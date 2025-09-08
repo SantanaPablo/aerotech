@@ -152,7 +152,7 @@ body {
         page-break-inside: auto;
         table-layout: fixed;
         word-wrap: break-word;
-        font-size: 11px !important;
+        font-size: 12px !important;
         line-height: 1.2;
         /*margin-bottom: 30mm;*/ /* Espacio para firmas */
     }
@@ -212,6 +212,17 @@ body {
         }
 
     /* --- SECCIÓN FIRMAS --- */
+    .firma-finalnota {
+        position: fixed;
+        bottom: 60mm;
+        left: 10mm;
+        right: 10mm;
+        display: flex !important;
+        justify-content: space-between;
+        font-size: 11px !important;
+        /*border-top: 1px solid #000;*/
+        padding-top: 10px;
+    }
     .firma-final {
         position: fixed;
         bottom: 10mm;
