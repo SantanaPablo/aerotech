@@ -1,9 +1,13 @@
 ﻿using Dominio;
 using Microsoft.EntityFrameworkCore;
+using Negocio.Interfaces;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Negocio
 {
-    public class ItemSalidaNegocio
+    public class ItemSalidaNegocio : IItemSalidaService
     {
         private readonly AppDbContext _context;
 
@@ -12,44 +16,50 @@ namespace Negocio
             _context = context;
         }
 
-        public List<ItemSalida> ObtenerTodos()
+        // ASÍNCRONO
+        public async Task<List<ItemSalida>> ObtenerTodosAsync()
         {
-            return _context.ItemsSalida.Include(i => i.NotaSalida).ToList();
+            return await _context.ItemsSalida.Include(i => i.NotaSalida).ToListAsync();
         }
 
-        public ItemSalida ObtenerPorId(int id)
+        // ASÍNCRONO
+        public async Task<ItemSalida> ObtenerPorIdAsync(int id)
         {
-            return _context.ItemsSalida.Include(i => i.NotaSalida)
-                                       .FirstOrDefault(i => i.Id == id);
+            return await _context.ItemsSalida.Include(i => i.NotaSalida)
+                                            .FirstOrDefaultAsync(i => i.Id == id);
         }
 
-        public void Crear(ItemSalida item)
+        // ASÍNCRONO
+        public async Task CrearAsync(ItemSalida item)
         {
             _context.ItemsSalida.Add(item);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public void Actualizar(ItemSalida item)
+        // ASÍNCRONO
+        public async Task ActualizarAsync(ItemSalida item)
         {
             _context.ItemsSalida.Update(item);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public void Eliminar(int id)
+        // ASÍNCRONO
+        public async Task EliminarAsync(int id)
         {
-            var item = _context.ItemsSalida.Find(id);
+            var item = await _context.ItemsSalida.FindAsync(id);
             if (item != null)
             {
                 _context.ItemsSalida.Remove(item);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
             }
         }
 
-        public List<ItemSalida> ObtenerPorNotaSalidaId(int notaId)
+        // ASÍNCRONO
+        public async Task<List<ItemSalida>> ObtenerPorNotaSalidaIdAsync(int notaId)
         {
-            return _context.ItemsSalida
+            return await _context.ItemsSalida
                 .Where(i => i.NotaSalidaId == notaId)
-                .ToList();
+                .ToListAsync();
         }
     }
 }

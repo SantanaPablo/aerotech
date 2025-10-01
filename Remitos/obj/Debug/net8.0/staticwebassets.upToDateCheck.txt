@@ -1345,6 +1345,7 @@ wwwroot\BuscadorExcel\venv\Scripts\pip3.exe
 wwwroot\BuscadorExcel\venv\Scripts\python.exe
 wwwroot\BuscadorExcel\venv\Scripts\pythonw.exe
 wwwroot\BuscadorExcel\venv\Scripts\runxlrd.py
+wwwroot\css\notas.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\js\sa.js

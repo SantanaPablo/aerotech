@@ -1,8 +1,13 @@
 ﻿using Dominio;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Negocio.Interfaces;
 
 namespace Negocio
 {
-    public class UsuarioNegocio
+    public class UsuarioNegocio : IUsuarioService
     {
         private readonly AppDbContext _context;
 
@@ -11,41 +16,47 @@ namespace Negocio
             _context = context;
         }
 
-        public List<Usuario> ObtenerTodos()
+        // ASÍNCRONO
+        public async Task<List<Usuario>> ObtenerTodosAsync()
         {
-            return _context.Usuarios.ToList();
+            return await _context.Usuarios.ToListAsync();
         }
 
-        public Usuario ObtenerPorId(int id)
+        // ASÍNCRONO
+        public async Task<Usuario> ObtenerPorIdAsync(int id)
         {
-            return _context.Usuarios.Find(id);
+            return await _context.Usuarios.FindAsync(id);
         }
 
-        public void Crear(Usuario usuario)
+        // ASÍNCRONO
+        public async Task CrearAsync(Usuario usuario)
         {
             _context.Usuarios.Add(usuario);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public void Actualizar(Usuario usuario)
+        // ASÍNCRONO
+        public async Task ActualizarAsync(Usuario usuario)
         {
             _context.Usuarios.Update(usuario);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public void Eliminar(int id)
+        // ASÍNCRONO
+        public async Task EliminarAsync(int id)
         {
-            var usuario = _context.Usuarios.Find(id);
+            var usuario = await _context.Usuarios.FindAsync(id);
             if (usuario != null)
             {
                 _context.Usuarios.Remove(usuario);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
             }
         }
 
-        public Usuario ObtenerPorLegajo(string legajo)
+        // ASÍNCRONO
+        public async Task<Usuario> ObtenerPorLegajoAsync(string legajo)
         {
-            return _context.Usuarios.FirstOrDefault(u => u.Legajo == legajo);
+            return await _context.Usuarios.FirstOrDefaultAsync(u => u.Legajo == legajo);
         }
     }
 }

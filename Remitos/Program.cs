@@ -29,8 +29,7 @@ builder.Services.AddSession();
 // También registrar las clases de negocio:
 builder.Services.AddScoped<RemitoNegocio>();
 builder.Services.AddScoped<ItemRemitoNegocio>();
-builder.Services.AddScoped<GenerarReportes>();
-builder.Services.AddScoped<GenerarPDFSalida>();
+
 
 
 var app = builder.Build();

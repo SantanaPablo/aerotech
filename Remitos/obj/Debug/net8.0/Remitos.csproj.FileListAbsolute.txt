@@ -453,3 +453,15 @@ C:\Users\USUARIO\Desktop\Remitos\Remitos\obj\Debug\net8.0\rpswa.dswa.cache.json
 C:\Users\USUARIO\Desktop\Remitos\Remitos\obj\Debug\net8.0\rjimswa.dswa.cache.json
 C:\Users\USUARIO\Desktop\Remitos\Remitos\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 C:\Users\USUARIO\Desktop\Remitos\Remitos\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\USUARIO\Desktop\Remitos\Remitos\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\USUARIO\Desktop\Remitos\Remitos\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\USUARIO\Desktop\Remitos\Remitos\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\USUARIO\Desktop\Remitos\Remitos\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\USUARIO\Desktop\Remitos\Remitos\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\USUARIO\Desktop\Remitos\Remitos\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\USUARIO\Desktop\Remitos\Remitos\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\USUARIO\Desktop\Remitos\Remitos\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\USUARIO\Desktop\Remitos\Remitos\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\USUARIO\Desktop\Remitos\Remitos\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\USUARIO\Desktop\Remitos\Remitos\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\USUARIO\Desktop\Remitos\Remitos\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

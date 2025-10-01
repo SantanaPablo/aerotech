@@ -12,6 +12,9 @@ public class CrearRemitoModel : PageModel
     private readonly AppDbContext _context;
     private readonly IHttpContextAccessor _httpContextAccessor;
 
+    public string ultimo;
+    public int ultimonum;
+
     [BindProperty]
     public Remito Remito { get; set; } = new();
 
@@ -29,7 +32,15 @@ public class CrearRemitoModel : PageModel
     public void OnGet()
     {
         Remito.Fecha = DateTime.Now;
-        
+
+        ultimo = _context.Remitos
+                     .OrderByDescending(r => r.Numero)
+                     .Select(r => r.Numero)
+                     .FirstOrDefault();
+
+        ultimonum = int.Parse(ultimo) + 1;
+        ultimo = ultimonum.ToString();
+
         RecuperarItemsDeSession();
         if (Items.Count == 0) Items.Add(new ItemRemito { cantidad = 1, numero_item = 1 });
     }

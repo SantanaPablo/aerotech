@@ -1,11 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Dominio;
+﻿using Dominio;
 using Microsoft.EntityFrameworkCore;
+using Negocio.Interfaces; // nuevo proyecto de interfaces
 
 namespace Negocio
 {
-    public class RemitoNegocio
+    public class RemitoNegocio : IRemitoService
     {
         private readonly AppDbContext _context;
 
@@ -14,40 +13,37 @@ namespace Negocio
             _context = context;
         }
 
-        public List<Remito> ObtenerTodos()
+        public async Task<List<Remito>> ObtenerTodosAsync()
         {
-            return _context.Remitos.Include(r => r.Items).ToList();
+            return await _context.Remitos.Include(r => r.Items).ToListAsync();
         }
 
-        public Remito ObtenerPorId(int id)
+        public async Task<Remito?> ObtenerPorIdAsync(int id)
         {
-            return _context.Remitos.Include(r => r.Items)
-                                   .FirstOrDefault(r => r.Id == id);
+            return await _context.Remitos.Include(r => r.Items)
+                                         .FirstOrDefaultAsync(r => r.Id == id);
         }
 
-        public void Crear(Remito remito)
+        public async Task CrearAsync(Remito remito)
         {
             _context.Remitos.Add(remito);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public void Actualizar(Remito remito)
+        public async Task ActualizarAsync(Remito remito)
         {
             _context.Remitos.Update(remito);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public void Eliminar(int id)
+        public async Task EliminarAsync(int id)
         {
-            var remito = _context.Remitos.Find(id);
+            var remito = await _context.Remitos.FindAsync(id);
             if (remito != null)
             {
                 _context.Remitos.Remove(remito);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
             }
         }
-
-
     }
 }
-

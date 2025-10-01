@@ -2,10 +2,12 @@
 using System.Linq;
 using Dominio;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
+using Negocio.Interfaces;
 
 namespace Negocio
 {
-    public class ItemRemitoNegocio
+    public class ItemRemitoNegocio : IItemRemitoService
     {
         private readonly AppDbContext _context;
 
@@ -14,44 +16,57 @@ namespace Negocio
             _context = context;
         }
 
-        public List<ItemRemito> ObtenerTodos()
+        // ASÍNCRONO
+        public async Task<List<ItemRemito>> ObtenerTodosAsync()
         {
-            return _context.ItemsRemito.Include(i => i.Remito).ToList();
+            // Se usa ToListAsync()
+            return await _context.ItemsRemito.Include(i => i.Remito).ToListAsync();
         }
 
-        public ItemRemito ObtenerPorId(int id)
+        // ASÍNCRONO
+        public async Task<ItemRemito> ObtenerPorIdAsync(int id)
         {
-            return _context.ItemsRemito.Include(i => i.Remito)
-                                       .FirstOrDefault(i => i.Id == id);
+            // Se usa FirstOrDefaultAsync()
+            return await _context.ItemsRemito.Include(i => i.Remito)
+                                            .FirstOrDefaultAsync(i => i.Id == id);
         }
 
-        public void Crear(ItemRemito item)
+        // ASÍNCRONO
+        public async Task CrearAsync(ItemRemito item)
         {
             _context.ItemsRemito.Add(item);
-            _context.SaveChanges();
+            // Se usa SaveChangesAsync()
+            await _context.SaveChangesAsync();
         }
 
-        public void Actualizar(ItemRemito item)
+        // ASÍNCRONO
+        public async Task ActualizarAsync(ItemRemito item)
         {
             _context.ItemsRemito.Update(item);
-            _context.SaveChanges();
+            // Se usa SaveChangesAsync()
+            await _context.SaveChangesAsync();
         }
 
-        public void Eliminar(int id)
+        // ASÍNCRONO
+        public async Task EliminarAsync(int id)
         {
-            var item = _context.ItemsRemito.Find(id);
+            // Se usa FindAsync() o una consulta asíncrona
+            var item = await _context.ItemsRemito.FindAsync(id);
             if (item != null)
             {
                 _context.ItemsRemito.Remove(item);
-                _context.SaveChanges();
+                // Se usa SaveChangesAsync()
+                await _context.SaveChangesAsync();
             }
         }
 
-        public List<ItemRemito> ObtenerPorRemitoId(int remitoId)
+        // ASÍNCRONO
+        public async Task<List<ItemRemito>> ObtenerPorRemitoIdAsync(int remitoId)
         {
-            return _context.ItemsRemito
+            // Se usa ToListAsync()
+            return await _context.ItemsRemito
                 .Where(i => i.id_remito == remitoId)
-                .ToList();
+                .ToListAsync();
         }
     }
 }

@@ -1,9 +1,12 @@
 ﻿using Dominio;
 using Microsoft.EntityFrameworkCore;
-
+using Negocio.Interfaces;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 namespace Negocio
 {
-    public class NotaSalidaNegocio
+    public class NotaSalidaNegocio : INotaSalidaService
     {
         private readonly AppDbContext _context;
 
@@ -12,40 +15,44 @@ namespace Negocio
             _context = context;
         }
 
-        public List<NotaSalida> ObtenerTodos()
+        // ASÍNCRONO
+        public async Task<List<NotaSalida>> ObtenerTodosAsync()
         {
-            return _context.NotasSalida.Include(n => n.Autorizante).ToList();
+            return await _context.NotasSalida.Include(n => n.Autorizante).ToListAsync();
         }
 
-        public NotaSalida ObtenerPorId(int id)
+        // ASÍNCRONO
+        public async Task<NotaSalida> ObtenerPorIdAsync(int id)
         {
-            return _context.NotasSalida
+            return await _context.NotasSalida
                 .Include(n => n.Autorizante)
                 .Include(n => n.Items)
-                .FirstOrDefault(n => n.Id == id);
+                .FirstOrDefaultAsync(n => n.Id == id);
         }
 
-        public void Crear(NotaSalida nota)
+        // ASÍNCRONO
+        public async Task CrearAsync(NotaSalida nota)
         {
             _context.NotasSalida.Add(nota);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public void Actualizar(NotaSalida nota)
+        // ASÍNCRONO
+        public async Task ActualizarAsync(NotaSalida nota)
         {
             _context.NotasSalida.Update(nota);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
-        public void Eliminar(int id)
+        // ASÍNCRONO
+        public async Task EliminarAsync(int id)
         {
-            var nota = _context.NotasSalida.Find(id);
+            var nota = await _context.NotasSalida.FindAsync(id);
             if (nota != null)
             {
                 _context.NotasSalida.Remove(nota);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
             }
         }
     }
 }
-

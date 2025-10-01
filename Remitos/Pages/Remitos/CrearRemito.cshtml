@@ -14,7 +14,7 @@
         <div class="row mb-3">
             <div class="col-md-4">
                 <label class="form-label">Número</label>
-                <input asp-for="Remito.Numero" class="form-control" />
+                <input asp-for="Remito.Numero" class="form-control" value=@Model.ultimonum/>
                 <span asp-validation-for="Remito.Numero" class="text-danger"></span>
             </div>
             <div class="col-md-4">

@@ -34,24 +34,5 @@ public class VerNotaSalidaModel : PageModel
         return Page();
     }
 
-    public IActionResult OnPostGenerarPdf(int id)
-    {
-        var nota = _context.NotasSalida
-            .Include(n => n.Autorizante)
-            .FirstOrDefault(n => n.Id == id);
-
-        if (nota == null)
-            return NotFound();
-
-        var items = _context.ItemsSalida
-            .Where(i => i.NotaSalidaId == id)
-            .ToList();
-
-        string rutaPlantilla = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "pdf", "nota_salida.pdf");
-        var generador = new GenerarPDFSalida();
-        var pdfBytes = generador.GenerarRemitoEnMemoria(nota, items, rutaPlantilla);
-
-        string nombreArchivo = $"Remito_{nota.Fecha:yyyyMMdd}_{nota.Id}.pdf";
-        return File(pdfBytes, "application/pdf", nombreArchivo);
-    }
+    
 }

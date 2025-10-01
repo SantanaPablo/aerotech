@@ -28,10 +28,8 @@ namespace Dominio
         [Range(1, int.MaxValue, ErrorMessage = "La cantidad debe ser mayor a 0")]
         public int Cantidad { get; set; }
 
-        // FK a NotaPSA
-        public int NotaPSAId { get; set; }
+     
 
-        [ForeignKey("NotaPSAId")]
-        public NotaPSA NotaPSA { get; set; }
+       
     }
 }
