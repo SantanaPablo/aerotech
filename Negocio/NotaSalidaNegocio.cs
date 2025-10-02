@@ -18,7 +18,11 @@ namespace Negocio
         // ASÍNCRONO
         public async Task<List<NotaSalida>> ObtenerTodosAsync()
         {
-            return await _context.NotasSalida.Include(n => n.Autorizante).ToListAsync();
+            return await _context.NotasSalida
+         .Include(n => n.Autorizante)
+         .Include(n => n.Items) // 👈 ahora devuelve también los items
+         .ToListAsync();
+
         }
 
         // ASÍNCRONO

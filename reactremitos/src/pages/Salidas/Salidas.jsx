@@ -1,198 +1,248 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
 
-// Asume que esta variable está definida en tu entorno (ej: .env file en Vite/Create React App)
-const API_BASE_URL = import.meta.env.VITE_API_URL; 
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-/**
- * Componente principal para listar las Notas de Salida.
- * Replica la lógica de filtrado y paginación de la página Razor.
- * @param {Object} props - Propiedades del componente.
- * @param {string} props.token - JWT Token para autenticación.
- */
-export default function Salidas({ token }) {
-    const [notas, setNotas] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-    const [totalPaginas, setTotalPaginas] = useState(1);
-    
-    // Maneja los parámetros de URL para filtrar y paginar (equivalent al Model.Filtro y Model.PaginaActual)
-    const [searchParams, setSearchParams] = useSearchParams();
-    const filtro = searchParams.get('filtro') || '';
-    const paginaActual = parseInt(searchParams.get('pagina') || '1', 10);
-    
-    // Estado para el input de búsqueda, permite edición en tiempo real
-    const [inputFiltro, setInputFiltro] = useState(filtro); 
+const Salidas = () => {
+  const [notasTotales, setNotasTotales] = useState([]);
+  const [notas, setNotas] = useState([]);
+  const [filtro, setFiltro] = useState("");
+  const [paginaActual, setPaginaActual] = useState(1);
+  const tamañoPagina = 10;
 
-    /**
-     * Llama a la API para obtener los datos.
-     */
-    const fetchNotas = useCallback(async (currentFiltro, currentPage) => {
-        setLoading(true);
-        setError(null);
-        
-        // Construye la URL con la ruta del controlador NotasSalida
-        let url = `${API_BASE_URL}/api/NotasSalida?pagina=${currentPage}`;
-        if (currentFiltro) {
-            url += `&filtro=${encodeURIComponent(currentFiltro)}`;
-        }
+  const API_URL = import.meta.env.VITE_API_URL;
 
-        try {
-            const response = await fetch(url, {
-                headers: {
-                    'Authorization': `Bearer ${token}`,
-                    'Content-Type': 'application/json',
-                },
-            });
+  useEffect(() => {
+    const fetchNotas = async () => {
+      try {
+        // [Image of server icon];
 
-            if (!response.ok) {
-                const errText = response.status === 401 ? "Sesión expirada o no autorizada." : response.statusText;
-                throw new Error(errText);
-            }
-
-            // Asume que la respuesta JSON es similar a:
-            // { notas: [{...}], paginaActual: N, totalPaginas: P }
-            const data = await response.json(); 
-            setNotas(data.notas || []);
-            setTotalPaginas(data.totalPaginas || 1);
-
-        } catch (err) {
-            console.error("Error fetching NotasSalida:", err);
-            setError(err.message || "Error al cargar las notas de salida.");
-            setNotas([]);
-        } finally {
-            setLoading(false);
-        }
-    }, [token]);
-
-    // Dispara la carga de datos cuando cambian la página o el filtro
-    useEffect(() => {
-        fetchNotas(filtro, paginaActual);
-    }, [filtro, paginaActual, fetchNotas]);
-    
-    
-    /**
-     * Maneja el envío del formulario de búsqueda (equivalente a form method="get").
-     */
-    const handleSearchSubmit = (e) => {
-        e.preventDefault();
-        // Actualiza los parámetros de búsqueda en la URL y resetea la página a 1
-        setSearchParams({ pagina: 1, filtro: inputFiltro });
+        const resp = await fetch(`${API_URL}/api/NotasSalida`);
+        if (!resp.ok) throw new Error("Error al cargar notas");
+        const data = await resp.json();
+        setNotasTotales(data);
+      } catch (err) {
+        console.error(err);
+      }
     };
+    fetchNotas();
+  }, [API_URL]);
 
-    /**
-     * Maneja el cambio de página.
-     */
-    const handlePageChange = (newPage) => {
-        // Mantiene el filtro actual y actualiza solo la página
-        setSearchParams({ pagina: newPage, filtro: filtro });
-    };
+  useEffect(() => {
+    let filtradas = [...notasTotales];
 
-    // Sub-Componente para la Paginación
-    const Pagination = () => {
-        if (totalPaginas <= 1) return null;
-        
-        const pages = [];
-        for (let i = 1; i <= totalPaginas; i++) {
-            pages.push(
-                <li key={i} className={`page-item ${i === paginaActual ? 'active' : ''}`}>
-                    {/* El atributo asp-route-pagina se traduce a un onClick que actualiza el URL param */}
-                    <button 
-                        className="page-link" 
-                        onClick={() => handlePageChange(i)}
-                        disabled={loading}
-                    >
-                        {i}
-                    </button>
-                </li>
-            );
-        }
-        return (
-            <nav aria-label="Paginación" className="mt-4">
-                <ul className="pagination justify-content-center">
-                    {pages}
-                </ul>
-            </nav>
-        );
-    };
+    // 🔍 Filtrado
+    if (filtro.trim() !== "") {
+      const f = filtro.toLowerCase();
+      filtradas = filtradas.filter(
+        (n) =>
+          n.dirigidaA?.toLowerCase().includes(f) ||
+          n.tecnico?.toLowerCase().includes(f) ||
+          n.autorizante?.nombre?.toLowerCase().includes(f) ||
+          (n.items &&
+            n.items.some(
+              (i) =>
+                i.equipo?.toLowerCase().includes(f) ||
+                i.usuario?.toLowerCase().includes(f) ||
+                i.serial?.toLowerCase().includes(f)
+            ))
+      );
+    }
 
-    return (
-        <div className="container mt-4">
-            <h2><i className="bi bi-journal-text me-2"></i> Notas de Salida</h2>
+    // 📅 Ordenar por fecha descendente
+    filtradas.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
 
-            {/* Formulario de Búsqueda (Replica <form method="get">) */}
-            <form onSubmit={handleSearchSubmit} className="row g-2 mb-4">
-                <div className="col-sm-10">
-                    <input
-                        type="text"
-                        name="Filtro"
-                        className="form-control"
-                        placeholder="Buscar por técnico, destino, etc..."
-                        value={inputFiltro}
-                        onChange={(e) => setInputFiltro(e.target.value)}
-                        disabled={loading}
-                    />
-                </div>
-                <div className="col-sm-2">
-                    <button type="submit" className="btn btn-primary w-100" disabled={loading}>
-                        <i className="bi bi-search me-1"></i> Buscar
-                    </button>
-                </div>
-            </form>
+    setNotas(filtradas);
+    setPaginaActual(1); // resetear página al buscar
+  }, [filtro, notasTotales]);
 
-            {/* Enlace para Crear Nueva Nota (Replica <a asp-page="/Salidas/CrearNotaSalida">) */}
-            <Link to="/salidas/crear" className="btn btn-success mb-3">
-                <i className="bi bi-plus-circle me-1"></i> Nueva Nota de Salida
-            </Link>
+  // 📑 Paginación
+  const totalPaginas = Math.ceil(notas.length / tamañoPagina);
+  const inicio = (paginaActual - 1) * tamañoPagina;
+  const notasPagina = notas.slice(inicio, inicio + tamañoPagina);
 
-            {/* Mensajes de Estado */}
-            {loading && <div className="alert alert-info">Cargando notas...</div>}
-            {error && <div className="alert alert-danger">{error}</div>}
-            
-            {/* Tabla de Datos */}
-            <div className="table-responsive">
-                <table className="table table-striped table-hover table-bordered">
-                    <thead className="table-light">
-                        <tr>
-                            <th>Fecha</th>
-                            <th>Dirigido A</th>
-                            <th>Técnico</th>
-                            <th>Autorizante</th>
-                            <th colSpan="2">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {notas.length > 0 ? (
-                            notas.map((nota) => (
-                                <tr key={nota.id}>
-                                    {/* Muestra la fecha en formato dd-MM-yyyy */}
-                                    <td>{new Date(nota.fecha).toLocaleDateString('es-AR')}</td> 
-                                    <td>{nota.dirigidaA}</td>
-                                    <td>{nota.tecnico}</td>
-                                    {/* Replica @nota.Autorizante?.Nombre */}
-                                    <td>{nota.autorizante?.nombre || 'N/A'}</td> 
-                                    
-                                    {/* Columna de acciones (solo Ver) */}
-                                    <td>
-                                        {/* Replica <a asp-page="/Salidas/VerNotaSalida" asp-route-id="@nota.Id"> */}
-                                        <Link 
-                                            to={`/salidas/ver/${nota.id}`} 
-                                            className="btn btn-outline-secondary btn-sm"
-                                        >
-                                            <i className="bi bi-eye me-1"></i> Ver
-                                        </Link>
-                                    </td>
-                                </tr>
-                            ))
-                        ) : (
-                            !loading && <tr><td colSpan="6" className="text-center">No se encontraron notas de salida.</td></tr>
-                        )}
-                    </tbody>
-                </table>
-            </div>
-            
-            {/* Paginación */}
-            {!loading && notas.length > 0 && <Pagination />}
+  return (
+    <div className="p-6 bg-gray-50 min-h-screen"> {/* Added bg and min-h for better page context */}
+      <h2 className="text-3xl font-extrabold mb-6 text-gray-800 flex items-center gap-3"> {/* Slightly larger/bolder title */}
+        <i className="bi bi-journal-text"></i> Notas de Salida
+      </h2>
+      
+      {/* 🔍 Filtro */}
+      <form
+        onSubmit={(e) => e.preventDefault()}
+        className="flex gap-2 mb-4" // Simplified grid layout
+      >
+        <div className="flex-grow">
+          <input
+            type="text"
+            placeholder="Buscar por técnico, destino, ítem..."
+            value={filtro}
+            onChange={(e) => setFiltro(e.target.value)}
+            // 👇 Added focus:ring for better UX
+            className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 shadow-sm"
+          />
         </div>
-    );
+        <div>
+          <button
+            type="submit"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition duration-150 ease-in-out shadow-md"
+          >
+            <i className="bi bi-search"></i> Buscar
+          </button>
+        </div>
+      </form>
+
+      {/* ➕ Nueva nota */}
+      <Link
+        to="/salidas/crearnotasalida"
+        className="inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded mb-6 transition duration-150 ease-in-out shadow-md"
+      >
+        <i className="bi bi-plus-circle"></i> Nueva Nota de Salida
+      </Link>
+
+      {/* 📋 Tabla */}
+      <div className="overflow-x-auto bg-white rounded-lg shadow-lg"> {/* Added container styling */}
+        <table className="min-w-full divide-y divide-gray-300 text-sm"> {/* Used min-w-full and divide-y */}
+          <thead className="bg-gray-100">
+            <tr>
+              <th className="p-3 border-r text-left text-xs font-semibold uppercase tracking-wider text-gray-600">Fecha</th> {/* Adjusted header styling */}
+              <th className="p-3 border-r text-left text-xs font-semibold uppercase tracking-wider text-gray-600">Dirigido A</th>
+              <th className="p-3 border-r text-left text-xs font-semibold uppercase tracking-wider text-gray-600">Técnico</th>
+              <th className="p-3 border-r text-left text-xs font-semibold uppercase tracking-wider text-gray-600">Autorizante</th>
+              <th className="p-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-600">Acciones</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-gray-200">
+            {notasPagina.map((nota) => (
+              <tr key={nota.id} className="hover:bg-blue-50/50 transition duration-100"> {/* Hover effect change */}
+                <td className="p-3 border-r whitespace-nowrap">
+                  {new Date(nota.fecha).toLocaleDateString()}
+                </td>
+                <td className="p-3 border-r">{nota.dirigidaA}</td>
+                <td className="p-3 border-r">{nota.tecnico}</td>
+                <td className="p-3 border-r">{nota.autorizante?.nombre}</td>
+                <td className="p-3">
+                  <Link
+                    to={`/salidas/vernotasalida/${nota.id}`}
+                    // Enhanced button style
+                    className="px-3 py-1 text-xs border border-gray-300 rounded text-gray-700 hover:bg-blue-100 transition duration-150"
+                  >
+                    <i className="bi bi-eye"></i> Ver
+                  </Link>
+                </td>
+              </tr>
+            ))}
+
+            {notasPagina.length === 0 && (
+              <tr>
+                <td colSpan="5" className="p-6 text-center text-gray-500 bg-white">
+                  No se encontraron notas
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+
+      {/* 🔢 Paginación */}
+      <Paginacion
+        totalPaginas={totalPaginas}
+        paginaActual={paginaActual}
+        setPaginaActual={setPaginaActual}
+      />
+    </div>
+  );
+};
+
+// Paginacion component (no changes needed, as it was already well-styled)
+function Paginacion({ totalPaginas, paginaActual, setPaginaActual }) {
+  if (totalPaginas <= 1) return null;
+
+  const rango = 2;
+  let paginas = [];
+
+  for (
+    let i = Math.max(1, paginaActual - rango);
+    i <= Math.min(totalPaginas, paginaActual + rango);
+    i++
+  ) {
+    paginas.push(i);
+  }
+
+  const mostrarPrimero = paginas[0] > 1;
+  const mostrarUltimo = paginas[paginas.length - 1] < totalPaginas;
+
+  return (
+    <nav className="mt-6 flex justify-center"> {/* Adjusted margin for spacing */}
+      <ul className="flex items-center space-x-2 text-sm"> {/* Adjusted spacing */}
+        <li>
+          <button
+            disabled={paginaActual === 1}
+            onClick={() => setPaginaActual(paginaActual - 1)}
+            className="px-3 py-1 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 disabled:opacity-50 transition duration-150"
+          >
+            «
+          </button>
+        </li>
+
+        {mostrarPrimero && (
+          <>
+            <li>
+              <button
+                onClick={() => setPaginaActual(1)}
+                className="px-3 py-1 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100"
+              >
+                1
+              </button>
+            </li>
+            <li>
+              <span className="px-2 text-gray-500">…</span>
+            </li>
+          </>
+        )}
+
+        {paginas.map((num) => (
+          <li key={num}>
+            <button
+              onClick={() => setPaginaActual(num)}
+              className={`px-3 py-1 border rounded-lg transition duration-150 ${
+                num === paginaActual
+                  ? "bg-blue-600 text-white border-blue-600 shadow-md" // Highlight active page
+                  : "border-gray-300 text-gray-700 hover:bg-gray-100"
+              }`}
+            >
+              {num}
+            </button>
+          </li>
+        ))}
+
+        {mostrarUltimo && (
+          <>
+            <li>
+              <span className="px-2 text-gray-500">…</span>
+            </li>
+            <li>
+              <button
+                onClick={() => setPaginaActual(totalPaginas)}
+                className="px-3 py-1 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100"
+              >
+                {totalPaginas}
+              </button>
+            </li>
+          </>
+        )}
+
+        <li>
+          <button
+            disabled={paginaActual === totalPaginas}
+            onClick={() => setPaginaActual(paginaActual + 1)}
+            className="px-3 py-1 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 disabled:opacity-50 transition duration-150"
+          >
+            »
+          </button>
+        </li>
+      </ul>
+    </nav>
+  );
 }
+
+export default Salidas;
