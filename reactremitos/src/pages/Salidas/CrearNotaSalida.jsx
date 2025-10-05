@@ -1,404 +1,362 @@
-import React, { useState, useEffect } from 'react';
-import { FileText, PlusCircle, Trash2, Save, Send, Shield } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Plus, Trash2, Save } from 'lucide-react';
 
+const CrearNotaSalida = ({ authToken }) => {
+  const navigate = useNavigate();
+  const apiUrl = import.meta.env.VITE_API_URL;
 
-// Lista de técnicos para la datalist
-const MOCK_TECNICOS = ["Juan Pérez", "Ana López", "Carlos Ruiz", "Sofía Mendoza", "Elena Vidal"];
+  const [nota, setNota] = useState({
+    fecha: new Date().toISOString().split('T')[0],
+    dirigidaA: 'Seguridad T4',
+    recibido: false,
+    tecnico: '',
+    autorizanteId: null
+  });
 
-// Estructura inicial de un Ítem de Salida
-const INITIAL_ITEM_STATE = {
-    Unidad: 1,
-    Equipo: '',
-    Serial: '',
-    Usuario: '',
-    SD: ''
-};
+  const [items, setItems] = useState([]);
+  const [tecnicos, setTecnicos] = useState([]);
+  const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
 
-// Estado inicial de la Nota de Salida
-const getInitialNotaState = () => ({
-    Fecha: new Date().toISOString().substring(0, 10),
-    DirigidaA: 'Seguridad T4',
-    Tecnico: '',
-    Recibido: false
-});
+  // Cargar items desde localStorage al montar
+  useEffect(() => {
+    const savedItems = localStorage.getItem('itemsNotaSalida');
+    if (savedItems) {
+      setItems(JSON.parse(savedItems));
+    } else {
+      setItems([{ unidad: '1', equipo: '', serial: '', usuario: '', sd: '' }]);
+    }
+  }, []);
 
-const CrearNotaSalida = () => {
-    const [nota, setNota] = useState(getInitialNotaState);
-    const [items, setItems] = useState([INITIAL_ITEM_STATE]);
-    const [validationErrors, setValidationErrors] = useState({});
-    const [isSaving, setIsSaving] = useState(false);
-    const MAX_ITEMS = 25;
-
-    // --- MANEJADORES DE CAMBIO DE ESTADO ---
-
-    // Maneja cambios en los campos principales de la Nota
-    const handleNotaChange = (e) => {
-        const { name, value, type, checked } = e.target;
-        setNota(prev => ({
-            ...prev,
-            [name]: type === 'checkbox' ? checked : value
-        }));
-    };
-
-    // Maneja cambios en los campos de los Ítems
-    const handleItemChange = (index, e) => {
-        const { name, value, type } = e.target;
-        const newItems = items.map((item, i) => {
-            if (i === index) {
-                return {
-                    ...item,
-                    [name]: type === 'number' ? parseInt(value) || 0 : value
-                };
-            }
-            return item;
+  // Cargar técnicos desde la API
+  useEffect(() => {
+    const cargarTecnicos = async () => {
+      try {
+        const response = await fetch(`${apiUrl}/api/Usuarios`, {
+          headers: {
+            'Authorization': `Bearer ${authToken}`
+          }
         });
-        setItems(newItems);
-        // Limpia el error del campo si el usuario empieza a escribir
-        if (validationErrors.items) {
-            setValidationErrors(prev => ({ 
-                ...prev, 
-                items: {
-                    ...prev.items,
-                    [`${name}-${index}`]: null
-                }
-            }));
+        if (response.ok) {
+          const usuarios = await response.json();
+          const nombresTecnicos = [...new Set(usuarios.map(u => u.nombre))];
+          setTecnicos(nombresTecnicos);
         }
+      } catch (error) {
+        console.error('Error al cargar técnicos:', error);
+      }
     };
 
-    // --- MANEJADORES DE ARRAY (SIMULANDO HANDLERS) ---
+    cargarTecnicos();
+  }, [apiUrl, authToken]);
 
-    // Simula OnPostAddItem
-    const handleAddItem = (e) => {
-        e.preventDefault();
-        if (items.length < MAX_ITEMS) {
-            setItems(prev => [...prev, { ...INITIAL_ITEM_STATE }]);
-        }
-    };
+  // Extraer autorizanteId del token
+  useEffect(() => {
+    if (authToken) {
+      try {
+        const payload = JSON.parse(atob(authToken.split('.')[1]));
+        const usuarioId = payload.UsuarioId || payload.sub || payload.nameid;
+        setNota(prev => ({ ...prev, autorizanteId: parseInt(usuarioId) }));
+      } catch (error) {
+        console.error('Error al decodificar token:', error);
+      }
+    }
+  }, [authToken]);
 
-    // Simula OnPostRemoveItem
-    const handleRemoveItem = (index) => (e) => {
-        e.preventDefault();
-        setItems(prev => prev.filter((_, i) => i !== index));
-    };
+  // Guardar items en localStorage cuando cambien
+  useEffect(() => {
+    if (items.length > 0) {
+      localStorage.setItem('itemsNotaSalida', JSON.stringify(items));
+    }
+  }, [items]);
 
-    // --- VALIDACIÓN Y GUARDADO (SIMULANDO OnPostGuardarAsync) ---
+  const handleNotaChange = (field, value) => {
+    setNota(prev => ({ ...prev, [field]: value }));
+  };
 
-    const validateForm = () => {
-        let errors = {};
-        let itemErrors = {};
-        let isValid = true;
+  const handleItemChange = (index, field, value) => {
+    const newItems = [...items];
+    newItems[index][field] = value;
+    setItems(newItems);
+  };
 
-        if (!nota.Tecnico.trim()) {
-            errors.Tecnico = "El campo Técnico es obligatorio.";
-            isValid = false;
-        }
-        
-        // Validación de ítems
-        if (items.length < 1) {
-            errors.global = "Debe agregar al menos un ítem de salida.";
-            isValid = false;
-        } else {
-            items.forEach((item, i) => {
-                if (!item.Equipo.trim()) {
-                    itemErrors[`Equipo-${i}`] = "El campo Equipo es obligatorio.";
-                    isValid = false;
-                }
-                if (!item.Serial.trim()) {
-                    itemErrors[`Serial-${i}`] = "El campo Serial es obligatorio.";
-                    isValid = false;
-                }
-            });
-        }
-        
-        if (Object.keys(itemErrors).length > 0) {
-            errors.items = itemErrors;
-        }
+  const agregarItem = () => {
+    if (items.length < 30) {
+      setItems([...items, { unidad: '1', equipo: '', serial: '', usuario: '', sd: '' }]);
+    }
+  };
 
-        setValidationErrors(errors);
-        return isValid;
-    };
+  const eliminarItem = (index) => {
+    const newItems = items.filter((_, i) => i !== index);
+    setItems(newItems.length > 0 ? newItems : [{ unidad: '1', equipo: '', serial: '', usuario: '', sd: '' }]);
+  };
 
-    const handleSave = (e) => {
-        e.preventDefault();
-        if (!validateForm()) {
-            // La validación falló
-            console.error("Errores de validación, no se puede guardar.");
-            return;
-        }
+  const validarFormulario = () => {
+    const newErrors = {};
 
-        setIsSaving(true);
-        console.log("Datos válidos. Simulación de guardado...");
-        
-        // Simulación de llamada a API (2 segundos de latencia)
-        setTimeout(() => {
-            setIsSaving(false);
-            
-            // Simulación de éxito (limpiar el formulario)
-            // Aquí iría un RedirectToPage("VerNotaSalida", ...)
-            console.log("Nota guardada con éxito:", { nota, items });
-            alert("Nota de Salida guardada con éxito (Simulación).");
+    if (!nota.tecnico?.trim()) {
+      newErrors.tecnico = 'El campo Técnico es obligatorio';
+    }
 
-            // Resetear estado después de guardar
-            setNota(getInitialNotaState());
-            setItems([INITIAL_ITEM_STATE]);
-            setValidationErrors({});
-        }, 2000); 
-    };
+    if (items.length === 0) {
+      newErrors.items = 'Debe agregar al menos un ítem de salida';
+    }
 
-    // Componente Modal de Confirmación simple (reemplaza alert/confirm)
-    const ConfirmModal = ({ onConfirm, onClose }) => (
-        <div className="fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center z-50 p-4">
-            <div className="bg-white rounded-xl shadow-2xl w-full max-w-md p-6 transform transition-all">
-                <h3 className="text-xl font-bold text-gray-900 flex items-center mb-4">
-                    <Send className="w-5 h-5 mr-2 text-blue-600" /> Confirmar Guardado
-                </h3>
-                <p className="text-gray-700 mb-6">¿Estás seguro de que deseas guardar y enviar la Nota de Salida?</p>
-                <div className="flex justify-end space-x-3">
-                    <button
-                        type="button"
-                        onClick={onClose}
-                        className="px-4 py-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-lg hover:bg-gray-300 transition"
-                        disabled={isSaving}
-                    >
-                        Cancelar
-                    </button>
-                    <button
-                        type="button"
-                        onClick={onConfirm}
-                        className="px-4 py-2 text-sm font-semibold text-white bg-green-600 rounded-lg hover:bg-green-700 transition disabled:opacity-50"
-                        disabled={isSaving}
-                    >
-                        {isSaving ? 'Guardando...' : 'Confirmar Guardar'}
-                    </button>
-                </div>
-            </div>
+    items.forEach((item, i) => {
+      if (!item.equipo?.trim()) {
+        newErrors[`items[${i}].equipo`] = 'El campo Equipo es obligatorio';
+      }
+      if (!item.serial?.trim()) {
+        newErrors[`items[${i}].serial`] = 'El campo Serial es obligatorio';
+      }
+    });
+
+    if (!nota.autorizanteId) {
+      newErrors.autorizante = 'No se pudo identificar al usuario logueado';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const guardarNota = async () => {
+    if (!validarFormulario()) {
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      // Crear la nota de salida
+      const notaResponse = await fetch(`${apiUrl}/api/NotasSalida`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${authToken}`
+        },
+        body: JSON.stringify({
+          fecha: nota.fecha,
+          dirigidaA: nota.dirigidaA,
+          recibido: nota.recibido,
+          tecnico: nota.tecnico,
+          autorizanteId: nota.autorizanteId
+        })
+      });
+
+      if (!notaResponse.ok) {
+        throw new Error('Error al crear la nota de salida');
+      }
+
+      const notaCreada = await notaResponse.json();
+
+      // Crear los items
+      for (const item of items) {
+        await fetch(`${apiUrl}/api/ItemSalidas`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${authToken}`
+          },
+          body: JSON.stringify({
+            notaSalidaId: notaCreada.id,
+            unidad: item.unidad,
+            equipo: item.equipo,
+            serial: item.serial,
+            usuario: item.usuario,
+            sd: item.sd
+          })
+        });
+      }
+
+      // Limpiar localStorage
+      localStorage.removeItem('itemsNotaSalida');
+
+      // Redirigir a ver la nota
+      navigate(`/salidas/vernotasalida/${notaCreada.id}`);
+    } catch (error) {
+      console.error('Error al guardar:', error);
+      setErrors({ general: 'Error al guardar la nota. Por favor, intente nuevamente.' });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="max-w-7xl mx-auto p-6">
+      <h2 className="text-3xl font-bold mb-6">Crear Nota de Salida</h2>
+
+      <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+        {errors.general && (
+          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+            {errors.general}
+          </div>
+        )}
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Fecha
+            </label>
+            <input
+              type="date"
+              value={nota.fecha}
+              onChange={(e) => handleNotaChange('fecha', e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Dirigido A
+            </label>
+            <input
+              type="text"
+              value={nota.dirigidaA}
+              readOnly
+              className="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-100"
+            />
+          </div>
+
+          <div className="flex items-end">
+            <label className="flex items-center space-x-2">
+              <input
+                type="checkbox"
+                checked={nota.recibido}
+                onChange={(e) => handleNotaChange('recibido', e.target.checked)}
+                className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+              />
+              <span className="text-sm font-medium text-gray-700">Recibido</span>
+            </label>
+          </div>
         </div>
-    );
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    
-    // Función para abrir la modal de confirmación
-    const handleConfirmSave = () => {
-        if (validateForm()) {
-            setIsModalOpen(true);
-        }
-    };
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Técnico
+          </label>
+          <input
+            type="text"
+            list="tecnicosList"
+            value={nota.tecnico}
+            onChange={(e) => handleNotaChange('tecnico', e.target.value)}
+            className="w-full md:w-1/2 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <datalist id="tecnicosList">
+            {tecnicos.map((nombre, i) => (
+              <option key={i} value={nombre} />
+            ))}
+          </datalist>
+          {errors.tecnico && (
+            <span className="text-red-600 text-sm mt-1 block">{errors.tecnico}</span>
+          )}
+        </div>
 
+        <h5 className="text-xl font-semibold mt-6 mb-4 flex items-center">
+          <span className="mr-2">📦</span> Ítems de salida
+        </h5>
 
-    return (
-        <div className="p-4 sm:p-6 lg:p-8 bg-gray-50 min-h-screen font-sans">
-            <h1 className="text-3xl font-extrabold text-gray-900 mb-6 flex items-center">
-                <FileText className="w-8 h-8 mr-3 text-blue-600" /> Crear Nota de Salida
-            </h1>
+        <div className="flex justify-between items-center mb-4">
+          <button
+            type="button"
+            onClick={agregarItem}
+            disabled={items.length >= 30}
+            className="flex items-center space-x-2 px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <Plus className="w-5 h-5" />
+            <span>Agregar Ítem</span>
+          </button>
 
-            <div className="card p-4 sm:p-6 mb-8 shadow-xl bg-white rounded-xl border border-gray-200">
-                <form id="formCrearNota" onSubmit={handleSave}>
-                    {/* Resumen de Validación Global */}
-                    {(validationErrors.global || validationErrors.Tecnico) && (
-                        <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg">
-                            <p className="font-semibold mb-1">Hay errores en el formulario:</p>
-                            {validationErrors.global && <p>- {validationErrors.global}</p>}
-                            {validationErrors.Tecnico && <p>- {validationErrors.Tecnico}</p>}
-                        </div>
-                    )}
+          <button
+            type="button"
+            onClick={guardarNota}
+            disabled={loading}
+            className="flex items-center space-x-2 px-6 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 disabled:opacity-50"
+          >
+            <Save className="w-5 h-5" />
+            <span>{loading ? 'Guardando...' : 'Guardar Nota'}</span>
+          </button>
+        </div>
 
-                    {/* --- SECCIÓN PRINCIPAL DE LA NOTA --- */}
-                    <h2 className="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">Detalles Generales</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                        {/* Fecha */}
-                        <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1">Fecha</label>
-                            <input
-                                name="Fecha"
-                                type="date"
-                                value={nota.Fecha}
-                                onChange={handleNotaChange}
-                                className="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 transition"
-                            />
-                        </div>
+        {errors.items && (
+          <div className="text-red-600 text-sm mb-4">{errors.items}</div>
+        )}
 
-                        {/* Dirigido A (Readonly) */}
-                        <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-1">Dirigido A</label>
-                            <div className="relative">
-                                <Shield className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-                                <input
-                                    name="DirigidaA"
-                                    value={nota.DirigidaA}
-                                    readOnly
-                                    className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg bg-gray-100 text-gray-600 cursor-not-allowed"
-                                />
-                            </div>
-                        </div>
-
-                        {/* Recibido Checkbox */}
-                        <div className="flex items-end">
-                            <div className="flex items-center h-full pt-4 md:pt-0">
-                                <input
-                                    name="Recibido"
-                                    id="Nota_Recibido"
-                                    type="checkbox"
-                                    checked={nota.Recibido}
-                                    onChange={handleNotaChange}
-                                    className="h-5 w-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-                                />
-                                <label htmlFor="Nota_Recibido" className="ml-2 text-sm font-medium text-gray-700">Recibido</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                        {/* Técnico */}
-                        <div className="md:col-span-2">
-                            <label className="block text-sm font-medium text-gray-700 mb-1">Técnico <span className="text-red-500">*</span></label>
-                            <input
-                                name="Tecnico"
-                                value={nota.Tecnico}
-                                onChange={handleNotaChange}
-                                className={`w-full px-3 py-2 border rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 transition ${validationErrors.Tecnico ? 'border-red-500' : 'border-gray-300'}`}
-                                list="tecnicosList"
-                                placeholder="Escribe o selecciona un técnico"
-                            />
-                            <datalist id="tecnicosList">
-                                {MOCK_TECNICOS.map((nombre, index) => (
-                                    <option key={index} value={nombre} />
-                                ))}
-                            </datalist>
-                            {validationErrors.Tecnico && <p className="text-red-500 text-xs mt-1">{validationErrors.Tecnico}</p>}
-                        </div>
-                    </div>
-
-                    {/* --- SECCIÓN DE ÍTEMS --- */}
-                    
-                        <i className="bi bi-box-seam mr-2"></i> Ítems de salida
-
-                         <div className="mt-6 flex flex-col sm:flex-row justify-between gap-4 pt-4 border-t border-gray-200">
-                        <button
-                            type="button"
-                            onClick={handleAddItem}
-                            className={`flex items-center justify-center px-4 py-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-lg hover:bg-gray-300 transition shadow-md ${items.length >= MAX_ITEMS ? 'opacity-50 cursor-not-allowed' : ''}`}
-                            disabled={items.length >= MAX_ITEMS || isSaving}
-                        >
-                            <PlusCircle className="w-4 h-4 mr-2" /> 
-                            {items.length >= MAX_ITEMS ? `Máximo ${MAX_ITEMS} Ítems` : 'Agregar Ítem'}
-                        </button>
-                        
-                        <button 
-                            id="btnConfirmarGuardarSalida" 
-                            type="button"
-                            onClick={handleConfirmSave}
-                            className="flex items-center justify-center px-6 py-2 text-lg font-bold text-white bg-green-600 rounded-xl hover:bg-green-700 transition shadow-xl disabled:opacity-50"
-                            disabled={isSaving}
-                        >
-                            <Save className="w-5 h-5 mr-2" /> 
-                            {isSaving ? 'Guardando...' : 'Guardar Nota'}
-                        </button>
-                    </div>
-                    
-
-
-                    {/* Encabezados de la tabla de ítems */}
-                    <div className="hidden sm:grid grid-cols-12 gap-2 text-xs font-semibold text-gray-500 uppercase pb-2 border-b border-gray-200 mb-2">
-                        <div className="col-span-1">Unidad</div>
-                        <div className="col-span-3">Equipo <span className="text-red-500">*</span></div>
-                        <div className="col-span-3">Serial <span className="text-red-500">*</span></div>
-                        <div className="col-span-3">Usuario</div>
-                        <div className="col-span-1">SD</div>
-                        <div className="col-span-1 text-right">Acción</div>
-                    </div>
-
-                    
-                    
-                    {/* Lista Dinámica de Ítems */}
-                    {items.map((item, i) => (
-                        <div key={i} className="grid grid-cols-1 sm:grid-cols-12 gap-3 sm:gap-2 mb-4 border-b pb-4 sm:pb-2 sm:items-start items-center relative">
-                            <div className="col-span-12 sm:col-span-1 w-full">
-                                <label className="block sm:hidden text-xs font-medium text-gray-500">Unidad</label>
-                                <input
-                                    name="Unidad"
-                                    type="number"
-                                    value={item.Unidad}
-                                    onChange={(e) => handleItemChange(i, e)}
-                                    className="w-full px-2 py-1 border border-gray-300 rounded-lg shadow-sm text-sm"
-                                />
-                            </div>
-
-                            <div className="col-span-12 sm:col-span-3 w-full">
-                                <label className="block sm:hidden text-xs font-medium text-gray-500">Equipo</label>
-                                <input
-                                    name="Equipo"
-                                    value={item.Equipo}
-                                    onChange={(e) => handleItemChange(i, e)}
-                                    className={`w-full px-2 py-1 border rounded-lg shadow-sm text-sm ${validationErrors.items?.[`Equipo-${i}`] ? 'border-red-500' : 'border-gray-300'}`}
-                                    placeholder="Equipo"
-                                />
-                                {validationErrors.items?.[`Equipo-${i}`] && <p className="text-red-500 text-xs mt-1 sm:min-h-[1em]">{validationErrors.items[`Equipo-${i}`]}</p>}
-                            </div>
-
-                            <div className="col-span-12 sm:col-span-3 w-full">
-                                <label className="block sm:hidden text-xs font-medium text-gray-500">Serial</label>
-                                <input
-                                    name="Serial"
-                                    value={item.Serial}
-                                    onChange={(e) => handleItemChange(i, e)}
-                                    className={`w-full px-2 py-1 border rounded-lg shadow-sm text-sm ${validationErrors.items?.[`Serial-${i}`] ? 'border-red-500' : 'border-gray-300'}`}
-                                    placeholder="Serial"
-                                />
-                                {validationErrors.items?.[`Serial-${i}`] && <p className="text-red-500 text-xs mt-1 sm:min-h-[1em]">{validationErrors.items[`Serial-${i}`]}</p>}
-                            </div>
-
-                            <div className="col-span-12 sm:col-span-3 w-full">
-                                <label className="block sm:hidden text-xs font-medium text-gray-500">Usuario</label>
-                                <input
-                                    name="Usuario"
-                                    value={item.Usuario}
-                                    onChange={(e) => handleItemChange(i, e)}
-                                    className="w-full px-2 py-1 border border-gray-300 rounded-lg shadow-sm text-sm"
-                                    placeholder="Usuario"
-                                />
-                            </div>
-
-                            <div className="col-span-12 sm:col-span-1 w-full">
-                                <label className="block sm:hidden text-xs font-medium text-gray-500">SD</label>
-                                <input
-                                    name="SD"
-                                    value={item.SD}
-                                    onChange={(e) => handleItemChange(i, e)}
-                                    className="w-full px-2 py-1 border border-gray-300 rounded-lg shadow-sm text-sm"
-                                    placeholder="SD"
-                                />
-                            </div>
-
-                            {/* Botón Eliminar */}
-                            <div className="col-span-12 sm:col-span-1 flex justify-end sm:justify-center w-full">
-                                <button
-                                    type="button"
-                                    onClick={handleRemoveItem(i)}
-                                    className="flex items-center justify-center p-2 text-sm font-semibold text-red-600 bg-red-100 rounded-lg hover:bg-red-200 transition"
-                                >
-                                    <Trash2 className="w-4 h-4" />
-                                    <span className="sm:hidden ml-2">Eliminar Ítem</span>
-                                </button>
-                            </div>
-                        </div>
-                    ))}
-
-                
-                </form>
-            </div>
-            
-            {/* Modal de Confirmación */}
-            {isModalOpen && (
-                <ConfirmModal 
-                    onConfirm={handleSave} 
-                    onClose={() => setIsModalOpen(false)} 
+        <div className="space-y-3">
+          {items.map((item, index) => (
+            <div key={index} className="grid grid-cols-1 md:grid-cols-6 gap-3 items-start border-b pb-3">
+              <div>
+                <input
+                  type="number"
+                  value={item.unidad}
+                  onChange={(e) => handleItemChange(index, 'unidad', e.target.value)}
+                  placeholder="Unidad"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
-            )}
-            
-            {/* Footer space */}
-            <div className="h-[60px] block" aria-hidden="true"></div>
+              </div>
+
+              <div>
+                <input
+                  type="text"
+                  value={item.equipo}
+                  onChange={(e) => handleItemChange(index, 'equipo', e.target.value)}
+                  placeholder="Equipo"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                {errors[`items[${index}].equipo`] && (
+                  <span className="text-red-600 text-xs">{errors[`items[${index}].equipo`]}</span>
+                )}
+              </div>
+
+              <div>
+                <input
+                  type="text"
+                  value={item.serial}
+                  onChange={(e) => handleItemChange(index, 'serial', e.target.value)}
+                  placeholder="Serial"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                {errors[`items[${index}].serial`] && (
+                  <span className="text-red-600 text-xs">{errors[`items[${index}].serial`]}</span>
+                )}
+              </div>
+
+              <div>
+                <input
+                  type="text"
+                  value={item.usuario}
+                  onChange={(e) => handleItemChange(index, 'usuario', e.target.value)}
+                  placeholder="Usuario"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+
+              <div>
+                <input
+                  type="text"
+                  value={item.sd}
+                  onChange={(e) => handleItemChange(index, 'sd', e.target.value)}
+                  placeholder="SD"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+
+              <div>
+                <button
+                  type="button"
+                  onClick={() => eliminarItem(index)}
+                  className="flex items-center space-x-1 px-3 py-2 border border-red-300 text-red-600 rounded-md hover:bg-red-50"
+                >
+                  <Trash2 className="w-4 h-4" />
+                  <span>Eliminar</span>
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default CrearNotaSalida;

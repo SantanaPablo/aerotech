@@ -50,7 +50,7 @@ const Salidas = () => {
     }
 
     // 📅 Ordenar por fecha descendente
-    filtradas.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+    filtradas.sort((a, b) => b.id - a.id);
 
     setNotas(filtradas);
     setPaginaActual(1); // resetear página al buscar
