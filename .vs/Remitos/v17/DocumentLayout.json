@@ -1,281 +1,285 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\USUARIO\\Desktop\\Remitos\\",
+  "WorkspaceRootPath": "D:\\remitos\\remitos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\pages\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\pages\\salidas\\vernotasalida.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\salidas\\vernotasalida.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\pages\\salidas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\salidas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|c:\\users\\usuario\\desktop\\remitos\\negocio\\notasalidanegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|solutionrelative:negocio\\notasalidanegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\wwwroot\\pdf\\logo.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
-      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\wwwroot\\pdf\\logo.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\pages\\salidas\\vernotasalida.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\salidas\\vernotasalida.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|c:\\users\\usuario\\desktop\\remitos\\dominio\\notasalida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|solutionrelative:dominio\\notasalida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|c:\\users\\usuario\\desktop\\remitos\\dominio\\notaentrada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|solutionrelative:dominio\\notaentrada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|c:\\users\\usuario\\desktop\\remitos\\negocio\\interfaces\\inotasalidaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|solutionrelative:negocio\\interfaces\\inotasalidaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos.api\\controllers\\notassalidacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\controllers\\notassalidacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\pages\\salidas\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\salidas\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\pages\\salidas\\crearnotasalida.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\pages\\salidas\\crearnotasalida.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\salidas\\crearnotasalida.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\pages\\salidas\\crearnotasalida.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\pages\\salidas\\crearnotasalida.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\salidas\\crearnotasalida.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\pages\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\pages\\remitos\\editarremito.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\remitos\\editarremito.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos.api\\request\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\request\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\remitos.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\remitos.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|c:\\users\\usuario\\desktop\\remitos\\dominio\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|solutionrelative:dominio\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|c:\\users\\usuario\\desktop\\remitos\\dominio\\remito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|solutionrelative:dominio\\remito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|c:\\users\\usuario\\desktop\\remitos\\dominio\\resultadobusqueda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|solutionrelative:dominio\\resultadobusqueda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|c:\\users\\usuario\\desktop\\remitos\\dominio\\itemsalida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|solutionrelative:dominio\\itemsalida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|c:\\users\\usuario\\desktop\\remitos\\dominio\\itemremito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|solutionrelative:dominio\\itemremito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|c:\\users\\usuario\\desktop\\remitos\\dominio\\itementrada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|solutionrelative:dominio\\itementrada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|c:\\users\\usuario\\desktop\\remitos\\negocio\\itemremitonegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|solutionrelative:negocio\\itemremitonegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|c:\\users\\usuario\\desktop\\remitos\\negocio\\interfaces\\iitemremitoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|solutionrelative:negocio\\interfaces\\iitemremitoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|c:\\users\\usuario\\desktop\\remitos\\negocio\\itemsalidanegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|solutionrelative:negocio\\itemsalidanegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|c:\\users\\usuario\\desktop\\remitos\\negocio\\interfaces\\iusuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|solutionrelative:negocio\\interfaces\\iusuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|c:\\users\\usuario\\desktop\\remitos\\negocio\\interfaces\\iremitoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|solutionrelative:negocio\\interfaces\\iremitoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|c:\\users\\usuario\\desktop\\remitos\\negocio\\interfaces\\iitemsalidaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|solutionrelative:negocio\\interfaces\\iitemsalidaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos.api\\controllers\\usuarioscontroler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\controllers\\usuarioscontroler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos.api\\controllers\\remitoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\controllers\\remitoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos.api\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos.api\\controllers\\itemremitoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\controllers\\itemremitoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos.api\\controllers\\itemsalidascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\controllers\\itemsalidascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\wwwroot\\css\\notas.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\wwwroot\\css\\notas.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\wwwroot\\js\\sa.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\wwwroot\\js\\sa.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FD078C69-9E98-7E0C-B58C-E81D8A9A7707}|ReactRemitos\\reactremitos.esproj|c:\\users\\usuario\\desktop\\remitos\\reactremitos\\src\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{FD078C69-9E98-7E0C-B58C-E81D8A9A7707}|ReactRemitos\\reactremitos.esproj|solutionrelative:reactremitos\\src\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos.api\\remitos.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\remitos.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos.api\\remitos.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\remitos.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\pages\\remitos\\verdetalleremito.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\remitos\\verdetalleremito.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\pages\\remitos\\verdetalleremito.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\remitos\\verdetalleremito.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\pages\\remitos\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\remitos\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|c:\\users\\usuario\\desktop\\remitos\\negocio\\remitonegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|solutionrelative:negocio\\remitonegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\pages\\remitos\\crearremito.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\pages\\remitos\\crearremito.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\remitos\\crearremito.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\pages\\entradas\\crearentrada.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|d:\\remitos\\remitos\\remitos.api\\request\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\request\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|d:\\remitos\\remitos\\remitos.api\\controllers\\notassalidacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\controllers\\notassalidacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\wwwroot\\css\\notas.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\wwwroot\\css\\notas.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\pages\\salidas\\vernotasalida.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\salidas\\vernotasalida.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\wwwroot\\js\\sa.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\wwwroot\\js\\sa.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|d:\\remitos\\remitos\\remitos.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\remitos.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\remitos.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\pages\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\pages\\salidas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\salidas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|d:\\remitos\\remitos\\negocio\\notasalidanegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|solutionrelative:negocio\\notasalidanegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\wwwroot\\pdf\\logo.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\wwwroot\\pdf\\logo.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\pages\\salidas\\vernotasalida.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\salidas\\vernotasalida.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|d:\\remitos\\remitos\\dominio\\notasalida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|solutionrelative:dominio\\notasalida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|d:\\remitos\\remitos\\dominio\\notaentrada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|solutionrelative:dominio\\notaentrada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|d:\\remitos\\remitos\\negocio\\interfaces\\inotasalidaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|solutionrelative:negocio\\interfaces\\inotasalidaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\pages\\salidas\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\salidas\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\pages\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|d:\\remitos\\remitos\\dominio\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|solutionrelative:dominio\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|d:\\remitos\\remitos\\dominio\\remito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|solutionrelative:dominio\\remito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|d:\\remitos\\remitos\\dominio\\resultadobusqueda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|solutionrelative:dominio\\resultadobusqueda.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|d:\\remitos\\remitos\\dominio\\itemsalida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|solutionrelative:dominio\\itemsalida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|d:\\remitos\\remitos\\dominio\\itemremito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|solutionrelative:dominio\\itemremito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|d:\\remitos\\remitos\\dominio\\itementrada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|solutionrelative:dominio\\itementrada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|d:\\remitos\\remitos\\remitos.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|d:\\remitos\\remitos\\negocio\\itemremitonegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|solutionrelative:negocio\\itemremitonegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|d:\\remitos\\remitos\\negocio\\interfaces\\iitemremitoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|solutionrelative:negocio\\interfaces\\iitemremitoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|d:\\remitos\\remitos\\negocio\\itemsalidanegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|solutionrelative:negocio\\itemsalidanegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|d:\\remitos\\remitos\\negocio\\interfaces\\iusuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|solutionrelative:negocio\\interfaces\\iusuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|d:\\remitos\\remitos\\negocio\\interfaces\\iremitoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|solutionrelative:negocio\\interfaces\\iremitoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|d:\\remitos\\remitos\\negocio\\interfaces\\iitemsalidaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|solutionrelative:negocio\\interfaces\\iitemsalidaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|d:\\remitos\\remitos\\remitos.api\\controllers\\usuarioscontroler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\controllers\\usuarioscontroler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|d:\\remitos\\remitos\\remitos.api\\controllers\\remitoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\controllers\\remitoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|d:\\remitos\\remitos\\remitos.api\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|d:\\remitos\\remitos\\remitos.api\\controllers\\itemremitoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\controllers\\itemremitoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|d:\\remitos\\remitos\\remitos.api\\controllers\\itemsalidascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\controllers\\itemsalidascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD078C69-9E98-7E0C-B58C-E81D8A9A7707}|ReactRemitos\\reactremitos.esproj|d:\\remitos\\remitos\\reactremitos\\src\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{FD078C69-9E98-7E0C-B58C-E81D8A9A7707}|ReactRemitos\\reactremitos.esproj|solutionrelative:reactremitos\\src\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|d:\\remitos\\remitos\\remitos.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|d:\\remitos\\remitos\\remitos.api\\remitos.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\remitos.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|d:\\remitos\\remitos\\remitos.api\\remitos.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\remitos.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\pages\\remitos\\verdetalleremito.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\remitos\\verdetalleremito.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\pages\\remitos\\verdetalleremito.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\remitos\\verdetalleremito.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\pages\\remitos\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\remitos\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|d:\\remitos\\remitos\\negocio\\remitonegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|solutionrelative:negocio\\remitonegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\pages\\entradas\\crearentrada.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\entradas\\crearentrada.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\pages\\entradas\\verentrada.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\pages\\entradas\\verentrada.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\entradas\\verentrada.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\pages\\entradas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\pages\\entradas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\entradas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\pages\\entradas\\crearentrada.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\pages\\entradas\\crearentrada.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\entradas\\crearentrada.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|c:\\users\\usuario\\desktop\\remitos\\dominio\\itemnotapsa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|d:\\remitos\\remitos\\dominio\\itemnotapsa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3363B6D1-1536-477E-BC2A-E474B9F29D6E}|Dominio\\Dominio.csproj|solutionrelative:dominio\\itemnotapsa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\pages\\perfil.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\pages\\perfil.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\perfil.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\pages\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\pages\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\pages\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\pages\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|d:\\remitos\\remitos\\remitos.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos.api\\data\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|d:\\remitos\\remitos\\remitos.api\\data\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\data\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|c:\\users\\usuario\\desktop\\remitos\\negocio\\usuarionegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|d:\\remitos\\remitos\\negocio\\usuarionegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|solutionrelative:negocio\\usuarionegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\pages\\remitos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\pages\\remitos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\remitos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|c:\\users\\usuario\\desktop\\remitos\\negocio\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|d:\\remitos\\remitos\\negocio\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A456AA80-2EBB-4876-8940-31FFF6C61A79}|Negocio\\Negocio.csproj|solutionrelative:negocio\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\pages\\remitos\\crearremito.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\pages\\remitos\\crearremito.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\remitos\\crearremito.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\pages\\entradas\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\pages\\entradas\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\entradas\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\pages\\entradas\\verentrada.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\pages\\entradas\\verentrada.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\pages\\entradas\\verentrada.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|c:\\users\\usuario\\desktop\\remitos\\remitos\\wwwroot\\css\\notas.css||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|d:\\remitos\\remitos\\remitos\\wwwroot\\css\\notas.css||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0B44F96-390C-4391-8C95-426B9B102E44}|Remitos\\Remitos.csproj|solutionrelative:remitos\\wwwroot\\css\\notas.css||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -286,868 +290,851 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "NotaSalidaNegocio.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Negocio\\NotaSalidaNegocio.cs",
-              "RelativeDocumentMoniker": "Negocio\\NotaSalidaNegocio.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Negocio\\NotaSalidaNegocio.cs",
-              "RelativeToolTip": "Negocio\\NotaSalidaNegocio.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T11:15:34.611Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "LOGO.png -  [Spanish (Mexico)] - PNG [268x100, 24 bit, PNG]",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\wwwroot\\pdf\\LOGO.png",
-              "RelativeDocumentMoniker": "Remitos\\wwwroot\\pdf\\LOGO.png",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\wwwroot\\pdf\\LOGO.png -  [Spanish (Mexico)] - PNG [268x100, 24 bit, PNG]",
-              "RelativeToolTip": "Remitos\\wwwroot\\pdf\\LOGO.png -  [Spanish (Mexico)] - PNG [268x100, 24 bit, PNG]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
-              "WhenOpened": "2025-07-09T19:07:26.646Z",
-              "EditorCaption": " -  [Spanish (Mexico)] - PNG [268x100, 24 bit, PNG]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "VerNotaSalida.cshtml",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Salidas\\VerNotaSalida.cshtml",
-              "RelativeDocumentMoniker": "Remitos\\Pages\\Salidas\\VerNotaSalida.cshtml",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Salidas\\VerNotaSalida.cshtml",
-              "RelativeToolTip": "Remitos\\Pages\\Salidas\\VerNotaSalida.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-06T14:22:44.783Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Salidas\\Index.cshtml",
-              "RelativeDocumentMoniker": "Remitos\\Pages\\Salidas\\Index.cshtml",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Salidas\\Index.cshtml",
-              "RelativeToolTip": "Remitos\\Pages\\Salidas\\Index.cshtml",
-              "ViewState": "AgIAABMAAAAAAAAAAADwv0EAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-11T16:36:54.648Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Remitos\\Pages\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Remitos\\Pages\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAADUAAAAAAAAAAAAIwGMAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-11T16:26:13.444Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_ValidationScriptsPartial.cshtml",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeDocumentMoniker": "Remitos\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeToolTip": "Remitos\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-28T14:35:21.411Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "VerNotaSalida.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Salidas\\VerNotaSalida.cshtml.cs",
-              "RelativeDocumentMoniker": "Remitos\\Pages\\Salidas\\VerNotaSalida.cshtml.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Salidas\\VerNotaSalida.cshtml.cs",
-              "RelativeToolTip": "Remitos\\Pages\\Salidas\\VerNotaSalida.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-28T13:52:43.987Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "INotaSalidaService.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Negocio\\Interfaces\\INotaSalidaService.cs",
-              "RelativeDocumentMoniker": "Negocio\\Interfaces\\INotaSalidaService.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Negocio\\Interfaces\\INotaSalidaService.cs",
-              "RelativeToolTip": "Negocio\\Interfaces\\INotaSalidaService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T19:27:14.93Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "NotaSalida.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Dominio\\NotaSalida.cs",
-              "RelativeDocumentMoniker": "Dominio\\NotaSalida.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Dominio\\NotaSalida.cs",
-              "RelativeToolTip": "Dominio\\NotaSalida.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T13:32:00.017Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "NotaEntrada.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Dominio\\NotaEntrada.cs",
-              "RelativeDocumentMoniker": "Dominio\\NotaEntrada.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Dominio\\NotaEntrada.cs",
-              "RelativeToolTip": "Dominio\\NotaEntrada.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T13:30:58.181Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "NotasSalidaController.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos.API\\Controllers\\NotasSalidaController.cs",
-              "RelativeDocumentMoniker": "Remitos.API\\Controllers\\NotasSalidaController.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos.API\\Controllers\\NotasSalidaController.cs",
-              "RelativeToolTip": "Remitos.API\\Controllers\\NotasSalidaController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T18:48:05.897Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Index.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Salidas\\Index.cshtml.cs",
-              "RelativeDocumentMoniker": "Remitos\\Pages\\Salidas\\Index.cshtml.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Salidas\\Index.cshtml.cs",
-              "RelativeToolTip": "Remitos\\Pages\\Salidas\\Index.cshtml.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAAwE4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T20:14:08.826Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Login.cshtml",
-              "RelativeDocumentMoniker": "Remitos\\Pages\\Login.cshtml",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Login.cshtml",
-              "RelativeToolTip": "Remitos\\Pages\\Login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHYAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-11T16:11:26.309Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "LoginRequest.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos.API\\Request\\LoginRequest.cs",
-              "RelativeDocumentMoniker": "Remitos.API\\Request\\LoginRequest.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos.API\\Request\\LoginRequest.cs",
-              "RelativeToolTip": "Remitos.API\\Request\\LoginRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-28T12:58:19.716Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Remitos.csproj",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Remitos.csproj",
-              "RelativeDocumentMoniker": "Remitos\\Remitos.csproj",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Remitos.csproj",
-              "RelativeToolTip": "Remitos\\Remitos.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-09-28T13:49:27.166Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "CrearNotaSalida.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Salidas\\CrearNotaSalida.cshtml.cs",
-              "RelativeDocumentMoniker": "Remitos\\Pages\\Salidas\\CrearNotaSalida.cshtml.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Salidas\\CrearNotaSalida.cshtml.cs",
-              "RelativeToolTip": "Remitos\\Pages\\Salidas\\CrearNotaSalida.cshtml.cs",
-              "ViewState": "AgIAAHQAAAAAAAAAAAAgwKAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-02T10:32:18.847Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos.API\\appsettings.json",
-              "RelativeDocumentMoniker": "Remitos.API\\appsettings.json",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos.API\\appsettings.json",
-              "RelativeToolTip": "Remitos.API\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-27T18:56:31.082Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Dominio\\Usuario.cs",
-              "RelativeDocumentMoniker": "Dominio\\Usuario.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Dominio\\Usuario.cs",
-              "RelativeToolTip": "Dominio\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T11:18:23.209Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Remito.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Dominio\\Remito.cs",
-              "RelativeDocumentMoniker": "Dominio\\Remito.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Dominio\\Remito.cs",
-              "RelativeToolTip": "Dominio\\Remito.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T13:38:55.173Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "CrearNotaSalida.cshtml",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Salidas\\CrearNotaSalida.cshtml",
-              "RelativeDocumentMoniker": "Remitos\\Pages\\Salidas\\CrearNotaSalida.cshtml",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Salidas\\CrearNotaSalida.cshtml",
-              "RelativeToolTip": "Remitos\\Pages\\Salidas\\CrearNotaSalida.cshtml",
-              "ViewState": "AgIAADwAAAAAAAAAAADwv2oAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-11T16:06:41.173Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "ResultadoBusqueda.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Dominio\\ResultadoBusqueda.cs",
-              "RelativeDocumentMoniker": "Dominio\\ResultadoBusqueda.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Dominio\\ResultadoBusqueda.cs",
-              "RelativeToolTip": "Dominio\\ResultadoBusqueda.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T11:18:25.731Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "ItemRemito.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Dominio\\ItemRemito.cs",
-              "RelativeDocumentMoniker": "Dominio\\ItemRemito.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Dominio\\ItemRemito.cs",
-              "RelativeToolTip": "Dominio\\ItemRemito.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAiwB8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T13:31:05.582Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "ItemSalida.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Dominio\\ItemSalida.cs",
-              "RelativeDocumentMoniker": "Dominio\\ItemSalida.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Dominio\\ItemSalida.cs",
-              "RelativeToolTip": "Dominio\\ItemSalida.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T13:30:56.357Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "ItemEntrada.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Dominio\\ItemEntrada.cs",
-              "RelativeDocumentMoniker": "Dominio\\ItemEntrada.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Dominio\\ItemEntrada.cs",
-              "RelativeToolTip": "Dominio\\ItemEntrada.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T11:18:41.288Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos.API\\Program.cs",
-              "RelativeDocumentMoniker": "Remitos.API\\Program.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos.API\\Program.cs",
-              "RelativeToolTip": "Remitos.API\\Program.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAkwCcAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T18:51:02.841Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "ItemRemitoNegocio.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Negocio\\ItemRemitoNegocio.cs",
-              "RelativeDocumentMoniker": "Negocio\\ItemRemitoNegocio.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Negocio\\ItemRemitoNegocio.cs",
-              "RelativeToolTip": "Negocio\\ItemRemitoNegocio.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T11:15:35.951Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "IItemRemitoService.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Negocio\\Interfaces\\IItemRemitoService.cs",
-              "RelativeDocumentMoniker": "Negocio\\Interfaces\\IItemRemitoService.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Negocio\\Interfaces\\IItemRemitoService.cs",
-              "RelativeToolTip": "Negocio\\Interfaces\\IItemRemitoService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T19:26:11.799Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "ItemSalidaNegocio.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Negocio\\ItemSalidaNegocio.cs",
-              "RelativeDocumentMoniker": "Negocio\\ItemSalidaNegocio.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Negocio\\ItemSalidaNegocio.cs",
-              "RelativeToolTip": "Negocio\\ItemSalidaNegocio.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T11:14:31.269Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "IUsuarioService.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Negocio\\Interfaces\\IUsuarioService.cs",
-              "RelativeDocumentMoniker": "Negocio\\Interfaces\\IUsuarioService.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Negocio\\Interfaces\\IUsuarioService.cs",
-              "RelativeToolTip": "Negocio\\Interfaces\\IUsuarioService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T19:26:17.091Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "IRemitoService.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Negocio\\Interfaces\\IRemitoService.cs",
-              "RelativeDocumentMoniker": "Negocio\\Interfaces\\IRemitoService.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Negocio\\Interfaces\\IRemitoService.cs",
-              "RelativeToolTip": "Negocio\\Interfaces\\IRemitoService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T19:26:19.227Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "IItemSalidaService.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Negocio\\Interfaces\\IItemSalidaService.cs",
-              "RelativeDocumentMoniker": "Negocio\\Interfaces\\IItemSalidaService.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Negocio\\Interfaces\\IItemSalidaService.cs",
-              "RelativeToolTip": "Negocio\\Interfaces\\IItemSalidaService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T19:26:15.449Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "ItemSalidasController.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos.API\\Controllers\\ItemSalidasController.cs",
-              "RelativeDocumentMoniker": "Remitos.API\\Controllers\\ItemSalidasController.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos.API\\Controllers\\ItemSalidasController.cs",
-              "RelativeToolTip": "Remitos.API\\Controllers\\ItemSalidasController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T18:49:04.327Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "UsuariosControler.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos.API\\Controllers\\UsuariosControler.cs",
-              "RelativeDocumentMoniker": "Remitos.API\\Controllers\\UsuariosControler.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos.API\\Controllers\\UsuariosControler.cs",
-              "RelativeToolTip": "Remitos.API\\Controllers\\UsuariosControler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T19:34:16.425Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "RemitosController.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos.API\\Controllers\\RemitosController.cs",
-              "RelativeDocumentMoniker": "Remitos.API\\Controllers\\RemitosController.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos.API\\Controllers\\RemitosController.cs",
-              "RelativeToolTip": "Remitos.API\\Controllers\\RemitosController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T18:46:54.088Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "LoginController.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos.API\\Controllers\\LoginController.cs",
-              "RelativeDocumentMoniker": "Remitos.API\\Controllers\\LoginController.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos.API\\Controllers\\LoginController.cs",
-              "RelativeToolTip": "Remitos.API\\Controllers\\LoginController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-28T12:57:12.46Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "ItemRemitosController.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos.API\\Controllers\\ItemRemitosController.cs",
-              "RelativeDocumentMoniker": "Remitos.API\\Controllers\\ItemRemitosController.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos.API\\Controllers\\ItemRemitosController.cs",
-              "RelativeToolTip": "Remitos.API\\Controllers\\ItemRemitosController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T18:47:07.189Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Index.cshtml",
-              "RelativeDocumentMoniker": "Remitos\\Pages\\Index.cshtml",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Index.cshtml",
-              "RelativeToolTip": "Remitos\\Pages\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-11T16:26:54.798Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos.API\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "Remitos.API\\appsettings.Development.json",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos.API\\appsettings.Development.json",
-              "RelativeToolTip": "Remitos.API\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-28T15:09:15.475Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "notas.css",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\wwwroot\\css\\notas.css",
-              "RelativeDocumentMoniker": "Remitos\\wwwroot\\css\\notas.css",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\wwwroot\\css\\notas.css",
-              "RelativeToolTip": "Remitos\\wwwroot\\css\\notas.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-09-28T14:35:38.798Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "Remitos.API.http",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos.API\\Remitos.API.http",
-              "RelativeDocumentMoniker": "Remitos.API\\Remitos.API.http",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos.API\\Remitos.API.http",
-              "RelativeToolTip": "Remitos.API\\Remitos.API.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2025-09-28T13:00:09.989Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "Remitos.API.csproj",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos.API\\Remitos.API.csproj",
-              "RelativeDocumentMoniker": "Remitos.API\\Remitos.API.csproj",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos.API\\Remitos.API.csproj",
-              "RelativeToolTip": "Remitos.API\\Remitos.API.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-09-27T18:54:02.506Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "site.js",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\wwwroot\\js\\site.js",
-              "RelativeDocumentMoniker": "Remitos\\wwwroot\\js\\site.js",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\wwwroot\\js\\site.js",
-              "RelativeToolTip": "Remitos\\wwwroot\\js\\site.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-09-08T20:15:04.883Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "sa.js",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\wwwroot\\js\\sa.js",
-              "RelativeDocumentMoniker": "Remitos\\wwwroot\\js\\sa.js",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\wwwroot\\js\\sa.js",
-              "RelativeToolTip": "Remitos\\wwwroot\\js\\sa.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-09-08T20:15:03.185Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "site.css",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "Remitos\\wwwroot\\css\\site.css",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "Remitos\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAOQAAAAAAAAAAAAYwAwBAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-07-09T18:55:36.525Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "index.css",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\reactremitos\\src\\index.css",
-              "RelativeDocumentMoniker": "reactremitos\\src\\index.css",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\reactremitos\\src\\index.css",
-              "RelativeToolTip": "reactremitos\\src\\index.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-09-28T17:04:26.195Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Program.cs",
-              "RelativeDocumentMoniker": "Remitos\\Program.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Program.cs",
-              "RelativeToolTip": "Remitos\\Program.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAADwvzYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-28T13:48:51.158Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "VerDetalleRemito.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Remitos\\VerDetalleRemito.cshtml.cs",
-              "RelativeDocumentMoniker": "Remitos\\Pages\\Remitos\\VerDetalleRemito.cshtml.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Remitos\\VerDetalleRemito.cshtml.cs",
-              "RelativeToolTip": "Remitos\\Pages\\Remitos\\VerDetalleRemito.cshtml.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAowBkAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-28T13:51:30.015Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "Index.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Remitos\\Index.cshtml.cs",
-              "RelativeDocumentMoniker": "Remitos\\Pages\\Remitos\\Index.cshtml.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Remitos\\Index.cshtml.cs",
-              "RelativeToolTip": "Remitos\\Pages\\Remitos\\Index.cshtml.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAUwDAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T19:06:16.933Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 50,
-              "Title": "CrearRemito.cshtml",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Remitos\\CrearRemito.cshtml",
-              "RelativeDocumentMoniker": "Remitos\\Pages\\Remitos\\CrearRemito.cshtml",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Remitos\\CrearRemito.cshtml",
-              "RelativeToolTip": "Remitos\\Pages\\Remitos\\CrearRemito.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-27T12:14:22.419Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 49,
-              "Title": "RemitoNegocio.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Negocio\\RemitoNegocio.cs",
-              "RelativeDocumentMoniker": "Negocio\\RemitoNegocio.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Negocio\\RemitoNegocio.cs",
-              "RelativeToolTip": "Negocio\\RemitoNegocio.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBQAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T11:15:32.945Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "VerDetalleRemito.cshtml",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Remitos\\VerDetalleRemito.cshtml",
-              "RelativeDocumentMoniker": "Remitos\\Pages\\Remitos\\VerDetalleRemito.cshtml",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Remitos\\VerDetalleRemito.cshtml",
-              "RelativeToolTip": "Remitos\\Pages\\Remitos\\VerDetalleRemito.cshtml",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAADgAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-09T19:12:36.43Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 51,
-              "Title": "CrearEntrada.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Entradas\\CrearEntrada.cshtml.cs",
-              "RelativeDocumentMoniker": "Remitos\\Pages\\Entradas\\CrearEntrada.cshtml.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Entradas\\CrearEntrada.cshtml.cs",
-              "RelativeToolTip": "Remitos\\Pages\\Entradas\\CrearEntrada.cshtml.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-28T13:52:36.168Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 54,
-              "Title": "CrearEntrada.cshtml",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Entradas\\CrearEntrada.cshtml",
-              "RelativeDocumentMoniker": "Remitos\\Pages\\Entradas\\CrearEntrada.cshtml",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Entradas\\CrearEntrada.cshtml",
-              "RelativeToolTip": "Remitos\\Pages\\Entradas\\CrearEntrada.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAADMAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-09T18:59:37.161Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 53,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Entradas\\Index.cshtml",
-              "RelativeDocumentMoniker": "Remitos\\Pages\\Entradas\\Index.cshtml",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Entradas\\Index.cshtml",
-              "RelativeToolTip": "Remitos\\Pages\\Entradas\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-09T19:00:02.561Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 52,
-              "Title": "VerEntrada.cshtml",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Entradas\\VerEntrada.cshtml",
-              "RelativeDocumentMoniker": "Remitos\\Pages\\Entradas\\VerEntrada.cshtml",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Entradas\\VerEntrada.cshtml",
-              "RelativeToolTip": "Remitos\\Pages\\Entradas\\VerEntrada.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-09T19:00:10.102Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 56,
-              "Title": "Perfil.cshtml",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Perfil.cshtml",
-              "RelativeDocumentMoniker": "Remitos\\Pages\\Perfil.cshtml",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Perfil.cshtml",
-              "RelativeToolTip": "Remitos\\Pages\\Perfil.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-28T13:15:27.62Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 57,
-              "Title": "Privacy.cshtml",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Privacy.cshtml",
-              "RelativeDocumentMoniker": "Remitos\\Pages\\Privacy.cshtml",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Privacy.cshtml",
-              "RelativeToolTip": "Remitos\\Pages\\Privacy.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-28T13:15:31.214Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 55,
-              "Title": "ItemNotaPSA.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Dominio\\ItemNotaPSA.cs",
-              "RelativeDocumentMoniker": "Dominio\\ItemNotaPSA.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Dominio\\ItemNotaPSA.cs",
-              "RelativeToolTip": "Dominio\\ItemNotaPSA.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAawB4AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T13:33:08.554Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 59,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos.API\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Remitos.API\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos.API\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Remitos.API\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-28T13:14:44.917Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 58,
-              "Title": "Logout.cshtml",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Logout.cshtml",
-              "RelativeDocumentMoniker": "Remitos\\Pages\\Logout.cshtml",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Logout.cshtml",
-              "RelativeToolTip": "Remitos\\Pages\\Logout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-27T11:14:06.448Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 60,
-              "Title": "JwtHelper.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos.API\\Data\\JwtHelper.cs",
-              "RelativeDocumentMoniker": "Remitos.API\\Data\\JwtHelper.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos.API\\Data\\JwtHelper.cs",
-              "RelativeToolTip": "Remitos.API\\Data\\JwtHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-28T12:55:07.804Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 61,
-              "Title": "UsuarioNegocio.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Negocio\\UsuarioNegocio.cs",
-              "RelativeDocumentMoniker": "Negocio\\UsuarioNegocio.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Negocio\\UsuarioNegocio.cs",
-              "RelativeToolTip": "Negocio\\UsuarioNegocio.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T11:15:31.595Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 62,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Remitos\\Index.cshtml",
-              "RelativeDocumentMoniker": "Remitos\\Pages\\Remitos\\Index.cshtml",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Remitos\\Index.cshtml",
-              "RelativeToolTip": "Remitos\\Pages\\Remitos\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-27T19:06:13.909Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 63,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Negocio\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Negocio\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Negocio\\AppDbContext.cs",
-              "RelativeToolTip": "Negocio\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T13:28:51.9Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 64,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\appsettings.json",
-              "RelativeDocumentMoniker": "Remitos\\appsettings.json",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\appsettings.json",
-              "RelativeToolTip": "Remitos\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-27T18:56:45.484Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 65,
-              "Title": "CrearRemito.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Remitos\\CrearRemito.cshtml.cs",
-              "RelativeDocumentMoniker": "Remitos\\Pages\\Remitos\\CrearRemito.cshtml.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Remitos\\CrearRemito.cshtml.cs",
-              "RelativeToolTip": "Remitos\\Pages\\Remitos\\CrearRemito.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T12:14:56.687Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 66,
-              "Title": "Index.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Entradas\\Index.cshtml.cs",
-              "RelativeDocumentMoniker": "Remitos\\Pages\\Entradas\\Index.cshtml.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Entradas\\Index.cshtml.cs",
-              "RelativeToolTip": "Remitos\\Pages\\Entradas\\Index.cshtml.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAwwC8AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T12:11:48.191Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 67,
-              "Title": "VerEntrada.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Entradas\\VerEntrada.cshtml.cs",
-              "RelativeDocumentMoniker": "Remitos\\Pages\\Entradas\\VerEntrada.cshtml.cs",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\Pages\\Entradas\\VerEntrada.cshtml.cs",
-              "RelativeToolTip": "Remitos\\Pages\\Entradas\\VerEntrada.cshtml.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAcwDgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T10:33:56.924Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 68,
-              "Title": "notas.css",
-              "DocumentMoniker": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\wwwroot\\css\\notas.css",
-              "RelativeDocumentMoniker": "Remitos\\wwwroot\\css\\notas.css",
-              "ToolTip": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Remitos\\wwwroot\\css\\notas.css",
-              "RelativeToolTip": "Remitos\\wwwroot\\css\\notas.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-09-08T20:18:05.465Z"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 211,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "NotasSalidaController.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos.API\\Controllers\\NotasSalidaController.cs",
+              "RelativeDocumentMoniker": "Remitos.API\\Controllers\\NotasSalidaController.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos.API\\Controllers\\NotasSalidaController.cs",
+              "RelativeToolTip": "Remitos.API\\Controllers\\NotasSalidaController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAMAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:19.63Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Remitos.csproj",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\Remitos.csproj",
+              "RelativeDocumentMoniker": "Remitos\\Remitos.csproj",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\Remitos.csproj",
+              "RelativeToolTip": "Remitos\\Remitos.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-02T18:49:19.653Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoginRequest.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos.API\\Request\\LoginRequest.cs",
+              "RelativeDocumentMoniker": "Remitos.API\\Request\\LoginRequest.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos.API\\Request\\LoginRequest.cs",
+              "RelativeToolTip": "Remitos.API\\Request\\LoginRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:19.644Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CrearNotaSalida.cshtml",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\Pages\\Salidas\\CrearNotaSalida.cshtml",
+              "RelativeDocumentMoniker": "Remitos\\Pages\\Salidas\\CrearNotaSalida.cshtml",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\Pages\\Salidas\\CrearNotaSalida.cshtml",
+              "RelativeToolTip": "Remitos\\Pages\\Salidas\\CrearNotaSalida.cshtml",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAiwGoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-02T18:49:19.86Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CrearNotaSalida.cshtml.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\Pages\\Salidas\\CrearNotaSalida.cshtml.cs",
+              "RelativeDocumentMoniker": "Remitos\\Pages\\Salidas\\CrearNotaSalida.cshtml.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\Pages\\Salidas\\CrearNotaSalida.cshtml.cs",
+              "RelativeToolTip": "Remitos\\Pages\\Salidas\\CrearNotaSalida.cshtml.cs",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAqwJkAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:19.837Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EditarRemito.cshtml",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\Pages\\Remitos\\EditarRemito.cshtml",
+              "RelativeDocumentMoniker": "Remitos\\Pages\\Remitos\\EditarRemito.cshtml",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\Pages\\Remitos\\EditarRemito.cshtml",
+              "RelativeToolTip": "Remitos\\Pages\\Remitos\\EditarRemito.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-04T15:35:55.056Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "VerNotaSalida.cshtml",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\Pages\\Salidas\\VerNotaSalida.cshtml",
+              "RelativeDocumentMoniker": "Remitos\\Pages\\Salidas\\VerNotaSalida.cshtml",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\Pages\\Salidas\\VerNotaSalida.cshtml",
+              "RelativeToolTip": "Remitos\\Pages\\Salidas\\VerNotaSalida.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-02T18:49:19.599Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "site.js",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "Remitos\\wwwroot\\js\\site.js",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "Remitos\\wwwroot\\js\\site.js",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAAADkAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-10-02T18:49:19.979Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "sa.js",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\wwwroot\\js\\sa.js",
+              "RelativeDocumentMoniker": "Remitos\\wwwroot\\js\\sa.js",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\wwwroot\\js\\sa.js",
+              "RelativeToolTip": "Remitos\\wwwroot\\js\\sa.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-10-02T18:49:19.983Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CrearRemito.cshtml",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\Pages\\Remitos\\CrearRemito.cshtml",
+              "RelativeDocumentMoniker": "Remitos\\Pages\\Remitos\\CrearRemito.cshtml",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\Pages\\Remitos\\CrearRemito.cshtml",
+              "RelativeToolTip": "Remitos\\Pages\\Remitos\\CrearRemito.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-02T18:49:20.015Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "notas.css",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\wwwroot\\css\\notas.css",
+              "RelativeDocumentMoniker": "Remitos\\wwwroot\\css\\notas.css",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\wwwroot\\css\\notas.css",
+              "RelativeToolTip": "Remitos\\wwwroot\\css\\notas.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-02T18:49:19.963Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos.API\\appsettings.json",
+              "RelativeDocumentMoniker": "Remitos.API\\appsettings.json",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos.API\\appsettings.json",
+              "RelativeToolTip": "Remitos.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-02T18:49:19.843Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "site.css",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "Remitos\\wwwroot\\css\\site.css",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "Remitos\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAPoAAAAAAAAAAAAIwAwBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-02T18:49:19.988Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "NotaSalidaNegocio.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Negocio\\NotaSalidaNegocio.cs",
+              "RelativeDocumentMoniker": "Negocio\\NotaSalidaNegocio.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Negocio\\NotaSalidaNegocio.cs",
+              "RelativeToolTip": "Negocio\\NotaSalidaNegocio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:19.407Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "Remitos\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "Remitos\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-02T18:49:19.61Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Remitos\\Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Remitos\\Pages\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAADUAAAAAAAAAAAAIwGMAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-02T18:49:19.606Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\Pages\\Salidas\\Index.cshtml",
+              "RelativeDocumentMoniker": "Remitos\\Pages\\Salidas\\Index.cshtml",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\Pages\\Salidas\\Index.cshtml",
+              "RelativeToolTip": "Remitos\\Pages\\Salidas\\Index.cshtml",
+              "ViewState": "AgIAABMAAAAAAAAAAADwv0EAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-02T18:49:19.603Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "LOGO.png",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\wwwroot\\pdf\\LOGO.png",
+              "RelativeDocumentMoniker": "Remitos\\wwwroot\\pdf\\LOGO.png",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\wwwroot\\pdf\\LOGO.png",
+              "RelativeToolTip": "Remitos\\wwwroot\\pdf\\LOGO.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-10-02T18:49:19.594Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "VerNotaSalida.cshtml.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\Pages\\Salidas\\VerNotaSalida.cshtml.cs",
+              "RelativeDocumentMoniker": "Remitos\\Pages\\Salidas\\VerNotaSalida.cshtml.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\Pages\\Salidas\\VerNotaSalida.cshtml.cs",
+              "RelativeToolTip": "Remitos\\Pages\\Salidas\\VerNotaSalida.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:19.613Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "INotaSalidaService.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Negocio\\Interfaces\\INotaSalidaService.cs",
+              "RelativeDocumentMoniker": "Negocio\\Interfaces\\INotaSalidaService.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Negocio\\Interfaces\\INotaSalidaService.cs",
+              "RelativeToolTip": "Negocio\\Interfaces\\INotaSalidaService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:19.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "NotaSalida.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Dominio\\NotaSalida.cs",
+              "RelativeDocumentMoniker": "Dominio\\NotaSalida.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Dominio\\NotaSalida.cs",
+              "RelativeToolTip": "Dominio\\NotaSalida.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:19.621Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "NotaEntrada.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Dominio\\NotaEntrada.cs",
+              "RelativeDocumentMoniker": "Dominio\\NotaEntrada.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Dominio\\NotaEntrada.cs",
+              "RelativeToolTip": "Dominio\\NotaEntrada.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:19.626Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\Pages\\Salidas\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "Remitos\\Pages\\Salidas\\Index.cshtml.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\Pages\\Salidas\\Index.cshtml.cs",
+              "RelativeToolTip": "Remitos\\Pages\\Salidas\\Index.cshtml.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAAwE4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:19.634Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\Pages\\Login.cshtml",
+              "RelativeDocumentMoniker": "Remitos\\Pages\\Login.cshtml",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\Pages\\Login.cshtml",
+              "RelativeToolTip": "Remitos\\Pages\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHYAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-02T18:49:19.639Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Dominio\\Usuario.cs",
+              "RelativeDocumentMoniker": "Dominio\\Usuario.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Dominio\\Usuario.cs",
+              "RelativeToolTip": "Dominio\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:19.848Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Remito.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Dominio\\Remito.cs",
+              "RelativeDocumentMoniker": "Dominio\\Remito.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Dominio\\Remito.cs",
+              "RelativeToolTip": "Dominio\\Remito.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:19.855Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ResultadoBusqueda.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Dominio\\ResultadoBusqueda.cs",
+              "RelativeDocumentMoniker": "Dominio\\ResultadoBusqueda.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Dominio\\ResultadoBusqueda.cs",
+              "RelativeToolTip": "Dominio\\ResultadoBusqueda.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:19.865Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ItemRemito.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Dominio\\ItemRemito.cs",
+              "RelativeDocumentMoniker": "Dominio\\ItemRemito.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Dominio\\ItemRemito.cs",
+              "RelativeToolTip": "Dominio\\ItemRemito.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAiwB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:19.869Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ItemSalida.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Dominio\\ItemSalida.cs",
+              "RelativeDocumentMoniker": "Dominio\\ItemSalida.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Dominio\\ItemSalida.cs",
+              "RelativeToolTip": "Dominio\\ItemSalida.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:19.873Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ItemEntrada.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Dominio\\ItemEntrada.cs",
+              "RelativeDocumentMoniker": "Dominio\\ItemEntrada.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Dominio\\ItemEntrada.cs",
+              "RelativeToolTip": "Dominio\\ItemEntrada.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:19.883Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos.API\\Program.cs",
+              "RelativeDocumentMoniker": "Remitos.API\\Program.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos.API\\Program.cs",
+              "RelativeToolTip": "Remitos.API\\Program.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAkwCcAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:19.888Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "ItemRemitoNegocio.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Negocio\\ItemRemitoNegocio.cs",
+              "RelativeDocumentMoniker": "Negocio\\ItemRemitoNegocio.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Negocio\\ItemRemitoNegocio.cs",
+              "RelativeToolTip": "Negocio\\ItemRemitoNegocio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:19.894Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "IItemRemitoService.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Negocio\\Interfaces\\IItemRemitoService.cs",
+              "RelativeDocumentMoniker": "Negocio\\Interfaces\\IItemRemitoService.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Negocio\\Interfaces\\IItemRemitoService.cs",
+              "RelativeToolTip": "Negocio\\Interfaces\\IItemRemitoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:19.899Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "ItemSalidaNegocio.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Negocio\\ItemSalidaNegocio.cs",
+              "RelativeDocumentMoniker": "Negocio\\ItemSalidaNegocio.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Negocio\\ItemSalidaNegocio.cs",
+              "RelativeToolTip": "Negocio\\ItemSalidaNegocio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:19.905Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "IUsuarioService.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Negocio\\Interfaces\\IUsuarioService.cs",
+              "RelativeDocumentMoniker": "Negocio\\Interfaces\\IUsuarioService.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Negocio\\Interfaces\\IUsuarioService.cs",
+              "RelativeToolTip": "Negocio\\Interfaces\\IUsuarioService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:19.91Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "IRemitoService.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Negocio\\Interfaces\\IRemitoService.cs",
+              "RelativeDocumentMoniker": "Negocio\\Interfaces\\IRemitoService.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Negocio\\Interfaces\\IRemitoService.cs",
+              "RelativeToolTip": "Negocio\\Interfaces\\IRemitoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:19.916Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "IItemSalidaService.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Negocio\\Interfaces\\IItemSalidaService.cs",
+              "RelativeDocumentMoniker": "Negocio\\Interfaces\\IItemSalidaService.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Negocio\\Interfaces\\IItemSalidaService.cs",
+              "RelativeToolTip": "Negocio\\Interfaces\\IItemSalidaService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:19.921Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "ItemSalidasController.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos.API\\Controllers\\ItemSalidasController.cs",
+              "RelativeDocumentMoniker": "Remitos.API\\Controllers\\ItemSalidasController.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos.API\\Controllers\\ItemSalidasController.cs",
+              "RelativeToolTip": "Remitos.API\\Controllers\\ItemSalidasController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:19.926Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "UsuariosControler.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos.API\\Controllers\\UsuariosControler.cs",
+              "RelativeDocumentMoniker": "Remitos.API\\Controllers\\UsuariosControler.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos.API\\Controllers\\UsuariosControler.cs",
+              "RelativeToolTip": "Remitos.API\\Controllers\\UsuariosControler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:19.932Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "RemitosController.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos.API\\Controllers\\RemitosController.cs",
+              "RelativeDocumentMoniker": "Remitos.API\\Controllers\\RemitosController.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos.API\\Controllers\\RemitosController.cs",
+              "RelativeToolTip": "Remitos.API\\Controllers\\RemitosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:19.938Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos.API\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "Remitos.API\\Controllers\\LoginController.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos.API\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "Remitos.API\\Controllers\\LoginController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:19.943Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "ItemRemitosController.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos.API\\Controllers\\ItemRemitosController.cs",
+              "RelativeDocumentMoniker": "Remitos.API\\Controllers\\ItemRemitosController.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos.API\\Controllers\\ItemRemitosController.cs",
+              "RelativeToolTip": "Remitos.API\\Controllers\\ItemRemitosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:19.948Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "Remitos\\Pages\\Index.cshtml",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\Pages\\Index.cshtml",
+              "RelativeToolTip": "Remitos\\Pages\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-02T18:49:19.954Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos.API\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "Remitos.API\\appsettings.Development.json",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos.API\\appsettings.Development.json",
+              "RelativeToolTip": "Remitos.API\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-02T18:49:19.958Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "Remitos.API.http",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos.API\\Remitos.API.http",
+              "RelativeDocumentMoniker": "Remitos.API\\Remitos.API.http",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos.API\\Remitos.API.http",
+              "RelativeToolTip": "Remitos.API\\Remitos.API.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-10-02T18:49:19.967Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "Remitos.API.csproj",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos.API\\Remitos.API.csproj",
+              "RelativeDocumentMoniker": "Remitos.API\\Remitos.API.csproj",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos.API\\Remitos.API.csproj",
+              "RelativeToolTip": "Remitos.API\\Remitos.API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-02T18:49:19.972Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "index.css",
+              "DocumentMoniker": "D:\\remitos\\remitos\\reactremitos\\src\\index.css",
+              "RelativeDocumentMoniker": "reactremitos\\src\\index.css",
+              "ToolTip": "D:\\remitos\\remitos\\reactremitos\\src\\index.css",
+              "RelativeToolTip": "reactremitos\\src\\index.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-02T18:49:19.995Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\Program.cs",
+              "RelativeDocumentMoniker": "Remitos\\Program.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\Program.cs",
+              "RelativeToolTip": "Remitos\\Program.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAADwvzYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:20.001Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "VerDetalleRemito.cshtml.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\Pages\\Remitos\\VerDetalleRemito.cshtml.cs",
+              "RelativeDocumentMoniker": "Remitos\\Pages\\Remitos\\VerDetalleRemito.cshtml.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\Pages\\Remitos\\VerDetalleRemito.cshtml.cs",
+              "RelativeToolTip": "Remitos\\Pages\\Remitos\\VerDetalleRemito.cshtml.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAowBkAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:20.007Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\Pages\\Remitos\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "Remitos\\Pages\\Remitos\\Index.cshtml.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\Pages\\Remitos\\Index.cshtml.cs",
+              "RelativeToolTip": "Remitos\\Pages\\Remitos\\Index.cshtml.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAUwDAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:20.011Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "RemitoNegocio.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Negocio\\RemitoNegocio.cs",
+              "RelativeDocumentMoniker": "Negocio\\RemitoNegocio.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Negocio\\RemitoNegocio.cs",
+              "RelativeToolTip": "Negocio\\RemitoNegocio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBQAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:20.019Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "VerDetalleRemito.cshtml",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\Pages\\Remitos\\VerDetalleRemito.cshtml",
+              "RelativeDocumentMoniker": "Remitos\\Pages\\Remitos\\VerDetalleRemito.cshtml",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\Pages\\Remitos\\VerDetalleRemito.cshtml",
+              "RelativeToolTip": "Remitos\\Pages\\Remitos\\VerDetalleRemito.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADgAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-02T18:49:20.024Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "CrearEntrada.cshtml.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\Pages\\Entradas\\CrearEntrada.cshtml.cs",
+              "RelativeDocumentMoniker": "Remitos\\Pages\\Entradas\\CrearEntrada.cshtml.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\Pages\\Entradas\\CrearEntrada.cshtml.cs",
+              "RelativeToolTip": "Remitos\\Pages\\Entradas\\CrearEntrada.cshtml.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:20.028Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "CrearEntrada.cshtml",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\Pages\\Entradas\\CrearEntrada.cshtml",
+              "RelativeDocumentMoniker": "Remitos\\Pages\\Entradas\\CrearEntrada.cshtml",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\Pages\\Entradas\\CrearEntrada.cshtml",
+              "RelativeToolTip": "Remitos\\Pages\\Entradas\\CrearEntrada.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAADMAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-02T18:49:20.033Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\Pages\\Entradas\\Index.cshtml",
+              "RelativeDocumentMoniker": "Remitos\\Pages\\Entradas\\Index.cshtml",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\Pages\\Entradas\\Index.cshtml",
+              "RelativeToolTip": "Remitos\\Pages\\Entradas\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-02T18:49:20.038Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "VerEntrada.cshtml",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\Pages\\Entradas\\VerEntrada.cshtml",
+              "RelativeDocumentMoniker": "Remitos\\Pages\\Entradas\\VerEntrada.cshtml",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\Pages\\Entradas\\VerEntrada.cshtml",
+              "RelativeToolTip": "Remitos\\Pages\\Entradas\\VerEntrada.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-02T18:49:20.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "Perfil.cshtml",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\Pages\\Perfil.cshtml",
+              "RelativeDocumentMoniker": "Remitos\\Pages\\Perfil.cshtml",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\Pages\\Perfil.cshtml",
+              "RelativeToolTip": "Remitos\\Pages\\Perfil.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-02T18:49:20.05Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\Pages\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "Remitos\\Pages\\Privacy.cshtml",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\Pages\\Privacy.cshtml",
+              "RelativeToolTip": "Remitos\\Pages\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-02T18:49:20.055Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "ItemNotaPSA.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Dominio\\ItemNotaPSA.cs",
+              "RelativeDocumentMoniker": "Dominio\\ItemNotaPSA.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Dominio\\ItemNotaPSA.cs",
+              "RelativeToolTip": "Dominio\\ItemNotaPSA.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAawB4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:20.06Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos.API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Remitos.API\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos.API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Remitos.API\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-02T18:49:20.065Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "Logout.cshtml",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\Pages\\Logout.cshtml",
+              "RelativeDocumentMoniker": "Remitos\\Pages\\Logout.cshtml",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\Pages\\Logout.cshtml",
+              "RelativeToolTip": "Remitos\\Pages\\Logout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-02T18:49:20.072Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "JwtHelper.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos.API\\Data\\JwtHelper.cs",
+              "RelativeDocumentMoniker": "Remitos.API\\Data\\JwtHelper.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos.API\\Data\\JwtHelper.cs",
+              "RelativeToolTip": "Remitos.API\\Data\\JwtHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:20.078Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "UsuarioNegocio.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Negocio\\UsuarioNegocio.cs",
+              "RelativeDocumentMoniker": "Negocio\\UsuarioNegocio.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Negocio\\UsuarioNegocio.cs",
+              "RelativeToolTip": "Negocio\\UsuarioNegocio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:20.084Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\Pages\\Remitos\\Index.cshtml",
+              "RelativeDocumentMoniker": "Remitos\\Pages\\Remitos\\Index.cshtml",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\Pages\\Remitos\\Index.cshtml",
+              "RelativeToolTip": "Remitos\\Pages\\Remitos\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-02T18:49:20.09Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Negocio\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Negocio\\AppDbContext.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Negocio\\AppDbContext.cs",
+              "RelativeToolTip": "Negocio\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:20.097Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\appsettings.json",
+              "RelativeDocumentMoniker": "Remitos\\appsettings.json",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\appsettings.json",
+              "RelativeToolTip": "Remitos\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-02T18:49:20.104Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "CrearRemito.cshtml.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\Pages\\Remitos\\CrearRemito.cshtml.cs",
+              "RelativeDocumentMoniker": "Remitos\\Pages\\Remitos\\CrearRemito.cshtml.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\Pages\\Remitos\\CrearRemito.cshtml.cs",
+              "RelativeToolTip": "Remitos\\Pages\\Remitos\\CrearRemito.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:20.111Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\Pages\\Entradas\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "Remitos\\Pages\\Entradas\\Index.cshtml.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\Pages\\Entradas\\Index.cshtml.cs",
+              "RelativeToolTip": "Remitos\\Pages\\Entradas\\Index.cshtml.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAwwC8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:20.116Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "VerEntrada.cshtml.cs",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\Pages\\Entradas\\VerEntrada.cshtml.cs",
+              "RelativeDocumentMoniker": "Remitos\\Pages\\Entradas\\VerEntrada.cshtml.cs",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\Pages\\Entradas\\VerEntrada.cshtml.cs",
+              "RelativeToolTip": "Remitos\\Pages\\Entradas\\VerEntrada.cshtml.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAcwDgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T18:49:20.123Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "notas.css",
+              "DocumentMoniker": "D:\\remitos\\remitos\\Remitos\\wwwroot\\css\\notas.css",
+              "RelativeDocumentMoniker": "Remitos\\wwwroot\\css\\notas.css",
+              "ToolTip": "D:\\remitos\\remitos\\Remitos\\wwwroot\\css\\notas.css",
+              "RelativeToolTip": "Remitos\\wwwroot\\css\\notas.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-02T18:49:20.13Z"
             }
           ]
         }

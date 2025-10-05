@@ -59,3 +59,16 @@ E:\Remitos\Dominio\obj\Debug\net8.0\refint\Dominio.dll
 E:\Remitos\Dominio\obj\Debug\net8.0\Dominio.pdb
 E:\Remitos\Dominio\obj\Debug\net8.0\ref\Dominio.dll
 C:\Users\USUARIO\Desktop\Remitos\Dominio\obj\Debug\net8.0\Dominio.sourcelink.json
+D:\remitos\remitos\Dominio\bin\Debug\net8.0\Dominio.deps.json
+D:\remitos\remitos\Dominio\bin\Debug\net8.0\Dominio.dll
+D:\remitos\remitos\Dominio\bin\Debug\net8.0\Dominio.pdb
+D:\remitos\remitos\Dominio\obj\Debug\net8.0\Dominio.csproj.AssemblyReference.cache
+D:\remitos\remitos\Dominio\obj\Debug\net8.0\Dominio.GeneratedMSBuildEditorConfig.editorconfig
+D:\remitos\remitos\Dominio\obj\Debug\net8.0\Dominio.AssemblyInfoInputs.cache
+D:\remitos\remitos\Dominio\obj\Debug\net8.0\Dominio.AssemblyInfo.cs
+D:\remitos\remitos\Dominio\obj\Debug\net8.0\Dominio.csproj.CoreCompileInputs.cache
+D:\remitos\remitos\Dominio\obj\Debug\net8.0\Dominio.sourcelink.json
+D:\remitos\remitos\Dominio\obj\Debug\net8.0\Dominio.dll
+D:\remitos\remitos\Dominio\obj\Debug\net8.0\refint\Dominio.dll
+D:\remitos\remitos\Dominio\obj\Debug\net8.0\Dominio.pdb
+D:\remitos\remitos\Dominio\obj\Debug\net8.0\ref\Dominio.dll

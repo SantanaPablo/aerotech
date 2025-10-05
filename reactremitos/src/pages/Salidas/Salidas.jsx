@@ -43,7 +43,8 @@ const Salidas = () => {
               (i) =>
                 i.equipo?.toLowerCase().includes(f) ||
                 i.usuario?.toLowerCase().includes(f) ||
-                i.serial?.toLowerCase().includes(f)
+                i.serial?.toLowerCase().includes(f) ||
+                i.sd?.toLowerCase().includes(f)
             ))
       );
     }
@@ -65,7 +66,7 @@ const Salidas = () => {
       <h2 className="text-3xl font-extrabold mb-6 text-gray-800 flex items-center gap-3"> {/* Slightly larger/bolder title */}
         <i className="bi bi-journal-text"></i> Notas de Salida
       </h2>
-      
+
       {/* 🔍 Filtro */}
       <form
         onSubmit={(e) => e.preventDefault()}
@@ -100,11 +101,11 @@ const Salidas = () => {
       </Link>
 
       {/* 📋 Tabla */}
-      <div className="overflow-x-auto bg-white rounded-lg shadow-lg"> {/* Added container styling */}
-        <table className="min-w-full divide-y divide-gray-300 text-sm"> {/* Used min-w-full and divide-y */}
+      <div className="overflow-x-auto bg-white rounded-lg shadow-lg">
+        <table className="min-w-full divide-y divide-gray-300 text-sm">
           <thead className="bg-gray-100">
             <tr>
-              <th className="p-3 border-r text-left text-xs font-semibold uppercase tracking-wider text-gray-600">Fecha</th> {/* Adjusted header styling */}
+              <th className="p-3 border-r text-left text-xs font-semibold uppercase tracking-wider text-gray-600">Fecha</th>
               <th className="p-3 border-r text-left text-xs font-semibold uppercase tracking-wider text-gray-600">Dirigido A</th>
               <th className="p-3 border-r text-left text-xs font-semibold uppercase tracking-wider text-gray-600">Técnico</th>
               <th className="p-3 border-r text-left text-xs font-semibold uppercase tracking-wider text-gray-600">Autorizante</th>
@@ -113,7 +114,7 @@ const Salidas = () => {
           </thead>
           <tbody className="divide-y divide-gray-200">
             {notasPagina.map((nota) => (
-              <tr key={nota.id} className="hover:bg-blue-50/50 transition duration-100"> {/* Hover effect change */}
+              <tr key={nota.id} className="hover:bg-blue-50/50 transition duration-100">
                 <td className="p-3 border-r whitespace-nowrap">
                   {new Date(nota.fecha).toLocaleDateString()}
                 </td>
@@ -204,11 +205,10 @@ function Paginacion({ totalPaginas, paginaActual, setPaginaActual }) {
           <li key={num}>
             <button
               onClick={() => setPaginaActual(num)}
-              className={`px-3 py-1 border rounded-lg transition duration-150 ${
-                num === paginaActual
-                  ? "bg-blue-600 text-white border-blue-600 shadow-md" // Highlight active page
-                  : "border-gray-300 text-gray-700 hover:bg-gray-100"
-              }`}
+              className={`px-3 py-1 border rounded-lg transition duration-150 ${num === paginaActual
+                ? "bg-blue-600 text-white border-blue-600 shadow-md" // Highlight active page
+                : "border-gray-300 text-gray-700 hover:bg-gray-100"
+                }`}
             >
               {num}
             </button>

@@ -1,0 +1,55 @@
+html {
+    font-size: 14px;
+}
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+/* --- SECCIÓN FIRMAS --- */
+.firma-finalnota {
+    display: none;
+}
+
+/* --- IMPRESIÓN --- */
+@media print {
+
+    /* Ocultar elementos no imprimibles */
+    body * {
+        visibility: hidden;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    /* Entradas y salidas */
+    .print-content2,
+    .print-content2 * {
+        visibility: visible;
+    }
+
+    .print-content2 {
+        position: absolute;
+        width: 100%;
+    }
+
+    .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    }
+
+    /* firma de nota de salida/entrada */
+    .firma-finalnota {
+        position: fixed;
+        bottom: 60mm;
+        left: 10mm;
+        right: 10mm;
+        display: flex !important;
+        justify-content: space-between;
+        font-size: 11px !important;
+        padding-top: 10px;
+    }
+
+}

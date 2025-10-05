@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, NavLink } from 'react-router-dom';
-
 // Importa tus páginas
 import Login from './pages/Login';
 import Salidas from './pages/Salidas/Salidas';
 import CrearNotaSalida from './pages/Salidas/CrearNotaSalida';
 import VerNotaSalida from './pages/Salidas/VerNotaSalida';
-
+import './css/NotaSalidaPrint.css';
 const Home = () => <h1 className="text-2xl font-bold">Página Principal (Dashboard)</h1>;
 
 export default function App() {
@@ -77,7 +76,7 @@ export default function App() {
         </main>
 
         {/* FOOTER */}
-        <footer className="bg-gray-900 text-gray-300 text-center p-3 mt-auto">
+        <footer className="bg-gray-900 text-gray-300 text-center p-3 mt-auto no-print">
           &copy; 2025 - Sistema de Remitos
         </footer>
       </div>
@@ -86,7 +85,9 @@ export default function App() {
 
   return (
     <Router>
+      <link rel="stylesheet" href="/css/NotaSalidaPrint.css" media="print" />
       <Routes>
+        
         {/* LOGIN */}
         <Route path="/login" element={isLoggedIn ? <Navigate to="/" replace /> : <Login handleAuthSuccess={handleAuthSuccess} />} />
 
