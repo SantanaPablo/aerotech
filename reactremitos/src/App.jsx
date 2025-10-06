@@ -9,18 +9,18 @@ import './css/NotaSalidaPrint.css';
 const Home = () => <h1 className="text-2xl font-bold">Página Principal (Dashboard)</h1>;
 
 export default function App() {
-  const [token, setToken] = useState(localStorage.getItem('authToken'));
+  const [token, setToken] = useState(localStorage.getItem('Token'));
   const isLoggedIn = !!token;
   const [menuOpen, setMenuOpen] = useState(false); // Para menú móvil
 
   const handleAuthSuccess = (newToken) => {
     setToken(newToken);
-    localStorage.setItem('authToken', newToken);
+    localStorage.setItem('Token', newToken);
   };
 
   const handleLogout = () => {
     setToken(null);
-    localStorage.removeItem('authToken');
+    localStorage.removeItem('Token');
   };
 
   const MainLayout = ({ children }) => {
@@ -97,7 +97,7 @@ export default function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/salidas" element={<Salidas token={token} />} />
-              <Route path="/salidas/crearnotasalida" element={<CrearNotaSalida />} />
+              <Route path="/salidas/crearnotasalida" element={<CrearNotaSalida token={token} />} />
               <Route path="/salidas/vernotasalida/:id" element={<VerNotaSalida />} />
               <Route path="/remitos" element={<h1>Remitos</h1>} />
               <Route path="/entradas" element={<h1>Entradas</h1>} />
