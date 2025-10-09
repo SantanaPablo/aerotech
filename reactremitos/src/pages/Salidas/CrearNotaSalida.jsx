@@ -2,15 +2,15 @@ import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Plus, Trash2, Save, AlertCircle } from 'lucide-react';
 
-// NOTE: We assume 'useNavigate' and 'import.meta.env.VITE_API_URL' are correctly defined in the surrounding application environment.
+// NOTE: We assume 'useNavigate' is correctly defined in the surrounding application environment.
 
 const STORAGE_KEY = 'notaSalidaDraft';
 
 const CrearNotaSalida = ({ token }) => {
   // Replace useNavigate with a mock function if the environment doesn't support react-router-dom
   const navigate = typeof useNavigate === 'function' ? useNavigate() : (path) => console.log('NAVIGATE TO:', path);
-  // Replace import.meta.env.VITE_API_URL with a placeholder or actual value
-  const apiUrl = typeof import.meta.env.VITE_API_URL !== 'undefined' ? import.meta.env.VITE_API_URL : 'http://localhost:5000';
+  
+ const apiUrl = import.meta.env.VITE_API_URL;
   
   const serialInputRefs = useRef([]);
 
@@ -327,21 +327,12 @@ const CrearNotaSalida = ({ token }) => {
           <div className="space-y-6">
             {items.map((item, index) => (
               <div key={index} className="border border-gray-200 rounded-xl p-4 md:p-6 bg-gray-50 relative group shadow-sm">
-                <div className="flex justify-between items-center mb-4 border-b pb-3">
-                  <span className="text-md font-bold text-gray-700">Ítem #{index + 1}</span>
-                  {/* Botón Eliminar: Icono compacto a la derecha */}
-                  <button 
-                    type="button" 
-                    onClick={() => eliminarItem(index)} 
-                    title="Eliminar Ítem"
-                    className="p-2 text-red-600 hover:text-red-800 hover:bg-red-100 rounded-full transition-colors"
-                  >
-                    <Trash2 className="w-5 h-5" />
-                  </button>
-                </div>
                 
-                <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                  {/* Unidad (REQUIRED) */}
+
+                {/* Cuadrícula de Inputs y Botón de Eliminar */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 items-end">
+                  
+                  {/* 1. Unidad (REQUIRED) */}
                   <div>
                     <label className="block text-xs font-medium text-gray-600 mb-1">Unidad <span className="text-red-500">*</span></label>
                     <input 
@@ -354,7 +345,7 @@ const CrearNotaSalida = ({ token }) => {
                     {errors[`items[${index}].unidad`] && <span className="text-red-600 text-xs block mt-1">{errors[`items[${index}].unidad`]}</span>}
                   </div>
 
-                  {/* Equipo (REQUIRED) */}
+                  {/* 2. Equipo (REQUIRED) */}
                   <div>
                     <label className="block text-xs font-medium text-gray-600 mb-1">Equipo <span className="text-red-500">*</span></label>
                     <input 
@@ -367,7 +358,7 @@ const CrearNotaSalida = ({ token }) => {
                     {errors[`items[${index}].equipo`] && <span className="text-red-600 text-xs block mt-1">{errors[`items[${index}].equipo`]}</span>}
                   </div>
 
-                  {/* Serial (REQUIRED) */}
+                  {/* 3. Serial (REQUIRED) */}
                   <div>
                     <label className="block text-xs font-medium text-gray-600 mb-1">Serial <span className="text-red-500">*</span></label>
                     <input 
@@ -382,7 +373,7 @@ const CrearNotaSalida = ({ token }) => {
                     {errors[`items[${index}].serial`] && <span className="text-red-600 text-xs block mt-1">{errors[`items[${index}].serial`]}</span>}
                   </div>
 
-                  {/* Usuario (REQUIRED) */}
+                  {/* 4. Usuario (REQUIRED) */}
                   <div>
                     <label className="block text-xs font-medium text-gray-600 mb-1">Usuario <span className="text-red-500">*</span></label>
                     <input 
@@ -394,7 +385,7 @@ const CrearNotaSalida = ({ token }) => {
                     {errors[`items[${index}].usuario`] && <span className="text-red-600 text-xs block mt-1">{errors[`items[${index}].usuario`]}</span>}
                   </div>
 
-                  {/* SD (REQUIRED) */}
+                  {/* 5. SD (REQUIRED) */}
                   <div>
                     <label className="block text-xs font-medium text-gray-600 mb-1">SD <span className="text-red-500">*</span></label>
                     <input 
@@ -404,6 +395,19 @@ const CrearNotaSalida = ({ token }) => {
                       className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 ${errors[`items[${index}].sd`] ? 'border-red-500 ring-red-500' : 'border-gray-300 ring-blue-500'}`}
                     />
                     {errors[`items[${index}].sd`] && <span className="text-red-600 text-xs block mt-1">{errors[`items[${index}].sd`]}</span>}
+                  </div>
+					
+                  {/* 6. Botón Eliminar (Integrado en la fila) */}
+                  <div className="col-span-2 sm:col-span-3 md:col-span-1">
+                    <button 
+                      type="button" 
+                      onClick={() => eliminarItem(index)} 
+                      title={`Eliminar Ítem #${index + 1}`}
+                      className="w-full p-3 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600 transition-colors flex justify-center items-center h-[42px] mt-4 md:mt-0"
+                    >
+                      <Trash2 className="w-5 h-5" />
+                      <span className="md:hidden ml-2 font-semibold">Eliminar Ítem</span>
+                    </button>
                   </div>
                 </div>
               </div>

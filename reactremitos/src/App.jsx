@@ -9,18 +9,18 @@ import './css/NotaSalidaPrint.css';
 const Home = () => <h1 className="text-2xl font-bold">Página Principal (Dashboard)</h1>;
 
 export default function App() {
-  const [token, setToken] = useState(localStorage.getItem('Token'));
+  const [token, setToken] = useState(localStorage.getItem('authToken'));
   const isLoggedIn = !!token;
   const [menuOpen, setMenuOpen] = useState(false); // Para menú móvil
 
   const handleAuthSuccess = (newToken) => {
     setToken(newToken);
-    localStorage.setItem('Token', newToken);
+    localStorage.setItem('authToken', newToken);
   };
 
   const handleLogout = () => {
     setToken(null);
-    localStorage.removeItem('Token');
+    localStorage.removeItem('authToken');
   };
 
   const MainLayout = ({ children }) => {

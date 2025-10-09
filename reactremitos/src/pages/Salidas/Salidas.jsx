@@ -14,7 +14,6 @@ const Salidas = () => {
   useEffect(() => {
     const fetchNotas = async () => {
       try {
-        // [Image of server icon];
 
         const resp = await fetch(`${API_URL}/api/NotasSalida`);
         if (!resp.ok) throw new Error("Error al cargar notas");
@@ -30,7 +29,6 @@ const Salidas = () => {
   useEffect(() => {
     let filtradas = [...notasTotales];
 
-    // 🔍 Filtrado
     if (filtro.trim() !== "") {
       const f = filtro.toLowerCase();
       filtradas = filtradas.filter(
@@ -49,14 +47,12 @@ const Salidas = () => {
       );
     }
 
-    // 📅 Ordenar por fecha descendente
     filtradas.sort((a, b) => b.id - a.id);
 
     setNotas(filtradas);
     setPaginaActual(1); // resetear página al buscar
   }, [filtro, notasTotales]);
 
-  // 📑 Paginación
   const totalPaginas = Math.ceil(notas.length / tamañoPagina);
   const inicio = (paginaActual - 1) * tamañoPagina;
   const notasPagina = notas.slice(inicio, inicio + tamañoPagina);
@@ -78,7 +74,6 @@ const Salidas = () => {
             placeholder="Buscar por técnico, destino, ítem..."
             value={filtro}
             onChange={(e) => setFiltro(e.target.value)}
-            // 👇 Added focus:ring for better UX
             className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 shadow-sm"
           />
         </div>
@@ -100,7 +95,6 @@ const Salidas = () => {
         <i className="bi bi-plus-circle"></i> Nueva Nota de Salida
       </Link>
 
-      {/* 📋 Tabla */}
       <div className="overflow-x-auto bg-white rounded-lg shadow-lg">
         <table className="min-w-full divide-y divide-gray-300 text-sm">
           <thead className="bg-gray-100">
@@ -144,7 +138,6 @@ const Salidas = () => {
         </table>
       </div>
 
-      {/* 🔢 Paginación */}
       <Paginacion
         totalPaginas={totalPaginas}
         paginaActual={paginaActual}
@@ -235,7 +228,7 @@ function Paginacion({ totalPaginas, paginaActual, setPaginaActual }) {
           <button
             disabled={paginaActual === totalPaginas}
             onClick={() => setPaginaActual(paginaActual + 1)}
-            className="px-3 py-1 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 disabled:opacity-50 transition duration-150"
+            className="px-3 py-1 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-1F00 disabled:opacity-50 transition duration-150"
           >
             »
           </button>
