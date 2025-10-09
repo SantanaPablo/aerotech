@@ -62,6 +62,8 @@ builder.Services.AddScoped<IRemitoService, RemitoNegocio>();
 builder.Services.AddScoped<IItemRemitoService, ItemRemitoNegocio>();
 builder.Services.AddScoped<IItemSalidaService, ItemSalidaNegocio>();
 builder.Services.AddScoped<INotaSalidaService, NotaSalidaNegocio>();
+builder.Services.AddScoped<IItemEntradaService, ItemEntradaNegocio>();
+builder.Services.AddScoped<INotaEntradaService, NotaEntradaNegocio>();
 builder.Services.AddScoped<IUsuarioService, UsuarioNegocio>();
 
 var app = builder.Build();

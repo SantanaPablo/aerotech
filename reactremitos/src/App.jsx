@@ -5,7 +5,15 @@ import Login from './pages/Login';
 import Salidas from './pages/Salidas/Salidas';
 import CrearNotaSalida from './pages/Salidas/CrearNotaSalida';
 import VerNotaSalida from './pages/Salidas/VerNotaSalida';
+
+import Entradas from './pages/Entradas/Entradas';
+import CrearNotaEntrada from './pages/Entradas/CrearNotaEntrada';
+import VerNotaEntrada from './pages/Entradas/VerNotaEntrada';
+import Remitos from './pages/Remitos/Remitos';
+import VerRemito from './pages/Remitos/VerRemito';
 import './css/NotaSalidaPrint.css';
+import './css/VerRemito.css';
+
 const Home = () => <h1 className="text-2xl font-bold">Página Principal (Dashboard)</h1>;
 
 export default function App() {
@@ -99,8 +107,14 @@ export default function App() {
               <Route path="/salidas" element={<Salidas token={token} />} />
               <Route path="/salidas/crearnotasalida" element={<CrearNotaSalida token={token} />} />
               <Route path="/salidas/vernotasalida/:id" element={<VerNotaSalida />} />
-              <Route path="/remitos" element={<h1>Remitos</h1>} />
-              <Route path="/entradas" element={<h1>Entradas</h1>} />
+
+              <Route path="/entradas" element={<Entradas token={token} />} />
+              <Route path="/entradas/crearnotaentrada" element={<CrearNotaEntrada token={token} />} />
+              <Route path="/entradas/vernotaentrada/:id" element={<VerNotaEntrada />} />
+
+              <Route path="/remitos" element={<Remitos token={token} />} />
+               <Route path="/remitos/verremito/:id" element={<VerRemito />} />
+
               <Route path="/enviosEzeiza" element={<h1>Envíos Ezeiza</h1>} />
               <Route path="/perfil" element={<h1>Perfil de Usuario</h1>} />
               <Route path="*" element={<h1>404 | Página no encontrada</h1>} />
