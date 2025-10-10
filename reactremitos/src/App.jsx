@@ -11,6 +11,7 @@ import CrearNotaEntrada from './pages/Entradas/CrearNotaEntrada';
 import VerNotaEntrada from './pages/Entradas/VerNotaEntrada';
 import Remitos from './pages/Remitos/Remitos';
 import VerRemito from './pages/Remitos/VerRemito';
+import CrearRemito from './pages/Remitos/CrearRemito';
 import './css/NotaSalidaPrint.css';
 import './css/VerRemito.css';
 
@@ -113,8 +114,8 @@ export default function App() {
               <Route path="/entradas/vernotaentrada/:id" element={<VerNotaEntrada />} />
 
               <Route path="/remitos" element={<Remitos token={token} />} />
-               <Route path="/remitos/verremito/:id" element={<VerRemito />} />
-
+              <Route path="/remitos/verremito/:id" element={<VerRemito />} />
+              <Route path="/remitos/crearremito" element={<CrearRemito token={token} />}/>
               <Route path="/enviosEzeiza" element={<h1>Envíos Ezeiza</h1>} />
               <Route path="/perfil" element={<h1>Perfil de Usuario</h1>} />
               <Route path="*" element={<h1>404 | Página no encontrada</h1>} />

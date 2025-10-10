@@ -84,7 +84,7 @@ const Remitos = ({ token }) => {
 
       {/* ➕ Nuevo remito */}
       <Link
-        to="/remitos/crear"
+        to="/remitos/crearremito"
         className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg mb-6 shadow-md transition duration-150"
       >
         <PlusCircle size={18} /> Nuevo Remito
