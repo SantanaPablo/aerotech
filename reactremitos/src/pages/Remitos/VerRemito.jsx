@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Printer, Pencil } from "lucide-react";
 
-
 const VerRemito = ({ token }) => {
   const { id } = useParams();
   const [remito, setRemito] = useState(null);
@@ -35,9 +34,13 @@ const VerRemito = ({ token }) => {
   }
 
   return (
-    <div className="p-4 sm:p-6 lg:p-8 bg-gray-50 min-h-screen font-sans">
+    <>
       {/* Botones de acción */}
-      <div className="no-print flex gap-3 mb-4">
+      
+
+      {/* Contenido imprimible */}
+      <div className="print-content bg-white border rounded-lg shadow-md p-6">
+        <div className="no-print flex gap-3 mb-4">
         <button
           onClick={() => window.print()}
           className="flex items-center gap-2 bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg shadow-md transition"
@@ -52,14 +55,11 @@ const VerRemito = ({ token }) => {
           <Pencil size={18} /> Editar
         </Link>
       </div>
-
-      {/* Contenido imprimible */}
-      <div className="print-content p-6 sm:p-8 bg-white rounded-xl shadow-2xl border border-gray-100">
         {/* Encabezado */}
         <div className="flex flex-wrap justify-between items-center mb-4 encabezado">
           <div className="w-1/4">
             <img
-              src="/pdf/logo.png"
+              src="/assets/LOGO.png"
               alt="Logo"
               className="max-h-16 object-contain"
             />
@@ -170,7 +170,7 @@ const VerRemito = ({ token }) => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

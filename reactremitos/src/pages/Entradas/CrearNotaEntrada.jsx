@@ -4,9 +4,9 @@ import { Plus, Trash2, Save, AlertCircle } from 'lucide-react';
 
 // NOTE: We assume 'useNavigate' is correctly defined in the surrounding application environment.
 
-const STORAGE_KEY = 'notaSalidaDraft';
+const STORAGE_KEY = 'notaEntradaDraft';
 
-const CrearNotaSalida = ({ token }) => {
+const CrearNotaEntrada = ({ token }) => {
   // Replace useNavigate with a mock function if the environment doesn't support react-router-dom
   const navigate = typeof useNavigate === 'function' ? useNavigate() : (path) => console.log('NAVIGATE TO:', path);
   
@@ -236,20 +236,20 @@ const CrearNotaSalida = ({ token }) => {
         items: itemsValidos 
       };
 
-      const res = await fetch(`${apiUrl}/api/NotasSalida`, {
+      const res = await fetch(`${apiUrl}/api/NotasEntrada`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify(notaCompleta)
       });
 
-      if (!res.ok) throw new Error(await res.text() || `Error al crear la nota de salida: HTTP ${res.status}`);
+      if (!res.ok) throw new Error(await res.text() || `Error al crear la nota de Entrada: HTTP ${res.status}`);
 
       const notaCreada = await res.json();
       localStorage.removeItem(STORAGE_KEY);
-      setSuccessMessage(`Nota de salida creada con ${itemsValidos.length} ítem(s) (#${notaCreada.id})`);
+      setSuccessMessage(`Nota de entrada creada con ${itemsValidos.length} ítem(s) (#${notaCreada.id})`);
       // Use 'navigate' only if it's a real function
       if (typeof navigate === 'function') {
-        setTimeout(() => navigate(`/salidas/vernotasalida/${notaCreada.id}`), 1500);
+        setTimeout(() => navigate(`/entradas/vernotaentrada/${notaCreada.id}`), 1500);
       }
 
     } catch (e) {
@@ -270,7 +270,7 @@ const CrearNotaSalida = ({ token }) => {
         }
       `}</style>
 
-      <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 border-b pb-2">Crear Nota de Salida</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 border-b pb-2">Crear Nota de Entrada</h2>
 
       <div className="bg-white rounded-xl shadow-lg p-4 md:p-8 mb-6">
         {/* Error/Success Messages */}
@@ -307,7 +307,7 @@ const CrearNotaSalida = ({ token }) => {
         {/* Sección de Items */}
         <div className="border-t pt-6">
           <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
-            <span className="mr-2 text-2xl">📦</span> Ítems de salida
+            <span className="mr-2 text-2xl">📦</span> Ítems de entrada
           </h3>
 
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
@@ -419,4 +419,4 @@ const CrearNotaSalida = ({ token }) => {
   );
 };
 
-export default CrearNotaSalida;
+export default CrearNotaEntrada;
