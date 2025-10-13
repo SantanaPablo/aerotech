@@ -1,21 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Printer, Pencil } from "lucide-react";
+import { apiGet } from "../../utils/api";
 
-const VerRemito = ({ token }) => {
+const VerRemito = () => {
   const { id } = useParams();
   const [remito, setRemito] = useState(null);
   const [items, setItems] = useState([]);
-  const API_URL = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     const fetchRemito = async () => {
       try {
-        const resp = await fetch(`${API_URL}/api/Remitos/${id}`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        if (!resp.ok) throw new Error("Error al cargar remito");
-        const data = await resp.json();
+        const data = await apiGet(`/api/Remitos/${id}`);
         setRemito(data);
         setItems(data.items || []);
       } catch (err) {
@@ -23,7 +19,7 @@ const VerRemito = ({ token }) => {
       }
     };
     fetchRemito();
-  }, [API_URL, id, token]);
+  }, [id]);
 
   if (!remito) {
     return (
@@ -35,26 +31,23 @@ const VerRemito = ({ token }) => {
 
   return (
     <>
-      {/* Botones de acción */}
-      
-
-      {/* Contenido imprimible */}
       <div className="print-content bg-white border rounded-lg shadow-md p-6">
         <div className="no-print flex gap-3 mb-4">
-        <button
-          onClick={() => window.print()}
-          className="flex items-center gap-2 bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg shadow-md transition"
-        >
-          <Printer size={18} /> Imprimir
-        </button>
+          <button
+            onClick={() => window.print()}
+            className="flex items-center gap-2 bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg shadow-md transition"
+          >
+            <Printer size={18} /> Imprimir
+          </button>
 
-        <Link
-          to={`/remitos/editar/${remito.id}`}
-          className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow-md transition"
-        >
-          <Pencil size={18} /> Editar
-        </Link>
-      </div>
+          <Link
+            to={`/remitos/editarremito/${remito.id}`}
+            className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow-md transition"
+          >
+            <Pencil size={18} /> Editar
+          </Link>
+        </div>
+
         {/* Encabezado */}
         <div className="flex flex-wrap justify-between items-center mb-4 encabezado">
           <div className="w-1/4">

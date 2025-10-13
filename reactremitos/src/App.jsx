@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, NavLink } from 'react-router-dom';
 // Importa tus páginas
 import Login from './pages/Login';
+
 import Salidas from './pages/Salidas/Salidas';
 import CrearNotaSalida from './pages/Salidas/CrearNotaSalida';
 import VerNotaSalida from './pages/Salidas/VerNotaSalida';
@@ -9,11 +10,16 @@ import VerNotaSalida from './pages/Salidas/VerNotaSalida';
 import Entradas from './pages/Entradas/Entradas';
 import CrearNotaEntrada from './pages/Entradas/CrearNotaEntrada';
 import VerNotaEntrada from './pages/Entradas/VerNotaEntrada';
+
 import Remitos from './pages/Remitos/Remitos';
 import VerRemito from './pages/Remitos/VerRemito';
 import CrearRemito from './pages/Remitos/CrearRemito';
+import EditarRemito from './pages/Remitos/EditarRemito';
+
 import './css/NotaSalidaPrint.css';
 import './css/VerRemito.css';
+
+import Perfil from './pages/Perfil.jsx';
 
 const Home = () => <h1 className="text-2xl font-bold">Página Principal (Dashboard)</h1>;
 
@@ -50,7 +56,7 @@ export default function App() {
                   <NavLink to="/salidas" className={({ isActive }) => isActive ? activeClass : inactiveClass}>Salidas</NavLink>
                   <NavLink to="/remitos" className={({ isActive }) => isActive ? activeClass : inactiveClass}>Remitos</NavLink>
                   <NavLink to="/entradas" className={({ isActive }) => isActive ? activeClass : inactiveClass}>Entradas</NavLink>
-                  <NavLink to="/enviosEzeiza" className={({ isActive }) => isActive ? activeClass : inactiveClass}>Envíos Ezeiza</NavLink>
+                  {/* <NavLink to="/enviosEzeiza" className={({ isActive }) => isActive ? activeClass : inactiveClass}>Envíos Ezeiza</NavLink>*/}
                   <NavLink to="/perfil" className={({ isActive }) => isActive ? activeClass : inactiveClass}>Perfil</NavLink>
                   <button onClick={handleLogout} className="border border-red-500 text-red-500 px-3 py-1 rounded hover:bg-red-500 hover:text-white">Salir</button>
                 </nav>
@@ -72,7 +78,7 @@ export default function App() {
               <NavLink to="/salidas" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? activeClass : inactiveClass}>Salidas</NavLink>
               <NavLink to="/remitos" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? activeClass : inactiveClass}>Remitos</NavLink>
               <NavLink to="/entradas" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? activeClass : inactiveClass}>Entradas</NavLink>
-              <NavLink to="/enviosEzeiza" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? activeClass : inactiveClass}>Envíos Ezeiza</NavLink>
+              {/* <NavLink to="/enviosEzeiza" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? activeClass : inactiveClass}>Envíos Ezeiza</NavLink>*/}
               <NavLink to="/perfil" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? activeClass : inactiveClass}>Perfil</NavLink>
               <button onClick={() => { handleLogout(); setMenuOpen(false); }} className="border border-red-500 text-red-500 px-3 py-1 rounded hover:bg-red-500 hover:text-white w-full text-left">Salir</button>
             </nav>
@@ -116,8 +122,11 @@ export default function App() {
               <Route path="/remitos" element={<Remitos token={token} />} />
               <Route path="/remitos/verremito/:id" element={<VerRemito />} />
               <Route path="/remitos/crearremito" element={<CrearRemito token={token} />}/>
-              <Route path="/enviosEzeiza" element={<h1>Envíos Ezeiza</h1>} />
-              <Route path="/perfil" element={<h1>Perfil de Usuario</h1>} />
+              <Route path="/remitos/editarremito/:id" element={<EditarRemito token={token} />}/>
+
+
+              {/* <Route path="/enviosEzeiza" element={<h1>Envíos Ezeiza</h1>} />*/}
+              <Route path="/perfil" element={<Perfil/>} />
               <Route path="*" element={<h1>404 | Página no encontrada</h1>} />
             </Routes>
           </MainLayout>

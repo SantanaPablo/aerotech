@@ -30,6 +30,7 @@ namespace Remitos.API.Controllers
             var token = JwtHelper.GenerateJwtToken(
                 user.Id,
                 user.Nombre,
+                user.Legajo,
                 "Usuario",
                 _config["Jwt:Key"]
             );

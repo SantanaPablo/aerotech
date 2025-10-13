@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\remitos\\remitos\\Negocio\\Negocio.csproj": {}
+    "C:\\Users\\USUARIO\\Desktop\\Remitos\\Negocio\\Negocio.csproj": {}
   },
   "projects": {
-    "D:\\remitos\\remitos\\Dominio\\Dominio.csproj": {
+    "C:\\Users\\USUARIO\\Desktop\\Remitos\\Dominio\\Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\remitos\\remitos\\Dominio\\Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Dominio\\Dominio.csproj",
         "projectName": "Dominio",
-        "projectPath": "D:\\remitos\\remitos\\Dominio\\Dominio.csproj",
-        "packagesPath": "C:\\Users\\Pablo Santana\\.nuget\\packages\\",
-        "outputPath": "D:\\remitos\\remitos\\Dominio\\obj\\",
+        "projectPath": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Dominio\\Dominio.csproj",
+        "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Pablo Santana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -83,24 +83,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\remitos\\remitos\\Negocio\\Negocio.csproj": {
+    "C:\\Users\\USUARIO\\Desktop\\Remitos\\Negocio\\Negocio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\remitos\\remitos\\Negocio\\Negocio.csproj",
+        "projectUniqueName": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Negocio\\Negocio.csproj",
         "projectName": "Negocio",
-        "projectPath": "D:\\remitos\\remitos\\Negocio\\Negocio.csproj",
-        "packagesPath": "C:\\Users\\Pablo Santana\\.nuget\\packages\\",
-        "outputPath": "D:\\remitos\\remitos\\Negocio\\obj\\",
+        "projectPath": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Negocio\\Negocio.csproj",
+        "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Negocio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Pablo Santana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -115,8 +115,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\remitos\\remitos\\Dominio\\Dominio.csproj": {
-                "projectPath": "D:\\remitos\\remitos\\Dominio\\Dominio.csproj"
+              "C:\\Users\\USUARIO\\Desktop\\Remitos\\Dominio\\Dominio.csproj": {
+                "projectPath": "C:\\Users\\USUARIO\\Desktop\\Remitos\\Dominio\\Dominio.csproj"
               }
             }
           }
@@ -131,7 +131,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -186,7 +186,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

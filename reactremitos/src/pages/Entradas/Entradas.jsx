@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { apiGet} from "../../utils/api";
 
 const Entradas = () => {
   const [notasTotales, setNotasTotales] = useState([]);
@@ -9,22 +10,18 @@ const Entradas = () => {
   const [paginaActual, setPaginaActual] = useState(1);
   const tamañoPagina = 10;
 
-  const API_URL = import.meta.env.VITE_API_URL;
-
   useEffect(() => {
     const fetchNotas = async () => {
       try {
 
-        const resp = await fetch(`${API_URL}/api/NotasEntrada`);
-        if (!resp.ok) throw new Error("Error al cargar notas");
-        const data = await resp.json();
+        const data = await apiGet(`/api/NotasEntrada`);
         setNotasTotales(data);
       } catch (err) {
         console.error(err);
       }
     };
     fetchNotas();
-  }, [API_URL]);
+  }, []);
 
   useEffect(() => {
     let filtradas = [...notasTotales];

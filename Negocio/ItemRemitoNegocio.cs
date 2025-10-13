@@ -26,7 +26,6 @@ namespace Negocio
         // ASÍNCRONO
         public async Task<ItemRemito> ObtenerPorIdAsync(int id)
         {
-            // Se usa FirstOrDefaultAsync()
             return await _context.ItemsRemito.Include(i => i.Remito)
                                             .FirstOrDefaultAsync(i => i.Id == id);
         }
@@ -35,7 +34,6 @@ namespace Negocio
         public async Task CrearAsync(ItemRemito item)
         {
             _context.ItemsRemito.Add(item);
-            // Se usa SaveChangesAsync()
             await _context.SaveChangesAsync();
         }
 
@@ -43,7 +41,6 @@ namespace Negocio
         public async Task ActualizarAsync(ItemRemito item)
         {
             _context.ItemsRemito.Update(item);
-            // Se usa SaveChangesAsync()
             await _context.SaveChangesAsync();
         }
 

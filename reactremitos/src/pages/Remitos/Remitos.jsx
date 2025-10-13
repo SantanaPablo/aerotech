@@ -1,31 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Search, PlusCircle, Eye, Pencil } from "lucide-react";
+import { apiGet } from "../../utils/api";
 
-const Remitos = ({ token }) => {
+const Remitos = () => {
   const [remitosTotales, setRemitosTotales] = useState([]);
   const [remitos, setRemitos] = useState([]);
   const [filtro, setFiltro] = useState("");
   const [paginaActual, setPaginaActual] = useState(1);
   const tamañoPagina = 10;
 
-  const API_URL = import.meta.env.VITE_API_URL;
-
   useEffect(() => {
     const fetchRemitos = async () => {
       try {
-        const resp = await fetch(`${API_URL}/api/Remitos`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        if (!resp.ok) throw new Error("Error al cargar remitos");
-        const data = await resp.json();
+        const data = await apiGet('/api/Remitos');
         setRemitosTotales(data);
       } catch (err) {
         console.error(err);
       }
     };
     fetchRemitos();
-  }, [API_URL, token]);
+  }, []);
 
   useEffect(() => {
     let filtrados = [...remitosTotales];
@@ -62,7 +57,6 @@ const Remitos = ({ token }) => {
         Remitos
       </h2>
 
-      {/* 🔍 Búsqueda */}
       <form
         onSubmit={(e) => e.preventDefault()}
         className="flex gap-2 mb-4 items-center"
@@ -82,7 +76,6 @@ const Remitos = ({ token }) => {
         </button>
       </form>
 
-      {/* ➕ Nuevo remito */}
       <Link
         to="/remitos/crearremito"
         className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg mb-6 shadow-md transition duration-150"
@@ -90,7 +83,6 @@ const Remitos = ({ token }) => {
         <PlusCircle size={18} /> Nuevo Remito
       </Link>
 
-      {/* 🧾 Tabla */}
       <div className="overflow-x-auto bg-white rounded-lg shadow-lg">
         <table className="min-w-full divide-y divide-gray-200 text-sm">
           <thead className="bg-gray-100">
@@ -128,7 +120,7 @@ const Remitos = ({ token }) => {
                     <Eye size={16} /> Ver
                   </Link>
                   <Link
-                    to={`/remitos/editar/${r.id}`}
+                    to={`/remitos/editarremito/${r.id}`}
                     className="px-3 py-1 border border-gray-300 rounded text-gray-700 hover:bg-blue-100 flex items-center gap-1"
                   >
                     <Pencil size={16} /> Editar
@@ -150,7 +142,6 @@ const Remitos = ({ token }) => {
         </table>
       </div>
 
-      {/* 🔢 Paginación */}
       <Paginacion
         totalPaginas={totalPaginas}
         paginaActual={paginaActual}

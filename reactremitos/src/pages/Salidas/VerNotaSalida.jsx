@@ -1,41 +1,27 @@
 import React, { useState, useEffect } from 'react';
-// Se asume que react-router-dom está disponible en el entorno.
 import { useParams } from 'react-router-dom';
 import { Printer, FileText, Loader2, User, AlertTriangle, Calendar, Send, Settings } from 'lucide-react';
-
-// --- CONFIGURACIÓN DE API ---
-const API_BASE_URL = 'http://localhost:5003/api';
+import { apiGet } from '../../utils/api';
 
 const fetchNotaById = async (id) => {
-    // Lógica de reintento/manejo de errores robusta
-    const noteResponse = await fetch(`${API_BASE_URL}/NotasSalida/${id}`);
+  try {
+    // Obtener nota principal
+    const nota = await apiGet(`/api/NotasSalida/${id}`);
 
-    if (!noteResponse.ok) {
-        if (noteResponse.status === 404) {
-            return null; // Nota no encontrada
-        }
-        throw new Error(`Error al obtener detalles de nota (Status: ${noteResponse.status})`);
-    }
-    const nota = await noteResponse.json();
+    // Obtener ítems asociados
+    const items = await apiGet(`/api/ItemSalidas/por-notasalida/${id}`);
 
-    const itemsResponse = await fetch(`${API_BASE_URL}/ItemSalidas/por-notasalida/${id}`);
-
-    if (!itemsResponse.ok) {
-        throw new Error(`Error al obtener ítems de nota (Status: ${itemsResponse.status})`);
-    }
-    const items = await itemsResponse.json();
-
-    // Adaptación y combinación de datos
     return {
-        ...nota,
-        Items: items,
-        // Adaptación para Autorizante (Usuario)
-        Usuario: nota.autorizante || nota.Autorizante,
-        NotaIdDisplay: nota.id || nota.Id || id,
+      ...nota,
+      Items: items,
+      Usuario: nota.autorizante || nota.Autorizante,
+      NotaIdDisplay: nota.id || nota.Id || id,
     };
+  } catch (error) {
+    console.error('Error al obtener detalles de la nota:', error);
+    throw new Error(error.message || 'No se pudo obtener los datos de la nota.');
+  }
 };
-
-// --- COMPONENTE PRINCIPAL ---
 
 const VerNotaSalida = () => {
     const { id } = useParams();
@@ -75,7 +61,6 @@ const VerNotaSalida = () => {
         window.print();
     };
 
-    // --- RENDERIZADO CONDICIONAL: CARGA, ERROR, NO ENCONTRADO ---
 
     if (loading) {
         return (
@@ -102,7 +87,6 @@ const VerNotaSalida = () => {
         );
     }
 
-    // Mapeo seguro de propiedades (si hay datos)
     const rawDate = notaData.Fecha || notaData.fecha;
     const formattedDate = rawDate ? new Date(rawDate).toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' }) : 'N/A';
 
