@@ -46,8 +46,18 @@ export default function App() {
       <div className="min-h-screen flex flex-col">
         {/* HEADER */}
         <header className="bg-gray-900 text-white shadow-sm">
+
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-            <NavLink to="/" className="font-bold text-xl">Sistema de Remitos</NavLink>
+            <div className="flex items-center space-x-2">
+              <img
+                src="../../sdr.png"
+                alt="Logo"
+                className="max-h-16 object-contain"
+              />
+              <NavLink to="/" className="font-bold text-xl">Sistema de Remitos</NavLink>
+            </div>
+
+
 
             {isLoggedIn && (
               <div className="flex items-center space-x-4">
@@ -102,7 +112,7 @@ export default function App() {
     <Router>
       <link rel="stylesheet" href="/css/NotaSalidaPrint.css" media="print" />
       <Routes>
-        
+
         {/* LOGIN */}
         <Route path="/login" element={isLoggedIn ? <Navigate to="/" replace /> : <Login handleAuthSuccess={handleAuthSuccess} />} />
 
@@ -121,12 +131,12 @@ export default function App() {
 
               <Route path="/remitos" element={<Remitos token={token} />} />
               <Route path="/remitos/verremito/:id" element={<VerRemito />} />
-              <Route path="/remitos/crearremito" element={<CrearRemito token={token} />}/>
-              <Route path="/remitos/editarremito/:id" element={<EditarRemito token={token} />}/>
+              <Route path="/remitos/crearremito" element={<CrearRemito token={token} />} />
+              <Route path="/remitos/editarremito/:id" element={<EditarRemito token={token} />} />
 
 
               {/* <Route path="/enviosEzeiza" element={<h1>Envíos Ezeiza</h1>} />*/}
-              <Route path="/perfil" element={<Perfil/>} />
+              <Route path="/perfil" element={<Perfil />} />
               <Route path="*" element={<h1>404 | Página no encontrada</h1>} />
             </Routes>
           </MainLayout>

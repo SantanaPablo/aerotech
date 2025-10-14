@@ -4,23 +4,23 @@ import { Printer, FileText, Loader2, User, AlertTriangle, Calendar, Send, Settin
 import { apiGet } from '../../utils/api';
 
 const fetchNotaById = async (id) => {
-  try {
-    // Obtener nota principal
-    const nota = await apiGet(`/api/NotasSalida/${id}`);
+    try {
+        // Obtener nota principal
+        const nota = await apiGet(`/api/NotasSalida/${id}`);
 
-    // Obtener ítems asociados
-    const items = await apiGet(`/api/ItemSalidas/por-notasalida/${id}`);
+        // Obtener ítems asociados
+        const items = await apiGet(`/api/ItemSalidas/por-notasalida/${id}`);
 
-    return {
-      ...nota,
-      Items: items,
-      Usuario: nota.autorizante || nota.Autorizante,
-      NotaIdDisplay: nota.id || nota.Id || id,
-    };
-  } catch (error) {
-    console.error('Error al obtener detalles de la nota:', error);
-    throw new Error(error.message || 'No se pudo obtener los datos de la nota.');
-  }
+        return {
+            ...nota,
+            Items: items,
+            Usuario: nota.autorizante || nota.Autorizante,
+            NotaIdDisplay: nota.id || nota.Id || id,
+        };
+    } catch (error) {
+        console.error('Error al obtener detalles de la nota:', error);
+        throw new Error(error.message || 'No se pudo obtener los datos de la nota.');
+    }
 };
 
 const VerNotaSalida = () => {
@@ -120,7 +120,6 @@ const VerNotaSalida = () => {
                         <span className='tracking-wide'>NOTA DE SALIDA</span>
                     </h2>
 
-                    {/* Placeholder de Logo - Asegúrate de que la ruta sea correcta */}
                     <div className="h-20 w-54 flex items-center justify-center text-xs text-gray-600 font-semibold">
                         <img
                             src="/assets/LOGO.png"

@@ -20,7 +20,7 @@ public static class JwtHelper
 
         var token = new JwtSecurityToken(
             claims: claims,
-            expires: DateTime.UtcNow.AddHours(2),
+            expires: DateTime.UtcNow.AddHours(13),
             signingCredentials: creds);
 
         return new JwtSecurityTokenHandler().WriteToken(token);
