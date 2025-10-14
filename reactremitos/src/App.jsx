@@ -120,7 +120,7 @@ export default function App() {
         <Route path="*" element={!isLoggedIn ? <Navigate to="/login" replace /> : (
           <MainLayout>
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Navigate to="/salidas" replace />} />
               <Route path="/salidas" element={<Salidas token={token} />} />
               <Route path="/salidas/crearnotasalida" element={<CrearNotaSalida token={token} />} />
               <Route path="/salidas/vernotasalida/:id" element={<VerNotaSalida />} />
