@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, NavLink } from 'react-router-dom';
+import { getToken, apiGet, apiPut } from './utils/api.js';
 // Importa tus páginas
 import Login from './pages/Login';
 
@@ -23,10 +24,13 @@ import Perfil from './pages/Perfil.jsx';
 
 const Home = () => <h1 className="text-2xl font-bold">Página Principal (Dashboard)</h1>;
 
+
 export default function App() {
   const [token, setToken] = useState(localStorage.getItem('authToken'));
   const isLoggedIn = !!token;
   const [menuOpen, setMenuOpen] = useState(false); // Para menú móvil
+  const [usuario, setUsuario] = useState({ id: 0, nombre: '', legajo: '' });
+  
 
   const handleAuthSuccess = (newToken) => {
     setToken(newToken);
@@ -38,9 +42,32 @@ export default function App() {
     localStorage.removeItem('authToken');
   };
 
+  useEffect(() => {
+  const token = getToken();
+  if (!token) return;
+
+  try {
+    const payloadBase64 = token.split('.')[1];
+    const payload = JSON.parse(atob(payloadBase64));
+
+    const usuarioId = payload['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier'];
+    const nombre = payload['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'];
+    const legajo = payload['Legajo'];
+
+    setUsuario({
+      id: parseInt(usuarioId),
+      nombre: nombre || '',
+      legajo: legajo || ''
+    });
+  } catch (e) {
+    console.error('Error al decodificar el token:', e);
+  }
+}, [token]);
+
   const MainLayout = ({ children }) => {
     const activeClass = "bg-gray-700 text-white rounded px-3 py-2 block";
     const inactiveClass = "text-gray-300 hover:text-white px-3 py-2 block";
+    
 
     return (
       <div className="min-h-screen flex flex-col">
@@ -68,6 +95,10 @@ export default function App() {
                   <NavLink to="/entradas" className={({ isActive }) => isActive ? activeClass : inactiveClass}>Entradas</NavLink>
                   {/* <NavLink to="/enviosEzeiza" className={({ isActive }) => isActive ? activeClass : inactiveClass}>Envíos Ezeiza</NavLink>*/}
                   <NavLink to="/perfil" className={({ isActive }) => isActive ? activeClass : inactiveClass}>Perfil</NavLink>
+                  <span className="text-gray-200 px-3 py-2 block">{usuario.nombre}</span>
+                  
+
+
                   <button onClick={handleLogout} className="border border-red-500 text-red-500 px-3 py-1 rounded hover:bg-red-500 hover:text-white">Salir</button>
                 </nav>
 
@@ -90,6 +121,7 @@ export default function App() {
               <NavLink to="/entradas" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? activeClass : inactiveClass}>Entradas</NavLink>
               {/* <NavLink to="/enviosEzeiza" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? activeClass : inactiveClass}>Envíos Ezeiza</NavLink>*/}
               <NavLink to="/perfil" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? activeClass : inactiveClass}>Perfil</NavLink>
+              <span className="text-gray-200 px-3 py-2 block">Hola, {usuario.nombre}</span>
               <button onClick={() => { handleLogout(); setMenuOpen(false); }} className="border border-red-500 text-red-500 px-3 py-1 rounded hover:bg-red-500 hover:text-white w-full text-left">Salir</button>
             </nav>
           )}
@@ -110,7 +142,6 @@ export default function App() {
 
   return (
     <Router>
-      <link rel="stylesheet" href="/css/NotaSalidaPrint.css" media="print" />
       <Routes>
 
         {/* LOGIN */}
