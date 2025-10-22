@@ -17,8 +17,11 @@ import VerRemito from './pages/Remitos/VerRemito';
 import CrearRemito from './pages/Remitos/CrearRemito';
 import EditarRemito from './pages/Remitos/EditarRemito';
 
+import NotaPSA from './pages/NotaPSA';
+
 import './css/NotaSalidaPrint.css';
 import './css/VerRemito.css';
+import './css/NotaPSA.css';
 
 import Perfil from './pages/Perfil.jsx';
 
@@ -143,7 +146,7 @@ export default function App() {
   return (
     <Router>
       <Routes>
-
+        <Route path="/notaPSA" element={<NotaPSA token={token} />} />
         {/* LOGIN */}
         <Route path="/login" element={isLoggedIn ? <Navigate to="/" replace /> : <Login handleAuthSuccess={handleAuthSuccess} />} />
 

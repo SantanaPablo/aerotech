@@ -74,7 +74,7 @@ const VerNotaSalida = () => {
     if (error || !notaData) {
         return (
             <div className="p-8 bg-gray-50 min-h-screen">
-                <div className="p-6 bg-white rounded-xl shadow-xl border border-red-300">
+                <div className="p-6 bg-white rounded-xl border border-red-300">
                     <h2 className="text-2xl font-bold text-red-600 flex items-center">
                         <AlertTriangle className="w-6 h-6 mr-2" /> {error ? 'Error de Carga' : 'Nota No Encontrada'}
                     </h2>
@@ -104,11 +104,11 @@ const VerNotaSalida = () => {
         <>
 
             {/* Contenido a Imprimir */}
-            <div className="print-content2 p-6 sm:p-10 bg-white rounded-xl shadow-2xl border border-gray-100 relative">
+            <div className="print-content2 p-6 sm:p-10 bg-white rounded-xl border border-gray-100 relative">
                 <div className=" no-print">
                     {/* Botón de Imprimir (Solo en pantalla) */}
                     <button
-                        className="no-print flex items-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-xl mb-8 transition duration-300 transform hover:scale-[1.02] active:scale-100"
+                        className="no-print flex items-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full mb-8 transition duration-300 transform hover:scale-[1.02] active:scale-100"
                         onClick={handlePrint}
                     >
                         <Printer className="w-5 h-5 mr-3" /> Imprimir Nota de Salida
@@ -167,7 +167,7 @@ const VerNotaSalida = () => {
 
                 <div className="ovposition: absolute;
         width: 100%;0">
-                    <table className="min-w-full divide-y divide-gray-20low-x-auto shadow-xl rounded-lg border border-gray-0 table-print text-base">
+                    <table className="min-w-full divide-y divide-gray-20low-x-auto rounded-lg border border-gray-0 table-print text-base">
                         <thead className="bg-gray-700">
                             <tr>
                                 <th className="px-4 py-3 text-left text-xs font-extrabold text-white uppercase tracking-wider w-[8%] rounded-tl-lg">Unidad</th>
