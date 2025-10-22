@@ -15,12 +15,7 @@ html {
 @media print {
 
     /* Ocultar elementos no imprimibles */
-    body * {
-        visibility: hidden;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
+  
     .no-print {
         display: none !important;
     }

@@ -433,8 +433,8 @@ const NotaPSA = () => {
             <thead>
               <tr>
                 <th style={{width: '5%'}}>Nº</th>
-                <th style={{width: '30%'}}>NATURALEZA</th>
-                <th style={{width: '20%'}}>MARCA</th>
+                <th style={{width: '20%'}}>NATURALEZA</th>
+                <th style={{width: '30%'}}>MARCA</th>
                 <th style={{width: '25%'}}>Nº SERIE O REGISTRO</th>
                 <th style={{width: '10%'}}>CANTIDAD</th>
                 <th style={{width: '10%'}} className="no-print">ACCIÓN</th>

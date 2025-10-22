@@ -355,7 +355,13 @@
                 background-color: white;
                 margin: 0;
                 padding: 0;
+                
             }
+
+            .nota-psa-container{
+                visibility: visible;
+            }
+
             .container {
                 width: 100%;
                 height: auto;
