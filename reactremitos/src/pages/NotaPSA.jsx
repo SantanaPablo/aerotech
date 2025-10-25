@@ -1,5 +1,6 @@
 // NotaPSA.jsx
 import React, { useState, useEffect } from 'react';
+import '../css/notaPSA.css';
 
 const NotaPSA = () => {
   const [formData, setFormData] = useState({
@@ -25,7 +26,7 @@ const NotaPSA = () => {
   });
 
   const [articulos, setArticulos] = useState([
-    { numero: 1, naturaleza: 'MONITOR', marca: 'LG 23MP55HQ-PA', serie: '504NSYVOL914', cantidad: 1 }
+    { numero: 1, naturaleza: 'MONITOR', marca: '', serie: '', cantidad: 1 }
   ]);
 
   const [credenciales, setCredenciales] = useState([]);
@@ -79,7 +80,6 @@ const NotaPSA = () => {
   const removeArticulo = (index) => {
     if (articulos.length > 1) {
       const newArticulos = articulos.filter((_, i) => i !== index);
-      // Renumerar
       const renumerados = newArticulos.map((art, i) => ({
         ...art,
         numero: i + 1
@@ -177,19 +177,19 @@ const NotaPSA = () => {
   };
 
   return (
-    <div className="nota-psa-container">
+    <div className="psa-nota-container">
       {/* Primera página */}
-      <div className="container">
-        <div className="header">
-          <div className="logo-container">
+      <div className="psa-container">
+        <div className="psa-header">
+          <div className="psa-logo-container">
             <img src="/assets/LOGO.png" alt="Logo PSA" />
           </div>
-          <div className="header-info">
-            <p id="fecha-actual">{fechaActual}</p>
+          <div className="psa-header-info">
+            <p id="psa-fecha-actual">{fechaActual}</p>
           </div>
         </div>
 
-        <div className="header-lines">
+        <div className="psa-header-lines">
           <h1>Unidad Operacional de Seguridad Preventiva Metropolitana</h1>
           <h1>Aeropuerto Internacional Aeroparque Jorge Newbery</h1>
           <h1>POLICIA DE SEGURIDAD AEROPORTUARIA</h1>
@@ -197,123 +197,123 @@ const NotaPSA = () => {
           <p>JEFATURA DIVISION ADUANA AEROPARQUE</p>
         </div>
         
-        <div className="saludo">
+        <div className="psa-saludo">
           <p>De mi mayor consideración:</p>
           <p>Tengo el agrado de dirigirme a Usted a efectos de solicitar autorización para el</p>
           
-          <div className="symbol-container">
-            <div className="inline-checkbox-container">
-              <div className="tipo-operacion">
+          <div className="psa-symbol-container">
+            <div className="psa-inline-checkbox-container">
+              <div className="psa-tipo-operacion">
                 <input 
                   type="checkbox" 
-                  id="ingreso-checkbox" 
+                  id="psa-ingreso-checkbox" 
                   name="ingresoChecked"
                   checked={formData.ingresoChecked}
                   onChange={handleInputChange}
                 />
-                <label htmlFor="ingreso-checkbox">INGRESO</label>
+                <label htmlFor="psa-ingreso-checkbox">INGRESO</label>
               </div>
-              <div className="tipo-operacion">
+              <div className="psa-tipo-operacion">
                 <input 
                   type="checkbox" 
-                  id="egreso-checkbox" 
+                  id="psa-egreso-checkbox" 
                   name="egresoChecked"
                   checked={formData.egresoChecked}
                   onChange={handleInputChange}
                 />
-                <label htmlFor="egreso-checkbox">EGRESO</label>
+                <label htmlFor="psa-egreso-checkbox">EGRESO</label>
               </div>
               (Indicar lo que corresponda), de artículos incluidos en el listado de objetos prohibidos a utilizar en la zona de seguridad restringida y/o sector estéril de este Aeropuerto Internacional Aeroparque Jorge Newbery.
             </div>
           </div>
         </div>
         
-        <div className="form-section">
-          <div className="form-section-title">Información de la Solicitud</div>
-          <table>
+        <div className="psa-form-section">
+          <div className="psa-form-section-title">Información de la Solicitud</div>
+          <table className="psa-table">
             <tbody>
               <tr>
                 <th style={{width: '30%'}}>Actividades desarrolladas en el Aeropuerto:</th>
                 <td>
-                  <div className="checkbox-container">
+                  <div className="psa-checkbox-container">
                     <input 
                       type="checkbox" 
-                      id="org-publico"
+                      id="psa-org-publico"
                       name="orgPublico"
                       checked={formData.actividades.orgPublico}
                       onChange={handleActividadChange}
                     />
-                    <label htmlFor="org-publico">Organismo público</label>
+                    <label htmlFor="psa-org-publico">Organismo público</label>
                   </div>
-                  <div className="checkbox-container">
+                  <div className="psa-checkbox-container">
                     <input 
                       type="checkbox" 
-                      id="expl-aeropuerto"
+                      id="psa-expl-aeropuerto"
                       name="explAeropuerto"
                       checked={formData.actividades.explAeropuerto}
                       onChange={handleActividadChange}
                     />
-                    <label htmlFor="expl-aeropuerto">Explotador de aeropuerto</label>
+                    <label htmlFor="psa-expl-aeropuerto">Explotador de aeropuerto</label>
                   </div>
-                  <div className="checkbox-container">
+                  <div className="psa-checkbox-container">
                     <input 
                       type="checkbox" 
-                      id="expl-aereo"
+                      id="psa-expl-aereo"
                       name="explAereo"
                       checked={formData.actividades.explAereo}
                       onChange={handleActividadChange}
                     />
-                    <label htmlFor="expl-aereo">Explotador aéreo</label>
+                    <label htmlFor="psa-expl-aereo">Explotador aéreo</label>
                   </div>
-                  <div className="checkbox-container">
+                  <div className="psa-checkbox-container">
                     <input 
                       type="checkbox" 
-                      id="empresa-proveedora"
+                      id="psa-empresa-proveedora"
                       name="empresaProveedora"
                       checked={formData.actividades.empresaProveedora}
                       onChange={handleActividadChange}
                     />
-                    <label htmlFor="empresa-proveedora">Empresa proveedora de provisiones, suministros, servicios de limpieza y otros servicios aeroportuarios.</label>
+                    <label htmlFor="psa-empresa-proveedora">Empresa proveedora de provisiones, suministros, servicios de limpieza y otros servicios aeroportuarios.</label>
                   </div>
-                  <div className="checkbox-container">
+                  <div className="psa-checkbox-container">
                     <input 
                       type="checkbox" 
-                      id="seguridad-privada"
+                      id="psa-seguridad-privada"
                       name="seguridadPrivada"
                       checked={formData.actividades.seguridadPrivada}
                       onChange={handleActividadChange}
                     />
-                    <label htmlFor="seguridad-privada">Empresa prestadora de servicios de seguridad privada</label>
+                    <label htmlFor="psa-seguridad-privada">Empresa prestadora de servicios de seguridad privada</label>
                   </div>
-                  <div className="checkbox-container">
+                  <div className="psa-checkbox-container">
                     <input 
                       type="checkbox" 
-                      id="otros-act"
+                      id="psa-otros-act"
                       name="otros"
                       checked={formData.actividades.otros}
                       onChange={handleActividadChange}
                     />
-                    <label htmlFor="otros-act">Otros:</label>
+                    <label htmlFor="psa-otros-act">Otros:</label>
                     <input 
                       type="text" 
-                      className="input-field" 
-                      id="otros-act-text" 
+                      className="psa-input-field" 
+                      id="psa-otros-act-text" 
                       name="otrosText"
                       value={formData.actividades.otrosText}
                       onChange={handleActividadChange}
                       placeholder="Especifique otras actividades"
                     />
-                    <span className="required">*</span>
+                    <span className="psa-required">*</span>
                   </div>
                 </td>
               </tr>
               <tr>
-                <th>Especificar sector en que desarrolle la actividad:<span className="required">*</span></th>
+                <th>Especificar sector en que desarrolle la actividad:<span className="psa-required">*</span></th>
                 <td>
                   <input 
                     type="text" 
-                    className="input-field" 
-                    id="sector-actividad"
+                    className="psa-input-field" 
+                    id="psa-sector-actividad"
                     name="sectorActividad"
                     value={formData.sectorActividad}
                     onChange={handleInputChange}
@@ -322,41 +322,41 @@ const NotaPSA = () => {
                 </td>
               </tr>
               <tr>
-                <th>Tipo de Solicitud:<span className="required">*</span></th>
+                <th>Tipo de Solicitud:<span className="psa-required">*</span></th>
                 <td>
-                  <div className="tipo-solicitud-container">
-                    <div className="checkbox-container">
+                  <div className="psa-tipo-solicitud-container">
+                    <div className="psa-checkbox-container">
                       <input 
                         type="radio" 
-                        id="transitoria" 
+                        id="psa-transitoria" 
                         name="tipoSolicitud" 
                         value="transitoria"
                         checked={formData.tipoSolicitud === 'transitoria'}
                         onChange={handleInputChange}
                       />
-                      <label htmlFor="transitoria">TRANSITORIA (no mayor a un día)</label>
+                      <label htmlFor="psa-transitoria">TRANSITORIA (no mayor a un día)</label>
                     </div>
-                    <div className="checkbox-container">
+                    <div className="psa-checkbox-container">
                       <input 
                         type="radio" 
-                        id="permanente" 
+                        id="psa-permanente" 
                         name="tipoSolicitud" 
                         value="permanente"
                         checked={formData.tipoSolicitud === 'permanente'}
                         onChange={handleInputChange}
                       />
-                      <label htmlFor="permanente">PERMANENTE</label>
+                      <label htmlFor="psa-permanente">PERMANENTE</label>
                     </div>
                   </div>
                 </td>
               </tr>
               <tr>
-                <th>Especificar motivo de la solicitud:<span className="required">*</span></th>
+                <th>Especificar motivo de la solicitud:<span className="psa-required">*</span></th>
                 <td>
                   <input 
                     type="text" 
-                    className="input-field" 
-                    id="motivo-solicitud"
+                    className="psa-input-field" 
+                    id="psa-motivo-solicitud"
                     name="motivoSolicitud"
                     value={formData.motivoSolicitud}
                     onChange={handleInputChange}
@@ -365,12 +365,12 @@ const NotaPSA = () => {
                 </td>
               </tr>
               <tr>
-                <th>Especificar día/s vº horario:<span className="required">*</span></th>
+                <th>Especificar día/s vº horario:<span className="psa-required">*</span></th>
                 <td>
                   <input 
                     type="text" 
-                    className="input-field" 
-                    id="dias-solicitud"
+                    className="psa-input-field" 
+                    id="psa-dias-solicitud"
                     name="diasSolicitud"
                     value={formData.diasSolicitud}
                     onChange={handleInputChange}
@@ -378,8 +378,8 @@ const NotaPSA = () => {
                   />
                   <input 
                     type="text" 
-                    className="input-field" 
-                    id="horario-solicitud"
+                    className="psa-input-field" 
+                    id="psa-horario-solicitud"
                     name="horarioSolicitud"
                     value={formData.horarioSolicitud}
                     onChange={handleInputChange}
@@ -388,7 +388,7 @@ const NotaPSA = () => {
                   />
                   <input 
                     type="text" 
-                    className="input-field"
+                    className="psa-input-field"
                     name="infoAdicional"
                     value={formData.infoAdicional}
                     onChange={handleInputChange}
@@ -401,11 +401,11 @@ const NotaPSA = () => {
           </table>
         </div>
         
-        <div className="puesto-ingreso">
+        <div className="psa-puesto-ingreso">
           <strong>PUESTO DE </strong>
           <select 
-            className="ingreso-egreso-select" 
-            id="tipo-puesto"
+            className="psa-ingreso-egreso-select" 
+            id="psa-tipo-puesto"
             name="tipoPuesto"
             value={formData.tipoPuesto}
             onChange={handleInputChange}
@@ -417,8 +417,8 @@ const NotaPSA = () => {
           <strong>:</strong>
           <input 
             type="text" 
-            className="input-field puesto-input" 
-            id="puesto-detalle"
+            className="psa-input-field psa-puesto-input" 
+            id="psa-puesto-detalle"
             name="puestoDetalle"
             value={formData.puestoDetalle}
             onChange={handleInputChange}
@@ -427,9 +427,9 @@ const NotaPSA = () => {
           />
         </div>
         
-        <div className="form-section">
-          <div className="form-section-title">Artículos a Ingresar/Egresar <span className="required">*</span></div>
-          <table className="tabla-articulos">
+        <div className="psa-form-section">
+          <div className="psa-form-section-title">Artículos a Ingresar/Egresar <span className="psa-required">*</span></div>
+          <table className="psa-tabla-articulos psa-table">
             <thead>
               <tr>
                 <th style={{width: '5%'}}>Nº</th>
@@ -437,16 +437,16 @@ const NotaPSA = () => {
                 <th style={{width: '30%'}}>MARCA</th>
                 <th style={{width: '25%'}}>Nº SERIE O REGISTRO</th>
                 <th style={{width: '10%'}}>CANTIDAD</th>
-                <th style={{width: '10%'}} className="no-print">ACCIÓN</th>
+                <th style={{width: '10%'}} className="psa-no-print">ACCIÓN</th>
               </tr>
             </thead>
-            <tbody id="articulos-body">
+            <tbody id="psa-articulos-body">
               {articulos.map((articulo, index) => (
                 <tr key={index}>
                   <td>
                     <input 
                       type="text" 
-                      className="input-field" 
+                      className="psa-input-field" 
                       value={articulo.numero} 
                       readOnly
                     />
@@ -454,7 +454,7 @@ const NotaPSA = () => {
                   <td>
                     <input 
                       type="text" 
-                      className="input-field articulo-naturaleza"
+                      className="psa-input-field psa-articulo-naturaleza"
                       value={articulo.naturaleza}
                       onChange={(e) => handleArticuloChange(index, 'naturaleza', e.target.value)}
                       required
@@ -463,7 +463,7 @@ const NotaPSA = () => {
                   <td>
                     <input 
                       type="text" 
-                      className="input-field"
+                      className="psa-input-field"
                       value={articulo.marca}
                       onChange={(e) => handleArticuloChange(index, 'marca', e.target.value)}
                     />
@@ -471,7 +471,7 @@ const NotaPSA = () => {
                   <td>
                     <input 
                       type="text" 
-                      className="input-field"
+                      className="psa-input-field"
                       value={articulo.serie}
                       onChange={(e) => handleArticuloChange(index, 'serie', e.target.value)}
                     />
@@ -479,16 +479,16 @@ const NotaPSA = () => {
                   <td>
                     <input 
                       type="number" 
-                      className="input-field"
+                      className="psa-input-field"
                       value={articulo.cantidad}
                       onChange={(e) => handleArticuloChange(index, 'cantidad', e.target.value)}
                       min="1" 
                       required
                     />
                   </td>
-                  <td className="no-print">
+                  <td className="psa-no-print">
                     <button 
-                      className="btn btn-danger" 
+                      className="psa-btn psa-btn-danger" 
                       onClick={() => removeArticulo(index)}
                     >
                       Eliminar
@@ -500,28 +500,28 @@ const NotaPSA = () => {
           </table>
           
           <button 
-            className="btn btn-secondary no-print" 
+            className="psa-btn psa-btn-secondary psa-no-print" 
             onClick={addArticulo}
           >
             Añadir Artículo
           </button>
         </div>
         
-        <div className="actions no-print">
-          <button className="btn" onClick={validarFormulario}>Validar Formulario</button>
-          <button className="btn btn-secondary" onClick={handlePrint}>Imprimir Documento</button>
+        <div className="psa-actions psa-no-print">
+          <button className="psa-btn" onClick={validarFormulario}>Validar Formulario</button>
+          <button className="psa-btn psa-btn-secondary" onClick={handlePrint}>Imprimir Documento</button>
         </div>
       </div>
       
       {/* Segunda página */}
-      <div className="container-second page-break print-margin">
-        <div className="header">
-          <div className="logo-container">
+      <div className="psa-container-second psa-page-break psa-print-margin">
+        <div className="psa-header">
+          <div className="psa-logo-container">
             <img src="/assets/LOGO.png" alt="Logo PSA" />
           </div>           
         </div>
         
-        <p className="nota">
+        <p className="psa-nota">
           ***La presentación de una solicitud para la autorización de ingreso/egreso de objetos, no representa por si sola una autorización automática de la misma, dicho pedido se podrá extender hasta un máximo de una semana para casos excepcionales.***
         </p>
         
@@ -531,26 +531,26 @@ const NotaPSA = () => {
         
         <input 
           type="file" 
-          id="credential-upload" 
+          id="psa-credential-upload" 
           accept=".jpg,.jpeg,.png" 
           multiple 
-          className="no-print" 
+          className="psa-no-print" 
           style={{display: 'none'}}
           onChange={handleCredencialUpload}
         />
         <button 
-          className="btn btn-secondary no-print" 
-          onClick={() => document.getElementById('credential-upload').click()}
+          className="psa-btn psa-btn-secondary psa-no-print" 
+          onClick={() => document.getElementById('psa-credential-upload').click()}
         >
           Añadir Credencial
         </button>
         
-        <div className="flex-container" id="credentials-container">
+        <div className="psa-flex-container" id="psa-credentials-container">
           {credenciales.map((credencial, index) => (
-            <div key={index} className="credential-box">
+            <div key={index} className="psa-credential-box">
               <img src={credencial} alt={`Credencial ${index + 1}`} />
               <button 
-                className="remove-btn no-print"
+                className="psa-remove-btn psa-no-print"
                 onClick={() => removeCredencial(index)}
               >
                 X
@@ -559,8 +559,8 @@ const NotaPSA = () => {
           ))}
         </div>
         
-        <div className="actions no-print" style={{marginTop: '15px'}}>
-          <button className="btn" onClick={handlePrint}>Imprimir Documento</button>
+        <div className="psa-actions psa-no-print" style={{marginTop: '15px'}}>
+          <button className="psa-btn" onClick={handlePrint}>Imprimir Documento</button>
         </div>
       </div>
     </div>

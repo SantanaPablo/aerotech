@@ -15,7 +15,12 @@ html {
 @media print {
 
     /* Ocultar elementos no imprimibles */
-  
+    body * {
+        visibility: hidden;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
     .no-print {
         display: none !important;
     }
@@ -30,11 +35,12 @@ html {
     .print-content2 {
         position: absolute;
         width: 100%;
-        
+        margin-bottom: 10px !important;
     }
 
     .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-4 {
         grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        margin-bottom: 10px !important;
     }
 
     /* firma de nota de salida/entrada */

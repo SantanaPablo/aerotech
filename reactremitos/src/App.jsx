@@ -21,7 +21,8 @@ import NotaPSA from './pages/NotaPSA';
 
 import './css/NotaSalidaPrint.css';
 import './css/VerRemito.css';
-import './css/NotaPSA.css';
+import './css/NotaPSA.css'
+
 
 import Perfil from './pages/Perfil.jsx';
 

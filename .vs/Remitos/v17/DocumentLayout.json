@@ -402,8 +402,7 @@
               "RelativeToolTip": "Remitos.API\\Controllers\\RemitosController.cs",
               "ViewState": "AgIAADgAAAAAAAAAAAAAADgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-02T18:49:19.938Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-02T18:49:19.938Z"
             },
             {
               "$type": "Document",
@@ -980,7 +979,8 @@
               "RelativeToolTip": "Remitos\\Remitos.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-10-02T18:49:19.653Z"
+              "WhenOpened": "2025-10-02T18:49:19.653Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

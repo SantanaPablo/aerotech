@@ -114,7 +114,7 @@ const VerNotaEntrada = () => {
                         <Printer className="w-5 h-5 mr-3" /> Imprimir Nota de Entrada
                     </button>
                 </div>
-                <div className="flex justify-between mb-10 border-b-4 border-blue-600">
+                <div className="flex justify-between mb-10 border-blue-600">
                     <h2 className="text-4xl font-extrabold text-gray-900 flex items-center">
                         <FileText className="w-10 h-10 mr-4 text-blue-600" />
                         <span className='tracking-wide'>NOTA DE ENTRADA</span>
