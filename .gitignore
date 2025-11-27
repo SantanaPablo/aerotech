@@ -1,3 +1,8 @@
 # Build
 **/bin/
 **/obj/
+# Ignorar archivo Técnicos
+public/Tecnicos.json
+
+# Ignorar carpeta Credenciales completa dentro de /public/assets/
+public/assets/Credenciales/

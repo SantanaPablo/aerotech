@@ -187,8 +187,8 @@
 }
 
 .psa-credential-box {
-    width: 130px;
-    height: 180px;
+    width: 45mm;
+    height: 65mm;
     border: 1px dashed #ccc;
     margin: 5px;
     display: inline-flex;
@@ -350,6 +350,81 @@
     gap: 5px;
     margin: 5px 0;
 }
+
+/* Modales */
+.psa-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.psa-modal {
+  background: #fff;
+  padding: 20px;
+  width: 1200px;
+  max-height: 80vh;
+  border-radius: 12px;
+  overflow-y: auto;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.psa-modal h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.psa-modal-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.psa-tecnico-card {
+  background: #f5f5f5;
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.psa-tecnico-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.psa-tecnico-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.psa-btn-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+
 
 /* Estilos para impresión */
 @media print {

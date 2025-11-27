@@ -1,0 +1,109 @@
+{
+  "tecnicos": [
+    {
+      "id": 1,
+      "nombre": "Gabriel Henriquez",
+      "legajo": "ar039280",
+      "vencimiento": "04-09-2026",
+      "credencial": "/Credenciales/T4/GABO 9-26.jpeg"
+    },
+    {
+      "id": 2,
+      "nombre": "Daniel Leiva",
+      "legajo": "ar029931",
+      "vencimiento": "04-12-2026",
+      "credencial": "/Credenciales/T4/Cred Leiva 12-25.jpeg"
+    },
+    {
+      "id": 3,
+      "nombre": "Dario Kanashiro",
+      "legajo": "ar034285",
+      "vencimiento": "26-11-2025",
+      "credencial": "/Credenciales/T4/CRED KANASHIRO 11-25.jpeg"
+    },
+    {
+      "id": 4,
+      "nombre": "Angel G. Lopez",
+      "legajo": "ar031704",
+      "vencimiento": "27-05-2026",
+      "credencial": "/Credenciales/T4/CRED LOPEZ 5-26.jpg"
+    },
+    {
+      "id": 5,
+      "nombre": "Sebastián Gutierrez",
+      "legajo": "ar035878",
+      "vencimiento": "14-02-2026",
+      "credencial": "/Credenciales/T4/CRED Seba 02-26.jpeg"
+    },
+    {
+      "id": 6,
+      "nombre": "Nicolas Garese",
+      "legajo": "12350",
+      "vencimiento": "03-12-2025",
+      "credencial": "/Credenciales/HGS/Cred Garese 12-25.jpeg"
+    },
+    {
+      "id": 7,
+      "nombre": "Jorge Rodriguez",
+      "legajo": "12351",
+      "vencimiento": "21-04-2026",
+      "credencial": "/Credenciales/HGS/CRED JORGE 4-26.jpeg"
+    },
+    {
+      "id": 8,
+      "nombre": "Gonzalo Pelimene",
+      "legajo": "12352",
+      "vencimiento": "09-04-2026",
+      "credencial": "/Credenciales/HGS/CRED PELIMENE 4-26.jpeg"
+    },
+     {
+      "id": 9,
+      "nombre": "Gilberto Bevilacqua",
+      "legajo": "12345",
+      "vencimiento": "19-02-2026",
+      "credencial": "/Credenciales/CHECKPOINT/Cred Bevi 2-26.jpeg"
+    },
+    {
+      "id": 10,
+      "nombre": "Pablo Britez Santana",
+      "legajo": "zz480242",
+      "vencimiento": "19-12-2025",
+      "credencial": "/Credenciales/CHECKPOINT/Cred Britez 12-25.jpeg"
+    },
+    {
+      "id": 11,
+      "nombre": "Carlos M. Gomez",
+      "legajo": "12347",
+      "vencimiento": "23-07-2026",
+      "credencial": "/Credenciales/CHECKPOINT/CRED GOMEZ 07-26.jpeg"
+    },
+    {
+      "id": 12,
+      "nombre": "Juan Grieco",
+      "legajo": "ar036214",
+      "vencimiento": "13-01-2026",
+      "credencial": "/Credenciales/CHECKPOINT/CRED GRIECO 1-26.jpeg"
+    },
+    {
+      "id": 13,
+      "nombre": "Horacio Killing",
+      "legajo": "12349",
+      "vencimiento": "24-06-2026",
+      "credencial": "/Credenciales/CHECKPOINT/CRED KILLING 6-26.jpeg"
+    },
+    {
+      "id": 14,
+      "nombre": "Matias Montes de Oca",
+      "legajo": "12350",
+      "vencimiento": "06-01-2026",
+      "credencial": "/Credenciales/CHECKPOINT/CRED MONTES DE OCA 1-26.jpeg"
+    },
+    {
+      "id": 15,
+      "nombre": "Johan Rojas",
+      "legajo": "12351",
+      "vencimiento": "16-04-2026",
+      "credencial": "/Credenciales/CHECKPOINT/CRED YOHAN.jpeg"
+    }
+  ]
+}

@@ -25,156 +25,200 @@ const NotaPSA = () => {
     }
   });
 
-  const [articulos, setArticulos] = useState([
-    { numero: 1, naturaleza: 'MONITOR', marca: '', serie: '', cantidad: 1 }
-  ]);
-
+  const [articulos, setArticulos] = useState([{ numero: 1, naturaleza: 'MONITOR', marca: '', serie: '', cantidad: 1 }]);
   const [credenciales, setCredenciales] = useState([]);
   const [fechaActual, setFechaActual] = useState('');
+  const [showModal, setShowModal] = useState(false);
+  const [tecnicos, setTecnicos] = useState([]);
+
+ useEffect(() => {
+  actualizarFecha();
+  
+  // ✅ Cargar JSON dinámicamente
+  fetch('/Tecnicos.json')
+    .then(response => response.json())
+    .then(data => {
+      const listaConFlag = data.tecnicos.map(t => ({ ...t, seleccionado: false }));
+      setTecnicos(listaConFlag);
+    })
+    .catch(error => {
+      console.error('Error cargando técnicos:', error);
+    });
+}, []);
 
   useEffect(() => {
-    actualizarFecha();
-  }, []);
+    setTecnicos(prev =>
+      prev.map(t => ({
+        ...t,
+        seleccionado: credenciales.some(
+          c => (c.id && c.id === t.id)
+        )
+      }))
+    );
+  }, [credenciales]);
+
 
   const actualizarFecha = () => {
     const ahora = new Date();
-    const opciones = { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
-    };
+    const opciones = { year: 'numeric', month: 'long', day: 'numeric' };
     const fechaFormateada = ahora.toLocaleDateString('es-ES', opciones);
     setFechaActual(`Ciudad Autónoma de Buenos Aires, ${fechaFormateada}`);
   };
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: type === 'checkbox' ? checked : value
-    }));
+    setFormData(prev => ({ ...prev, [name]: type === 'checkbox' ? checked : value }));
   };
 
   const handleActividadChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData(prev => ({
       ...prev,
-      actividades: {
-        ...prev.actividades,
-        [name]: type === 'checkbox' ? checked : value
-      }
+      actividades: { ...prev.actividades, [name]: type === 'checkbox' ? checked : value }
     }));
   };
 
   const addArticulo = () => {
-    const newArticulo = {
-      numero: articulos.length + 1,
-      naturaleza: '',
-      marca: '',
-      serie: '',
-      cantidad: 1
-    };
+    const newArticulo = { numero: articulos.length + 1, naturaleza: '', marca: '', serie: '', cantidad: 1 };
     setArticulos([...articulos, newArticulo]);
   };
 
   const removeArticulo = (index) => {
     if (articulos.length > 1) {
       const newArticulos = articulos.filter((_, i) => i !== index);
-      const renumerados = newArticulos.map((art, i) => ({
-        ...art,
-        numero: i + 1
-      }));
+      const renumerados = newArticulos.map((art, i) => ({ ...art, numero: i + 1 }));
       setArticulos(renumerados);
-    } else {
-      alert('Debe haber al menos un artículo en la lista.');
-    }
+    } else alert('Debe haber al menos un artículo en la lista.');
   };
 
   const handleArticuloChange = (index, field, value) => {
     const newArticulos = [...articulos];
-    newArticulos[index] = {
-      ...newArticulos[index],
-      [field]: value
-    };
+    newArticulos[index] = { ...newArticulos[index], [field]: value };
     setArticulos(newArticulos);
   };
 
   const handleCredencialUpload = (e) => {
     const files = Array.from(e.target.files);
-    
     files.forEach(file => {
       if (file.type.match('image.*')) {
         const reader = new FileReader();
-        
-        reader.onload = (e) => {
-          setCredenciales(prev => [...prev, e.target.result]);
-        };
-        
+        reader.onload = (e) => setCredenciales(prev => [...prev, { img: e.target.result }]);
         reader.readAsDataURL(file);
       }
     });
-    
     e.target.value = '';
   };
 
   const removeCredencial = (index) => {
-    setCredenciales(prev => prev.filter((_, i) => i !== index));
+    setCredenciales(prev => {
+      const nuevas = prev.filter((_, i) => i !== index);
+      // Si la credencial eliminada era de un técnico, destildalo
+      setTecnicos(prevT =>
+        prevT.map(t => ({
+          ...t,
+          seleccionado: nuevas.some(c => c.img === t.credencial || c === t.credencial)
+        }))
+      );
+      return nuevas;
+    });
   };
 
   const validarFormulario = () => {
-    let isValid = true;
     let errores = [];
-
-    if (!formData.ingresoChecked && !formData.egresoChecked) {
+    if (!formData.ingresoChecked && !formData.egresoChecked)
       errores.push('Por favor seleccione INGRESO y/o EGRESO');
-      isValid = false;
-    }
-
-    if (!formData.sectorActividad.trim()) {
+    if (!formData.sectorActividad.trim())
       errores.push('El sector de actividad es requerido');
-      isValid = false;
-    }
-
-    if (!formData.motivoSolicitud.trim()) {
+    if (!formData.motivoSolicitud.trim())
       errores.push('El motivo de solicitud es requerido');
-      isValid = false;
-    }
-
-    if (!formData.diasSolicitud.trim()) {
+    if (!formData.diasSolicitud.trim())
       errores.push('Los días de solicitud son requeridos');
-      isValid = false;
-    }
-
-    if (!formData.horarioSolicitud.trim()) {
+    if (!formData.horarioSolicitud.trim())
       errores.push('El horario de solicitud es requerido');
-      isValid = false;
-    }
-
-    if (!formData.puestoDetalle.trim()) {
+    if (!formData.puestoDetalle.trim())
       errores.push('El puesto detalle es requerido');
-      isValid = false;
-    }
 
     const articulosValidos = articulos.every(art => art.naturaleza.trim());
-    if (!articulosValidos || articulos.length === 0) {
+    if (!articulosValidos || articulos.length === 0)
       errores.push('Todos los artículos deben tener naturaleza definida');
-      isValid = false;
-    }
 
-    if (!isValid) {
+    if (errores.length > 0) {
       alert(errores.join('\n'));
-    } else {
-      alert('El formulario ha sido validado correctamente. Puede proceder a imprimirlo.');
+      return false;
     }
 
-    return isValid;
+    alert('El formulario ha sido validado correctamente. Puede proceder a imprimirlo.');
+    return true;
   };
 
   const handlePrint = () => {
-    if (validarFormulario()) {
-      window.print();
-    }
+    if (validarFormulario()) window.print();
   };
+
+  // ✅ Manejo de selección de técnicos
+  const handleCheckboxChange = (id, checked) => {
+    setTecnicos(prev =>
+      prev.map(t => (t.id === id ? { ...t, seleccionado: checked } : t))
+    );
+  };
+
+  const confirmarSeleccionTecnicos = () => {
+    const seleccionados = tecnicos.filter(t => t.seleccionado);
+
+    setCredenciales(prev => {
+      // Convertimos todo a objetos uniformes (con id, img y nombre)
+      const nuevas = seleccionados.map(s => ({
+        id: s.id,
+        img: s.credencial,
+        nombre: s.nombre
+      }));
+
+      // Mezclamos los existentes y los nuevos
+      const combinadas = [...prev, ...nuevas];
+
+      // Filtramos para mantener solo el primero de cada ID único
+      const unicas = combinadas.filter(
+        (valor, indice, self) =>
+          indice === self.findIndex((t) => t.id === valor.id)
+      );
+
+      return unicas;
+    });
+
+    setShowModal(false);
+  };
+
+ const calcularEstadoVencimiento = (fechaVencimiento) => {
+    if (!fechaVencimiento) return { estado: 'desconocido', texto: 'S/D', color: '#ccc' };
+
+    // Separamos por guión '-'
+    // Se asume formato DD-MM-AAAA (ej: 21-04-2026)
+    const partes = fechaVencimiento.split('-'); 
+    
+    // Si no tiene 3 partes, retornamos error para evitar crash
+    if (partes.length !== 3) return { estado: 'error', texto: 'ERROR', color: '#ccc' };
+
+    const dia = parseInt(partes[0], 10);
+    const mes = parseInt(partes[1], 10) - 1; // Meses en JS son 0-11
+    const anio = parseInt(partes[2], 10);
+
+    const vencimiento = new Date(anio, mes, dia);
+    
+    // Fecha de hoy sin horas/minutos para comparación justa
+    const hoy = new Date();
+    hoy.setHours(0, 0, 0, 0);
+
+    const diffTime = vencimiento - hoy;
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+    if (diffDays < 0) {
+      return { estado: 'vencida', texto: 'VENCIDA', color: '#ff0000' };
+    } else if (diffDays <= 30) {
+      return { estado: 'por-vencer', texto: 'POR VENCER', color: '#ffaa00' };
+    }
+    return { estado: 'vigente', texto: 'VIGENTE', color: '#00aa00' };
+  };
+
 
   return (
     <div className="psa-nota-container">
@@ -196,17 +240,17 @@ const NotaPSA = () => {
           <p>JEFE DE UNIDAD -- INSPECTOR RUBEN RIOS</p>
           <p>JEFATURA DIVISION ADUANA AEROPARQUE</p>
         </div>
-        
+
         <div className="psa-saludo">
           <p>De mi mayor consideración:</p>
           <p>Tengo el agrado de dirigirme a Usted a efectos de solicitar autorización para el</p>
-          
+
           <div className="psa-symbol-container">
             <div className="psa-inline-checkbox-container">
               <div className="psa-tipo-operacion">
-                <input 
-                  type="checkbox" 
-                  id="psa-ingreso-checkbox" 
+                <input
+                  type="checkbox"
+                  id="psa-ingreso-checkbox"
                   name="ingresoChecked"
                   checked={formData.ingresoChecked}
                   onChange={handleInputChange}
@@ -214,9 +258,9 @@ const NotaPSA = () => {
                 <label htmlFor="psa-ingreso-checkbox">INGRESO</label>
               </div>
               <div className="psa-tipo-operacion">
-                <input 
-                  type="checkbox" 
-                  id="psa-egreso-checkbox" 
+                <input
+                  type="checkbox"
+                  id="psa-egreso-checkbox"
                   name="egresoChecked"
                   checked={formData.egresoChecked}
                   onChange={handleInputChange}
@@ -227,17 +271,17 @@ const NotaPSA = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="psa-form-section">
           <div className="psa-form-section-title">Información de la Solicitud</div>
           <table className="psa-table">
             <tbody>
               <tr>
-                <th style={{width: '30%'}}>Actividades desarrolladas en el Aeropuerto:</th>
+                <th style={{ width: '30%' }}>Actividades desarrolladas en el Aeropuerto:</th>
                 <td>
                   <div className="psa-checkbox-container">
-                    <input 
-                      type="checkbox" 
+                    <input
+                      type="checkbox"
                       id="psa-org-publico"
                       name="orgPublico"
                       checked={formData.actividades.orgPublico}
@@ -246,8 +290,8 @@ const NotaPSA = () => {
                     <label htmlFor="psa-org-publico">Organismo público</label>
                   </div>
                   <div className="psa-checkbox-container">
-                    <input 
-                      type="checkbox" 
+                    <input
+                      type="checkbox"
                       id="psa-expl-aeropuerto"
                       name="explAeropuerto"
                       checked={formData.actividades.explAeropuerto}
@@ -256,8 +300,8 @@ const NotaPSA = () => {
                     <label htmlFor="psa-expl-aeropuerto">Explotador de aeropuerto</label>
                   </div>
                   <div className="psa-checkbox-container">
-                    <input 
-                      type="checkbox" 
+                    <input
+                      type="checkbox"
                       id="psa-expl-aereo"
                       name="explAereo"
                       checked={formData.actividades.explAereo}
@@ -266,8 +310,8 @@ const NotaPSA = () => {
                     <label htmlFor="psa-expl-aereo">Explotador aéreo</label>
                   </div>
                   <div className="psa-checkbox-container">
-                    <input 
-                      type="checkbox" 
+                    <input
+                      type="checkbox"
                       id="psa-empresa-proveedora"
                       name="empresaProveedora"
                       checked={formData.actividades.empresaProveedora}
@@ -276,8 +320,8 @@ const NotaPSA = () => {
                     <label htmlFor="psa-empresa-proveedora">Empresa proveedora de provisiones, suministros, servicios de limpieza y otros servicios aeroportuarios.</label>
                   </div>
                   <div className="psa-checkbox-container">
-                    <input 
-                      type="checkbox" 
+                    <input
+                      type="checkbox"
                       id="psa-seguridad-privada"
                       name="seguridadPrivada"
                       checked={formData.actividades.seguridadPrivada}
@@ -286,18 +330,18 @@ const NotaPSA = () => {
                     <label htmlFor="psa-seguridad-privada">Empresa prestadora de servicios de seguridad privada</label>
                   </div>
                   <div className="psa-checkbox-container">
-                    <input 
-                      type="checkbox" 
+                    <input
+                      type="checkbox"
                       id="psa-otros-act"
                       name="otros"
                       checked={formData.actividades.otros}
                       onChange={handleActividadChange}
                     />
                     <label htmlFor="psa-otros-act">Otros:</label>
-                    <input 
-                      type="text" 
-                      className="psa-input-field" 
-                      id="psa-otros-act-text" 
+                    <input
+                      type="text"
+                      className="psa-input-field"
+                      id="psa-otros-act-text"
                       name="otrosText"
                       value={formData.actividades.otrosText}
                       onChange={handleActividadChange}
@@ -310,9 +354,9 @@ const NotaPSA = () => {
               <tr>
                 <th>Especificar sector en que desarrolle la actividad:<span className="psa-required">*</span></th>
                 <td>
-                  <input 
-                    type="text" 
-                    className="psa-input-field" 
+                  <input
+                    type="text"
+                    className="psa-input-field"
                     id="psa-sector-actividad"
                     name="sectorActividad"
                     value={formData.sectorActividad}
@@ -326,10 +370,10 @@ const NotaPSA = () => {
                 <td>
                   <div className="psa-tipo-solicitud-container">
                     <div className="psa-checkbox-container">
-                      <input 
-                        type="radio" 
-                        id="psa-transitoria" 
-                        name="tipoSolicitud" 
+                      <input
+                        type="radio"
+                        id="psa-transitoria"
+                        name="tipoSolicitud"
                         value="transitoria"
                         checked={formData.tipoSolicitud === 'transitoria'}
                         onChange={handleInputChange}
@@ -337,10 +381,10 @@ const NotaPSA = () => {
                       <label htmlFor="psa-transitoria">TRANSITORIA (no mayor a un día)</label>
                     </div>
                     <div className="psa-checkbox-container">
-                      <input 
-                        type="radio" 
-                        id="psa-permanente" 
-                        name="tipoSolicitud" 
+                      <input
+                        type="radio"
+                        id="psa-permanente"
+                        name="tipoSolicitud"
                         value="permanente"
                         checked={formData.tipoSolicitud === 'permanente'}
                         onChange={handleInputChange}
@@ -353,9 +397,9 @@ const NotaPSA = () => {
               <tr>
                 <th>Especificar motivo de la solicitud:<span className="psa-required">*</span></th>
                 <td>
-                  <input 
-                    type="text" 
-                    className="psa-input-field" 
+                  <input
+                    type="text"
+                    className="psa-input-field"
                     id="psa-motivo-solicitud"
                     name="motivoSolicitud"
                     value={formData.motivoSolicitud}
@@ -367,44 +411,44 @@ const NotaPSA = () => {
               <tr>
                 <th>Especificar día/s vº horario:<span className="psa-required">*</span></th>
                 <td>
-                  <input 
-                    type="text" 
-                    className="psa-input-field" 
+                  <input
+                    type="text"
+                    className="psa-input-field"
                     id="psa-dias-solicitud"
                     name="diasSolicitud"
                     value={formData.diasSolicitud}
                     onChange={handleInputChange}
                     required
                   />
-                  <input 
-                    type="text" 
-                    className="psa-input-field" 
+                  <input
+                    type="text"
+                    className="psa-input-field"
                     id="psa-horario-solicitud"
                     name="horarioSolicitud"
                     value={formData.horarioSolicitud}
                     onChange={handleInputChange}
-                    style={{marginTop: '3px'}}
+                    style={{ marginTop: '3px' }}
                     required
                   />
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     className="psa-input-field"
                     name="infoAdicional"
                     value={formData.infoAdicional}
                     onChange={handleInputChange}
-                    placeholder="Información adicional (opcional)" 
-                    style={{marginTop: '3px'}}
+                    placeholder="Información adicional (opcional)"
+                    style={{ marginTop: '3px' }}
                   />
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
-        
+
         <div className="psa-puesto-ingreso">
           <strong>PUESTO DE </strong>
-          <select 
-            className="psa-ingreso-egreso-select" 
+          <select
+            className="psa-ingreso-egreso-select"
             id="psa-tipo-puesto"
             name="tipoPuesto"
             value={formData.tipoPuesto}
@@ -415,45 +459,45 @@ const NotaPSA = () => {
             <option value="EGRESO">EGRESO</option>
           </select>
           <strong>:</strong>
-          <input 
-            type="text" 
-            className="psa-input-field psa-puesto-input" 
+          <input
+            type="text"
+            className="psa-input-field psa-puesto-input"
             id="psa-puesto-detalle"
             name="puestoDetalle"
             value={formData.puestoDetalle}
             onChange={handleInputChange}
-            placeholder="ECO/CHECKPOINT" 
+            placeholder="ECO/CHECKPOINT"
             required
           />
         </div>
-        
+
         <div className="psa-form-section">
           <div className="psa-form-section-title">Artículos a Ingresar/Egresar <span className="psa-required">*</span></div>
           <table className="psa-tabla-articulos psa-table">
             <thead>
               <tr>
-                <th style={{width: '5%'}}>Nº</th>
-                <th style={{width: '20%'}}>NATURALEZA</th>
-                <th style={{width: '30%'}}>MARCA</th>
-                <th style={{width: '25%'}}>Nº SERIE O REGISTRO</th>
-                <th style={{width: '10%'}}>CANTIDAD</th>
-                <th style={{width: '10%'}} className="psa-no-print">ACCIÓN</th>
+                <th style={{ width: '5%' }}>Nº</th>
+                <th style={{ width: '20%' }}>NATURALEZA</th>
+                <th style={{ width: '30%' }}>MARCA</th>
+                <th style={{ width: '25%' }}>Nº SERIE O REGISTRO</th>
+                <th style={{ width: '10%' }}>CANTIDAD</th>
+                <th style={{ width: '10%' }} className="psa-no-print">ACCIÓN</th>
               </tr>
             </thead>
             <tbody id="psa-articulos-body">
               {articulos.map((articulo, index) => (
                 <tr key={index}>
                   <td>
-                    <input 
-                      type="text" 
-                      className="psa-input-field" 
-                      value={articulo.numero} 
+                    <input
+                      type="text"
+                      className="psa-input-field"
+                      value={articulo.numero}
                       readOnly
                     />
                   </td>
                   <td>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       className="psa-input-field psa-articulo-naturaleza"
                       value={articulo.naturaleza}
                       onChange={(e) => handleArticuloChange(index, 'naturaleza', e.target.value)}
@@ -461,34 +505,34 @@ const NotaPSA = () => {
                     />
                   </td>
                   <td>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       className="psa-input-field"
                       value={articulo.marca}
                       onChange={(e) => handleArticuloChange(index, 'marca', e.target.value)}
                     />
                   </td>
                   <td>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       className="psa-input-field"
                       value={articulo.serie}
                       onChange={(e) => handleArticuloChange(index, 'serie', e.target.value)}
                     />
                   </td>
                   <td>
-                    <input 
-                      type="number" 
+                    <input
+                      type="number"
                       className="psa-input-field"
                       value={articulo.cantidad}
                       onChange={(e) => handleArticuloChange(index, 'cantidad', e.target.value)}
-                      min="1" 
+                      min="1"
                       required
                     />
                   </td>
                   <td className="psa-no-print">
-                    <button 
-                      className="psa-btn psa-btn-danger" 
+                    <button
+                      className="psa-btn psa-btn-danger"
                       onClick={() => removeArticulo(index)}
                     >
                       Eliminar
@@ -498,71 +542,133 @@ const NotaPSA = () => {
               ))}
             </tbody>
           </table>
-          
-          <button 
-            className="psa-btn psa-btn-secondary psa-no-print" 
+
+          <button
+            className="psa-btn psa-btn-secondary psa-no-print"
             onClick={addArticulo}
           >
             Añadir Artículo
           </button>
         </div>
-        
+
         <div className="psa-actions psa-no-print">
           <button className="psa-btn" onClick={validarFormulario}>Validar Formulario</button>
           <button className="psa-btn psa-btn-secondary" onClick={handlePrint}>Imprimir Documento</button>
         </div>
       </div>
-      
+
       {/* Segunda página */}
       <div className="psa-container-second psa-page-break psa-print-margin">
         <div className="psa-header">
           <div className="psa-logo-container">
             <img src="/assets/LOGO.png" alt="Logo PSA" />
-          </div>           
+          </div>
         </div>
-        
+
         <p className="psa-nota">
-          ***La presentación de una solicitud para la autorización de ingreso/egreso de objetos, no representa por si sola una autorización automática de la misma, dicho pedido se podrá extender hasta un máximo de una semana para casos excepcionales.***
+          ***La presentación de una solicitud para la autorización de ingreso/egreso de objetos, no representa por sí sola una autorización automática de la misma...***
         </p>
-        
-        <p>Maniobra que efectuarán el personal técnico de sistemas ARSA:</p>
-        <h2>Credenciales del Personal</h2>
-        <p>Seleccione las imágenes de las credenciales del personal involucrado:</p>
-        
-        <input 
-          type="file" 
-          id="psa-credential-upload" 
-          accept=".jpg,.jpeg,.png" 
-          multiple 
-          className="psa-no-print" 
-          style={{display: 'none'}}
+
+        <h2>Credenciales del Personal: </h2>
+     
+        <input
+          type="file"
+          id="psa-credential-upload"
+          accept=".jpg,.jpeg,.png"
+          multiple
+          className="psa-no-print"
+          style={{ display: 'none' }}
           onChange={handleCredencialUpload}
         />
-        <button 
-          className="psa-btn psa-btn-secondary psa-no-print" 
-          onClick={() => document.getElementById('psa-credential-upload').click()}
-        >
-          Añadir Credencial
-        </button>
-        
+
+        <div className="psa-btn-group psa-no-print">
+          <button
+            className="psa-btn psa-btn-secondary"
+            onClick={() => document.getElementById('psa-credential-upload').click()}
+          >
+            Añadir Credencial Manual
+          </button>
+
+          <button
+            className="psa-btn psa-btn-primary"
+            onClick={() => setShowModal(true)}
+          >
+            Seleccionar Técnicos
+          </button>
+        </div>
+
+        {/* Galería */}
         <div className="psa-flex-container" id="psa-credentials-container">
           {credenciales.map((credencial, index) => (
             <div key={index} className="psa-credential-box">
-              <img src={credencial} alt={`Credencial ${index + 1}`} />
-              <button 
-                className="psa-remove-btn psa-no-print"
-                onClick={() => removeCredencial(index)}
-              >
-                X
-              </button>
+              <img src={credencial.img || credencial} alt={`Credencial ${index + 1}`} />
+              
+              <button className="psa-remove-btn psa-no-print" onClick={() => removeCredencial(index)}>X</button>
             </div>
           ))}
         </div>
-        
-        <div className="psa-actions psa-no-print" style={{marginTop: '15px'}}>
+
+        <div className="psa-actions psa-no-print" style={{ marginTop: '15px' }}>
           <button className="psa-btn" onClick={handlePrint}>Imprimir Documento</button>
         </div>
       </div>
+
+      {/* ✅ MODAL MULTI-SELECCIÓN DE TÉCNICOS */}
+      {showModal && (
+        <div className="psa-modal-overlay">
+          <div className="psa-modal">
+            <h2>Seleccionar Técnicos</h2>
+            <div className="psa-modal-list">
+              {tecnicos.map((t) => {
+                const estadoVenc = calcularEstadoVencimiento(t.vencimiento);
+                return (
+                  <div key={t.id} className="psa-tecnico-card">
+                    <label style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer' }}>
+                      <input
+                        type="checkbox"
+                        checked={t.seleccionado}
+                        onChange={(e) => handleCheckboxChange(t.id, e.target.checked)}
+                      />
+                      <img src={t.credencial} alt={t.nombre} style={{ width: '60px', height: '100px', objectFit: 'cover' }} />
+                      <div style={{ flex: 1 }}>
+                        <strong>{t.nombre}</strong><br />
+                        Legajo: {t.legajo}<br />
+                        Vence: {t.vencimiento}
+                      </div>
+                      <div style={{ 
+                        fontWeight: 'bold', 
+                        color: estadoVenc.color,
+                        fontSize: '0.85em',
+                        padding: '4px 8px',
+                        border: `2px solid ${estadoVenc.color}`,
+                        borderRadius: '4px',
+                        backgroundColor: `${estadoVenc.color}15`
+                      }}>
+                        {estadoVenc.texto}
+                      </div>
+                    </label>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div style={{ marginTop: '15px', display: 'flex', gap: '10px', justifyContent: 'center' }}>
+              <button
+                className="psa-btn psa-btn-primary"
+                onClick={confirmarSeleccionTecnicos}
+              >
+                Confirmar Selección
+              </button>
+              <button
+                className="psa-btn psa-btn-danger"
+                onClick={() => setShowModal(false)}
+              >
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
