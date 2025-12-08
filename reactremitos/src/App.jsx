@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, NavLink } from 'react-router-dom';
 import { getToken, apiGet, apiPut } from './utils/api.js';
-// Importa tus páginas
+
 import Login from './pages/Login';
+import Dashboard from './pages/Dashboard.jsx'; 
+import DashboardSalidas from './pages/DashboardSalidas.jsx'; 
 
 import Salidas from './pages/Salidas/Salidas';
 import CrearNotaSalida from './pages/Salidas/CrearNotaSalida';
@@ -168,6 +170,9 @@ export default function App() {
               <Route path="/remitos/verremito/:id" element={<VerRemito />} />
               <Route path="/remitos/crearremito" element={<CrearRemito token={token} />} />
               <Route path="/remitos/editarremito/:id" element={<EditarRemito token={token} />} />
+
+              <Route path="/dashboard" element={<Dashboard token={token} />} />
+              <Route path="/dashboardSalidas" element={<DashboardSalidas token={token} />} />
 
 
               {/* <Route path="/enviosEzeiza" element={<h1>Envíos Ezeiza</h1>} />*/}
