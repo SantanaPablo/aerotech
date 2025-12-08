@@ -1,4 +1,3 @@
-// NotaPSA.jsx
 import React, { useState, useEffect } from 'react';
 import '../css/notaPSA.css';
 
@@ -34,7 +33,7 @@ const NotaPSA = () => {
  useEffect(() => {
   actualizarFecha();
   
-  // ✅ Cargar JSON dinámicamente
+
   fetch('/Tecnicos.json')
     .then(response => response.json())
     .then(data => {
@@ -112,7 +111,6 @@ const NotaPSA = () => {
   const removeCredencial = (index) => {
     setCredenciales(prev => {
       const nuevas = prev.filter((_, i) => i !== index);
-      // Si la credencial eliminada era de un técnico, destildalo
       setTecnicos(prevT =>
         prevT.map(t => ({
           ...t,
@@ -155,7 +153,6 @@ const NotaPSA = () => {
     if (validarFormulario()) window.print();
   };
 
-  // ✅ Manejo de selección de técnicos
   const handleCheckboxChange = (id, checked) => {
     setTecnicos(prev =>
       prev.map(t => (t.id === id ? { ...t, seleccionado: checked } : t))
@@ -166,17 +163,14 @@ const NotaPSA = () => {
     const seleccionados = tecnicos.filter(t => t.seleccionado);
 
     setCredenciales(prev => {
-      // Convertimos todo a objetos uniformes (con id, img y nombre)
       const nuevas = seleccionados.map(s => ({
         id: s.id,
         img: s.credencial,
         nombre: s.nombre
       }));
 
-      // Mezclamos los existentes y los nuevos
       const combinadas = [...prev, ...nuevas];
 
-      // Filtramos para mantener solo el primero de cada ID único
       const unicas = combinadas.filter(
         (valor, indice, self) =>
           indice === self.findIndex((t) => t.id === valor.id)
@@ -191,20 +185,16 @@ const NotaPSA = () => {
  const calcularEstadoVencimiento = (fechaVencimiento) => {
     if (!fechaVencimiento) return { estado: 'desconocido', texto: 'S/D', color: '#ccc' };
 
-    // Separamos por guión '-'
-    // Se asume formato DD-MM-AAAA (ej: 21-04-2026)
     const partes = fechaVencimiento.split('-'); 
     
-    // Si no tiene 3 partes, retornamos error para evitar crash
     if (partes.length !== 3) return { estado: 'error', texto: 'ERROR', color: '#ccc' };
 
     const dia = parseInt(partes[0], 10);
-    const mes = parseInt(partes[1], 10) - 1; // Meses en JS son 0-11
+    const mes = parseInt(partes[1], 10) - 1;
     const anio = parseInt(partes[2], 10);
 
     const vencimiento = new Date(anio, mes, dia);
-    
-    // Fecha de hoy sin horas/minutos para comparación justa
+
     const hoy = new Date();
     hoy.setHours(0, 0, 0, 0);
 
@@ -613,7 +603,7 @@ const NotaPSA = () => {
         </div>
       </div>
 
-      {/* ✅ MODAL MULTI-SELECCIÓN DE TÉCNICOS */}
+      {/*MODAL*/}
       {showModal && (
         <div className="psa-modal-overlay">
           <div className="psa-modal">

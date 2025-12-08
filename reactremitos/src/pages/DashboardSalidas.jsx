@@ -114,7 +114,6 @@ export default function DashboardSalidas({ token }) {
   const datosAutorizantes = useMemo(() => {
     const conteo = datosFiltrados.reduce((acc, curr) => {
       const key = curr.autorizante; 
-      // Contamos cantidad de items autorizados (o puedes contar +1 si prefieres contar operaciones)
       acc[key] = (acc[key] || 0) + curr.cantidad;
       return acc;
     }, {});

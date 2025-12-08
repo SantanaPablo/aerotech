@@ -55,15 +55,15 @@ const Salidas = () => {
   const notasPagina = notas.slice(inicio, inicio + tamañoPagina);
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen"> {/* Added bg and min-h for better page context */}
-      <h2 className="text-3xl font-extrabold mb-6 text-gray-800 flex items-center gap-3"> {/* Slightly larger/bolder title */}
+    <div className="p-6 bg-gray-50 min-h-screen">
+      <h2 className="text-3xl font-extrabold mb-6 text-gray-800 flex items-center gap-3">
         <i className="bi bi-journal-text"></i> Notas de Salida
       </h2>
 
-      {/* 🔍 Filtro */}
+
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="flex gap-2 mb-4" // Simplified grid layout
+        className="flex gap-2 mb-4" 
       >
         <div className="flex-grow">
           <input
@@ -84,7 +84,6 @@ const Salidas = () => {
         </div>
       </form>
 
-      {/* ➕ Nueva nota */}
       <Link
         to="/salidas/crearnotasalida"
         className="inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded mb-6 transition duration-150 ease-in-out shadow-md"
@@ -115,7 +114,7 @@ const Salidas = () => {
                 <td className="p-3">
                   <Link
                     to={`/salidas/vernotasalida/${nota.id}`}
-                    // Enhanced button style
+          
                     className="px-3 py-1 text-xs border border-gray-300 rounded text-gray-700 hover:bg-blue-100 transition duration-150"
                   >
                     <i className="bi bi-eye"></i> Ver
@@ -144,7 +143,7 @@ const Salidas = () => {
   );
 };
 
-// Paginacion component (no changes needed, as it was already well-styled)
+
 function Paginacion({ totalPaginas, paginaActual, setPaginaActual }) {
   if (totalPaginas <= 1) return null;
 
@@ -163,8 +162,8 @@ function Paginacion({ totalPaginas, paginaActual, setPaginaActual }) {
   const mostrarUltimo = paginas[paginas.length - 1] < totalPaginas;
 
   return (
-    <nav className="mt-6 flex justify-center"> {/* Adjusted margin for spacing */}
-      <ul className="flex items-center space-x-2 text-sm"> {/* Adjusted spacing */}
+    <nav className="mt-6 flex justify-center">
+      <ul className="flex items-center space-x-2 text-sm">
         <li>
           <button
             disabled={paginaActual === 1}

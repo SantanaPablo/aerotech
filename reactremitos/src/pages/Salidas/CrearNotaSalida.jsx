@@ -51,15 +51,13 @@ const CrearNotaSalida = () => {
   const [loading, setLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
 
-  // 1. Guardar en localStorage cuando cambian items o nota
   useEffect(() => {
     const draft = { nota, items };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(draft));
   }, [items, nota]);
 
-  // 2. Extraer autorizanteId del token (JWT)
   useEffect(() => {
-    const token = getToken(); // ⬅️ USAR getToken()
+    const token = getToken();
     if (!token) return;
     try {
       const payloadBase64 = token.split('.')[1];
@@ -77,7 +75,6 @@ const CrearNotaSalida = () => {
     }
   }, []);
 
-  // 3. Cargar técnicos desde API
   useEffect(() => {
     const cargarTecnicos = async () => {
       try {
@@ -236,7 +233,6 @@ const CrearNotaSalida = () => {
       <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 border-b pb-2">Crear Nota de Salida</h2>
 
       <div className="bg-white rounded-xl shadow-lg p-4 md:p-8 mb-6">
-        {/* Error/Success Messages */}
         {errors.general && <div className="bg-red-50 border-l-4 border-red-500 text-red-700 px-4 py-3 rounded mb-4 flex items-start"><AlertCircle className="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" />{errors.general}</div>}
         {successMessage && <div className="bg-green-50 border-l-4 border-green-500 text-green-700 px-4 py-3 rounded mb-4">{successMessage}</div>}
         {errors.autorizante && <div className="bg-yellow-50 border-l-4 border-yellow-500 text-yellow-700 px-4 py-3 rounded mb-4 flex items-start"><AlertCircle className="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" />{errors.autorizante}</div>}

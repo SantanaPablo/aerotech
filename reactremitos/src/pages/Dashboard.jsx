@@ -53,7 +53,6 @@ export default function Dashboard({ token }) {
     );
   }, [busqueda, movimientos]);
 
-  // 3. AGRUPAR PARA GRÁFICO: Sumar cantidades por fecha
   const datosGrafico = useMemo(() => {
     const agrupado = datosFiltrados.reduce((acc, curr) => {
       const fecha = curr.fecha;

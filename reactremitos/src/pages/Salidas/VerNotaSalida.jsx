@@ -5,10 +5,8 @@ import { apiGet } from '../../utils/api';
 
 const fetchNotaById = async (id) => {
     try {
-        // Obtener nota principal
         const nota = await apiGet(`/api/NotasSalida/${id}`);
 
-        // Obtener ítems asociados
         const items = await apiGet(`/api/ItemSalidas/por-notasalida/${id}`);
 
         return {
@@ -103,7 +101,6 @@ const VerNotaSalida = () => {
     return (
         <>
 
-            {/* Contenido a Imprimir */}
             <div className="print-content2 p-6 sm:p-10 bg-white rounded-xl border border-gray-100 relative">
                 <div className=" no-print">
                     {/* Botón de Imprimir (Solo en pantalla) */}

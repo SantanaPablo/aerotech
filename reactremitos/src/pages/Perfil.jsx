@@ -25,7 +25,6 @@ const Perfil = () => {
   const [loading, setLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
 
-  // Cargar datos del usuario desde el token
   useEffect(() => {
     const token = getToken();
     if (!token) return;
@@ -51,7 +50,6 @@ const Perfil = () => {
   const handleChange = (field, value) => {
     setCambioContrasena(prev => ({ ...prev, [field]: value }));
     
-    // Limpiar error del campo al escribir
     if (errors[field]) {
       setErrors(prev => {
         const newErrors = { ...prev };
@@ -109,14 +107,11 @@ const Perfil = () => {
 
     setSuccessMessage('Contraseña actualizada correctamente ✅');
     
-    // Limpiar formulario
     setCambioContrasena({
       contrasenaActual: '',
       nuevaContrasena: '',
       repetirContrasena: ''
     });
-
-    // Ocultar mensaje después de 5 segundos
     setTimeout(() => setSuccessMessage(''), 5000);
 
   } catch (error) {

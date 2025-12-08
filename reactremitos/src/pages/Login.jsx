@@ -19,26 +19,24 @@ export default function Login({ handleAuthSuccess }) {
     const [isLoading, setIsLoading] = useState(false);
 
     /**
-     * Maneja el envío del formulario.
-     * @param {React.FormEvent} e - Evento del formulario.
+     * @param {React.FormEvent} e
      */
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');
         setIsLoading(true);
 
-        // Simple validación de campos obligatorios
+        
         if (!legajo || !contrasena) {
             setError('Por favor, ingresa tu usuario y contraseña.');
             setIsLoading(false);
             return;
         }
 
-        // Endpoint de login
+
         const loginUrl = `${API_BASE_URL}/api/Auth/login`;
 
         try {
-            // Implementando un simple mecanismo de reintento con retroceso exponencial
             let response = null;
             const maxRetries = 3;
             let delay = 1000;
@@ -50,24 +48,22 @@ export default function Login({ handleAuthSuccess }) {
                         headers: {
                             'Content-Type': 'application/json',
                         },
-                        // Asegúrate de que las keys coincidan con el DTO esperado en C# (Legajo, Contrasena)
                         body: JSON.stringify({ Legajo: legajo, Contrasena: contrasena }),
                     });
                     
-                    if (response.status !== 429) { // 429 Too Many Requests
-                        break; // Salir del bucle si no es un error de rate limiting
+                    if (response.status !== 429) {
+                        break; 
                     }
                 } catch (fetchError) {
-                    if (i === maxRetries - 1) throw fetchError; // Lanzar el error en el último intento
+                    if (i === maxRetries - 1) throw fetchError;
                 }
 
-                // Esperar con retroceso exponencial
+            
                 await new Promise(resolve => setTimeout(resolve, delay));
                 delay *= 2;
             }
 
             if (!response || !response.ok) {
-                // Intenta obtener el mensaje de error del cuerpo de la respuesta
                 let errorMessage = 'Error de inicio de sesión';
                 
                 if (response) {
@@ -75,11 +71,9 @@ export default function Login({ handleAuthSuccess }) {
                         const errorJson = await response.json();
                         errorMessage = errorJson.message || errorMessage;
                     } catch {
-                        // Si no es JSON, usa el status text o un mensaje genérico
                         errorMessage = response.statusText || 'Error de conexión o credenciales.';
                     }
                     
-                    // Si el status es 401, generalmente es un error de credenciales
                     if (response.status === 401) {
                         errorMessage = 'Usuario o contraseña incorrectos.';
                     }
@@ -90,32 +84,25 @@ export default function Login({ handleAuthSuccess }) {
 
             const data = await response.json();
             
-            // Llama a la función de éxito para guardar el token en localStorage y redirigir
             if (data.token) {
                 handleAuthSuccess(data.token); 
             } else {
-                // Manejar el caso si el login fue OK (200) pero falta el token en la respuesta
                 throw new Error('Inicio de sesión exitoso, pero el token de autenticación está ausente.');
             }
 
         } catch (err) {
             console.error('Login error:', err);
-            // Mostrar el mensaje de error capturado
             setError(err.message);
         } finally {
             setIsLoading(false);
         }
     };
 
-    /**
-     * Alterna la visibilidad de la contraseña.
-     */
     const togglePasswordVisibility = () => {
         setIsPasswordVisible(prev => !prev);
     };
 
 
-    // Estilos Tailwind CSS
     const darkBg = 'bg-[#2c3e50] text-[#ecf0f1] font-sans';
     const cardBg = 'bg-[#2c3e50]/90 border border-[#34495e] rounded-xl shadow-2xl';
     const inputStyle = 'w-full px-4 py-2 bg-[#34495e] border border-[#4a647d] text-white placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out';
@@ -124,7 +111,6 @@ export default function Login({ handleAuthSuccess }) {
 
 
     return (
-        // Contenedor principal: Centrado en la pantalla con fondo oscuro
         <div className={`min-h-screen flex items-center justify-center ${darkBg}`}>
             {/* Tarjeta de Login */}
             <div className={`max-w-md w-full p-8 text-center mx-4 sm:mx-auto ${cardBg}`}>
