@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate, NavLink } from 'react
 import { getToken, apiGet, apiPut } from './utils/api.js';
 
 import Login from './pages/Login';
+import Home from './pages/Home';
 import Dashboard from './pages/Dashboard.jsx'; 
 import DashboardSalidas from './pages/DashboardSalidas.jsx'; 
 
@@ -28,7 +29,6 @@ import './css/NotaPSA.css'
 
 import Perfil from './pages/Perfil.jsx';
 
-const Home = () => <h1 className="text-2xl font-bold">Página Principal (Dashboard)</h1>;
 
 
 export default function App() {
@@ -157,7 +157,7 @@ export default function App() {
         <Route path="*" element={!isLoggedIn ? <Navigate to="/login" replace /> : (
           <MainLayout>
             <Routes>
-              <Route path="/" element={<Navigate to="/salidas" replace />} />
+             <Route path="/" element={<Home />}/>
               <Route path="/salidas" element={<Salidas token={token} />} />
               <Route path="/salidas/crearnotasalida" element={<CrearNotaSalida token={token} />} />
               <Route path="/salidas/vernotasalida/:id" element={<VerNotaSalida />} />

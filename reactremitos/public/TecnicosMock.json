@@ -1,0 +1,89 @@
+{
+  "tecnicos": [
+    {
+      "id": 1,
+      "nombre": "Juan Pérez",
+      "legajo": "ar045123",
+      "vencimiento": "12-05-2027",
+      "credencial": "/Credenciales/CREDENCIALPSA.webp"
+    },
+    {
+      "id": 2,
+      "nombre": "María González",
+      "legajo": "ar038999",
+      "vencimiento": "20-11-2026",
+      "credencial": "/Credenciales/CREDENCIALPSA.webp"
+    },
+    {
+      "id": 3,
+      "nombre": "Carlos López",
+      "legajo": "ar051200",
+      "vencimiento": "05-03-2028",
+      "credencial": "/Credenciales/CREDENCIALPSA.webp"
+    },
+    {
+      "id": 4,
+      "nombre": "Ana Martínez",
+      "legajo": "ar042555",
+      "vencimiento": "15-08-2026",
+      "credencial": "/Credenciales/CREDENCIALPSA.webp"
+    },
+    {
+      "id": 5,
+      "nombre": "Lucía Fernández",
+      "legajo": "ar049888",
+      "vencimiento": "30-01-2027",
+      "credencial": "/Credenciales/CREDENCIALPSA.webp"
+    },
+    {
+      "id": 6,
+      "nombre": "Roberto Sánchez",
+      "legajo": "ar033442",
+      "vencimiento": "22-12-2025",
+      "credencial": "/Credenciales/CREDENCIALPSA.webp"
+    },
+
+    {
+      "id": 7,
+      "nombre": "Juan Pérez",
+      "legajo": "ar045123",
+      "vencimiento": "12-05-2027",
+      "credencial": "/Credenciales/CREDENCIALPSA.webp"
+    },
+    {
+      "id": 8,
+      "nombre": "María González",
+      "legajo": "ar038999",
+      "vencimiento": "20-11-2026",
+      "credencial": "/Credenciales/CREDENCIALPSA.webp"
+    },
+    {
+      "id": 9,
+      "nombre": "Carlos López",
+      "legajo": "ar051200",
+      "vencimiento": "05-03-2028",
+      "credencial": "/Credenciales/CREDENCIALPSA.webp"
+    },
+    {
+      "id": 10,
+      "nombre": "Ana Martínez",
+      "legajo": "ar042555",
+      "vencimiento": "15-08-2026",
+      "credencial": "/Credenciales/CREDENCIALPSA.webp"
+    },
+    {
+      "id": 11,
+      "nombre": "Lucía Fernández",
+      "legajo": "ar049888",
+      "vencimiento": "30-01-2027",
+      "credencial": "/Credenciales/CREDENCIALPSA.webp"
+    },
+    {
+      "id": 12,
+      "nombre": "Roberto Sánchez",
+      "legajo": "ar033442",
+      "vencimiento": "22-12-2025",
+      "credencial": "/Credenciales/CREDENCIALPSA.webp"
+    }
+  ]
+}

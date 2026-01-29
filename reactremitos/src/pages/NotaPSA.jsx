@@ -227,7 +227,7 @@ const NotaPSA = () => {
           <h1>Unidad Operacional de Seguridad Preventiva Metropolitana</h1>
           <h1>Aeropuerto Internacional Aeroparque Jorge Newbery</h1>
           <h1>POLICIA DE SEGURIDAD AEROPORTUARIA</h1>
-          <p>JEFE DE UNIDAD -- INSPECTOR RUBEN RIOS</p>
+          <p>JEFE DE UNIDAD</p>
           <p>JEFATURA DIVISION ADUANA AEROPARQUE</p>
         </div>
 
