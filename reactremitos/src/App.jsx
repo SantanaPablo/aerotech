@@ -19,6 +19,7 @@ import Remitos from './pages/Remitos/Remitos';
 import VerRemito from './pages/Remitos/VerRemito';
 import CrearRemito from './pages/Remitos/CrearRemito';
 import EditarRemito from './pages/Remitos/EditarRemito';
+import GenerarEtiquetas from './pages/Remitos/GenerarEtiquetas';
 
 import NotaPSA from './pages/NotaPSA';
 
@@ -170,6 +171,7 @@ export default function App() {
               <Route path="/remitos/verremito/:id" element={<VerRemito />} />
               <Route path="/remitos/crearremito" element={<CrearRemito token={token} />} />
               <Route path="/remitos/editarremito/:id" element={<EditarRemito token={token} />} />
+              <Route path="/remitos/etiquetas/:id" element={<GenerarEtiquetas />} />
 
               <Route path="/dashboard" element={<Dashboard token={token} />} />
               <Route path="/dashboardSalidas" element={<DashboardSalidas token={token} />} />

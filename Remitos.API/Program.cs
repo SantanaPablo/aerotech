@@ -30,6 +30,7 @@ builder.Services.AddControllers()
     {
         options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
         options.JsonSerializerOptions.WriteIndented = true;
+
     });
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -65,6 +66,8 @@ builder.Services.AddScoped<INotaSalidaService, NotaSalidaNegocio>();
 builder.Services.AddScoped<IItemEntradaService, ItemEntradaNegocio>();
 builder.Services.AddScoped<INotaEntradaService, NotaEntradaNegocio>();
 builder.Services.AddScoped<IUsuarioService, UsuarioNegocio>();
+builder.Services.AddScoped<IAuditoriaService, AuditoriaNegocio>();
+builder.Services.AddScoped<IRemitoService, RemitoNegocio>();
 
 var app = builder.Build();
 

@@ -46,6 +46,12 @@ const VerRemito = () => {
           >
             <Pencil size={18} /> Editar
           </Link>
+          <Link
+    to={`/remitos/etiquetas/${remito.id}`}
+    className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg shadow-md transition font-medium"
+  >
+    Generar Etiquetas
+  </Link>
         </div>
 
         {/* CONTENEDOR DE ENCABEZADO Y DATOS */}

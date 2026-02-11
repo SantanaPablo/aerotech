@@ -17,6 +17,8 @@ namespace Negocio
         public DbSet<ItemEntrada> ItemsEntrada { get; set; }
 
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<AuditoriaRemito> AuditoriasRemito { get; set; }
+        public DbSet<AuditoriaItemRemito> AuditoriasItemRemito { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -53,6 +55,33 @@ namespace Negocio
                 .HasOne(i => i.NotaEntrada)
                 .WithMany(n => n.Items)
                 .HasForeignKey(i => i.NotaEntradaId);
+
+            modelBuilder.Entity<AuditoriaRemito>(entity =>
+            {
+                entity.ToTable("auditoria_remitos");
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.IdRemito).HasColumnName("id_remito");
+                entity.Property(e => e.TipoOperacion).HasColumnName("tipo_operacion").HasMaxLength(10);
+                entity.Property(e => e.UsuarioOperacion).HasColumnName("usuario_operacion").HasMaxLength(100);
+                entity.Property(e => e.FechaOperacion).HasColumnName("fecha_operacion");
+                entity.Property(e => e.DatosAnteriores).HasColumnName("datos_anteriores").HasColumnType("JSON");
+                entity.Property(e => e.DatosNuevos).HasColumnName("datos_nuevos").HasColumnType("JSON");
+            });
+
+            modelBuilder.Entity<AuditoriaItemRemito>(entity =>
+            {
+                entity.ToTable("auditoria_items_remito");
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Id).HasColumnName("id");
+                entity.Property(e => e.IdItem).HasColumnName("id_item");
+                entity.Property(e => e.IdRemito).HasColumnName("id_remito");
+                entity.Property(e => e.TipoOperacion).HasColumnName("tipo_operacion").HasMaxLength(10);
+                entity.Property(e => e.UsuarioOperacion).HasColumnName("usuario_operacion").HasMaxLength(100);
+                entity.Property(e => e.FechaOperacion).HasColumnName("fecha_operacion");
+                entity.Property(e => e.DatosAnteriores).HasColumnName("datos_anteriores").HasColumnType("JSON");
+                entity.Property(e => e.DatosNuevos).HasColumnName("datos_nuevos").HasColumnType("JSON");
+            });
 
             base.OnModelCreating(modelBuilder);
         }

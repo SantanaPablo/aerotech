@@ -6,8 +6,8 @@ namespace Negocio.Interfaces
     {
         Task<List<Remito>> ObtenerTodosAsync();
         Task<Remito?> ObtenerPorIdAsync(int id);
-        Task CrearAsync(Remito remito);
-        Task ActualizarAsync(Remito remito);
-        Task EliminarAsync(int id);
+        Task CrearAsync(Remito remito, string usuario);
+        Task ActualizarAsync(Remito remito, string usuario);
+        Task EliminarAsync(int id, string usuario);
     }
 }
