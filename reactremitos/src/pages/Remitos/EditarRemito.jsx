@@ -12,8 +12,18 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { apiGet, apiPut } from "../../utils/api";
+import {
+  saveDraft,
+  loadDraftRaw,
+  clearDraft,
+  markLastSaved,
+  getLastSaved,
+  DRAFT_TTL_MS,
+} from "../../utils/draftStorage";
 
-const EditarRemito = () => { 
+const REFETCH_AFTER_MS = 8 * 60 * 60 * 1000;
+
+const EditarRemito = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const serialRefs = useRef([]);
@@ -25,47 +35,104 @@ const EditarRemito = () => {
   const [error, setError] = useState(null);
   const [successMessage, setSuccessMessage] = useState("");
 
-  useEffect(() => {
-    const fetchRemito = async () => {
-      try {
-        const draft = localStorage.getItem(STORAGE_KEY);
-        if (draft) {
-          setRemito(JSON.parse(draft));
-          setLoading(false);
-          return;
-        }
+  const lastFetchRef = useRef(null);
 
-        const data = await apiGet(`/api/Remitos/${id}`);
-        if (!data.items || data.items.length === 0) {
-          data.items = [
-            {
-              numero_item: 1,
-              descripcion: "",
-              serial: "",
-              usuario: "",
-              cantidad: 1,
-              detalle: "",
-              recibido_por: "",
-            },
-          ];
-        }
-        setRemito(data);
-      } catch (err) {
-        console.error(err);
-        setError(err.message || "Error al cargar el remito");
-      } finally {
-        setLoading(false);
+  // ─── Lógica de decisión del draft ──────────────────────────────────────────
+  //
+  // Al cargar, siempre se fetchea el servidor. Luego se compara:
+  //
+  //   raw.savedAt  →  cuándo se guardó el draft por última vez
+  //   lastSaved    →  cuándo fue el último submit exitoso (markLastSaved)
+  //
+  //   CASO A: No hay draft                     → usar servidor
+  //   CASO B: Draft expirado (> 8hs)           → descartar, usar servidor
+  //   CASO C: Draft anterior al último submit  → el usuario ya guardó todo,
+  //                                              el draft es basura vieja → servidor
+  //   CASO D: Draft posterior al último submit → el usuario agregó cosas
+  //                                              después del último guardado
+  //                                              y se fue sin guardar → draft
+  //
+  // El visibilitychange refresca silenciosamente si la pestaña estuvo
+  // inactiva más de 8 horas, resolviendo el caso de persona 1 con la
+  // pestaña abierta todo el día mientras persona 2 editó.
+  //
+  // ───────────────────────────────────────────────────────────────────────────
+
+  const fetchRemito = async (silent = false) => {
+    if (!silent) setLoading(true);
+    try {
+      const data = await apiGet(`/api/Remitos/${id}`);
+
+      if (!data.items || data.items.length === 0) {
+        data.items = [{
+          numero_item: 1,
+          descripcion: "",
+          serial: "",
+          usuario: "",
+          cantidad: 1,
+          detalle: "",
+          recibido_por: "",
+        }];
       }
-    };
-    fetchRemito();
-  }, [id, STORAGE_KEY]);
 
+      const raw = loadDraftRaw(STORAGE_KEY);
+      const lastSaved = getLastSaved(id);
+      const draftAge = raw ? Date.now() - raw.savedAt : Infinity;
+
+      const draftIsRecent = raw && draftAge <= DRAFT_TTL_MS;
+      const draftIsNewerThanLastSave = raw && raw.savedAt > lastSaved;
+
+      if (draftIsRecent && draftIsNewerThanLastSave) {
+        // CASO D: el usuario tenía cambios sin guardar → restaurar draft
+        setRemito(raw.data);
+      } else {
+        // CASO A, B o C: servidor es la fuente de verdad
+        clearDraft(STORAGE_KEY);
+        setRemito(data);
+      }
+
+      lastFetchRef.current = Date.now();
+    } catch (err) {
+      // Sin conexión: usar draft como fallback si es reciente
+      const raw = loadDraftRaw(STORAGE_KEY);
+      if (raw && Date.now() - raw.savedAt <= DRAFT_TTL_MS) {
+        setRemito(raw.data);
+      } else {
+        setError(err.message || "Error al cargar el remito");
+      }
+    } finally {
+      if (!silent) setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchRemito();
+  }, [id]);
+
+  // ─── Refetch cuando la pestaña vuelve activa tras 8 horas ──────────────────
+  useEffect(() => {
+    const handleVisibilityChange = async () => {
+      if (document.visibilityState !== "visible") return;
+      if (!lastFetchRef.current) return;
+
+      const timeSinceLastFetch = Date.now() - lastFetchRef.current;
+      if (timeSinceLastFetch < REFETCH_AFTER_MS) return;
+
+      await fetchRemito(true);
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () => document.removeEventListener("visibilitychange", handleVisibilityChange);
+  }, [id]);
+
+  // ─── Persistir draft mientras se edita ─────────────────────────────────────
   useEffect(() => {
     if (remito) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(remito));
+      saveDraft(STORAGE_KEY, remito);
     }
-  }, [remito, STORAGE_KEY]);
+  }, [remito]);
 
+  // ─── Handlers ───────────────────────────────────────────────────────────────
   const handleChange = (e) => {
     const { name, value } = e.target;
     setRemito((prev) => ({ ...prev, [name]: value }));
@@ -74,15 +141,11 @@ const EditarRemito = () => {
   const handleItemChange = (index, field, value) => {
     const newItems = [...remito.items];
     newItems[index][field] = value;
-    setRemito((prev) => ({...prev, items: newItems }));
+    setRemito((prev) => ({ ...prev, items: newItems }));
   };
 
-  const renumberItems = (items) => {
-    return items.map((item, index) => ({
-      ...item,
-      numero_item: index + 1,
-    }));
-  };
+  const renumberItems = (items) =>
+    items.map((item, index) => ({ ...item, numero_item: index + 1 }));
 
   const addItem = (focusNew = false) => {
     if (remito.items.length >= 25) return;
@@ -132,7 +195,9 @@ const EditarRemito = () => {
 
     try {
       await apiPut(`/api/Remitos/${id}`, remito);
-      localStorage.removeItem(STORAGE_KEY);
+      // Marcar el momento exacto del guardado exitoso
+      markLastSaved(id);
+      clearDraft(STORAGE_KEY);
       setSuccessMessage("Remito actualizado correctamente ✅");
 
       setTimeout(() => {
@@ -146,6 +211,7 @@ const EditarRemito = () => {
     }
   };
 
+  // ─── Render ─────────────────────────────────────────────────────────────────
   if (loading) {
     return (
       <div className="p-10 text-center text-gray-600">
@@ -163,10 +229,10 @@ const EditarRemito = () => {
     <div className="p-6 sm:p-10 bg-gray-50 min-h-screen font-inter">
       <style>{`
         .font-inter { font-family: 'Inter', sans-serif; }
-        input[type="number"]::-webkit-inner-spin-button, 
-        input[type="number"]::-webkit-outer-spin-button { 
-          -webkit-appearance: none; 
-          margin: 0; 
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
         }
       `}</style>
 
@@ -322,7 +388,11 @@ const EditarRemito = () => {
             disabled={saving}
             className="px-6 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 disabled:opacity-50 flex items-center justify-center mx-auto sm:mx-0"
           >
-            {saving ? <Loader2 className="w-5 h-5 animate-spin mr-2" /> : <Save className="w-5 h-5 mr-2" />}
+            {saving ? (
+              <Loader2 className="w-5 h-5 animate-spin mr-2" />
+            ) : (
+              <Save className="w-5 h-5 mr-2" />
+            )}
             Guardar Cambios
           </button>
         </div>

@@ -1,7 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { PlusCircle, Save, Trash2, Loader2, FileText, CalendarDays, MapPin, AlertCircle, CheckCircle2 } from "lucide-react";
+import {
+  PlusCircle,
+  Save,
+  Trash2,
+  Loader2,
+  FileText,
+  CalendarDays,
+  MapPin,
+  AlertCircle,
+  CheckCircle2,
+} from "lucide-react";
 import { apiGet, apiPost } from "../../utils/api";
+import { saveDraft, loadDraft, clearDraft } from "../../utils/draftStorage";
 
 const STORAGE_KEY = "remitoDraft";
 
@@ -19,13 +30,11 @@ const CrearRemito = () => {
     recibido_por: "",
   };
 
+  // Intenta cargar draft vigente (respeta TTL de 8hs).
+  // Si no hay draft o expiró, arranca vacío.
   const [remito, setRemito] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) return JSON.parse(saved);
-    } catch (e) {
-      console.error("Error cargando draft:", e);
-    }
+    const draft = loadDraft(STORAGE_KEY);
+    if (draft) return draft;
     return {
       numero: "",
       fecha: new Date().toISOString().split("T")[0],
@@ -38,10 +47,11 @@ const CrearRemito = () => {
   const [error, setError] = useState(null);
   const [successMessage, setSuccessMessage] = useState("");
 
+  // Solo busca el próximo número si no hay draft guardado
   useEffect(() => {
     const fetchUltimoNumero = async () => {
       try {
-        const data = await apiGet('/api/Remitos');
+        const data = await apiGet("/api/Remitos");
         if (Array.isArray(data) && data.length > 0) {
           const numeros = data
             .map((r) => parseInt(r.numero))
@@ -52,18 +62,19 @@ const CrearRemito = () => {
           setRemito((prev) => ({ ...prev, numero: "1" }));
         }
       } catch (error) {
-        console.error('Error al obtener último número:', error);
+        console.error("Error al obtener último número:", error);
         setRemito((prev) => ({ ...prev, numero: "1" }));
       }
     };
 
-    if (!localStorage.getItem(STORAGE_KEY)) {
+    if (!loadDraft(STORAGE_KEY)) {
       fetchUltimoNumero();
     }
   }, []);
 
+  // Persiste el draft en cada cambio
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(remito));
+    saveDraft(STORAGE_KEY, remito);
   }, [remito]);
 
   const handleChange = (e) => {
@@ -77,12 +88,8 @@ const CrearRemito = () => {
     setRemito((prev) => ({ ...prev, items: newItems }));
   };
 
-  const renumberItems = (items) => {
-    return items.map((item, index) => ({
-      ...item,
-      numero_item: index + 1,
-    }));
-  };
+  const renumberItems = (items) =>
+    items.map((item, index) => ({ ...item, numero_item: index + 1 }));
 
   const addItem = (focusNew = false) => {
     if (remito.items.length >= 25) return;
@@ -131,8 +138,8 @@ const CrearRemito = () => {
     setSuccessMessage("");
 
     try {
-      const nuevoRemito = await apiPost('/api/Remitos', remito);
-      localStorage.removeItem(STORAGE_KEY);
+      const nuevoRemito = await apiPost("/api/Remitos", remito);
+      clearDraft(STORAGE_KEY);
       setSuccessMessage(`Remito #${nuevoRemito.id} creado correctamente ✅`);
 
       setTimeout(() => {
@@ -150,10 +157,10 @@ const CrearRemito = () => {
     <div className="p-6 sm:p-10 bg-gray-50 min-h-screen font-inter">
       <style>{`
         .font-inter { font-family: 'Inter', sans-serif; }
-        input[type="number"]::-webkit-inner-spin-button, 
-        input[type="number"]::-webkit-outer-spin-button { 
-          -webkit-appearance: none; 
-          margin: 0; 
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
         }
       `}</style>
 
@@ -309,7 +316,11 @@ const CrearRemito = () => {
             disabled={loading}
             className="px-6 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 disabled:opacity-50 flex items-center justify-center mx-auto sm:mx-0"
           >
-            {loading ? <Loader2 className="w-5 h-5 animate-spin mr-2" /> : <Save className="w-5 h-5 mr-2" />}
+            {loading ? (
+              <Loader2 className="w-5 h-5 animate-spin mr-2" />
+            ) : (
+              <Save className="w-5 h-5 mr-2" />
+            )}
             Guardar Remito
           </button>
         </div>
