@@ -154,6 +154,8 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/notaPSA" element={<NotaPSA token={token} />} />
+        <Route path="/DariOs" element={hasRol('Admin', 'Tecnico') ? <DariOs /> : <Navigate to="/" replace />} />
+
         {/* LOGIN */}
         <Route path="/login" element={isLoggedIn ? <Navigate to="/" replace /> : <Login handleAuthSuccess={handleAuthSuccess} />} />
 
@@ -184,7 +186,6 @@ export default function App() {
               <Route path="*" element={<h1>404 | Página no encontrada</h1>} />
 
               <Route path="/monitor-impresoras" element={hasRol('Admin', 'Tecnico') ? <MonitorImpresoras /> : <Navigate to="/" replace />} />
-              <Route path="/DariOs" element={hasRol('Admin', 'Tecnico') ? <DariOs /> : <Navigate to="/" replace />} />
 
             </Routes>
           </MainLayout>
