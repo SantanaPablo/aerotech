@@ -20,9 +20,11 @@ namespace Negocio
         public DbSet<AuditoriaRemito> AuditoriasRemito { get; set; }
         public DbSet<AuditoriaItemRemito> AuditoriasItemRemito { get; set; }
 
+        public DbSet<Rol> Roles { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-          
+
             modelBuilder.Entity<ItemRemito>()
                 .HasOne(i => i.Remito)
                 .WithMany(r => r.Items)
@@ -30,7 +32,7 @@ namespace Negocio
                 .OnDelete(DeleteBehavior.Cascade)
                 .IsRequired(false);
 
-           
+
             modelBuilder.Entity<ItemRemito>()
                 .HasIndex(i => new { i.serial, i.id_remito })
                 .IsUnique();
@@ -82,6 +84,11 @@ namespace Negocio
                 entity.Property(e => e.DatosAnteriores).HasColumnName("datos_anteriores").HasColumnType("JSON");
                 entity.Property(e => e.DatosNuevos).HasColumnName("datos_nuevos").HasColumnType("JSON");
             });
+
+            modelBuilder.Entity<Usuario>()
+                .HasOne(u => u.Rol)
+                .WithMany(r => r.Usuarios)
+                .HasForeignKey(u => u.RolId);
 
             base.OnModelCreating(modelBuilder);
         }

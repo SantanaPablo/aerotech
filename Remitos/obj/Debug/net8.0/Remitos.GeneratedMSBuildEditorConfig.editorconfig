@@ -1,5 +1,7 @@
 is_global = true
 build_property.TargetFramework = net8.0
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v8.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
@@ -9,97 +11,97 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Remitos
 build_property.RootNamespace = Remitos
-build_property.ProjectDir = C:\Users\USUARIO\Desktop\Remitos\Remitos\
+build_property.ProjectDir = C:\Users\pablo\OneDrive\Escritorio\Remitos\aerotech\Remitos\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\USUARIO\Desktop\Remitos\Remitos
+build_property.MSBuildProjectDirectory = C:\Users\pablo\OneDrive\Escritorio\Remitos\aerotech\Remitos
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/USUARIO/Desktop/Remitos/Remitos/Pages/Entradas/CrearEntrada.cshtml]
+[C:/Users/pablo/OneDrive/Escritorio/Remitos/aerotech/Remitos/Pages/Entradas/CrearEntrada.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW50cmFkYXNcQ3JlYXJFbnRyYWRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USUARIO/Desktop/Remitos/Remitos/Pages/Entradas/Index.cshtml]
+[C:/Users/pablo/OneDrive/Escritorio/Remitos/aerotech/Remitos/Pages/Entradas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW50cmFkYXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USUARIO/Desktop/Remitos/Remitos/Pages/Entradas/VerEntrada.cshtml]
+[C:/Users/pablo/OneDrive/Escritorio/Remitos/aerotech/Remitos/Pages/Entradas/VerEntrada.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW50cmFkYXNcVmVyRW50cmFkYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USUARIO/Desktop/Remitos/Remitos/Pages/EnviosEzeiza.cshtml]
+[C:/Users/pablo/OneDrive/Escritorio/Remitos/aerotech/Remitos/Pages/EnviosEzeiza.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW52aW9zRXplaXphLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USUARIO/Desktop/Remitos/Remitos/Pages/Error.cshtml]
+[C:/Users/pablo/OneDrive/Escritorio/Remitos/aerotech/Remitos/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USUARIO/Desktop/Remitos/Remitos/Pages/Index.cshtml]
+[C:/Users/pablo/OneDrive/Escritorio/Remitos/aerotech/Remitos/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USUARIO/Desktop/Remitos/Remitos/Pages/Login.cshtml]
+[C:/Users/pablo/OneDrive/Escritorio/Remitos/aerotech/Remitos/Pages/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USUARIO/Desktop/Remitos/Remitos/Pages/Logout.cshtml]
+[C:/Users/pablo/OneDrive/Escritorio/Remitos/aerotech/Remitos/Pages/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9nb3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USUARIO/Desktop/Remitos/Remitos/Pages/Perfil.cshtml]
+[C:/Users/pablo/OneDrive/Escritorio/Remitos/aerotech/Remitos/Pages/Perfil.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGVyZmlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USUARIO/Desktop/Remitos/Remitos/Pages/Privacy.cshtml]
+[C:/Users/pablo/OneDrive/Escritorio/Remitos/aerotech/Remitos/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USUARIO/Desktop/Remitos/Remitos/Pages/Remitos/CrearRemito.cshtml]
+[C:/Users/pablo/OneDrive/Escritorio/Remitos/aerotech/Remitos/Pages/Remitos/CrearRemito.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVtaXRvc1xDcmVhclJlbWl0by5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USUARIO/Desktop/Remitos/Remitos/Pages/Remitos/EditarRemito.cshtml]
+[C:/Users/pablo/OneDrive/Escritorio/Remitos/aerotech/Remitos/Pages/Remitos/EditarRemito.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVtaXRvc1xFZGl0YXJSZW1pdG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USUARIO/Desktop/Remitos/Remitos/Pages/Remitos/Index.cshtml]
+[C:/Users/pablo/OneDrive/Escritorio/Remitos/aerotech/Remitos/Pages/Remitos/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVtaXRvc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USUARIO/Desktop/Remitos/Remitos/Pages/Remitos/VerDetalleRemito.cshtml]
+[C:/Users/pablo/OneDrive/Escritorio/Remitos/aerotech/Remitos/Pages/Remitos/VerDetalleRemito.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVtaXRvc1xWZXJEZXRhbGxlUmVtaXRvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USUARIO/Desktop/Remitos/Remitos/Pages/Salidas/CrearNotaSalida.cshtml]
+[C:/Users/pablo/OneDrive/Escritorio/Remitos/aerotech/Remitos/Pages/Salidas/CrearNotaSalida.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2FsaWRhc1xDcmVhck5vdGFTYWxpZGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USUARIO/Desktop/Remitos/Remitos/Pages/Salidas/Index.cshtml]
+[C:/Users/pablo/OneDrive/Escritorio/Remitos/aerotech/Remitos/Pages/Salidas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2FsaWRhc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USUARIO/Desktop/Remitos/Remitos/Pages/Salidas/VerNotaSalida.cshtml]
+[C:/Users/pablo/OneDrive/Escritorio/Remitos/aerotech/Remitos/Pages/Salidas/VerNotaSalida.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2FsaWRhc1xWZXJOb3RhU2FsaWRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USUARIO/Desktop/Remitos/Remitos/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/pablo/OneDrive/Escritorio/Remitos/aerotech/Remitos/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USUARIO/Desktop/Remitos/Remitos/Pages/_ViewImports.cshtml]
+[C:/Users/pablo/OneDrive/Escritorio/Remitos/aerotech/Remitos/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USUARIO/Desktop/Remitos/Remitos/Pages/_ViewStart.cshtml]
+[C:/Users/pablo/OneDrive/Escritorio/Remitos/aerotech/Remitos/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/USUARIO/Desktop/Remitos/Remitos/Pages/Shared/_Layout.cshtml]
+[C:/Users/pablo/OneDrive/Escritorio/Remitos/aerotech/Remitos/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-1txaz6qjt5

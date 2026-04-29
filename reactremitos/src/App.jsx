@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, NavLink } from 'react-router-dom';
-import { getToken, apiGet, apiPut } from './utils/api.js';
+import { getToken, apiGet, apiPut, hasRol } from './utils/api.js';
 
 import Login from './pages/Login';
 import Home from './pages/Home';
@@ -23,12 +23,15 @@ import GenerarEtiquetas from './pages/Remitos/GenerarEtiquetas';
 
 import NotaPSA from './pages/NotaPSA';
 
+import MonitorImpresoras from './pages/MonitorImpresoras.jsx';
+
 import './css/NotaSalidaPrint.css';
 import './css/VerRemito.css';
 import './css/NotaPSA.css'
 
 
 import Perfil from './pages/Perfil.jsx';
+import DariOs from './pages/DariOs.jsx';
 
 
 
@@ -84,11 +87,11 @@ export default function App() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
             <div className="flex items-center space-x-2">
               <img
-                src="../../sdr.png"
+                src="../../aerotech.png"
                 alt="Logo"
-                className="max-h-16 object-contain"
+                className="max-h-24 object-contain"
               />
-              <NavLink to="/" className="font-bold text-xl">Sistema de Remitos</NavLink>
+              <NavLink to="/" className="font-bold text-xl">Aerotech</NavLink>
             </div>
 
 
@@ -97,11 +100,11 @@ export default function App() {
               <div className="flex items-center space-x-4">
                 {/* Menú Desktop */}
                 <nav className="hidden md:flex space-x-2">
-                  <NavLink to="/salidas" className={({ isActive }) => isActive ? activeClass : inactiveClass}>Salidas</NavLink>
-                  <NavLink to="/remitos" className={({ isActive }) => isActive ? activeClass : inactiveClass}>Remitos</NavLink>
-                  <NavLink to="/entradas" className={({ isActive }) => isActive ? activeClass : inactiveClass}>Entradas</NavLink>
+                  {hasRol('Admin') && <NavLink to="/salidas" className={({ isActive }) => isActive ? activeClass : inactiveClass}>Salidas</NavLink>}
+                  {hasRol('Admin') && <NavLink to="/remitos" className={({ isActive }) => isActive ? activeClass : inactiveClass}>Remitos</NavLink>}
+                  {hasRol('Admin') && <NavLink to="/entradas" className={({ isActive }) => isActive ? activeClass : inactiveClass}>Entradas</NavLink>}
+                  {hasRol('Admin', 'Tecnico') && <NavLink to="/perfil" className={({ isActive }) => isActive ? activeClass : inactiveClass}>Perfil</NavLink>}
                   {/* <NavLink to="/enviosEzeiza" className={({ isActive }) => isActive ? activeClass : inactiveClass}>Envíos Ezeiza</NavLink>*/}
-                  <NavLink to="/perfil" className={({ isActive }) => isActive ? activeClass : inactiveClass}>Perfil</NavLink>
                   <span className="text-gray-200 px-3 py-2 block">{usuario.nombre}</span>
                   
 
@@ -123,11 +126,11 @@ export default function App() {
           {/* Menú Mobile */}
           {menuOpen && (
             <nav className="md:hidden bg-gray-800 px-4 py-2 space-y-1">
-              <NavLink to="/salidas" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? activeClass : inactiveClass}>Salidas</NavLink>
-              <NavLink to="/remitos" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? activeClass : inactiveClass}>Remitos</NavLink>
-              <NavLink to="/entradas" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? activeClass : inactiveClass}>Entradas</NavLink>
+              {hasRol('Admin') && <NavLink to="/salidas" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? activeClass : inactiveClass}>Salidas</NavLink>}
+              {hasRol('Admin') && <NavLink to="/remitos" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? activeClass : inactiveClass}>Remitos</NavLink>}
+              {hasRol('Admin') && <NavLink to="/entradas" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? activeClass : inactiveClass}>Entradas</NavLink>}
+              {hasRol('Admin', 'Tecnico') && <NavLink to="/perfil" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? activeClass : inactiveClass}>Perfil</NavLink>}
               {/* <NavLink to="/enviosEzeiza" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? activeClass : inactiveClass}>Envíos Ezeiza</NavLink>*/}
-              <NavLink to="/perfil" onClick={() => setMenuOpen(false)} className={({ isActive }) => isActive ? activeClass : inactiveClass}>Perfil</NavLink>
               <span className="text-gray-200 px-3 py-2 block">Hola, {usuario.nombre}</span>
               <button onClick={() => { handleLogout(); setMenuOpen(false); }} className="border border-red-500 text-red-500 px-3 py-1 rounded hover:bg-red-500 hover:text-white w-full text-left">Salir</button>
             </nav>
@@ -141,7 +144,7 @@ export default function App() {
 
         {/* FOOTER */}
         <footer className="bg-gray-900 text-gray-300 text-center p-3 mt-auto no-print">
-          &copy; 2025 - Sistema de Remitos
+          &copy; 2026 - Aerotech
         </footer>
       </div>
     );
@@ -158,28 +161,31 @@ export default function App() {
         <Route path="*" element={!isLoggedIn ? <Navigate to="/login" replace /> : (
           <MainLayout>
             <Routes>
-             <Route path="/" element={<Home />}/>
-              <Route path="/salidas" element={<Salidas token={token} />} />
-              <Route path="/salidas/crearnotasalida" element={<CrearNotaSalida token={token} />} />
-              <Route path="/salidas/vernotasalida/:id" element={<VerNotaSalida />} />
+              <Route path="/" element={<Home />} />
 
-              <Route path="/entradas" element={<Entradas token={token} />} />
-              <Route path="/entradas/crearnotaentrada" element={<CrearNotaEntrada token={token} />} />
-              <Route path="/entradas/vernotaentrada/:id" element={<VerNotaEntrada />} />
+              <Route path="/salidas" element={hasRol('Admin') ? <Salidas token={token} /> : <Navigate to="/" replace />} />
+              <Route path="/salidas/crearnotasalida" element={hasRol('Admin') ? <CrearNotaSalida token={token} /> : <Navigate to="/" replace />} />
+              <Route path="/salidas/vernotasalida/:id" element={hasRol('Admin') ? <VerNotaSalida /> : <Navigate to="/" replace />} />
 
-              <Route path="/remitos" element={<Remitos token={token} />} />
-              <Route path="/remitos/verremito/:id" element={<VerRemito />} />
-              <Route path="/remitos/crearremito" element={<CrearRemito token={token} />} />
-              <Route path="/remitos/editarremito/:id" element={<EditarRemito token={token} />} />
-              <Route path="/remitos/etiquetas/:id" element={<GenerarEtiquetas />} />
+              <Route path="/entradas" element={hasRol('Admin') ? <Entradas token={token} /> : <Navigate to="/" replace />} />
+              <Route path="/entradas/crearnotaentrada" element={hasRol('Admin') ? <CrearNotaEntrada token={token} /> : <Navigate to="/" replace />} />
+              <Route path="/entradas/vernotaentrada/:id" element={hasRol('Admin') ? <VerNotaEntrada /> : <Navigate to="/" replace />} />
 
-              <Route path="/dashboard" element={<Dashboard token={token} />} />
-              <Route path="/dashboardSalidas" element={<DashboardSalidas token={token} />} />
+              <Route path="/remitos" element={hasRol('Admin') ? <Remitos token={token} /> : <Navigate to="/" replace />} />
+              <Route path="/remitos/verremito/:id" element={hasRol('Admin') ? <VerRemito /> : <Navigate to="/" replace />} />
+              <Route path="/remitos/crearremito" element={hasRol('Admin') ? <CrearRemito token={token} /> : <Navigate to="/" replace />} />
+              <Route path="/remitos/editarremito/:id" element={hasRol('Admin') ? <EditarRemito token={token} /> : <Navigate to="/" replace />} />
+              <Route path="/remitos/etiquetas/:id" element={hasRol('Admin') ? <GenerarEtiquetas /> : <Navigate to="/" replace />} />
 
+              <Route path="/dashboard" element={hasRol('Admin') ? <Dashboard token={token} /> : <Navigate to="/" replace />} />
+              <Route path="/dashboardSalidas" element={hasRol('Admin') ? <DashboardSalidas token={token} /> : <Navigate to="/" replace />} />
 
-              {/* <Route path="/enviosEzeiza" element={<h1>Envíos Ezeiza</h1>} />*/}
-              <Route path="/perfil" element={<Perfil />} />
+              <Route path="/perfil" element={hasRol('Admin', 'Tecnico') ? <Perfil /> : <Navigate to="/" replace />} />
               <Route path="*" element={<h1>404 | Página no encontrada</h1>} />
+
+              <Route path="/monitor-impresoras" element={hasRol('Admin', 'Tecnico') ? <MonitorImpresoras /> : <Navigate to="/" replace />} />
+              <Route path="/DariOs" element={hasRol('Admin', 'Tecnico') ? <DariOs /> : <Navigate to="/" replace />} />
+
             </Routes>
           </MainLayout>
         )} />

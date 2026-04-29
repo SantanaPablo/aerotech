@@ -7,7 +7,7 @@ namespace Remitos.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class NotasSalidaController : ControllerBase
     {
         private readonly INotaSalidaService _service;

@@ -26,13 +26,11 @@ export default function Login({ handleAuthSuccess }) {
         setError('');
         setIsLoading(true);
 
-        
         if (!legajo || !contrasena) {
             setError('Por favor, ingresa tu usuario y contraseña.');
             setIsLoading(false);
             return;
         }
-
 
         const loginUrl = `${API_BASE_URL}/api/Auth/login`;
 
@@ -57,7 +55,6 @@ export default function Login({ handleAuthSuccess }) {
                 } catch (fetchError) {
                     if (i === maxRetries - 1) throw fetchError;
                 }
-
             
                 await new Promise(resolve => setTimeout(resolve, delay));
                 delay *= 2;
@@ -85,7 +82,9 @@ export default function Login({ handleAuthSuccess }) {
             const data = await response.json();
             
             if (data.token) {
+                // Eliminamos localStorage.setItem("userRol", data.rol); <-- ¡Seguridad aumentada!
                 handleAuthSuccess(data.token); 
+                
             } else {
                 throw new Error('Inicio de sesión exitoso, pero el token de autenticación está ausente.');
             }
@@ -102,13 +101,11 @@ export default function Login({ handleAuthSuccess }) {
         setIsPasswordVisible(prev => !prev);
     };
 
-
     const darkBg = 'bg-[#2c3e50] text-[#ecf0f1] font-sans';
     const cardBg = 'bg-[#2c3e50]/90 border border-[#34495e] rounded-xl shadow-2xl';
     const inputStyle = 'w-full px-4 py-2 bg-[#34495e] border border-[#4a647d] text-white placeholder-gray-400 focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out';
     const inputGroupStyle = 'inline-flex items-center px-3 bg-[#34495e] border border-[#4a647d] text-[#95a5a6] transition duration-150 ease-in-out';
     const primaryBtn = 'w-full py-3 bg-[#3498db] hover:bg-[#2980b9] border-[#3498db] hover:border-[#2980b9] text-white font-semibold rounded-lg transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-lg';
-
 
     return (
         <div className={`min-h-screen flex items-center justify-center ${darkBg}`}>
@@ -116,9 +113,14 @@ export default function Login({ handleAuthSuccess }) {
             <div className={`max-w-md w-full p-8 text-center mx-4 sm:mx-auto ${cardBg}`}>
                 
                 {/* Ícono y Título */}
-                <Plane className="mx-auto h-12 w-12 text-[#3498db]" />
-                <h5 className="mt-2 text-xl font-medium text-white">Sistema de Remitos</h5>
-                <p className="text-gray-400 mb-6">Gestión de entradas y salidas</p>
+                {/*<Plane className="mx-auto h-12 w-12 text-[#3498db]" />*/}
+                <img
+                src="../../aerotech.png"
+                alt="Logo"
+                className="object-contain mx-auto block h-48 w-auto"
+              />
+                <h5 className="mt-2 text-xl font-medium text-white">Aerotech</h5>
+                <p className="text-gray-400 mb-6">Gestión técnica</p>
 
                 <form onSubmit={handleSubmit} noValidate>
                     {/* Mensaje de Error */}

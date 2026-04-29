@@ -22,20 +22,17 @@ namespace Remitos.API.Controllers
         public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
             var user = await _context.Usuarios
-                .FirstOrDefaultAsync(u => u.Legajo == request.Legajo && u.Contrasena == request.Contrasena);
+                .Include(u => u.Rol)   // <-- trae el rol
+                .FirstOrDefaultAsync(u => u.Legajo == request.Legajo
+                                       && u.Contrasena == request.Contrasena);
 
             if (user == null)
                 return Unauthorized("Usuario o contraseña incorrectos");
 
             var token = JwtHelper.GenerateJwtToken(
-                user.Id,
-                user.Nombre,
-                user.Legajo,
-                "Usuario",
-                _config["Jwt:Key"]
-            );
+                user.Id, user.Nombre, user.Legajo, user.Rol.Nombre, _config["Jwt:Key"]);
 
-            return Ok(new { token });
+            return Ok(new { token, rol = user.Rol.Nombre });
         }
     }
 
