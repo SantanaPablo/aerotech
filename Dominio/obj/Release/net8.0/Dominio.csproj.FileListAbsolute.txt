@@ -23,3 +23,16 @@ C:\Users\USUARIO\Desktop\Remitos\Dominio\obj\Release\net8.0\refint\Dominio.dll
 C:\Users\USUARIO\Desktop\Remitos\Dominio\obj\Release\net8.0\Dominio.pdb
 C:\Users\USUARIO\Desktop\Remitos\Dominio\obj\Release\net8.0\ref\Dominio.dll
 C:\Users\USUARIO\Desktop\Remitos\Dominio\obj\Release\net8.0\Dominio.sourcelink.json
+C:\Users\pablo\OneDrive\Escritorio\Remitos\aerotech\Dominio\bin\Release\net8.0\Dominio.deps.json
+C:\Users\pablo\OneDrive\Escritorio\Remitos\aerotech\Dominio\bin\Release\net8.0\Dominio.dll
+C:\Users\pablo\OneDrive\Escritorio\Remitos\aerotech\Dominio\bin\Release\net8.0\Dominio.pdb
+C:\Users\pablo\OneDrive\Escritorio\Remitos\aerotech\Dominio\obj\Release\net8.0\Dominio.csproj.AssemblyReference.cache
+C:\Users\pablo\OneDrive\Escritorio\Remitos\aerotech\Dominio\obj\Release\net8.0\Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pablo\OneDrive\Escritorio\Remitos\aerotech\Dominio\obj\Release\net8.0\Dominio.AssemblyInfoInputs.cache
+C:\Users\pablo\OneDrive\Escritorio\Remitos\aerotech\Dominio\obj\Release\net8.0\Dominio.AssemblyInfo.cs
+C:\Users\pablo\OneDrive\Escritorio\Remitos\aerotech\Dominio\obj\Release\net8.0\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\pablo\OneDrive\Escritorio\Remitos\aerotech\Dominio\obj\Release\net8.0\Dominio.sourcelink.json
+C:\Users\pablo\OneDrive\Escritorio\Remitos\aerotech\Dominio\obj\Release\net8.0\Dominio.dll
+C:\Users\pablo\OneDrive\Escritorio\Remitos\aerotech\Dominio\obj\Release\net8.0\refint\Dominio.dll
+C:\Users\pablo\OneDrive\Escritorio\Remitos\aerotech\Dominio\obj\Release\net8.0\Dominio.pdb
+C:\Users\pablo\OneDrive\Escritorio\Remitos\aerotech\Dominio\obj\Release\net8.0\ref\Dominio.dll

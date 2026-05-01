@@ -89,7 +89,7 @@ export default function App() {
               <img
                 src="../../aerotech.png"
                 alt="Logo"
-                className="max-h-24 object-contain"
+                className="max-h-16 object-contain"
               />
               <NavLink to="/" className="font-bold text-xl">Aerotech</NavLink>
             </div>
@@ -155,6 +155,7 @@ export default function App() {
       <Routes>
         <Route path="/notaPSA" element={<NotaPSA token={token} />} />
         <Route path="/DariOs" element={hasRol('Admin', 'Tecnico') ? <DariOs /> : <Navigate to="/" replace />} />
+        <Route path="/monitor-impresoras" element={hasRol('Admin', 'Tecnico') ? <MonitorImpresoras /> : <Navigate to="/" replace />} />
 
         {/* LOGIN */}
         <Route path="/login" element={isLoggedIn ? <Navigate to="/" replace /> : <Login handleAuthSuccess={handleAuthSuccess} />} />
@@ -185,7 +186,6 @@ export default function App() {
               <Route path="/perfil" element={hasRol('Admin', 'Tecnico') ? <Perfil /> : <Navigate to="/" replace />} />
               <Route path="*" element={<h1>404 | Página no encontrada</h1>} />
 
-              <Route path="/monitor-impresoras" element={hasRol('Admin', 'Tecnico') ? <MonitorImpresoras /> : <Navigate to="/" replace />} />
 
             </Routes>
           </MainLayout>
