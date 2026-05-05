@@ -52,9 +52,9 @@
     text-transform: uppercase;
 }
 
-.node-address-label { font-size: 18px; color: rgba(255,255,255,0.6); }
+.node-address-label { font-size: 24px; color: rgba(255,255,255,0.6); }
 
-.status-badge-xl { background: rgba(0,0,0,0.4); padding: 5px 10px; border-radius: 4px; font-weight: 800; font-size: 14px; }
+.status-badge-xl { background: rgba(0,0,0,0.4); padding: 5px 10px; border-radius: 4px; font-weight: 800; font-size: 32px; }
 
 /* TOOLTIP */
 .noc-tooltip-xl {
@@ -121,4 +121,67 @@
 .flow-wrapper { width: 100%; height: calc(100vh - 80px); }
 .spin { animation: s 1s linear infinite; }
 @keyframes s { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-.react-flow__handle { width: 12px !important; height: 12px !important; background: #fff !important; border: 2px solid #00ff88 !important; }
+.react-flow__handle {
+  background: #0a0a0a !important; 
+  border: 1px solid #111 !important; /* <-- Esto elimina el borde blanco por defecto */
+  border-radius: 2px !important; 
+  width: 8px !important; 
+  height: 8px !important;
+  z-index: 10 !important;
+}
+
+/* Color para los puertos de SALIDA (Source) - Verde muy oscuro */
+.react-flow__handle-source {
+  border-color: #1f5c2e !important; 
+}
+.react-flow__handle-source:hover {
+  background: #00ff88 !important;
+  border-color: #00ff88 !important;
+  box-shadow: 0 0 8px rgba(0, 255, 136, 0.5);
+}
+
+/* Color para los puertos de ENTRADA (Target) - Gris oscuro */
+.react-flow__handle-target {
+  border-color: #30363d !important;
+}
+.react-flow__handle-target:hover {
+  background: #58a6ff !important;
+  border-color: #58a6ff !important;
+  box-shadow: 0 0 8px rgba(88, 166, 255, 0.5);
+}
+
+/* ─── CAMINO FLÚOR ANIMADO (LÍNEAS DE ENERGÍA) ─── */
+  
+  /* Flujo Verde (Status UP) */
+  .fluor-edge-up path.react-flow__edge-path {
+    stroke: #00ff55 !important;
+    stroke-width: 2px !important;
+    /* Doble drop-shadow para un efecto neón intenso */
+    filter: drop-shadow(0 0 4px #00ff55) drop-shadow(0 0 8px rgba(0, 255, 85, 0.6));
+    /* Segmentos de luz más largos simulando paquetes de datos */
+    stroke-dasharray: 8 12 !important; 
+    /* Ajusta los segundos (1s) para que fluya más rápido o más lento */
+    animation: dashflow 1s linear infinite !important;
+  }
+
+  /* Flujo Rojo (Status DOWN) */
+  .fluor-edge-down path.react-flow__edge-path {
+    stroke: #ff3030 !important;
+    stroke-width: 2px !important;
+    filter: drop-shadow(0 0 4px #ff3030) drop-shadow(0 0 8px rgba(255, 48, 48, 0.6));
+    stroke-dasharray: 4 10 !important; /* Trazos más cortos y entrecortados */
+    /* La línea roja fluye al revés y más lento para indicar falla */
+    animation: dashflow-reverse 3s linear infinite !important;
+    opacity: 0.8;
+  }
+
+  /* Keyframes para que la "energía" viaje por la línea */
+  @keyframes dashflow {
+    from { stroke-dashoffset: 20; }
+    to { stroke-dashoffset: 0; }
+  }
+  
+  @keyframes dashflow-reverse {
+    from { stroke-dashoffset: 0; }
+    to { stroke-dashoffset: 20; }
+  }

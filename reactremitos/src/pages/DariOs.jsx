@@ -60,7 +60,7 @@ const getSmartHandles = (sourceNode, targetNode) => {
   return { sourceHandle, targetHandle };
 };
 
-// --- Construye todos los edges con handles inteligentes ---
+// --- edges inteligentes ---
 const buildEdges = (hosts, nodeMap) => {
   return Object.keys(hosts).flatMap(key =>
     (hosts[key].parent_hosts || []).map(p => {
@@ -78,6 +78,8 @@ const buildEdges = (hosts, nodeMap) => {
         sourceHandle,
         targetHandle,
         type: 'default',
+        animated: true, // <-- ADD THIS LINE
+        className: isUp ? 'fluor-edge-up' : 'fluor-edge-down', // <-- ADD THIS LINE
         style: {
           stroke: isUp ? '#00ff88' : '#ff4444',
           strokeWidth: 4,
@@ -112,7 +114,22 @@ const DeviceNode = ({ data }) => {
 
       <div className="card-content-xl">
         <div className="card-main-text">
-          <div className="node-name-label" title={data.name}>{data.name}</div>
+          {/* Aquí forzamos el salto de línea con un máximo de 2 filas */}
+          <div 
+            className="node-name-label" 
+            title={data.name}
+            style={{ 
+              whiteSpace: 'normal', 
+              wordBreak: 'break-word',
+              display: '-webkit-box',
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: 'vertical',
+              overflow: 'hidden',
+              lineHeight: '1.2'
+            }}
+          >
+            {data.name}
+          </div>
           <div className="node-address-label">{data.address}</div>
         </div>
         <div className="status-badge-xl">
@@ -136,8 +153,8 @@ const LocalhostNode = ({ data }) => (
     <div className="card-content-xl">
       <div className="card-icon-static"><Server size={40} /></div>
       <div className="card-main-text">
-        <div className="node-name-label" style={{ fontSize: '32px' }}>LOCALHOST</div>
-        <div className="node-address-label">LOCALHOST</div>
+        <div className="node-name-label" style={{ fontSize: '32px' }}>SENSOR T4</div>
+        <div className="node-address-label">UBUNTU SERVER</div>
       </div>
     </div>
 

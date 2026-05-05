@@ -154,7 +154,7 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/notaPSA" element={<NotaPSA token={token} />} />
-        <Route path="/DariOs" element={hasRol('Admin', 'Tecnico') ? <DariOs /> : <Navigate to="/" replace />} />
+        <Route path="/DariOs" element={<DariOs />} />
         <Route path="/monitor-impresoras" element={hasRol('Admin', 'Tecnico') ? <MonitorImpresoras /> : <Navigate to="/" replace />} />
 
         {/* LOGIN */}
