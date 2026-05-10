@@ -185,3 +185,97 @@
     from { stroke-dashoffset: 0; }
     to { stroke-dashoffset: 20; }
   }
+
+  /* --- ESTADOS DE ERROR Y DESCONEXIÓN --- */
+
+/*Nodo cuando no hay comunicación con el Backend */
+.noc-card-xl.offline {
+    background: linear-gradient(135deg, #1a1c1e 0%, #2c2f33 100%) !important;
+    border: 2px solid #555 !important;
+    filter: grayscale(0.8);
+    opacity: 0.85;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+/* Marca de agua visual de "SIN DATOS" */
+.noc-card-xl.offline::after {
+    content: "NO DATA RECV";
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 12px;
+    color: #ff4444;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+/* Ajuste del badge de status en error */
+.noc-card-xl.offline .status-badge-xl {
+    background: rgba(255, 0, 0, 0.2) !important;
+    color: #ff4444 !important;
+    border: 1px solid #ff4444;
+}
+
+/* Header en estado de Alerta */
+.noc-header-xl.header-error {
+    border-bottom: 3px solid #ff4444 !important;
+    background: #1a0505 !important;
+    transition: background 0.5s ease;
+}
+
+/* Badge que aparece en el medio del header */
+.error-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #ff4444;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-weight: 800;
+    font-size: 18px;
+    animation: pulse-red 2s infinite;
+}
+
+/* Botón de Sincronización en Error */
+.n-btn.sync.btn-danger {
+    color: #ff4444 !important;
+    border-color: #ff4444 !important;
+    background: rgba(255, 68, 68, 0.1);
+}
+
+.n-btn.sync.btn-danger:hover {
+    background: #ff4444 !important;
+    color: white !important;
+}
+
+/* Animación de Pulso para el error */
+@keyframes pulse-red {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 68, 68, 0.7);
+        transform: scale(1);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(255, 68, 68, 0);
+        transform: scale(1.02);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 68, 68, 0);
+        transform: scale(1);
+    }
+}
+
+/* Ajuste para que las líneas (edges) desaparezcan o se atenúen en error */
+.react-flow__edge.error-state {
+    opacity: 0.1 !important;
+}
+
+/* Tooltip en modo error */
+.noc-card-xl.offline .noc-tooltip-xl {
+    border-color: #ff4444 !important;
+    box-shadow: 0 8px 32px rgba(255, 68, 68, 0.15);
+}
+
+.noc-card-xl.offline .tooltip-title {
+    color: #ff4444 !important;
+}

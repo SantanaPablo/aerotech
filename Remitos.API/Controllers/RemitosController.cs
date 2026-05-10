@@ -10,7 +10,7 @@ namespace Remitos.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin, Tecnico")]
     public class RemitosController : ControllerBase
     {
         private readonly IRemitoService _service;
@@ -29,7 +29,7 @@ namespace Remitos.API.Controllers
                 username = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             return username ?? "SISTEMA";
         }
-
+        [Authorize(Roles = "Admin, Tecnico")]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<RemitoDto>>> Get()
         {
@@ -37,7 +37,7 @@ namespace Remitos.API.Controllers
             var remitosDto = remitos.Select(r => r.ToDto()).ToList();
             return Ok(remitosDto);
         }
-
+        [Authorize(Roles = "Admin, Tecnico")]
         [HttpGet("{id}")]
         public async Task<ActionResult<RemitoDto>> Get(int id)
         {
@@ -47,7 +47,7 @@ namespace Remitos.API.Controllers
 
             return Ok(remito.ToDto());
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] RemitoDto remitoDto)
         {
@@ -81,7 +81,7 @@ namespace Remitos.API.Controllers
 
             return CreatedAtAction(nameof(Get), new { id = remito.Id }, resultado);
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(int id, [FromBody] RemitoDto remitoDto)
         {
@@ -108,7 +108,7 @@ namespace Remitos.API.Controllers
                 return StatusCode(500, new { mensaje = "Error al actualizar", detalle = ex.Message });
             }
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

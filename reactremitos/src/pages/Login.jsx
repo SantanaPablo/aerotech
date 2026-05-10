@@ -119,7 +119,6 @@ export default function Login({ handleAuthSuccess }) {
                 alt="Logo"
                 className="object-contain mx-auto block h-48 w-auto"
               />
-                <h5 className="mt-2 text-xl font-medium text-white">Aerotech</h5>
                 <p className="text-gray-400 mb-6">Gestión técnica</p>
 
                 <form onSubmit={handleSubmit} noValidate>

@@ -9,12 +9,14 @@ import ReactFlow, {
   MarkerType
 } from 'reactflow';
 import 'reactflow/dist/style.css';
-import { RefreshCw, Download, Upload, Server } from 'lucide-react';
+import { RefreshCw, Download, Upload, Server, AlertTriangle, Home } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import '.././css/DariOs.css';
 
 const STORAGE_KEY = 'aeronet-noc-v6';
+const API_URL = 'http://10.35.144.252:5500/api/Nagios/combinado';
 
-// Dimensiones de los nodos para calcular el centro
+// Dimensiones de los nodos
 const NODE_W = 500;
 const NODE_H = 120;
 const LOCALHOST_W = 550;
@@ -29,11 +31,8 @@ const formatTime = (ts) => {
 };
 
 // --- Lógica de edges inteligentes ---
-// Calcula qué handle de source y target usar según la posición relativa entre dos nodos
 const getSmartHandles = (sourceNode, targetNode) => {
   const sw = sourceNode.type === 'localhostNode' ? LOCALHOST_W : NODE_W;
-
-  // Centro de cada nodo
   const sx = sourceNode.position.x + sw / 2;
   const sy = sourceNode.position.y + NODE_H / 2;
   const tx = targetNode.position.x + NODE_W / 2;
@@ -41,27 +40,23 @@ const getSmartHandles = (sourceNode, targetNode) => {
 
   const dx = tx - sx;
   const dy = ty - sy;
-
-  // Si el desplazamiento horizontal es dominante (ratio 1.2), usar lados
   const isHorizontal = Math.abs(dx) > Math.abs(dy) * 1.2;
 
   let sourceHandle, targetHandle;
-
   if (isHorizontal) {
-    // El target está a la derecha o izquierda del source
     sourceHandle = dx > 0 ? 'sr' : 'sl';
-    targetHandle = dx > 0 ? 'l'  : 'r';
+    targetHandle = dx > 0 ? 'l' : 'r';
   } else {
-    // El target está arriba o abajo del source
     sourceHandle = dy > 0 ? 'sb' : 'st';
-    targetHandle = dy > 0 ? 't'  : 'b';
+    targetHandle = dy > 0 ? 't' : 'b';
   }
-
   return { sourceHandle, targetHandle };
 };
 
-// --- edges inteligentes ---
 const buildEdges = (hosts, nodeMap) => {
+  // OPTIMIZACIÓN: Detectamos si es celular para apagar las animaciones pesadas
+  const isMobile = window.innerWidth <= 768;
+
   return Object.keys(hosts).flatMap(key =>
     (hosts[key].parent_hosts || []).map(p => {
       const sourceNode = nodeMap[p];
@@ -78,11 +73,12 @@ const buildEdges = (hosts, nodeMap) => {
         sourceHandle,
         targetHandle,
         type: 'default',
-        animated: true, // <-- ADD THIS LINE
-        className: isUp ? 'fluor-edge-up' : 'fluor-edge-down', // <-- ADD THIS LINE
+        // En celular apagamos el animated, en PC lo dejamos
+        animated: isMobile ? false : isUp,
+        className: isUp ? 'fluor-edge-up' : 'fluor-edge-down',
         style: {
           stroke: isUp ? '#00ff88' : '#ff4444',
-          strokeWidth: 4,
+          strokeWidth: isMobile ? 2 : 4, // Línea un poco más fina en móvil
           opacity: 0.5,
         },
         markerEnd: {
@@ -94,145 +90,97 @@ const buildEdges = (hosts, nodeMap) => {
   );
 };
 
-// --- Nodo de Dispositivo XL (4 handles por lado, tooltip) ---
+// --- Componentes de Nodo ---
 const DeviceNode = ({ data }) => {
-  const status = data.status === 2 ? 'up' : data.status === 1 ? 'warning' : 'down';
+  // Si hay error de conexión, forzamos un estado visual neutro
+  const statusClass = data.isError ? 'offline' : (data.status === 2 ? 'up' : data.status === 1 ? 'warning' : 'down');
 
   return (
-    <div className={`noc-card-xl ${status}`}>
-      {/* Handles TARGET — uno por lado */}
-      <Handle type="target" position={Position.Top}    id="t" className="smart-handle" />
+    <div className={`noc-card-xl ${statusClass}`}>
+      <Handle type="target" position={Position.Top} id="t" className="smart-handle" />
       <Handle type="target" position={Position.Bottom} id="b" className="smart-handle" />
-      <Handle type="target" position={Position.Left}   id="l" className="smart-handle" />
-      <Handle type="target" position={Position.Right}  id="r" className="smart-handle" />
+      <Handle type="target" position={Position.Left} id="l" className="smart-handle" />
+      <Handle type="target" position={Position.Right} id="r" className="smart-handle" />
 
-      {/* Handles SOURCE — uno por lado */}
-      <Handle type="source" position={Position.Top}    id="st" className="smart-handle" />
+      <Handle type="source" position={Position.Top} id="st" className="smart-handle" />
       <Handle type="source" position={Position.Bottom} id="sb" className="smart-handle" />
-      <Handle type="source" position={Position.Left}   id="sl" className="smart-handle" />
-      <Handle type="source" position={Position.Right}  id="sr" className="smart-handle" />
+      <Handle type="source" position={Position.Left} id="sl" className="smart-handle" />
+      <Handle type="source" position={Position.Right} id="sr" className="smart-handle" />
 
       <div className="card-content-xl">
         <div className="card-main-text">
-          {/* Aquí forzamos el salto de línea con un máximo de 2 filas */}
-          <div 
-            className="node-name-label" 
-            title={data.name}
-            style={{ 
-              whiteSpace: 'normal', 
-              wordBreak: 'break-word',
-              display: '-webkit-box',
-              WebkitLineClamp: 2,
-              WebkitBoxOrient: 'vertical',
-              overflow: 'hidden',
-              lineHeight: '1.2'
-            }}
-          >
-            {data.name}
-          </div>
+          <div className="node-name-label" title={data.name}>{data.name}</div>
           <div className="node-address-label">{data.address}</div>
         </div>
         <div className="status-badge-xl">
-          {data.status === 2 ? 'UP' : 'DOWN'}
+          {data.isError ? 'ERROR' : (data.status === 2 ? 'UP' : 'DOWN')}
         </div>
       </div>
 
-      {/* Tooltip */}
       <div className="noc-tooltip-xl">
         <div className="tooltip-line"><span>UP:</span> {formatTime(data.last_time_up)}</div>
         <div className="tooltip-line"><span>DOWN:</span> {formatTime(data.last_time_down)}</div>
-        <div className="tooltip-output">{data.plugin_output || 'Sin datos de salida'}</div>
+        <div className="tooltip-output">{data.plugin_output || 'Sin datos'}</div>
       </div>
     </div>
   );
 };
 
-// --- Nodo Localhost (4 handles por lado) ---
 const LocalhostNode = ({ data }) => (
-  <div className="noc-card-xl up localhost-master">
+  <div className={`noc-card-xl localhost-master ${data.isError ? 'offline' : 'up'}`}>
     <div className="card-content-xl">
       <div className="card-icon-static"><Server size={40} /></div>
       <div className="card-main-text">
         <div className="node-name-label" style={{ fontSize: '32px' }}>SENSOR T4</div>
-        <div className="node-address-label">UBUNTU SERVER</div>
+        <div className="node-address-label">{data.isError ? 'DESCONECTADO' : 'UBUNTU SERVER'}</div>
       </div>
     </div>
-
-    {/* Handles TARGET */}
-    <Handle type="target" position={Position.Top}    id="t" className="smart-handle" />
-    <Handle type="target" position={Position.Bottom} id="b" className="smart-handle" />
-    <Handle type="target" position={Position.Left}   id="l" className="smart-handle" />
-    <Handle type="target" position={Position.Right}  id="r" className="smart-handle" />
-
-    {/* Handles SOURCE */}
-    <Handle type="source" position={Position.Top}    id="st" className="smart-handle" />
+    
+    {/* PARCHE: Se agregaron los 4 conectores para evitar el error de "Couldn't create edge" */}
+    <Handle type="source" position={Position.Top} id="st" className="smart-handle" />
     <Handle type="source" position={Position.Bottom} id="sb" className="smart-handle" />
-    <Handle type="source" position={Position.Left}   id="sl" className="smart-handle" />
-    <Handle type="source" position={Position.Right}  id="sr" className="smart-handle" />
+    <Handle type="source" position={Position.Left} id="sl" className="smart-handle" />
+    <Handle type="source" position={Position.Right} id="sr" className="smart-handle" />
   </div>
 );
 
-// --- Componente principal ---
+// --- Componente Principal ---
 const DariOs = () => {
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
   const [loading, setLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
   const fileInputRef = useRef();
-
-  // Referencia a los hosts para recalcular edges al mover sin re-fetch
   const hostsRef = useRef({});
+  const navigate = useNavigate();
 
   const nodeTypes = useMemo(() => ({
     deviceNode: DeviceNode,
     localhostNode: LocalhostNode,
   }), []);
 
-  // --- Exportar layout ---
-  const handleExport = () => {
-    const data = localStorage.getItem(STORAGE_KEY) || '{}';
-    const blob = new Blob([data], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'noc-layout.json';
-    a.click();
-  };
-
-  // --- Importar layout ---
-  const handleImport = (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = (ev) => {
-      localStorage.setItem(STORAGE_KEY, ev.target.result);
-      window.location.reload();
-    };
-    reader.readAsText(file);
-  };
-
-  // --- Fetch de datos con lógica de agrupamiento original ---
   const fetchData = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await fetch('http://10.35.144.252:5500/api/Nagios/combinado');
+      const response = await fetch(API_URL);
+      
+      if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
+
       const json = await response.json();
       const hosts = json.data.hostlist;
-
-      // Guardar referencia para recalcular edges al mover nodos
       hostsRef.current = hosts;
+      setHasError(false);
 
       const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
       const counts = { enlaces: 0, interna: 0 };
 
-      // Construir nodos con lógica de agrupamiento original
       const deviceNodes = Object.keys(hosts).map(id => {
         const host = hosts[id];
-
         if (id === 'localhost') {
           return {
             id,
             type: 'localhostNode',
-            data: { ...host },
+            data: { ...host, isError: false },
             position: saved[id] || { x: 1200, y: 50 },
           };
         }
@@ -252,25 +200,29 @@ const DariOs = () => {
         return {
           id,
           type: 'deviceNode',
-          data: { ...host, group },
+          data: { ...host, group, isError: false },
           position,
         };
       });
 
-      // Mapa id -> nodo para cálculo de handles
       const nodeMap = Object.fromEntries(deviceNodes.map(n => [n.id, n]));
-      const newEdges = buildEdges(hosts, nodeMap);
-
       setNodes(deviceNodes);
-      setEdges(newEdges);
+      setEdges(buildEdges(hosts, nodeMap));
+
     } catch (err) {
-      console.error(err);
+      console.error("Fetch Error:", err);
+      setHasError(true);
+      // Marcamos los nodos existentes como erróneos para dar feedback visual
+      setNodes(nds => nds.map(n => ({
+        ...n,
+        data: { ...n.data, isError: true, status: 0 }
+      })));
+      setEdges([]); // Opcional: quitar conexiones para resaltar el fallo
     } finally {
       setLoading(false);
     }
   }, [setNodes, setEdges]);
 
-  // Auto-refresh cada 30 segundos
   useEffect(() => {
     fetchData();
     const interval = setInterval(fetchData, 30000);
@@ -278,41 +230,64 @@ const DariOs = () => {
   }, [fetchData]);
 
   const onNodeDragStop = useCallback((_, movedNode) => {
-    // 1. Persistir posición en localStorage
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
     saved[movedNode.id] = movedNode.position;
     localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
 
-    setNodes(currentNodes => {
-      const nodeMap = Object.fromEntries(currentNodes.map(n => [n.id, n]));
-      // Asegurarse de usar la posición más reciente del nodo movido
-      nodeMap[movedNode.id] = { ...movedNode };
-
+    setNodes(nds => {
+      const nodeMap = Object.fromEntries(nds.map(n => [n.id, n]));
+      nodeMap[movedNode.id] = movedNode;
       setEdges(buildEdges(hostsRef.current, nodeMap));
-      return currentNodes; // No modificar el array de nodos
+      return nds.map(n => n.id === movedNode.id ? movedNode : n);
     });
   }, [setNodes, setEdges]);
 
+  const handleExport = () => {
+    const data = localStorage.getItem(STORAGE_KEY) || '{}';
+    const blob = new Blob([data], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'noc-layout.json';
+    a.click();
+  };
+
+  const handleImport = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      localStorage.setItem(STORAGE_KEY, ev.target.result);
+      window.location.reload();
+    };
+    reader.readAsText(file);
+  };
+
   return (
     <div id="noc-terminal-scope">
-      <input
-        ref={fileInputRef}
-        type="file"
-        style={{ display: 'none' }}
-        onChange={handleImport}
-      />
+      <input ref={fileInputRef} type="file" style={{ display: 'none' }} onChange={handleImport} />
 
-      <header className="noc-header-xl">
+      <header className={`noc-header-xl ${hasError ? 'header-error' : ''}`}>
         <img src="/assets/images/DariOsLogo.png" alt="Logo" className="logo-img" />
+        
+        {hasError && (
+          <div className="error-badge">
+            <AlertTriangle size={18} />
+            <span>ERROR DE CONEXIÓN CON NAGIOS</span>
+          </div>
+        )}
+
         <div className="header-actions">
-          <button className="n-btn" onClick={handleExport}>
-            <Download size={14} /> EXPORTAR
+          {/* BOTÓN PARA VOLVER A AEROTECH */}
+          <button className="n-btn" onClick={() => navigate('/')}>
+            <Home size={14} /> AEROTECH
           </button>
-          <button className="n-btn" onClick={() => fileInputRef.current.click()}>
-            <Upload size={14} /> IMPORTAR
-          </button>
-          <button className="n-btn sync" onClick={fetchData}>
-            <RefreshCw size={14} className={loading ? 'spin' : ''} /> REFRESCAR
+          
+          <button className="n-btn" onClick={handleExport}><Upload size={14} /> EXPORTAR</button>
+          <button className="n-btn" onClick={() => fileInputRef.current.click()}><Download size={14} /> IMPORTAR</button>
+          <button className={`n-btn sync ${hasError ? 'btn-danger' : ''}`} onClick={fetchData}>
+            <RefreshCw size={14} className={loading ? 'spin' : ''} /> 
+            {hasError ? 'REINTENTAR' : 'REFRESCAR'}
           </button>
         </div>
       </header>
@@ -326,9 +301,17 @@ const DariOs = () => {
           onNodeDragStop={onNodeDragStop}
           nodeTypes={nodeTypes}
           fitView
+          // OPTIMIZACIONES PARA MÓVIL: Evita lags al scrollear y seleccionar
+          nodesFocusable={false}
+          edgesFocusable={false}
+          elementsSelectable={false}
+          zoomOnDoubleClick={false}
+          panOnScroll={true}
+          elevateNodesOnSelect={false}
         >
-          <Background color="#111" variant="grid" gap={60} />
-          <Controls />
+          <Background color="#111111" variant="grid" gap={60} />
+          {/* Los controles molestan en pantallas táctiles chicas, los ocultamos en móviles */}
+          {window.innerWidth > 768 && <Controls />}
         </ReactFlow>
       </div>
     </div>
