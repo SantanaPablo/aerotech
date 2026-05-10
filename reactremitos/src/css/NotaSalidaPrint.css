@@ -13,8 +13,15 @@ html {
 
 /* --- IMPRESIÓN --- */
 @media print {
+    /* 1. DESBLOQUEADOR DE TAILWIND (Para que no corte la hoja) */
+    html, body, #root, .print-layout-reset, .print-main-reset {
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+        position: static !important; /* Vital para que el absolute funcione bien */
+    }
 
-    /* Ocultar elementos no imprimibles */
+    /* 2. TU LÓGICA ORIGINAL EXACTA */
     body * {
         visibility: hidden;
         margin: 0 !important;
@@ -25,15 +32,15 @@ html {
         display: none !important;
     }
 
-    /* Entradas y salidas */
     .print-content2,
     .print-content2 * {
         visibility: visible;
-          
     }
 
     .print-content2 {
         position: absolute;
+        left: 0 !important; /* Agregado para alinear a la izquierda */
+        top: 0 !important;  /* Agregado para pegar arriba */
         width: 100%;
         margin-bottom: 10px !important;
     }
@@ -54,5 +61,4 @@ html {
         font-size: 11px !important;
         padding-top: 10px;
     }
-
 }

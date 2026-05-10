@@ -1,4 +1,5 @@
 /* Estilos generales */
+
 .psa-nota-container {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -181,7 +182,7 @@
 
 .psa-checkbox-container input[type="checkbox"], 
 .psa-checkbox-container input[type="radio"] {
-    margin: 5px;
+    margin: 5 px;
     transform: scale(0.8);
 }
 
@@ -352,115 +353,84 @@
 
 /* Modales */
 .psa-modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
 
 .psa-modal {
-    background: #fff;
-    padding: 20px;
-    width: 1200px;
-    max-height: 80vh;
-    border-radius: 12px;
-    overflow-y: auto;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-    animation: modalFadeIn 0.3s ease;
+  background: #fff;
+  padding: 20px;
+  width: 1200px;
+  max-height: 80vh;
+  border-radius: 12px;
+  overflow-y: auto;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  animation: modalFadeIn 0.3s ease;
 }
 
 @keyframes modalFadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .psa-modal h2 {
-    text-align: center;
-    margin-bottom: 15px;
+  text-align: center;
+  margin-bottom: 15px;
 }
 
 .psa-modal-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
 }
 
 .psa-tecnico-card {
-    background: #f5f5f5;
-    border-radius: 10px;
-    width: 100%;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+  background: #f5f5f5;
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .psa-tecnico-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .psa-tecnico-card img {
-    width: 60px;
-    height: 60px;
-    border-radius: 6px;
-    margin-right: 10px;
-    object-fit: cover;
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  margin-right: 10px;
+  object-fit: cover;
 }
 
 .psa-btn-group {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
-/* ==============================================================
-   ESTILOS DE IMPRESIÓN (Tus originales + Parche Tailwind)
-   ============================================================== */
+
+
+/* Estilos para impresión */
 @media print {
-    @page {
-        size: A4;
-        margin: 10mm;
-    }
-
-    /* PARCHE PARA TAILWIND: Evita que la hoja salga en blanco o cortada */
-    html, body, #root {
-        height: auto !important;
-        min-height: 0 !important;
-        overflow: visible !important;
-        background-color: white !important;
-    }
-
-    .print-layout-reset, .print-main-reset, 
-    .flex, .h-screen, .overflow-hidden, .overflow-y-auto {
-        display: block !important;
-        height: auto !important;
-        overflow: visible !important;
-        position: static !important;
-        width: 100% !important;
-        background: transparent !important;
-        padding: 0 !important;
-        margin: 0 !important;
-    }
-
-    /* Ocultar layout de la app (menú lateral, header móvil, etc) */
-    header, aside, .md\:hidden, .no-print, .psa-no-print {
-        display: none !important;
-    }
-
-    /* --- TUS ESTILOS ORIGINALES DE IMPRESIÓN --- */
     body {
         background-color: white;
-        margin: 0;
+        margin: 10 px;
         padding: 0;
     }
 
@@ -473,7 +443,7 @@
         height: auto;
         box-shadow: none;
         padding: 0.5cm;
-        margin: 0;
+        margin: 10 px;
     }
 
     .psa-container-second {
@@ -481,14 +451,19 @@
         height: auto;
         box-shadow: none;
         padding: 0.5cm;
-        margin: 0;
+        margin: 10 px;
         min-height: auto !important;
+    }
+
+    .psa-no-print {
+        display: none !important;
     }
 
     .psa-page-break {
         page-break-before: always;
     }
 
+    /* Mantener la estructura original */
     .psa-header {
         display: flex !important;
         justify-content: space-between !important;
@@ -504,12 +479,10 @@
     .psa-header-info {
         text-align: right !important;
     }
-
     .psa-header-lines {
         margin-bottom: 15px !important;
     }
-
-    .psa-header-lines h1 {
+   .psa-header-lines h1 {
         margin: 4px 0 !important;
     }
 
@@ -522,7 +495,7 @@
         margin-bottom: 10px !important;
     }
 
-    .psa-saludo {
+.psa-saludo {
         margin-bottom: 10px !important;
     }
 
@@ -551,7 +524,7 @@
     .psa-table th, .psa-table td {
         padding: 3px 4px !important;
     }
-
+    /* Asegurar que los inputs mantengan su estilo */
     .psa-puesto-ingreso {
         display: flex !important;
         flex-wrap: nowrap !important;
@@ -566,17 +539,18 @@
         width: auto !important;
     }
 
+    /* Mejorar la legibilidad en impresión */
     .psa-input-field {
         background: transparent !important;
         border: 1px solid #ccc !important;
     }
 
+    /* Asegurar que los botones no se impriman */
     .psa-btn, .psa-remove-btn {
         display: none !important;
     }
 }
 
-/* --- ESTILOS PARA PANTALLAS PEQUEÑAS (MÓVILES) --- */
 @media (max-width: 10cm) {
     .psa-container {
         width: 100%;
@@ -626,6 +600,7 @@
         gap: 5px;
     }
 
+    /* En móviles, forzar alineación izquierda para impresión */
     @media print {
         .psa-logo-container {
             text-align: left !important;
