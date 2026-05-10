@@ -1,5 +1,4 @@
 /* Estilos generales */
-
 .psa-nota-container {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -182,7 +181,7 @@
 
 .psa-checkbox-container input[type="checkbox"], 
 .psa-checkbox-container input[type="radio"] {
-    margin: 5 px;
+    margin: 5px;
     transform: scale(0.8);
 }
 
@@ -353,95 +352,94 @@
 
 /* Modales */
 .psa-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
 }
 
 .psa-modal {
-  background: #fff;
-  padding: 20px;
-  width: 1200px;
-  max-height: 80vh;
-  border-radius: 12px;
-  overflow-y: auto;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-  animation: modalFadeIn 0.3s ease;
+    background: #fff;
+    padding: 20px;
+    width: 1200px;
+    max-height: 80vh;
+    border-radius: 12px;
+    overflow-y: auto;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    animation: modalFadeIn 0.3s ease;
 }
 
 @keyframes modalFadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .psa-modal h2 {
-  text-align: center;
-  margin-bottom: 15px;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 .psa-modal-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
 }
 
 .psa-tecnico-card {
-  background: #f5f5f5;
-  border-radius: 10px;
-  width: 100%;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+    background: #f5f5f5;
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .psa-tecnico-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .psa-tecnico-card img {
-  width: 60px;
-  height: 60px;
-  border-radius: 6px;
-  margin-right: 10px;
-  object-fit: cover;
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    margin-right: 10px;
+    object-fit: cover;
 }
 
 .psa-btn-group {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
-
-
-/* ESTILOS DE IMPRESIÓN */
+/* ==============================================================
+   ESTILOS DE IMPRESIÓN (Tus originales + Parche Tailwind)
+   ============================================================== */
 @media print {
     @page {
         size: A4;
         margin: 10mm;
     }
 
-    /* 1. ROMPER LA HERENCIA DEL MAIN LAYOUT AL IMPRIMIR (VITAL) */
-    body, html, #root {
+    /* PARCHE PARA TAILWIND: Evita que la hoja salga en blanco o cortada */
+    html, body, #root {
         height: auto !important;
         min-height: 0 !important;
         overflow: visible !important;
         background-color: white !important;
     }
 
-    /* Forzar a los contenedores de Tailwind a comportarse como bloques normales */
     .print-layout-reset, .print-main-reset, 
     .flex, .h-screen, .overflow-hidden, .overflow-y-auto {
         display: block !important;
@@ -454,72 +452,48 @@
         margin: 0 !important;
     }
 
-    /* 2. OCULTAR SIDEBAR, HEADER Y BOTONES */
-    aside, header, footer, .no-print, .psa-no-print {
+    /* Ocultar layout de la app (menú lateral, header móvil, etc) */
+    header, aside, .md\:hidden, .no-print, .psa-no-print {
         display: none !important;
     }
 
-    /* 3. FORMATO PROPIO DE LA NOTA PSA */
-    .psa-nota-container {
-        background: white !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        width: 100% !important;
+    /* --- TUS ESTILOS ORIGINALES DE IMPRESIÓN --- */
+    body {
+        background-color: white;
+        margin: 0;
+        padding: 0;
     }
 
-    .psa-container, .psa-container-second {
-        width: 100% !important;
-        max-width: 100% !important;
-        height: auto !important;
-        box-shadow: none !important;
-        padding: 0 !important;
-        margin: 0 !important;
+    .psa-nota-container, .psa-nota-container * {
+        visibility: visible;
+    }
+
+    .psa-container {
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+        padding: 0.5cm;
+        margin: 0;
+    }
+
+    .psa-container-second {
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+        padding: 0.5cm;
+        margin: 0;
+        min-height: auto !important;
     }
 
     .psa-page-break {
-        page-break-before: always !important;
+        page-break-before: always;
     }
 
-    /* DEVOLVER EL FORMATO DE "CAJA" (TEXTBOX) A LOS INPUTS */
-    .psa-input-field {
-        background: transparent !important;
-        border: 1px solid #999 !important; /* <-- Borde de caja fina gris/oscura */
-        border-radius: 2px !important;
-        color: #000 !important;
-        box-shadow: none !important;
-        padding: 2px !important;
-    }
-
-    .psa-ingreso-egreso-select {
-        border: 1px solid #999 !important; /* <-- Borde de caja para el select */
-        appearance: none !important;
-        -webkit-appearance: none !important;
-        font-weight: bold !important;
-        background: transparent !important;
-        padding: 2px !important;
-    }
-
-    /* Tablas */
-    .psa-table {
-        border-collapse: collapse !important;
-        margin-bottom: 10px !important;
-    }
-    
-    .psa-table th, .psa-table td {
-        border: 1px solid #999 !important;
-        padding: 4px !important;
-    }
-    
-    .psa-table th {
-        background-color: #f0f0f0 !important;
-        color: black !important;
-    }
-
-    /* Encabezados y Logo */
     .psa-header {
         display: flex !important;
         justify-content: space-between !important;
         align-items: flex-start !important;
+        margin-bottom: 15px !important;
     }
 
     .psa-logo-container {
@@ -531,13 +505,78 @@
         text-align: right !important;
     }
 
-    /* Que no se corten las credenciales a la mitad de la hoja */
-    .psa-credential-box {
-        page-break-inside: avoid !important;
+    .psa-header-lines {
+        margin-bottom: 15px !important;
+    }
+
+    .psa-header-lines h1 {
+        margin: 4px 0 !important;
+    }
+
+    .psa-header-lines p {
+        margin: 3px 0 !important;
+    }
+
+    .psa-fecha {
+        text-align: right !important;
+        margin-bottom: 10px !important;
+    }
+
+    .psa-saludo {
+        margin-bottom: 10px !important;
+    }
+
+    .psa-saludo p {
+        margin: 4px 0 !important;
+    }
+
+    .psa-symbol-container {
+        margin: 10px 0 !important;
+        padding: 5px !important;
+    }
+
+    .psa-form-section {
+        margin-bottom: 15px !important;
+    }
+
+    .psa-form-section-title {
+        margin-bottom: 10px !important;
+        padding-bottom: 5px !important;
+    }
+
+    .psa-table {
+        margin-bottom: 10px !important;
+    }
+
+    .psa-table th, .psa-table td {
+        padding: 3px 4px !important;
+    }
+
+    .psa-puesto-ingreso {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        margin-bottom: 8px !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+
+    .psa-puesto-ingreso input {
+        flex-grow: 1 !important;
+        margin-left: 3px !important;
+        width: auto !important;
+    }
+
+    .psa-input-field {
+        background: transparent !important;
         border: 1px solid #ccc !important;
+    }
+
+    .psa-btn, .psa-remove-btn {
+        display: none !important;
     }
 }
 
+/* --- ESTILOS PARA PANTALLAS PEQUEÑAS (MÓVILES) --- */
 @media (max-width: 10cm) {
     .psa-container {
         width: 100%;
@@ -587,7 +626,6 @@
         gap: 5px;
     }
 
-    /* En móviles, forzar alineación izquierda para impresión */
     @media print {
         .psa-logo-container {
             text-align: left !important;

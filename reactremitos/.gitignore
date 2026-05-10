@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+public/Tecnicos.json
+public/Credenciales/
+src/assets/Credenciales/
+Credenciales/
+Tecnicos.json

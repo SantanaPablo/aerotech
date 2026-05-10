@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && del dist\\Tecnicos.json 2>nul && rmdir /s /q dist\\Credenciales 2>nul",
     "lint": "eslint .",
     "preview": "vite preview"
   },

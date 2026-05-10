@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "Remitos.API\\Controllers\\ItemRemitosController.cs",
               "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\ItemRemitosController.cs",
               "RelativeToolTip": "Remitos.API\\Controllers\\ItemRemitosController.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAA0wCwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACkAAAAAAAAAAAAIwCwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-06T12:20:12.179Z",
               "EditorCaption": ""
@@ -47,8 +47,7 @@
               "RelativeToolTip": "Remitos.API\\Controllers\\RemitosController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-06T12:19:31.97Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-06T12:19:31.97Z"
             },
             {
               "$type": "Document",
@@ -60,8 +59,7 @@
               "RelativeToolTip": "Remitos.API\\Controllers\\NotasSalidaController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-20T11:44:37.113Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-20T11:44:37.113Z"
             }
           ]
         }
