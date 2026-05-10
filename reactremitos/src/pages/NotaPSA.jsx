@@ -2,6 +2,12 @@ import React, { useState, useEffect } from 'react';
 import '../css/notaPSA.css';
 
 const NotaPSA = () => {
+  const [autoridades, setAutoridades] = useState({
+    jefe: '',
+    subjefe: '',
+    aduana: ''
+  });
+
   const [formData, setFormData] = useState({
     ingresoChecked: false,
     egresoChecked: false,
@@ -30,20 +36,34 @@ const NotaPSA = () => {
   const [showModal, setShowModal] = useState(false);
   const [tecnicos, setTecnicos] = useState([]);
 
- useEffect(() => {
-  actualizarFecha();
-  
+  useEffect(() => {
+    actualizarFecha();
 
-  fetch('/Tecnicos.json')
-    .then(response => response.json())
-    .then(data => {
-      const listaConFlag = data.tecnicos.map(t => ({ ...t, seleccionado: false }));
-      setTecnicos(listaConFlag);
-    })
-    .catch(error => {
-      console.error('Error cargando técnicos:', error);
-    });
-}, []);
+    // Fetch de Técnicos (existente)
+    fetch('/Tecnicos.json')
+      .then(response => response.json())
+      .then(data => {
+        const listaConFlag = data.tecnicos.map(t => ({ ...t, seleccionado: false }));
+        setTecnicos(listaConFlag);
+      })
+      .catch(error => {
+        console.error('Error cargando técnicos:', error);
+      });
+
+    fetch('/Autoridades.json')
+      .then(response => response.json())
+      .then(data => {
+        setAutoridades(data);
+      })
+      .catch(error => {
+        console.error('Error cargando autoridades:', error);
+        setAutoridades({
+            jefe: 'ERROR CARGANDO DATOS',
+            subjefe: 'ERROR CARGANDO DATOS',
+            aduana: ''
+        });
+      });
+  }, []);
 
   useEffect(() => {
     setTecnicos(prev =>
@@ -55,7 +75,6 @@ const NotaPSA = () => {
       }))
     );
   }, [credenciales]);
-
 
   const actualizarFecha = () => {
     const ahora = new Date();
@@ -182,11 +201,11 @@ const NotaPSA = () => {
     setShowModal(false);
   };
 
- const calcularEstadoVencimiento = (fechaVencimiento) => {
+  const calcularEstadoVencimiento = (fechaVencimiento) => {
     if (!fechaVencimiento) return { estado: 'desconocido', texto: 'S/D', color: '#ccc' };
 
-    const partes = fechaVencimiento.split('-'); 
-    
+    const partes = fechaVencimiento.split('-');
+
     if (partes.length !== 3) return { estado: 'error', texto: 'ERROR', color: '#ccc' };
 
     const dia = parseInt(partes[0], 10);
@@ -227,8 +246,11 @@ const NotaPSA = () => {
           <h1>Unidad Operacional de Seguridad Preventiva Metropolitana</h1>
           <h1>Aeropuerto Internacional Aeroparque Jorge Newbery</h1>
           <h1>POLICIA DE SEGURIDAD AEROPORTUARIA</h1>
-          <p>JEFE DE UNIDAD</p>
-          <p>JEFATURA DIVISION ADUANA AEROPARQUE</p>
+          
+          {/* 3. REEMPLAZO DE VARIABLES HARDCODEADAS */}
+          <p>JEFE DE UNIDAD - {autoridades.jefe}</p>
+          <p>SUBJEFE DE UNIDAD - {autoridades.subjefe}</p>
+          <p>{autoridades.aduana}</p>
         </div>
 
         <div className="psa-saludo">
@@ -560,7 +582,7 @@ const NotaPSA = () => {
         </p>
 
         <h2>Credenciales del Personal: </h2>
-     
+
         <input
           type="file"
           id="psa-credential-upload"
@@ -592,7 +614,7 @@ const NotaPSA = () => {
           {credenciales.map((credencial, index) => (
             <div key={index} className="psa-credential-box">
               <img src={credencial.img || credencial} alt={`Credencial ${index + 1}`} />
-              
+
               <button className="psa-remove-btn psa-no-print" onClick={() => removeCredencial(index)}>X</button>
             </div>
           ))}
@@ -625,8 +647,8 @@ const NotaPSA = () => {
                         Legajo: {t.legajo}<br />
                         Vence: {t.vencimiento}
                       </div>
-                      <div style={{ 
-                        fontWeight: 'bold', 
+                      <div style={{
+                        fontWeight: 'bold',
                         color: estadoVenc.color,
                         fontSize: '0.85em',
                         padding: '4px 8px',
