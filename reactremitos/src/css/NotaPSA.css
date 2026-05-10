@@ -426,49 +426,100 @@
 
 
 
-/* Estilos para impresión */
+/* ESTILOS DE IMPRESIÓN */
 @media print {
-    body {
-        background-color: white;
-        margin: 10 px;
-        padding: 0;
+    @page {
+        size: A4;
+        margin: 10mm;
     }
 
-    .psa-nota-container, .psa-nota-container * {
-        visibility: visible;
+    /* 1. ROMPER LA HERENCIA DEL MAIN LAYOUT AL IMPRIMIR (VITAL) */
+    body, html, #root {
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+        background-color: white !important;
     }
 
-    .psa-container {
-        width: 100%;
-        height: auto;
-        box-shadow: none;
-        padding: 0.5cm;
-        margin: 10 px;
+    /* Forzar a los contenedores de Tailwind a comportarse como bloques normales */
+    .print-layout-reset, .print-main-reset, 
+    .flex, .h-screen, .overflow-hidden, .overflow-y-auto {
+        display: block !important;
+        height: auto !important;
+        overflow: visible !important;
+        position: static !important;
+        width: 100% !important;
+        background: transparent !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
 
-    .psa-container-second {
-        width: 100%;
-        height: auto;
-        box-shadow: none;
-        padding: 0.5cm;
-        margin: 10 px;
-        min-height: auto !important;
-    }
-
-    .psa-no-print {
+    /* 2. OCULTAR SIDEBAR, HEADER Y BOTONES */
+    aside, header, footer, .no-print, .psa-no-print {
         display: none !important;
     }
 
-    .psa-page-break {
-        page-break-before: always;
+    /* 3. FORMATO PROPIO DE LA NOTA PSA */
+    .psa-nota-container {
+        background: white !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
     }
 
-    /* Mantener la estructura original */
+    .psa-container, .psa-container-second {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .psa-page-break {
+        page-break-before: always !important;
+    }
+
+    /* DEVOLVER EL FORMATO DE "CAJA" (TEXTBOX) A LOS INPUTS */
+    .psa-input-field {
+        background: transparent !important;
+        border: 1px solid #999 !important; /* <-- Borde de caja fina gris/oscura */
+        border-radius: 2px !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        padding: 2px !important;
+    }
+
+    .psa-ingreso-egreso-select {
+        border: 1px solid #999 !important; /* <-- Borde de caja para el select */
+        appearance: none !important;
+        -webkit-appearance: none !important;
+        font-weight: bold !important;
+        background: transparent !important;
+        padding: 2px !important;
+    }
+
+    /* Tablas */
+    .psa-table {
+        border-collapse: collapse !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .psa-table th, .psa-table td {
+        border: 1px solid #999 !important;
+        padding: 4px !important;
+    }
+    
+    .psa-table th {
+        background-color: #f0f0f0 !important;
+        color: black !important;
+    }
+
+    /* Encabezados y Logo */
     .psa-header {
         display: flex !important;
         justify-content: space-between !important;
         align-items: flex-start !important;
-        margin-bottom: 15px !important;
     }
 
     .psa-logo-container {
@@ -479,75 +530,11 @@
     .psa-header-info {
         text-align: right !important;
     }
-    .psa-header-lines {
-        margin-bottom: 15px !important;
-    }
-   .psa-header-lines h1 {
-        margin: 4px 0 !important;
-    }
 
-    .psa-header-lines p {
-        margin: 3px 0 !important;
-    }
-
-    .psa-fecha {
-        text-align: right !important;
-        margin-bottom: 10px !important;
-    }
-
-.psa-saludo {
-        margin-bottom: 10px !important;
-    }
-
-    .psa-saludo p {
-        margin: 4px 0 !important;
-    }
-
-    .psa-symbol-container {
-        margin: 10px 0 !important;
-        padding: 5px !important;
-    }
-
-    .psa-form-section {
-        margin-bottom: 15px !important;
-    }
-
-    .psa-form-section-title {
-        margin-bottom: 10px !important;
-        padding-bottom: 5px !important;
-    }
-
-    .psa-table {
-        margin-bottom: 10px !important;
-    }
-
-    .psa-table th, .psa-table td {
-        padding: 3px 4px !important;
-    }
-    /* Asegurar que los inputs mantengan su estilo */
-    .psa-puesto-ingreso {
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        margin-bottom: 8px !important;
-        align-items: center !important;
-        width: 100% !important;
-    }
-
-    .psa-puesto-ingreso input {
-        flex-grow: 1 !important;
-        margin-left: 3px !important;
-        width: auto !important;
-    }
-
-    /* Mejorar la legibilidad en impresión */
-    .psa-input-field {
-        background: transparent !important;
+    /* Que no se corten las credenciales a la mitad de la hoja */
+    .psa-credential-box {
+        page-break-inside: avoid !important;
         border: 1px solid #ccc !important;
-    }
-
-    /* Asegurar que los botones no se impriman */
-    .psa-btn, .psa-remove-btn {
-        display: none !important;
     }
 }
 
