@@ -15,7 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Negocio\Negocio.csproj" />
+    <ProjectReference Include="..\Aerotech.Infrastructure\Aerotech.Infrastructure.csproj" />
+    <ProjectReference Include="..\Application\Aerotech.Application.csproj" />
   </ItemGroup>
 
 </Project>

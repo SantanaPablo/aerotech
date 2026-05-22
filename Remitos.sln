@@ -1,17 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178
+# Visual Studio Version 18
+VisualStudioVersion = 18.5.11723.231 stable
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remitos", "Remitos\Remitos.csproj", "{C0B44F96-390C-4391-8C95-426B9B102E44}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{A456AA80-2EBB-4876-8940-31FFF6C61A79}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{3363B6D1-1536-477E-BC2A-E474B9F29D6E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remitos.API", "Remitos.API\Remitos.API.csproj", "{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "reactremitos", "ReactRemitos\reactremitos.esproj", "{FD078C69-9E98-7E0C-B58C-E81D8A9A7707}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aerotech.Domain", "Domain\Aerotech.Domain.csproj", "{F9525841-DCCA-4C2E-BA32-93D3E15325F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aerotech.Application", "Application\Aerotech.Application.csproj", "{B5DCF35D-4AED-447C-90F5-D093F08D12EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aerotech.Infrastructure", "Aerotech.Infrastructure\Aerotech.Infrastructure.csproj", "{FE845D5D-04C8-4710-9635-FE7CA767F800}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,18 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C0B44F96-390C-4391-8C95-426B9B102E44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C0B44F96-390C-4391-8C95-426B9B102E44}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C0B44F96-390C-4391-8C95-426B9B102E44}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C0B44F96-390C-4391-8C95-426B9B102E44}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A456AA80-2EBB-4876-8940-31FFF6C61A79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A456AA80-2EBB-4876-8940-31FFF6C61A79}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A456AA80-2EBB-4876-8940-31FFF6C61A79}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A456AA80-2EBB-4876-8940-31FFF6C61A79}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3363B6D1-1536-477E-BC2A-E474B9F29D6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3363B6D1-1536-477E-BC2A-E474B9F29D6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3363B6D1-1536-477E-BC2A-E474B9F29D6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3363B6D1-1536-477E-BC2A-E474B9F29D6E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,6 +29,18 @@ Global
 		{FD078C69-9E98-7E0C-B58C-E81D8A9A7707}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD078C69-9E98-7E0C-B58C-E81D8A9A7707}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FD078C69-9E98-7E0C-B58C-E81D8A9A7707}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F9525841-DCCA-4C2E-BA32-93D3E15325F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9525841-DCCA-4C2E-BA32-93D3E15325F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9525841-DCCA-4C2E-BA32-93D3E15325F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9525841-DCCA-4C2E-BA32-93D3E15325F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5DCF35D-4AED-447C-90F5-D093F08D12EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5DCF35D-4AED-447C-90F5-D093F08D12EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5DCF35D-4AED-447C-90F5-D093F08D12EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5DCF35D-4AED-447C-90F5-D093F08D12EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE845D5D-04C8-4710-9635-FE7CA767F800}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE845D5D-04C8-4710-9635-FE7CA767F800}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE845D5D-04C8-4710-9635-FE7CA767F800}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE845D5D-04C8-4710-9635-FE7CA767F800}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

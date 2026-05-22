@@ -1,10 +1,10 @@
-using Dominio;
-using Dominio.DTOs;
-using Dominio.Extensions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Negocio.Interfaces;
 using System.Security.Claims;
+using Aerotech.Domain;
+using Aerotech.Application.DTOs;
+using Aerotech.Application.Interfaces;
+using Aerotech.Application.Mappings;
 
 namespace Remitos.API.Controllers
 {

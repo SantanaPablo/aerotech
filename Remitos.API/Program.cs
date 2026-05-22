@@ -1,48 +1,45 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using Negocio;
-using Negocio.Interfaces;
+using Aerotech.Application.Interfaces;
+using Aerotech.Infrastructure.Services;
+using Aerotech.Infrastructure.Persistence;
 using System.Text;
 using System.Text.Json.Serialization;
 
-
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// CORS — orígenes desde appsettings.json
+var allowedOrigins = builder.Configuration
+    .GetSection("Cors:AllowedOrigins")
+    .Get<string[]>() ?? [];
 
-var secretKey = builder.Configuration["Jwt:Key"]
-                ?? throw new InvalidOperationException("Jwt:Key no está configurada");
-
-var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 builder.Services.AddCors(options =>
-{
-    options.AddPolicy(name: MyAllowSpecificOrigins,
-        policy =>
-        {
-            policy.WithOrigins("http://localhost:5173" , "http://localhost:5004", "http://10.35.144.252:5004", "http://localhost:5001", "http://10.35.144.252:5001")
-                  .AllowAnyHeader()                     
-                  .AllowAnyMethod();                    
-        });
-});
+    options.AddPolicy("AllowFrontend", policy =>
+        policy.WithOrigins(allowedOrigins)
+              .AllowAnyHeader()
+              .AllowAnyMethod()));
+
+// Controllers
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
         options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
         options.JsonSerializerOptions.WriteIndented = true;
-
     });
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
+// Base de datos
+var connectionString = builder.Configuration.GetConnectionString("MySqlConnection");
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseMySql(
-        builder.Configuration.GetConnectionString("MySqlConnection"),
-        ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("MySqlConnection"))
-    )
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))
 );
+
+// JWT
+var secretKey = builder.Configuration["Jwt:Key"]
+    ?? throw new InvalidOperationException("Jwt:Key no está configurada");
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -59,33 +56,26 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAuthorization();
 
-builder.Services.AddScoped<IRemitoService, RemitoNegocio>();
-builder.Services.AddScoped<IItemRemitoService, ItemRemitoNegocio>();
-builder.Services.AddScoped<IItemSalidaService, ItemSalidaNegocio>();
-builder.Services.AddScoped<INotaSalidaService, NotaSalidaNegocio>();
-builder.Services.AddScoped<IItemEntradaService, ItemEntradaNegocio>();
-builder.Services.AddScoped<INotaEntradaService, NotaEntradaNegocio>();
-builder.Services.AddScoped<IUsuarioService, UsuarioNegocio>();
-builder.Services.AddScoped<IAuditoriaService, AuditoriaNegocio>();
-builder.Services.AddScoped<IRemitoService, RemitoNegocio>();
+// Servicios de aplicación
+builder.Services.AddScoped<IAuditoriaService, AuditoriaService>();
+builder.Services.AddScoped<IRemitoService, RemitoService>();
+builder.Services.AddScoped<IItemRemitoService, ItemRemitoService>();
+builder.Services.AddScoped<INotaSalidaService, NotaSalidaService>();
+builder.Services.AddScoped<IItemSalidaService, ItemSalidaService>();
+builder.Services.AddScoped<INotaEntradaService, NotaEntradaService>();
+builder.Services.AddScoped<IItemEntradaService, ItemEntradaService>();
+builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-//app.UseHttpsRedirection();
-
-app.UseCors(MyAllowSpecificOrigins);
-
+app.UseCors("AllowFrontend");
 app.UseAuthentication();
-
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();

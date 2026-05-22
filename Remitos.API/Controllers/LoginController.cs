@@ -1,7 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Negocio;
+﻿using Aerotech.Domain;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Aerotech.Application.Interfaces;
+using Aerotech.Infrastructure.Persistence;
 using Remitos.API.Request;
+using Microsoft.EntityFrameworkCore;
 
 namespace Remitos.API.Controllers
 {
@@ -22,7 +25,7 @@ namespace Remitos.API.Controllers
         public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
             var user = await _context.Usuarios
-                .Include(u => u.Rol)   // <-- trae el rol
+                .Include(u => u.Rol)
                 .FirstOrDefaultAsync(u => u.Legajo == request.Legajo
                                        && u.Contrasena == request.Contrasena);
 

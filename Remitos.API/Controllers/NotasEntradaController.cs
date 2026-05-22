@@ -1,8 +1,7 @@
-using Dominio;
+using Aerotech.Domain;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Negocio.Interfaces;
-
+using Aerotech.Application.Interfaces;
 namespace Remitos.API.Controllers
 {
     [ApiController]

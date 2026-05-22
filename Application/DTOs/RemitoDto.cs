@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System;
 
-namespace Dominio.DTOs
+namespace Aerotech.Application.DTOs
 {
     public class RemitoDto
     {
