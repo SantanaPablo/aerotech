@@ -1,5 +1,4 @@
 @media print {
-  /* 1. DESBLOQUEADOR DE TAILWIND */
   html, body, #root, .print-layout-reset, .print-main-reset {
       height: auto !important;
       min-height: 0 !important;
@@ -7,7 +6,6 @@
       position: static !important; 
   }
 
-  /* 2. TU LÓGICA ORIGINAL EXACTA */
   body, html {
     margin: 0 !important;
     padding: 0 !important;
@@ -36,7 +34,6 @@
     font-size: 11px !important;
   }
 
-  /* Separación para la tabla de ítems */
   .items-container {
     margin-top: 5mm !important;
   }

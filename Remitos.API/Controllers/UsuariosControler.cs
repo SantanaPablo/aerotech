@@ -2,6 +2,7 @@ using Aerotech.Domain;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Aerotech.Application.Interfaces;
+using Aerotech.Application.DTOs;
 
 namespace Remitos.API.Controllers
 {
@@ -47,9 +48,9 @@ namespace Remitos.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, Usuario usuario)
+        public async Task<IActionResult> Put(int id, [FromBody] ActualizarContrasenaDto dto)
         {
-            if (id != usuario.Id) return BadRequest();
+            var usuario = new Usuario { Id = id, Contrasena = dto.Contrasena };
             await _service.ActualizarAsync(usuario);
             return NoContent();
         }

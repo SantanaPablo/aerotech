@@ -3,20 +3,60 @@
   "WorkspaceRootPath": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\remitos.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\remitos.api\\controllers\\itemsalidascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\controllers\\itemsalidascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9525841-DCCA-4C2E-BA32-93D3E15325F1}|Domain\\Aerotech.Domain.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\domain\\entidades\\notasalida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9525841-DCCA-4C2E-BA32-93D3E15325F1}|Domain\\Aerotech.Domain.csproj|solutionrelative:domain\\entidades\\notasalida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\remitos.api\\controllers\\usuarioscontroler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\controllers\\usuarioscontroler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5DCF35D-4AED-447C-90F5-D093F08D12EE}|Application\\Aerotech.Application.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\application\\dtos\\actualizarcontrasenadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5DCF35D-4AED-447C-90F5-D093F08D12EE}|Application\\Aerotech.Application.csproj|solutionrelative:application\\dtos\\actualizarcontrasenadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5DCF35D-4AED-447C-90F5-D093F08D12EE}|Application\\Aerotech.Application.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\application\\dtos\\remitodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5DCF35D-4AED-447C-90F5-D093F08D12EE}|Application\\Aerotech.Application.csproj|solutionrelative:application\\dtos\\remitodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE845D5D-04C8-4710-9635-FE7CA767F800}|Aerotech.Infrastructure\\Aerotech.Infrastructure.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\aerotech.infrastructure\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE845D5D-04C8-4710-9635-FE7CA767F800}|Aerotech.Infrastructure\\Aerotech.Infrastructure.csproj|solutionrelative:aerotech.infrastructure\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9525841-DCCA-4C2E-BA32-93D3E15325F1}|Domain\\Aerotech.Domain.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\domain\\entidades\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9525841-DCCA-4C2E-BA32-93D3E15325F1}|Domain\\Aerotech.Domain.csproj|solutionrelative:domain\\entidades\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B5DCF35D-4AED-447C-90F5-D093F08D12EE}|Application\\Aerotech.Application.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\application\\interfaces\\iservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B5DCF35D-4AED-447C-90F5-D093F08D12EE}|Application\\Aerotech.Application.csproj|solutionrelative:application\\interfaces\\iservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5DCF35D-4AED-447C-90F5-D093F08D12EE}|Application\\Aerotech.Application.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\application\\mappings\\remitoextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5DCF35D-4AED-447C-90F5-D093F08D12EE}|Application\\Aerotech.Application.csproj|solutionrelative:application\\mappings\\remitoextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\remitos.api\\data\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\data\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F9525841-DCCA-4C2E-BA32-93D3E15325F1}|Domain\\Aerotech.Domain.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\domain\\entidades\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F9525841-DCCA-4C2E-BA32-93D3E15325F1}|Domain\\Aerotech.Domain.csproj|solutionrelative:domain\\entidades\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\remitos.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\remitos.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\remitos.api\\controllers\\itementradascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\controllers\\itementradascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\remitos.api\\remitos.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\remitos.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5DCF35D-4AED-447C-90F5-D093F08D12EE}|Application\\Aerotech.Application.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\application\\mappings\\remitoextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5DCF35D-4AED-447C-90F5-D093F08D12EE}|Application\\Aerotech.Application.csproj|solutionrelative:application\\mappings\\remitoextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F9525841-DCCA-4C2E-BA32-93D3E15325F1}|Domain\\Aerotech.Domain.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\domain\\entidades\\remito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,10 +65,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F9525841-DCCA-4C2E-BA32-93D3E15325F1}|Domain\\Aerotech.Domain.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\domain\\entidades\\itemremito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F9525841-DCCA-4C2E-BA32-93D3E15325F1}|Domain\\Aerotech.Domain.csproj|solutionrelative:domain\\entidades\\itemremito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE845D5D-04C8-4710-9635-FE7CA767F800}|Aerotech.Infrastructure\\Aerotech.Infrastructure.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\aerotech.infrastructure\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE845D5D-04C8-4710-9635-FE7CA767F800}|Aerotech.Infrastructure\\Aerotech.Infrastructure.csproj|solutionrelative:aerotech.infrastructure\\persistence\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FE845D5D-04C8-4710-9635-FE7CA767F800}|Aerotech.Infrastructure\\Aerotech.Infrastructure.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\aerotech.infrastructure\\services\\itementradaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -47,10 +83,6 @@
       "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B5DCF35D-4AED-447C-90F5-D093F08D12EE}|Application\\Aerotech.Application.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\application\\dtos\\remitodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B5DCF35D-4AED-447C-90F5-D093F08D12EE}|Application\\Aerotech.Application.csproj|solutionrelative:application\\dtos\\remitodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F9525841-DCCA-4C2E-BA32-93D3E15325F1}|Domain\\Aerotech.Domain.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\domain\\entidades\\notaentrada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F9525841-DCCA-4C2E-BA32-93D3E15325F1}|Domain\\Aerotech.Domain.csproj|solutionrelative:domain\\entidades\\notaentrada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -59,36 +91,12 @@
       "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\controllers\\notasentradacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\remitos.api\\request\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\request\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\remitos.api\\controllers\\itementradascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\controllers\\itementradascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\remitos.api\\controllers\\usuarioscontroler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\controllers\\usuarioscontroler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\remitos.api\\controllers\\notassalidacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\controllers\\notassalidacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\remitos.api\\controllers\\itemsalidascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\controllers\\itemsalidascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\remitos.api\\controllers\\itemremitoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\controllers\\itemremitoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\remitos.api\\data\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\data\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\remitos.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FE845D5D-04C8-4710-9635-FE7CA767F800}|Aerotech.Infrastructure\\Aerotech.Infrastructure.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\aerotech.infrastructure\\services\\itemremitoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -111,20 +119,12 @@
       "RelativeMoniker": "D:0:0:{FE845D5D-04C8-4710-9635-FE7CA767F800}|Aerotech.Infrastructure\\Aerotech.Infrastructure.csproj|solutionrelative:aerotech.infrastructure\\services\\remitoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FE845D5D-04C8-4710-9635-FE7CA767F800}|Aerotech.Infrastructure\\Aerotech.Infrastructure.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\aerotech.infrastructure\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE845D5D-04C8-4710-9635-FE7CA767F800}|Aerotech.Infrastructure\\Aerotech.Infrastructure.csproj|solutionrelative:aerotech.infrastructure\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\remitos.api\\remitos.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
       "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\remitos.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F9525841-DCCA-4C2E-BA32-93D3E15325F1}|Domain\\Aerotech.Domain.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\domain\\audit\\auditoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F9525841-DCCA-4C2E-BA32-93D3E15325F1}|Domain\\Aerotech.Domain.csproj|solutionrelative:domain\\audit\\auditoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE845D5D-04C8-4710-9635-FE7CA767F800}|Aerotech.Infrastructure\\Aerotech.Infrastructure.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\aerotech.infrastructure\\extensions\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE845D5D-04C8-4710-9635-FE7CA767F800}|Aerotech.Infrastructure\\Aerotech.Infrastructure.csproj|solutionrelative:aerotech.infrastructure\\extensions\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FE845D5D-04C8-4710-9635-FE7CA767F800}|Aerotech.Infrastructure\\Aerotech.Infrastructure.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\aerotech.infrastructure\\aerotech.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -139,16 +139,8 @@
       "RelativeMoniker": "D:0:0:{B5DCF35D-4AED-447C-90F5-D093F08D12EE}|Application\\Aerotech.Application.csproj|solutionrelative:application\\aerotech.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\remitos.api\\remitos.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{3336E6E4-0AC8-44C2-9A43-0B63E6F330E2}|Remitos.API\\Remitos.API.csproj|solutionrelative:remitos.api\\remitos.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F9525841-DCCA-4C2E-BA32-93D3E15325F1}|Domain\\Aerotech.Domain.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\domain\\entidades\\rol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F9525841-DCCA-4C2E-BA32-93D3E15325F1}|Domain\\Aerotech.Domain.csproj|solutionrelative:domain\\entidades\\rol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F9525841-DCCA-4C2E-BA32-93D3E15325F1}|Domain\\Aerotech.Domain.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\domain\\entidades\\notasalida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F9525841-DCCA-4C2E-BA32-93D3E15325F1}|Domain\\Aerotech.Domain.csproj|solutionrelative:domain\\entidades\\notasalida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F9525841-DCCA-4C2E-BA32-93D3E15325F1}|Domain\\Aerotech.Domain.csproj|c:\\users\\pablo\\onedrive\\escritorio\\remitos\\aerotech\\domain\\entidades\\itemsalida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -166,336 +158,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AuditoriaService.cs",
-              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Services\\AuditoriaService.cs",
-              "RelativeDocumentMoniker": "Aerotech.Infrastructure\\Services\\AuditoriaService.cs",
-              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Services\\AuditoriaService.cs",
-              "RelativeToolTip": "Aerotech.Infrastructure\\Services\\AuditoriaService.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAYwAIAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T12:18:08.756Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ItemEntradaService.cs",
-              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Services\\ItemEntradaService.cs",
-              "RelativeDocumentMoniker": "Aerotech.Infrastructure\\Services\\ItemEntradaService.cs",
-              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Services\\ItemEntradaService.cs",
-              "RelativeToolTip": "Aerotech.Infrastructure\\Services\\ItemEntradaService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T12:19:34.421Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Persistence\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Aerotech.Infrastructure\\Persistence\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Persistence\\AppDbContext.cs",
-              "RelativeToolTip": "Aerotech.Infrastructure\\Persistence\\AppDbContext.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAiwAMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T12:00:18.386Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ItemRemito.cs",
-              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Domain\\Entidades\\ItemRemito.cs",
-              "RelativeDocumentMoniker": "Domain\\Entidades\\ItemRemito.cs",
-              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Domain\\Entidades\\ItemRemito.cs",
-              "RelativeToolTip": "Domain\\Entidades\\ItemRemito.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAYwAQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T11:38:02.67Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Remito.cs",
-              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Domain\\Entidades\\Remito.cs",
-              "RelativeDocumentMoniker": "Domain\\Entidades\\Remito.cs",
-              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Domain\\Entidades\\Remito.cs",
-              "RelativeToolTip": "Domain\\Entidades\\Remito.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T11:38:11.084Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Domain\\Entidades\\Usuario.cs",
-              "RelativeDocumentMoniker": "Domain\\Entidades\\Usuario.cs",
-              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Domain\\Entidades\\Usuario.cs",
-              "RelativeToolTip": "Domain\\Entidades\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T11:38:12.201Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "RemitoExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Application\\Mappings\\RemitoExtensions.cs",
-              "RelativeDocumentMoniker": "Application\\Mappings\\RemitoExtensions.cs",
-              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Application\\Mappings\\RemitoExtensions.cs",
-              "RelativeToolTip": "Application\\Mappings\\RemitoExtensions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T12:26:02.356Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IServices.cs",
-              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Application\\Interfaces\\IServices.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\IServices.cs",
-              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Application\\Interfaces\\IServices.cs",
-              "RelativeToolTip": "Application\\Interfaces\\IServices.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAkwFgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T11:34:19.097Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\appsettings.json",
-              "RelativeDocumentMoniker": "Remitos.API\\appsettings.json",
-              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\appsettings.json",
-              "RelativeToolTip": "Remitos.API\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-05-22T12:33:17.444Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "RemitosController.cs",
-              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\RemitosController.cs",
-              "RelativeDocumentMoniker": "Remitos.API\\Controllers\\RemitosController.cs",
-              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\RemitosController.cs",
-              "RelativeToolTip": "Remitos.API\\Controllers\\RemitosController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-06T12:19:31.97Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "NotaEntrada.cs",
-              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Domain\\Entidades\\NotaEntrada.cs",
-              "RelativeDocumentMoniker": "Domain\\Entidades\\NotaEntrada.cs",
-              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Domain\\Entidades\\NotaEntrada.cs",
-              "RelativeToolTip": "Domain\\Entidades\\NotaEntrada.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T11:38:09.901Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "LoginRequest.cs",
-              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Request\\LoginRequest.cs",
-              "RelativeDocumentMoniker": "Remitos.API\\Request\\LoginRequest.cs",
-              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Request\\LoginRequest.cs",
-              "RelativeToolTip": "Remitos.API\\Request\\LoginRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T11:09:01.987Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ItemEntradasController.cs",
-              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\ItemEntradasController.cs",
-              "RelativeDocumentMoniker": "Remitos.API\\Controllers\\ItemEntradasController.cs",
-              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\ItemEntradasController.cs",
-              "RelativeToolTip": "Remitos.API\\Controllers\\ItemEntradasController.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAA5wAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T12:35:07.05Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "NotasEntradaController.cs",
-              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\NotasEntradaController.cs",
-              "RelativeDocumentMoniker": "Remitos.API\\Controllers\\NotasEntradaController.cs",
-              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\NotasEntradaController.cs",
-              "RelativeToolTip": "Remitos.API\\Controllers\\NotasEntradaController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-13T18:03:26.857Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "LoginController.cs",
-              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\LoginController.cs",
-              "RelativeDocumentMoniker": "Remitos.API\\Controllers\\LoginController.cs",
-              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\LoginController.cs",
-              "RelativeToolTip": "Remitos.API\\Controllers\\LoginController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T12:35:55.826Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
               "Title": "UsuariosControler.cs",
               "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\UsuariosControler.cs",
               "RelativeDocumentMoniker": "Remitos.API\\Controllers\\UsuariosControler.cs",
               "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\UsuariosControler.cs",
               "RelativeToolTip": "Remitos.API\\Controllers\\UsuariosControler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-22T12:37:19.361Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 6,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Domain\\Entidades\\Usuario.cs",
+              "RelativeDocumentMoniker": "Domain\\Entidades\\Usuario.cs",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Domain\\Entidades\\Usuario.cs",
+              "RelativeToolTip": "Domain\\Entidades\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T11:38:12.201Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "RemitoDto.cs",
               "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Application\\DTOs\\RemitoDto.cs",
               "RelativeDocumentMoniker": "Application\\DTOs\\RemitoDto.cs",
               "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Application\\DTOs\\RemitoDto.cs",
               "RelativeToolTip": "Application\\DTOs\\RemitoDto.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAADwvzUAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAwwDUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T12:25:22.132Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-22T12:25:22.132Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "NotasSalidaController.cs",
-              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\NotasSalidaController.cs",
-              "RelativeDocumentMoniker": "Remitos.API\\Controllers\\NotasSalidaController.cs",
-              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\NotasSalidaController.cs",
-              "RelativeToolTip": "Remitos.API\\Controllers\\NotasSalidaController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-20T11:44:37.113Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "ItemSalidasController.cs",
-              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\ItemSalidasController.cs",
-              "RelativeDocumentMoniker": "Remitos.API\\Controllers\\ItemSalidasController.cs",
-              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\ItemSalidasController.cs",
-              "RelativeToolTip": "Remitos.API\\Controllers\\ItemSalidasController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T12:35:53.714Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "ItemRemitosController.cs",
-              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\ItemRemitosController.cs",
-              "RelativeDocumentMoniker": "Remitos.API\\Controllers\\ItemRemitosController.cs",
-              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\ItemRemitosController.cs",
-              "RelativeToolTip": "Remitos.API\\Controllers\\ItemRemitosController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T12:35:50.64Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "ItemRemitoService.cs",
-              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Services\\ItemRemitoService.cs",
-              "RelativeDocumentMoniker": "Aerotech.Infrastructure\\Services\\ItemRemitoService.cs",
-              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Services\\ItemRemitoService.cs",
-              "RelativeToolTip": "Aerotech.Infrastructure\\Services\\ItemRemitoService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T12:19:37.573Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "ItemSalidaService.cs",
-              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Services\\ItemSalidaService.cs",
-              "RelativeDocumentMoniker": "Aerotech.Infrastructure\\Services\\ItemSalidaService.cs",
-              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Services\\ItemSalidaService.cs",
-              "RelativeToolTip": "Aerotech.Infrastructure\\Services\\ItemSalidaService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T12:19:41.091Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Program.cs",
-              "RelativeDocumentMoniker": "Remitos.API\\Program.cs",
-              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Program.cs",
-              "RelativeToolTip": "Remitos.API\\Program.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAAADQAAABaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-13T11:30:24.603Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "NotaEntradaService.cs",
-              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Services\\NotaEntradaService.cs",
-              "RelativeDocumentMoniker": "Aerotech.Infrastructure\\Services\\NotaEntradaService.cs",
-              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Services\\NotaEntradaService.cs",
-              "RelativeToolTip": "Aerotech.Infrastructure\\Services\\NotaEntradaService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T12:19:44.258Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "NotaSalidaService.cs",
-              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Services\\NotaSalidaService.cs",
-              "RelativeDocumentMoniker": "Aerotech.Infrastructure\\Services\\NotaSalidaService.cs",
-              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Services\\NotaSalidaService.cs",
-              "RelativeToolTip": "Aerotech.Infrastructure\\Services\\NotaSalidaService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T12:19:47.085Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 8,
               "Title": "JwtHelper.cs",
               "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Data\\JwtHelper.cs",
               "RelativeDocumentMoniker": "Remitos.API\\Data\\JwtHelper.cs",
@@ -503,12 +207,301 @@
               "RelativeToolTip": "Remitos.API\\Data\\JwtHelper.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T11:08:57.744Z",
+              "WhenOpened": "2026-05-22T11:08:57.744Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ItemSalidasController.cs",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\ItemSalidasController.cs",
+              "RelativeDocumentMoniker": "Remitos.API\\Controllers\\ItemSalidasController.cs",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\ItemSalidasController.cs",
+              "RelativeToolTip": "Remitos.API\\Controllers\\ItemSalidasController.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAgwC0AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T12:35:53.714Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NotaSalida.cs",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Domain\\Entidades\\NotaSalida.cs",
+              "RelativeDocumentMoniker": "Domain\\Entidades\\NotaSalida.cs",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Domain\\Entidades\\NotaSalida.cs",
+              "RelativeToolTip": "Domain\\Entidades\\NotaSalida.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T11:38:10.551Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UsuarioService.cs",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Services\\UsuarioService.cs",
+              "RelativeDocumentMoniker": "Aerotech.Infrastructure\\Services\\UsuarioService.cs",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Services\\UsuarioService.cs",
+              "RelativeToolTip": "Aerotech.Infrastructure\\Services\\UsuarioService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwCcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T12:19:53.613Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ActualizarContrasenaDto.cs",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Application\\DTOs\\ActualizarContrasenaDto.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\ActualizarContrasenaDto.cs",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Application\\DTOs\\ActualizarContrasenaDto.cs",
+              "RelativeToolTip": "Application\\DTOs\\ActualizarContrasenaDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-26T18:19:03.954Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IServices.cs",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Application\\Interfaces\\IServices.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\IServices.cs",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Application\\Interfaces\\IServices.cs",
+              "RelativeToolTip": "Application\\Interfaces\\IServices.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAvwFMAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T11:34:19.097Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Program.cs",
+              "RelativeDocumentMoniker": "Remitos.API\\Program.cs",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Program.cs",
+              "RelativeToolTip": "Remitos.API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-13T11:30:24.603Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\appsettings.json",
+              "RelativeDocumentMoniker": "Remitos.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\appsettings.json",
+              "RelativeToolTip": "Remitos.API\\appsettings.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB4AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-22T12:33:17.444Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Remitos.API.csproj",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Remitos.API.csproj",
+              "RelativeDocumentMoniker": "Remitos.API\\Remitos.API.csproj",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Remitos.API.csproj",
+              "RelativeToolTip": "Remitos.API\\Remitos.API.csproj",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-05-22T12:01:41.437Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ItemEntradasController.cs",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\ItemEntradasController.cs",
+              "RelativeDocumentMoniker": "Remitos.API\\Controllers\\ItemEntradasController.cs",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\ItemEntradasController.cs",
+              "RelativeToolTip": "Remitos.API\\Controllers\\ItemEntradasController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwBkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T12:35:07.05Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AuditoriaService.cs",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Services\\AuditoriaService.cs",
+              "RelativeDocumentMoniker": "Aerotech.Infrastructure\\Services\\AuditoriaService.cs",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Services\\AuditoriaService.cs",
+              "RelativeToolTip": "Aerotech.Infrastructure\\Services\\AuditoriaService.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwAIAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T12:18:08.756Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ItemEntradaService.cs",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Services\\ItemEntradaService.cs",
+              "RelativeDocumentMoniker": "Aerotech.Infrastructure\\Services\\ItemEntradaService.cs",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Services\\ItemEntradaService.cs",
+              "RelativeToolTip": "Aerotech.Infrastructure\\Services\\ItemEntradaService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T12:19:34.421Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ItemRemito.cs",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Domain\\Entidades\\ItemRemito.cs",
+              "RelativeDocumentMoniker": "Domain\\Entidades\\ItemRemito.cs",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Domain\\Entidades\\ItemRemito.cs",
+              "RelativeToolTip": "Domain\\Entidades\\ItemRemito.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAYwAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T11:38:02.67Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Remito.cs",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Domain\\Entidades\\Remito.cs",
+              "RelativeDocumentMoniker": "Domain\\Entidades\\Remito.cs",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Domain\\Entidades\\Remito.cs",
+              "RelativeToolTip": "Domain\\Entidades\\Remito.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T11:38:11.084Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "RemitoExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Application\\Mappings\\RemitoExtensions.cs",
+              "RelativeDocumentMoniker": "Application\\Mappings\\RemitoExtensions.cs",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Application\\Mappings\\RemitoExtensions.cs",
+              "RelativeToolTip": "Application\\Mappings\\RemitoExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T12:26:02.356Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "RemitosController.cs",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\RemitosController.cs",
+              "RelativeDocumentMoniker": "Remitos.API\\Controllers\\RemitosController.cs",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\RemitosController.cs",
+              "RelativeToolTip": "Remitos.API\\Controllers\\RemitosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T12:19:31.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "NotaEntrada.cs",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Domain\\Entidades\\NotaEntrada.cs",
+              "RelativeDocumentMoniker": "Domain\\Entidades\\NotaEntrada.cs",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Domain\\Entidades\\NotaEntrada.cs",
+              "RelativeToolTip": "Domain\\Entidades\\NotaEntrada.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T11:38:09.901Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "NotasEntradaController.cs",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\NotasEntradaController.cs",
+              "RelativeDocumentMoniker": "Remitos.API\\Controllers\\NotasEntradaController.cs",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\NotasEntradaController.cs",
+              "RelativeToolTip": "Remitos.API\\Controllers\\NotasEntradaController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-13T18:03:26.857Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "Remitos.API\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "Remitos.API\\Controllers\\LoginController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T12:35:55.826Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "NotasSalidaController.cs",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\NotasSalidaController.cs",
+              "RelativeDocumentMoniker": "Remitos.API\\Controllers\\NotasSalidaController.cs",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\NotasSalidaController.cs",
+              "RelativeToolTip": "Remitos.API\\Controllers\\NotasSalidaController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T11:44:37.113Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ItemRemitosController.cs",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\ItemRemitosController.cs",
+              "RelativeDocumentMoniker": "Remitos.API\\Controllers\\ItemRemitosController.cs",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Controllers\\ItemRemitosController.cs",
+              "RelativeToolTip": "Remitos.API\\Controllers\\ItemRemitosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T12:35:50.64Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ItemRemitoService.cs",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Services\\ItemRemitoService.cs",
+              "RelativeDocumentMoniker": "Aerotech.Infrastructure\\Services\\ItemRemitoService.cs",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Services\\ItemRemitoService.cs",
+              "RelativeToolTip": "Aerotech.Infrastructure\\Services\\ItemRemitoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T12:19:37.573Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ItemSalidaService.cs",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Services\\ItemSalidaService.cs",
+              "RelativeDocumentMoniker": "Aerotech.Infrastructure\\Services\\ItemSalidaService.cs",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Services\\ItemSalidaService.cs",
+              "RelativeToolTip": "Aerotech.Infrastructure\\Services\\ItemSalidaService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T12:19:41.091Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 26,
+              "Title": "NotaEntradaService.cs",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Services\\NotaEntradaService.cs",
+              "RelativeDocumentMoniker": "Aerotech.Infrastructure\\Services\\NotaEntradaService.cs",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Services\\NotaEntradaService.cs",
+              "RelativeToolTip": "Aerotech.Infrastructure\\Services\\NotaEntradaService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T12:19:44.258Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "NotaSalidaService.cs",
+              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Services\\NotaSalidaService.cs",
+              "RelativeDocumentMoniker": "Aerotech.Infrastructure\\Services\\NotaSalidaService.cs",
+              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Services\\NotaSalidaService.cs",
+              "RelativeToolTip": "Aerotech.Infrastructure\\Services\\NotaSalidaService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T12:19:47.085Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
               "Title": "RemitoService.cs",
               "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Services\\RemitoService.cs",
               "RelativeDocumentMoniker": "Aerotech.Infrastructure\\Services\\RemitoService.cs",
@@ -516,25 +509,11 @@
               "RelativeToolTip": "Aerotech.Infrastructure\\Services\\RemitoService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T12:19:50.156Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-22T12:19:50.156Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "UsuarioService.cs",
-              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Services\\UsuarioService.cs",
-              "RelativeDocumentMoniker": "Aerotech.Infrastructure\\Services\\UsuarioService.cs",
-              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Services\\UsuarioService.cs",
-              "RelativeToolTip": "Aerotech.Infrastructure\\Services\\UsuarioService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T12:19:53.613Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "Remitos.API.http",
               "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Remitos.API.http",
               "RelativeDocumentMoniker": "Remitos.API\\Remitos.API.http",
@@ -542,47 +521,31 @@
               "RelativeToolTip": "Remitos.API\\Remitos.API.http",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2026-05-22T12:01:39.481Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-22T12:01:39.481Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "Auditoria.cs",
               "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Domain\\Audit\\Auditoria.cs",
               "RelativeDocumentMoniker": "Domain\\Audit\\Auditoria.cs",
               "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Domain\\Audit\\Auditoria.cs",
               "RelativeToolTip": "Domain\\Audit\\Auditoria.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAzwB8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAwB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T11:39:06.927Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "ServiceCollectionExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Extensions\\ServiceCollectionExtensions.cs",
-              "RelativeDocumentMoniker": "Aerotech.Infrastructure\\Extensions\\ServiceCollectionExtensions.cs",
-              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Extensions\\ServiceCollectionExtensions.cs",
-              "RelativeToolTip": "Aerotech.Infrastructure\\Extensions\\ServiceCollectionExtensions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T11:48:12.838Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-22T11:39:06.927Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 31,
-              "Title": "Aerotech.Infrastructure",
+              "Title": "Aerotech.Infrastructure.csproj",
               "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Aerotech.Infrastructure.csproj",
               "RelativeDocumentMoniker": "Aerotech.Infrastructure\\Aerotech.Infrastructure.csproj",
               "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Aerotech.Infrastructure\\Aerotech.Infrastructure.csproj",
               "RelativeToolTip": "Aerotech.Infrastructure\\Aerotech.Infrastructure.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-05-22T11:37:52.505Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-22T11:37:52.505Z"
             },
             {
               "$type": "Document",
@@ -594,8 +557,7 @@
               "RelativeToolTip": "Domain\\Entidades\\ItemEntrada.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T11:37:45.523Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-22T11:37:45.523Z"
             },
             {
               "$type": "Document",
@@ -607,25 +569,11 @@
               "RelativeToolTip": "Application\\Aerotech.Application.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-05-22T11:23:41.1Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-22T11:23:41.1Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 34,
-              "Title": "Remitos.API",
-              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Remitos.API.csproj",
-              "RelativeDocumentMoniker": "Remitos.API\\Remitos.API.csproj",
-              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Remitos.API\\Remitos.API.csproj",
-              "RelativeToolTip": "Remitos.API\\Remitos.API.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-05-22T12:01:41.437Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
               "Title": "Rol.cs",
               "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Domain\\Entidades\\Rol.cs",
               "RelativeDocumentMoniker": "Domain\\Entidades\\Rol.cs",
@@ -633,25 +581,11 @@
               "RelativeToolTip": "Domain\\Entidades\\Rol.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T11:38:11.618Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-22T11:38:11.618Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "NotaSalida.cs",
-              "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Domain\\Entidades\\NotaSalida.cs",
-              "RelativeDocumentMoniker": "Domain\\Entidades\\NotaSalida.cs",
-              "ToolTip": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Domain\\Entidades\\NotaSalida.cs",
-              "RelativeToolTip": "Domain\\Entidades\\NotaSalida.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T11:38:10.551Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 35,
               "Title": "ItemSalida.cs",
               "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Domain\\Entidades\\ItemSalida.cs",
               "RelativeDocumentMoniker": "Domain\\Entidades\\ItemSalida.cs",
@@ -659,12 +593,11 @@
               "RelativeToolTip": "Domain\\Entidades\\ItemSalida.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T11:38:08.636Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-22T11:38:08.636Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 36,
               "Title": "Aerotech.Domain.csproj",
               "DocumentMoniker": "C:\\Users\\pablo\\OneDrive\\Escritorio\\Remitos\\aerotech\\Domain\\Aerotech.Domain.csproj",
               "RelativeDocumentMoniker": "Domain\\Aerotech.Domain.csproj",
@@ -672,8 +605,7 @@
               "RelativeToolTip": "Domain\\Aerotech.Domain.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-05-22T11:24:37.825Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-22T11:24:37.825Z"
             }
           ]
         }

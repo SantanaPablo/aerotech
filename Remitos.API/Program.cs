@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Host.UseWindowsService();
 
 // CORS — orígenes desde appsettings.json
 var allowedOrigins = builder.Configuration
@@ -73,6 +74,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+
 
 app.UseCors("AllowFrontend");
 app.UseAuthentication();

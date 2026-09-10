@@ -1,12 +1,31 @@
-// src/utils/api.js
-
 import { clearAllDrafts } from "./draftStorage";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
 export const getToken = () => localStorage.getItem("authToken");
 
-export const isAuthenticated = () => !!getToken();
+// --- NUEVA FUNCIÓN PARA VERIFICAR EXPIRACIÓN DEL TOKEN ---
+export const isTokenExpired = () => {
+  const token = getToken();
+  if (!token) return true;
+
+  try {
+    const payloadBase64 = token.split('.')[1];
+    const base64 = payloadBase64.replace(/-/g, '+').replace(/_/g, '/');
+    const payload = JSON.parse(atob(base64));
+    
+    // Verificamos si la fecha actual (en ms) superó la fecha 'exp' del token (que viene en segundos)
+    if (payload.exp && Date.now() >= payload.exp * 1000) {
+      return true;
+    }
+    return false;
+  } catch (e) {
+    return true; // Si hay error al decodificar, asumimos que es inválido
+  }
+};
+
+// Verificamos que exista y que NO esté expirado
+export const isAuthenticated = () => !isTokenExpired();
 
 // --- ROL DINÁMICO DESDE EL JWT ---
 export const getUserRol = () => {
@@ -15,11 +34,9 @@ export const getUserRol = () => {
 
   try {
     const payloadBase64 = token.split('.')[1];
-    // Reemplazamos caracteres seguros para URL por caracteres Base64 estándar (buena práctica)
     const base64 = payloadBase64.replace(/-/g, '+').replace(/_/g, '/');
     const payload = JSON.parse(atob(base64));
     
-    // ClaimTypes.Role de .NET se mapea por defecto a esta URL, o caemos en 'role' por si acaso
     return payload['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'] || payload['role'];
   } catch (e) {
     console.error("Error obteniendo el rol del token:", e);
@@ -54,7 +71,6 @@ export const apiFetch = async (endpoint, options = {}) => {
     if (response.status === 401) {
       clearAllDrafts();
       localStorage.removeItem("authToken");
-      // Ya no limpiamos "userRol" de acá porque ya no existe en localStorage
       window.location.href = "/login";
       throw new Error("Sesión expirada. Por favor, inicia sesión nuevamente.");
     }

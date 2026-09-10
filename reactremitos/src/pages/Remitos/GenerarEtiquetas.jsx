@@ -52,10 +52,10 @@ const GenerarEtiquetas = () => {
         left: 0;
         width: 100%;
         
-        /* Margen SUPERIOR de 40mm (como pediste antes) */
-        padding-top: ${modoA4 ? "0mm" : "40mm"} !important;
+        /* Margen SUPERIOR de 40mm */
+        padding-top: ${modoA4 ? "0mm" : "0mm"} !important;
 
-        /* Margen INFERIOR de 50mm (NUEVO) */
+        /* Margen INFERIOR de 50mm */
         padding-bottom: ${modoA4 ? "0mm" : "50mm"} !important;
       }
 
@@ -67,24 +67,26 @@ const GenerarEtiquetas = () => {
       }
 
       .cut-line-container {
-        display: ${modoA4 ? "none" : "block"};
-        text-align: center;
-        margin-top: 5mm;
-        margin-bottom: 5mm;
+        display: ${modoA4 ? "none" : "flex"};
+        align-items: center;
+        justify-content: center;
         position: relative;
+        height: 15mm;
+        width: 100%;
+        overflow: hidden;
       }
       
       .cut-line-visual {
-        border-bottom: 3px dashed black; /* Línea gruesa */
+        border-bottom: 2px dashed black;
         width: 100%;
-        position: relative;
-        top: -10px;
+        position: absolute;
+        top: 50%;
       }
 
       .scissors-icon {
         background: white;
-        padding: 0 5px;
-        font-size: 14px;
+        padding: 0 4px;
+        font-size: 12px;
         position: relative;
         z-index: 10;
       }
@@ -98,7 +100,7 @@ const GenerarEtiquetas = () => {
       {/* FONDO DE PANTALLA */}
       <div className="bg-gray-100 min-h-screen p-6 font-sans">
         
-        {/* BARRA DE HERRAMIENTAS (NO SALE IMPRESA) */}
+        {/* BARRA DE HERRAMIENTAS */}
         <div className="no-print max-w-5xl mx-auto mb-8 bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex flex-wrap justify-between items-center gap-4">
           <div className="flex items-center gap-4">
             <Link
@@ -172,25 +174,32 @@ const GenerarEtiquetas = () => {
 
                 {/* CUERPO */}
                 <div className="text-sm text-gray-800 flex flex-col gap-2">
-                  <div className="grid grid-cols-[60px_1fr] gap-2 items-baseline">
+                  <div className="grid grid-cols-[60px_minmax(0,1fr)] gap-2 items-baseline">
                       <span className="text-xs font-bold text-gray-500 uppercase">Remito</span>
-                      <span className="font-bold text-base">{remito.numero}</span>
+                      <span className="font-bold text-base truncate">{remito.numero}</span>
                   </div>
-                  <div className="grid grid-cols-[60px_1fr] gap-2 items-baseline">
+                  <div className="grid grid-cols-[60px_minmax(0,1fr)] gap-2 items-baseline">
                       <span className="text-xs font-bold text-gray-500 uppercase">Desc</span>
-                      <span className="leading-tight text-sm font-medium">{item.descripcion}</span>
+                      <span className="leading-tight text-sm font-medium truncate" title={item.descripcion}>
+                        {item.descripcion}
+                      </span>
                   </div>
-                  <div className="grid grid-cols-[60px_1fr] gap-2 items-baseline">
+                  <div className="grid grid-cols-[60px_minmax(0,1fr)] gap-2 items-baseline">
                       <span className="text-xs font-bold text-gray-500 uppercase">Serial</span>
-                      <span className="font-mono font-bold text-xs break-all">{item.serial || "-"}</span>
+                      <span className="font-mono font-bold text-xs truncate" title={item.serial}>
+                        {item.serial || "-"}
+                      </span>
                   </div>
-                  <div className="grid grid-cols-[60px_1fr] gap-2 items-baseline">
+                  <div className="grid grid-cols-[60px_minmax(0,1fr)] gap-2 items-baseline">
                       <span className="text-xs font-bold text-gray-500 uppercase">Usuario</span>
-                      <span className="text-xs truncate font-medium">{item.usuario || "-"}</span>
+                      <span className="text-xs font-medium truncate" title={item.usuario}>
+                        {item.usuario || "-"}
+                      </span>
                   </div>
-                  <div className="grid grid-cols-[60px_1fr] gap-2 items-baseline mt-1">
+                  <div className="grid grid-cols-[60px_minmax(0,1fr)] gap-2 items-baseline mt-1">
                       <span className="text-xs font-bold text-gray-500 uppercase">Destino</span>
-                      <span className="font-black text-sm text-blue-800 uppercase leading-tight">
+                      {/* truncate */}
+                      <span className="font-black text-sm text-blue-800 uppercase leading-tight truncate" title={remito.destinatario || remito.destino}>
                           {remito.destinatario || remito.destino || "Sin Destino"}
                       </span>
                   </div>

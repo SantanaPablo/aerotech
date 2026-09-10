@@ -32,7 +32,10 @@ namespace Aerotech.Infrastructure.Services
 
         public async Task ActualizarAsync(Usuario usuario)
         {
-            _context.Usuarios.Update(usuario);
+            var usuarioExistente = await _context.Usuarios.FindAsync(usuario.Id);
+            if (usuarioExistente == null) throw new KeyNotFoundException("Usuario no encontrado");
+
+            usuarioExistente.Contrasena = usuario.Contrasena;
             await _context.SaveChangesAsync();
         }
 
