@@ -16,6 +16,8 @@ import Entradas from './pages/Entradas/Entradas';
 import CrearNotaEntrada from './pages/Entradas/CrearNotaEntrada';
 import VerNotaEntrada from './pages/Entradas/VerNotaEntrada';
 
+import AprobacionesPendientes from './pages/AprobacionesPendientes';
+
 import Remitos from './pages/Remitos/Remitos';
 import VerRemito from './pages/Remitos/VerRemito';
 import CrearRemito from './pages/Remitos/CrearRemito';
@@ -39,6 +41,7 @@ const menuItems = [
   { title: 'Salidas', path: '/salidas', roles: ['Admin', 'Tecnico'], icon: 'M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1' },
   { title: 'Remitos', path: '/remitos', roles: ['Admin', 'Tecnico'], icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' },
   { title: 'Entradas', path: '/entradas', roles: ['Admin', 'Tecnico'], icon: 'M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1' },
+  { title: 'Pendientes', path: '/pendientes', roles: ['Admin'], icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' },
   { title: 'Notas PSA', path: '/notaPSA', roles: ['Admin', 'Tecnico'], icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z' },
   { title: 'Mon. Impresoras', path: '/monitor-impresoras', roles: ['Admin', 'Tecnico'], icon: 'M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z' },
   { title: 'Switches', path: '/monitor-switches', roles: ['Admin', 'Tecnico'], icon: 'M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01' },
@@ -70,7 +73,7 @@ const MainLayout = ({ children, handleLogout, usuario }) => {
         </div>
         
         <div className="flex-1 overflow-y-auto py-6 px-4 space-y-2">
-          <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4 ml-2">Aplicaciones</p>
+          
           {menuFiltrado.map((item, idx) => (
             <NavLink 
               key={idx} 
@@ -210,13 +213,15 @@ export default function App() {
               <Route path="/notaPSA" element={<NotaPSA token={token} />} />
               <Route path="/monitor-impresoras" element={hasRol('Admin', 'Tecnico') ? <MonitorImpresoras /> : <Navigate to="/" replace />} />
 
-              <Route path="/salidas" element={hasRol('Admin', 'Tecnico') ? <Salidas token={token} /> : <Navigate to="/" replace />} />
-              <Route path="/salidas/crearnotasalida" element={hasRol('Admin') ? <CrearNotaSalida token={token} /> : <Navigate to="/" replace />} />
-              <Route path="/salidas/vernotasalida/:id" element={hasRol('Admin', 'Tecnico') ? <VerNotaSalida /> : <Navigate to="/" replace />} />
+              <Route path="/salidas" element={hasRol('Admin', 'Tecnico') ? <Salidas token={token} usuario={usuario} /> : <Navigate to="/" replace />} />
+              <Route path="/salidas/crearnotasalida" element={hasRol('Admin', 'Tecnico') ? <CrearNotaSalida token={token} /> : <Navigate to="/" replace />} />
+              <Route path="/salidas/vernotasalida/:id" element={hasRol('Admin', 'Tecnico') ? <VerNotaSalida usuario={usuario} /> : <Navigate to="/" replace />} />
 
               <Route path="/entradas" element={hasRol('Admin', 'Tecnico') ? <Entradas token={token} /> : <Navigate to="/" replace />} />
-              <Route path="/entradas/crearnotaentrada" element={hasRol('Admin') ? <CrearNotaEntrada token={token} /> : <Navigate to="/" replace />} />
+              <Route path="/entradas/crearnotaentrada" element={hasRol('Admin', 'Tecnico') ? <CrearNotaEntrada token={token} /> : <Navigate to="/" replace />} />
               <Route path="/entradas/vernotaentrada/:id" element={hasRol('Admin', 'Tecnico') ? <VerNotaEntrada /> : <Navigate to="/" replace />} />
+
+              <Route path="/pendientes" element={hasRol('Admin') ? <AprobacionesPendientes usuario={usuario} /> : <Navigate to="/" replace />} />
 
               <Route path="/remitos" element={hasRol('Admin', 'Tecnico') ? <Remitos token={token} /> : <Navigate to="/" replace />} />
               <Route path="/remitos/verremito/:id" element={hasRol('Admin', 'Tecnico') ? <VerRemito /> : <Navigate to="/" replace />} />

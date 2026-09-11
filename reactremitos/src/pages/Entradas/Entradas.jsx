@@ -1,25 +1,26 @@
-
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { apiGet} from "../../utils/api";
+import { apiGet, apiPatch, hasRol } from "../../utils/api";
 
-const Entradas = () => {
+const Entradas = ({ usuario }) => {
   const [notasTotales, setNotasTotales] = useState([]);
   const [notas, setNotas] = useState([]);
   const [filtro, setFiltro] = useState("");
   const [paginaActual, setPaginaActual] = useState(1);
   const tamañoPagina = 10;
 
-  useEffect(() => {
-    const fetchNotas = async () => {
-      try {
+  const esAdmin = hasRol("Admin") || usuario?.rol === "Admin";
 
-        const data = await apiGet(`/api/NotasEntrada`);
-        setNotasTotales(data);
-      } catch (err) {
-        console.error(err);
-      }
-    };
+  const fetchNotas = async () => {
+    try {
+      const data = await apiGet(`/api/NotasEntrada`);
+      setNotasTotales(data || []);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
     fetchNotas();
   }, []);
 
@@ -47,23 +48,33 @@ const Entradas = () => {
     filtradas.sort((a, b) => b.id - a.id);
 
     setNotas(filtradas);
-    setPaginaActual(1); // resetear página al buscar
+    setPaginaActual(1);
   }, [filtro, notasTotales]);
 
-  const totalPaginas = Math.ceil(notas.length / tamañoPagina);
+  const handleAprobar = async (id, e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    try {
+      await apiPatch(`/api/NotasEntrada/${id}/aprobar`);
+      await fetchNotas();
+    } catch (err) {
+      console.error("Error al aprobar nota de entrada:", err);
+    }
+  };
+
+  const totalPaginas = Math.ceil(notas.length / tamañoPagina) || 1;
   const inicio = (paginaActual - 1) * tamañoPagina;
   const notasPagina = notas.slice(inicio, inicio + tamañoPagina);
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen"> {/* Added bg and min-h for better page context */}
-      <h2 className="text-3xl font-extrabold mb-6 text-gray-800 flex items-center gap-3"> {/* Slightly larger/bolder title */}
+    <div className="p-6 bg-gray-50 min-h-screen">
+      <h2 className="text-3xl font-extrabold mb-6 text-gray-800 flex items-center gap-3">
         <i className="bi bi-journal-text"></i> Notas de Entrada
       </h2>
 
-      {/* 🔍 Filtro */}
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="flex gap-2 mb-4" // Simplified grid layout
+        className="flex gap-2 mb-4"
       >
         <div className="flex-grow">
           <input
@@ -84,7 +95,6 @@ const Entradas = () => {
         </div>
       </form>
 
-      {/* ➕ Nueva nota */}
       <Link
         to="/entradas/crearnotaentrada"
         className="inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded mb-6 transition duration-150 ease-in-out shadow-md"
@@ -100,33 +110,59 @@ const Entradas = () => {
               <th className="p-3 border-r text-left text-xs font-semibold uppercase tracking-wider text-gray-600">Dirigido A</th>
               <th className="p-3 border-r text-left text-xs font-semibold uppercase tracking-wider text-gray-600">Técnico</th>
               <th className="p-3 border-r text-left text-xs font-semibold uppercase tracking-wider text-gray-600">Autorizante</th>
+              <th className="p-3 border-r text-left text-xs font-semibold uppercase tracking-wider text-gray-600">Estado</th>
               <th className="p-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-600">Acciones</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
-            {notasPagina.map((nota) => (
-              <tr key={nota.id} className="hover:bg-blue-50/50 transition duration-100">
-                <td className="p-3 border-r whitespace-nowrap">
-                  {new Date(nota.fecha).toLocaleDateString()}
-                </td>
-                <td className="p-3 border-r">{nota.dirigidaA}</td>
-                <td className="p-3 border-r">{nota.tecnico}</td>
-                <td className="p-3 border-r">{nota.autorizante?.nombre}</td>
-                <td className="p-3">
-                  <Link
-                    to={`/entradas/vernotaentrada/${nota.id}`}
-                    // Enhanced button style
-                    className="px-3 py-1 text-xs border border-gray-300 rounded text-gray-700 hover:bg-blue-100 transition duration-150"
-                  >
-                    <i className="bi bi-eye"></i> Ver
-                  </Link>
-                </td>
-              </tr>
-            ))}
+            {notasPagina.map((nota) => {
+              const estaAprobada = Boolean(nota.recibido ?? nota.Recibido);
+
+              return (
+                <tr key={nota.id} className="hover:bg-blue-50/50 transition duration-100">
+                  <td className="p-3 border-r whitespace-nowrap">
+                    {new Date(nota.fecha).toLocaleDateString()}
+                  </td>
+                  <td className="p-3 border-r">{nota.dirigidaA}</td>
+                  <td className="p-3 border-r">{nota.tecnico}</td>
+                  <td className="p-3 border-r">{nota.autorizante?.nombre}</td>
+                  
+                  <td className="p-3 border-r">
+                    {estaAprobada ? (
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                        <i className="bi bi-check-circle-fill"></i> Aprobada
+                      </span>
+                    ) : (
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                        <i className="bi bi-clock-fill"></i> Pendiente
+                      </span>
+                    )}
+                  </td>
+
+                  <td className="p-3 flex items-center gap-2">
+                    <Link
+                      to={`/entradas/vernotaentrada/${nota.id}`}
+                      className="px-3 py-1 text-xs border border-gray-300 rounded text-gray-700 hover:bg-blue-100 transition duration-150"
+                    >
+                      <i className="bi bi-eye"></i> Ver
+                    </Link>
+
+                    {esAdmin && !estaAprobada && (
+                      <button
+                        onClick={(e) => handleAprobar(nota.id, e)}
+                        className="px-3 py-1 text-xs border border-green-500 rounded text-green-700 hover:bg-green-100 transition duration-150"
+                      >
+                        <i className="bi bi-check2-circle"></i> Aprobar
+                      </button>
+                    )}
+                  </td>
+                </tr>
+              );
+            })}
 
             {notasPagina.length === 0 && (
               <tr>
-                <td colSpan="5" className="p-6 text-center text-gray-500 bg-white">
+                <td colSpan={6} className="p-6 text-center text-gray-500 bg-white">
                   No se encontraron notas
                 </td>
               </tr>
@@ -144,7 +180,6 @@ const Entradas = () => {
   );
 };
 
-// Paginacion component (no changes needed, as it was already well-styled)
 function Paginacion({ totalPaginas, paginaActual, setPaginaActual }) {
   if (totalPaginas <= 1) return null;
 
@@ -163,8 +198,8 @@ function Paginacion({ totalPaginas, paginaActual, setPaginaActual }) {
   const mostrarUltimo = paginas[paginas.length - 1] < totalPaginas;
 
   return (
-    <nav className="mt-6 flex justify-center"> {/* Adjusted margin for spacing */}
-      <ul className="flex items-center space-x-2 text-sm"> {/* Adjusted spacing */}
+    <nav className="mt-6 flex justify-center">
+      <ul className="flex items-center space-x-2 text-sm">
         <li>
           <button
             disabled={paginaActual === 1}
@@ -196,7 +231,7 @@ function Paginacion({ totalPaginas, paginaActual, setPaginaActual }) {
             <button
               onClick={() => setPaginaActual(num)}
               className={`px-3 py-1 border rounded-lg transition duration-150 ${num === paginaActual
-                ? "bg-blue-600 text-white border-blue-600 shadow-md" // Highlight active page
+                ? "bg-blue-600 text-white border-blue-600 shadow-md"
                 : "border-gray-300 text-gray-700 hover:bg-gray-100"
                 }`}
             >
@@ -225,7 +260,7 @@ function Paginacion({ totalPaginas, paginaActual, setPaginaActual }) {
           <button
             disabled={paginaActual === totalPaginas}
             onClick={() => setPaginaActual(paginaActual + 1)}
-            className="px-3 py-1 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-1F00 disabled:opacity-50 transition duration-150"
+            className="px-3 py-1 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 disabled:opacity-50 transition duration-150"
           >
             »
           </button>

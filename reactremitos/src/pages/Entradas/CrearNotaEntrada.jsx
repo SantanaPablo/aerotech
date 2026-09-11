@@ -40,7 +40,6 @@ const CrearNotaEntrada = () => {
     return {
       fecha: new Date().toISOString().split('T')[0],
       dirigidaA: 'Seguridad T4',
-      recibido: false,
       tecnico: '',
       autorizanteId: null
     };
@@ -59,7 +58,7 @@ const CrearNotaEntrada = () => {
 
   // 2. Extraer autorizanteId del token (JWT)
   useEffect(() => {
-    const token = getToken(); // ⬅️ USAR getToken()
+    const token = getToken();
     if (!token) return;
     try {
       const payloadBase64 = token.split('.')[1];
@@ -81,7 +80,7 @@ const CrearNotaEntrada = () => {
   useEffect(() => {
     const cargarTecnicos = async () => {
       try {
-        const usuarios = await apiGet('/api/Usuarios'); // ⬅️ USAR apiGet
+        const usuarios = await apiGet('/api/Usuarios');
         const nombresTecnicos = [...new Set(usuarios.map(u => u.nombre))].filter(Boolean);
         setTecnicos(nombresTecnicos);
       } catch (e) {
@@ -206,7 +205,7 @@ const CrearNotaEntrada = () => {
         items: itemsValidos 
       };
 
-      const notaCreada = await apiPost('/api/NotasEntrada', notaCompleta); // ⬅️ USAR apiPost
+      const notaCreada = await apiPost('/api/NotasEntrada', notaCompleta); 
       
       localStorage.removeItem(STORAGE_KEY);
       setSuccessMessage(`Nota de entrada creada con ${itemsValidos.length} ítem(s) (#${notaCreada.id})`);
@@ -241,8 +240,8 @@ const CrearNotaEntrada = () => {
         {successMessage && <div className="bg-green-50 border-l-4 border-green-500 text-green-700 px-4 py-3 rounded mb-4">{successMessage}</div>}
         {errors.autorizante && <div className="bg-yellow-50 border-l-4 border-yellow-500 text-yellow-700 px-4 py-3 rounded mb-4 flex items-start"><AlertCircle className="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" />{errors.autorizante}</div>}
 
-        {/* Sección de Nota */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        {/* Sección de Nota — sin checkbox Recibido */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Fecha <span className="text-red-500">*</span></label>
             <input type="date" value={nota.fecha} onChange={e => handleNotaChange('fecha', e.target.value)} className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 ${errors.fecha ? 'border-red-500 ring-red-500' : 'border-gray-300 ring-blue-500'}`} />
@@ -250,12 +249,6 @@ const CrearNotaEntrada = () => {
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Dirigido A <span className="text-red-500">*</span></label>
             <input type="text" value={nota.dirigidaA} onChange={e => handleNotaChange('dirigidaA', e.target.value)} className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 ${errors.dirigidaA ? 'border-red-500 ring-red-500' : 'border-gray-300 ring-blue-500'}`} />
-          </div>
-          <div className="flex items-center pt-6">
-            <label className="flex items-center space-x-2 cursor-pointer p-2 bg-gray-50 rounded-lg shadow-inner">
-              <input type="checkbox" checked={nota.recibido} onChange={e => handleNotaChange('recibido', e.target.checked)} className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" />
-              <span className="text-sm font-medium text-gray-700">Recibido</span>
-            </label>
           </div>
         </div>
 

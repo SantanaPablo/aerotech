@@ -40,7 +40,6 @@ const CrearNotaSalida = () => {
     return {
       fecha: new Date().toISOString().split('T')[0],
       dirigidaA: 'Seguridad T4',
-      recibido: false,
       tecnico: '',
       autorizanteId: null
     };
@@ -78,7 +77,7 @@ const CrearNotaSalida = () => {
   useEffect(() => {
     const cargarTecnicos = async () => {
       try {
-        const usuarios = await apiGet('/api/Usuarios'); // ⬅️ USAR apiGet
+        const usuarios = await apiGet('/api/Usuarios');
         const nombresTecnicos = [...new Set(usuarios.map(u => u.nombre))].filter(Boolean);
         setTecnicos(nombresTecnicos);
       } catch (e) {
@@ -203,7 +202,7 @@ const CrearNotaSalida = () => {
         items: itemsValidos 
       };
 
-      const notaCreada = await apiPost('/api/NotasSalida', notaCompleta); // ⬅️ USAR apiPost
+      const notaCreada = await apiPost('/api/NotasSalida', notaCompleta);
       
       localStorage.removeItem(STORAGE_KEY);
       setSuccessMessage(`Nota de salida creada con ${itemsValidos.length} ítem(s) (#${notaCreada.id})`);
@@ -237,8 +236,8 @@ const CrearNotaSalida = () => {
         {successMessage && <div className="bg-green-50 border-l-4 border-green-500 text-green-700 px-4 py-3 rounded mb-4">{successMessage}</div>}
         {errors.autorizante && <div className="bg-yellow-50 border-l-4 border-yellow-500 text-yellow-700 px-4 py-3 rounded mb-4 flex items-start"><AlertCircle className="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" />{errors.autorizante}</div>}
 
-        {/* Sección de Nota */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        {/* Sección de Nota — sin checkbox Recibido */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Fecha <span className="text-red-500">*</span></label>
             <input type="date" value={nota.fecha} onChange={e => handleNotaChange('fecha', e.target.value)} className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 ${errors.fecha ? 'border-red-500 ring-red-500' : 'border-gray-300 ring-blue-500'}`} />
@@ -246,12 +245,6 @@ const CrearNotaSalida = () => {
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Dirigido A <span className="text-red-500">*</span></label>
             <input type="text" value={nota.dirigidaA} onChange={e => handleNotaChange('dirigidaA', e.target.value)} className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 ${errors.dirigidaA ? 'border-red-500 ring-red-500' : 'border-gray-300 ring-blue-500'}`} />
-          </div>
-          <div className="flex items-center pt-6">
-            <label className="flex items-center space-x-2 cursor-pointer p-2 bg-gray-50 rounded-lg shadow-inner">
-              <input type="checkbox" checked={nota.recibido} onChange={e => handleNotaChange('recibido', e.target.checked)} className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500" />
-              <span className="text-sm font-medium text-gray-700">Recibido</span>
-            </label>
           </div>
         </div>
 
@@ -286,82 +279,40 @@ const CrearNotaSalida = () => {
           <div className="space-y-6">
             {items.map((item, index) => (
               <div key={index} className="border border-gray-200 rounded-xl p-4 md:p-6 bg-gray-50 relative group shadow-sm">
-                
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 items-end">
                   
-                  {/* 1. Unidad */}
                   <div>
                     <label className="block text-xs font-medium text-gray-600 mb-1">Unidad <span className="text-red-500">*</span></label>
-                    <input 
-                      type="number" 
-                      value={item.unidad} 
-                      onChange={e => handleItemChange(index, 'unidad', e.target.value)} 
-                      min="1" 
-                      className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 ${errors[`items[${index}].unidad`] ? 'border-red-500 ring-red-500' : 'border-gray-300 ring-blue-500'}`} 
-                    />
+                    <input type="number" value={item.unidad} onChange={e => handleItemChange(index, 'unidad', e.target.value)} min="1" className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 ${errors[`items[${index}].unidad`] ? 'border-red-500 ring-red-500' : 'border-gray-300 ring-blue-500'}`} />
                     {errors[`items[${index}].unidad`] && <span className="text-red-600 text-xs block mt-1">{errors[`items[${index}].unidad`]}</span>}
                   </div>
 
-                  {/* 2. Equipo */}
                   <div>
                     <label className="block text-xs font-medium text-gray-600 mb-1">Equipo <span className="text-red-500">*</span></label>
-                    <input 
-                      type="text" 
-                      value={item.equipo} 
-                      onChange={e => handleItemChange(index, 'equipo', e.target.value)} 
-                      className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 ${errors[`items[${index}].equipo`] ? 'border-red-500 ring-red-500' : 'border-gray-300 ring-blue-500'}`} 
-                      placeholder="Ej: Laptop" 
-                    />
+                    <input type="text" value={item.equipo} onChange={e => handleItemChange(index, 'equipo', e.target.value)} className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 ${errors[`items[${index}].equipo`] ? 'border-red-500 ring-red-500' : 'border-gray-300 ring-blue-500'}`} placeholder="Ej: Laptop" />
                     {errors[`items[${index}].equipo`] && <span className="text-red-600 text-xs block mt-1">{errors[`items[${index}].equipo`]}</span>}
                   </div>
 
-                  {/* 3. Serial */}
                   <div>
                     <label className="block text-xs font-medium text-gray-600 mb-1">Serial <span className="text-red-500">*</span></label>
-                    <input 
-                      ref={el => serialInputRefs.current[index] = el} 
-                      type="text" 
-                      value={item.serial} 
-                      onChange={e => handleItemChange(index, 'serial', e.target.value)} 
-                      onKeyDown={e => handleSerialKeyDown(e, index)} 
-                      className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 ${errors[`items[${index}].serial`] ? 'border-red-500 ring-red-500' : 'border-gray-300 ring-blue-500'}`} 
-                      placeholder="Serial" 
-                    />
+                    <input ref={el => serialInputRefs.current[index] = el} type="text" value={item.serial} onChange={e => handleItemChange(index, 'serial', e.target.value)} onKeyDown={e => handleSerialKeyDown(e, index)} className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 ${errors[`items[${index}].serial`] ? 'border-red-500 ring-red-500' : 'border-gray-300 ring-blue-500'}`} placeholder="Serial" />
                     {errors[`items[${index}].serial`] && <span className="text-red-600 text-xs block mt-1">{errors[`items[${index}].serial`]}</span>}
                   </div>
 
-                  {/* 4. Usuario */}
                   <div>
                     <label className="block text-xs font-medium text-gray-600 mb-1">Usuario <span className="text-red-500">*</span></label>
-                    <input 
-                      type="text" 
-                      value={item.usuario} 
-                      onChange={e => handleItemChange(index, 'usuario', e.target.value)} 
-                      className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 ${errors[`items[${index}].usuario`] ? 'border-red-500 ring-red-500' : 'border-gray-300 ring-blue-500'}`}
-                    />
+                    <input type="text" value={item.usuario} onChange={e => handleItemChange(index, 'usuario', e.target.value)} className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 ${errors[`items[${index}].usuario`] ? 'border-red-500 ring-red-500' : 'border-gray-300 ring-blue-500'}`} />
                     {errors[`items[${index}].usuario`] && <span className="text-red-600 text-xs block mt-1">{errors[`items[${index}].usuario`]}</span>}
                   </div>
 
-                  {/* 5. SD */}
                   <div>
                     <label className="block text-xs font-medium text-gray-600 mb-1">SD <span className="text-red-500">*</span></label>
-                    <input 
-                      type="text" 
-                      value={item.sd} 
-                      onChange={e => handleItemChange(index, 'sd', e.target.value)} 
-                      className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 ${errors[`items[${index}].sd`] ? 'border-red-500 ring-red-500' : 'border-gray-300 ring-blue-500'}`}
-                    />
+                    <input type="text" value={item.sd} onChange={e => handleItemChange(index, 'sd', e.target.value)} className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 ${errors[`items[${index}].sd`] ? 'border-red-500 ring-red-500' : 'border-gray-300 ring-blue-500'}`} />
                     {errors[`items[${index}].sd`] && <span className="text-red-600 text-xs block mt-1">{errors[`items[${index}].sd`]}</span>}
                   </div>
 					
-                  {/* 6. Botón Eliminar */}
                   <div className="col-span-2 sm:col-span-3 md:col-span-1">
-                    <button 
-                      type="button" 
-                      onClick={() => eliminarItem(index)} 
-                      title={`Eliminar Ítem #${index + 1}`}
-                      className="w-full p-3 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600 transition-colors flex justify-center items-center h-[42px] mt-4 md:mt-0"
-                    >
+                    <button type="button" onClick={() => eliminarItem(index)} title={`Eliminar Ítem #${index + 1}`} className="w-full p-3 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600 transition-colors flex justify-center items-center h-[42px] mt-4 md:mt-0">
                       <Trash2 className="w-5 h-5" />
                       <span className="md:hidden ml-2 font-semibold">Eliminar Ítem</span>
                     </button>

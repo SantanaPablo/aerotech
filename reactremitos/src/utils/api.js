@@ -4,7 +4,6 @@ const API_URL = import.meta.env.VITE_API_URL;
 
 export const getToken = () => localStorage.getItem("authToken");
 
-// --- NUEVA FUNCIÓN PARA VERIFICAR EXPIRACIÓN DEL TOKEN ---
 export const isTokenExpired = () => {
   const token = getToken();
   if (!token) return true;
@@ -14,13 +13,13 @@ export const isTokenExpired = () => {
     const base64 = payloadBase64.replace(/-/g, '+').replace(/_/g, '/');
     const payload = JSON.parse(atob(base64));
     
-    // Verificamos si la fecha actual (en ms) superó la fecha 'exp' del token (que viene en segundos)
+  
     if (payload.exp && Date.now() >= payload.exp * 1000) {
       return true;
     }
     return false;
   } catch (e) {
-    return true; // Si hay error al decodificar, asumimos que es inválido
+    return true;
   }
 };
 
@@ -96,3 +95,8 @@ export const apiGet = (endpoint) => apiFetch(endpoint, { method: "GET" });
 export const apiPost = (endpoint, data) => apiFetch(endpoint, { method: "POST", body: JSON.stringify(data) });
 export const apiPut = (endpoint, data) => apiFetch(endpoint, { method: "PUT", body: JSON.stringify(data) });
 export const apiDelete = (endpoint) => apiFetch(endpoint, { method: "DELETE" });
+export const apiPatch = (url) =>
+  fetch(`${API_URL}${url}`, {
+    method: "PATCH",
+    headers: { Authorization: `Bearer ${getToken()}` },
+  }).then(res => { if (!res.ok) throw new Error(res.statusText); });
