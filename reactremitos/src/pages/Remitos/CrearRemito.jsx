@@ -10,15 +10,19 @@ import {
   MapPin,
   AlertCircle,
   CheckCircle2,
+  Scan
 } from "lucide-react";
 import { apiGet, apiPost } from "../../utils/api";
 import { saveDraft, loadDraft, clearDraft } from "../../utils/draftStorage";
+import ScannerModal from "../ScannerModal";
 
 const STORAGE_KEY = "remitoDraft";
 
 const CrearRemito = () => {
   const navigate = useNavigate();
+  // Referencias para auto-focus
   const serialRefs = useRef([]);
+  const usuarioRefs = useRef([]);
 
   const initialItem = {
     numero_item: 1,
@@ -30,8 +34,6 @@ const CrearRemito = () => {
     recibido_por: "",
   };
 
-  // Intenta cargar draft vigente (respeta TTL de 8hs).
-  // Si no hay draft o expiró, arranca vacío.
   const [remito, setRemito] = useState(() => {
     const draft = loadDraft(STORAGE_KEY);
     if (draft) return draft;
@@ -47,7 +49,9 @@ const CrearRemito = () => {
   const [error, setError] = useState(null);
   const [successMessage, setSuccessMessage] = useState("");
 
-  // Solo busca el próximo número si no hay draft guardado
+  // Estado del escáner
+  const [scannerConfig, setScannerConfig] = useState({ isOpen: false, itemIndex: null, field: null });
+
   useEffect(() => {
     const fetchUltimoNumero = async () => {
       try {
@@ -72,7 +76,6 @@ const CrearRemito = () => {
     }
   }, []);
 
-  // Persiste el draft en cada cambio
   useEffect(() => {
     saveDraft(STORAGE_KEY, remito);
   }, [remito]);
@@ -86,6 +89,25 @@ const CrearRemito = () => {
     const newItems = [...remito.items];
     newItems[index][field] = value;
     setRemito((prev) => ({ ...prev, items: newItems }));
+  };
+
+  // FUNCIÓN DE ESCÁNER CON FOCUS
+  const handleScanSuccess = (textoEscaneado) => {
+    const { itemIndex, field } = scannerConfig;
+
+    if (itemIndex !== null && field !== null) {
+      handleItemChange(itemIndex, field, textoEscaneado);
+
+      setTimeout(() => {
+        if (field === 'descripcion') {
+          serialRefs.current[itemIndex]?.focus();
+        } else if (field === 'serial') {
+          usuarioRefs.current[itemIndex]?.focus();
+        }
+      }, 150);
+    }
+    
+    setScannerConfig({ isOpen: false, itemIndex: null, field: null });
   };
 
   const renumberItems = (items) =>
@@ -164,6 +186,14 @@ const CrearRemito = () => {
         }
       `}</style>
 
+      {/* MODAL ESCÁNER */}
+      {scannerConfig.isOpen && (
+        <ScannerModal
+          onScan={handleScanSuccess}
+          onClose={() => setScannerConfig({ isOpen: false, itemIndex: null, field: null })}
+        />
+      )}
+
       <div className="bg-white shadow-xl rounded-xl p-8 border border-gray-100 max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold text-gray-800 flex items-center mb-6">
           <FileText className="w-8 h-8 mr-3 text-blue-600" /> Crear Remito
@@ -187,42 +217,19 @@ const CrearRemito = () => {
             <label className="font-semibold flex items-center text-gray-700 mb-1">
               <FileText className="w-4 h-4 mr-2 text-blue-500" /> Número
             </label>
-            <input
-              type="text"
-              name="numero"
-              className="w-full border-gray-300 rounded-lg shadow-sm"
-              value={remito.numero}
-              onChange={handleChange}
-              required
-            />
+            <input type="text" name="numero" className="w-full border-gray-300 rounded-lg shadow-sm" value={remito.numero} onChange={handleChange} required />
           </div>
-
           <div>
             <label className="font-semibold flex items-center text-gray-700 mb-1">
               <CalendarDays className="w-4 h-4 mr-2 text-blue-500" /> Fecha
             </label>
-            <input
-              type="date"
-              name="fecha"
-              className="w-full border-gray-300 rounded-lg shadow-sm"
-              value={remito.fecha}
-              onChange={handleChange}
-              required
-            />
+            <input type="date" name="fecha" className="w-full border-gray-300 rounded-lg shadow-sm" value={remito.fecha} onChange={handleChange} required />
           </div>
-
           <div>
             <label className="font-semibold flex items-center text-gray-700 mb-1">
               <MapPin className="w-4 h-4 mr-2 text-blue-500" /> Destino
             </label>
-            <input
-              type="text"
-              name="destino"
-              className="w-full border-gray-300 rounded-lg shadow-sm"
-              value={remito.destino}
-              onChange={handleChange}
-              required
-            />
+            <input type="text" name="destino" className="w-full border-gray-300 rounded-lg shadow-sm" value={remito.destino} onChange={handleChange} required />
           </div>
         </div>
 
@@ -250,61 +257,63 @@ const CrearRemito = () => {
 
         {remito.items.map((item, i) => (
           <div key={i} className="grid grid-cols-8 gap-3 mb-2 border-b pb-2 items-center">
-            <input
-              type="text"
-              value={item.numero_item}
-              readOnly
-              className="text-center bg-gray-50 border-gray-300 rounded"
-            />
-            <input
-              type="text"
-              placeholder="Descripción"
-              value={item.descripcion}
-              onChange={(e) => handleItemChange(i, "descripcion", e.target.value)}
-              className="border-gray-300 rounded"
-            />
-            <input
-              type="text"
-              placeholder="Serial"
-              value={item.serial}
-              ref={(el) => (serialRefs.current[i] = el)}
-              onChange={(e) => handleItemChange(i, "serial", e.target.value)}
-              onKeyDown={(e) => handleKeyPress(e, i)}
-              className="border-gray-300 rounded"
-            />
+            
+            <input type="text" value={item.numero_item} readOnly className="text-center bg-gray-50 border-gray-300 rounded" />
+            
+            {/* DESCRIPCIÓN (Equivalente a Equipo) */}
+            <div className="flex bg-white rounded border border-gray-300 focus-within:ring-2 focus-within:ring-blue-500 overflow-hidden">
+              <input
+                type="text"
+                placeholder="Descripción"
+                value={item.descripcion}
+                onChange={(e) => handleItemChange(i, "descripcion", e.target.value)}
+                className="w-full focus:outline-none px-2 py-2 bg-transparent text-sm"
+              />
+              <button
+                type="button"
+                onClick={() => setScannerConfig({ isOpen: true, itemIndex: i, field: 'descripcion' })}
+                className="xl:hidden flex-shrink-0 bg-gray-800 hover:bg-gray-700 text-white px-2 flex items-center justify-center transition"
+                title="Escanear Descripción"
+              >
+                <Scan className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* SERIAL */}
+            <div className="flex bg-white rounded border border-gray-300 focus-within:ring-2 focus-within:ring-blue-500 overflow-hidden">
+              <input
+                type="text"
+                placeholder="Serial"
+                value={item.serial}
+                ref={(el) => (serialRefs.current[i] = el)}
+                onChange={(e) => handleItemChange(i, "serial", e.target.value)}
+                onKeyDown={(e) => handleKeyPress(e, i)}
+                className="w-full focus:outline-none px-2 py-2 bg-transparent text-sm"
+              />
+              <button
+                type="button"
+                onClick={() => setScannerConfig({ isOpen: true, itemIndex: i, field: 'serial' })}
+                className="xl:hidden flex-shrink-0 bg-gray-800 hover:bg-gray-700 text-white px-2 flex items-center justify-center transition"
+                title="Escanear Serial"
+              >
+                <Scan className="w-4 h-4" />
+              </button>
+            </div>
+
             <input
               type="text"
               placeholder="Usuario"
               value={item.usuario}
+              ref={(el) => (usuarioRefs.current[i] = el)}
               onChange={(e) => handleItemChange(i, "usuario", e.target.value)}
               className="border-gray-300 rounded"
             />
-            <input
-              type="number"
-              placeholder="Cantidad"
-              value={item.cantidad}
-              onChange={(e) => handleItemChange(i, "cantidad", e.target.value)}
-              className="border-gray-300 rounded text-center"
-            />
-            <input
-              type="text"
-              placeholder="Detalle"
-              value={item.detalle}
-              onChange={(e) => handleItemChange(i, "detalle", e.target.value)}
-              className="border-gray-300 rounded"
-            />
-            <input
-              type="text"
-              placeholder="Recibido por"
-              value={item.recibido_por}
-              onChange={(e) => handleItemChange(i, "recibido_por", e.target.value)}
-              className="border-gray-300 rounded"
-            />
-            <button
-              type="button"
-              onClick={() => removeItem(i)}
-              className="text-red-600 hover:text-red-800 flex justify-center"
-            >
+            
+            <input type="number" placeholder="Cantidad" value={item.cantidad} onChange={(e) => handleItemChange(i, "cantidad", e.target.value)} className="border-gray-300 rounded text-center" />
+            <input type="text" placeholder="Detalle" value={item.detalle} onChange={(e) => handleItemChange(i, "detalle", e.target.value)} className="border-gray-300 rounded" />
+            <input type="text" placeholder="Recibido por" value={item.recibido_por} onChange={(e) => handleItemChange(i, "recibido_por", e.target.value)} className="border-gray-300 rounded" />
+            
+            <button type="button" onClick={() => removeItem(i)} className="text-red-600 hover:text-red-800 flex justify-center">
               <Trash2 className="w-5 h-5" />
             </button>
           </div>

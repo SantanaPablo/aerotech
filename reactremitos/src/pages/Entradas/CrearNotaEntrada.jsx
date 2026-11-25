@@ -1,13 +1,16 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Plus, Trash2, Save, AlertCircle } from 'lucide-react';
+import { Plus, Trash2, Save, AlertCircle, Scan } from 'lucide-react';
 import { apiGet, apiPost, getToken } from '../../utils/api';
+import ScannerModal from '../ScannerModal';
 
 const STORAGE_KEY = 'notaEntradaDraft';
 
 const CrearNotaEntrada = () => {
   const navigate = useNavigate();
+  // Referencias para el auto-focus
   const serialInputRefs = useRef([]);
+  const usuarioInputRefs = useRef([]);
 
   const initialItem = { unidad: '1', equipo: '', serial: '', usuario: '', sd: '' };
 
@@ -50,13 +53,14 @@ const CrearNotaEntrada = () => {
   const [loading, setLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
 
-  // 1. Guardar en localStorage cuando cambian items o nota
+  // Estado del escáner
+  const [scannerConfig, setScannerConfig] = useState({ isOpen: false, itemIndex: null, field: null });
+
   useEffect(() => {
     const draft = { nota, items };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(draft));
   }, [items, nota]);
 
-  // 2. Extraer autorizanteId del token (JWT)
   useEffect(() => {
     const token = getToken();
     if (!token) return;
@@ -76,7 +80,6 @@ const CrearNotaEntrada = () => {
     }
   }, []);
 
-  // 3. Cargar técnicos desde API
   useEffect(() => {
     const cargarTecnicos = async () => {
       try {
@@ -114,6 +117,25 @@ const CrearNotaEntrada = () => {
         return newErrors;
       });
     }
+  };
+
+  //FUNCIÓN DE ESCÁNER CON FOCUS
+  const handleScanSuccess = (textoEscaneado) => {
+    const { itemIndex, field } = scannerConfig;
+
+    if (itemIndex !== null && field !== null) {
+      handleItemChange(itemIndex, field, textoEscaneado);
+
+      setTimeout(() => {
+        if (field === 'equipo') {
+          serialInputRefs.current[itemIndex]?.focus();
+        } else if (field === 'serial') {
+          usuarioInputRefs.current[itemIndex]?.focus();
+        }
+      }, 150);
+    }
+    
+    setScannerConfig({ isOpen: false, itemIndex: null, field: null });
   };
 
   const agregarItem = () => {
@@ -232,15 +254,21 @@ const CrearNotaEntrada = () => {
         }
       `}</style>
 
+      {/* MODAL ESCÁNER */}
+      {scannerConfig.isOpen && (
+        <ScannerModal
+          onScan={handleScanSuccess}
+          onClose={() => setScannerConfig({ isOpen: false, itemIndex: null, field: null })}
+        />
+      )}
+
       <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 border-b pb-2">Crear Nota de Entrada</h2>
 
       <div className="bg-white rounded-xl shadow-lg p-4 md:p-8 mb-6">
-        {/* Error/Success Messages */}
         {errors.general && <div className="bg-red-50 border-l-4 border-red-500 text-red-700 px-4 py-3 rounded mb-4 flex items-start"><AlertCircle className="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" />{errors.general}</div>}
         {successMessage && <div className="bg-green-50 border-l-4 border-green-500 text-green-700 px-4 py-3 rounded mb-4">{successMessage}</div>}
         {errors.autorizante && <div className="bg-yellow-50 border-l-4 border-yellow-500 text-yellow-700 px-4 py-3 rounded mb-4 flex items-start"><AlertCircle className="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" />{errors.autorizante}</div>}
 
-        {/* Sección de Nota — sin checkbox Recibido */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Fecha <span className="text-red-500">*</span></label>
@@ -252,7 +280,6 @@ const CrearNotaEntrada = () => {
           </div>
         </div>
 
-        {/* Sección de Técnico */}
         <div className="mb-8 border-t pt-6">
           <label className="block text-lg font-semibold text-gray-800 mb-2">Técnico <span className="text-red-500">*</span></label>
           <input type="text" list="tecnicosList" value={nota.tecnico} onChange={e => handleNotaChange('tecnico', e.target.value)} className={`w-full md:w-1/2 px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 ${errors.tecnico ? 'border-red-500 ring-red-500' : 'border-gray-300 ring-blue-500'}`} placeholder="Ingrese o seleccione un técnico" />
@@ -260,7 +287,6 @@ const CrearNotaEntrada = () => {
           {errors.tecnico && <span className="text-red-600 text-sm mt-1 block font-medium">{errors.tecnico}</span>}
         </div>
 
-        {/* Sección de Items */}
         <div className="border-t pt-6">
           <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
             <span className="mr-2 text-2xl">📦</span> Ítems de entrada
@@ -286,51 +312,64 @@ const CrearNotaEntrada = () => {
                 
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 items-end">
                   
-                  {/* 1. Unidad */}
+                  {/* Unidad */}
                   <div>
                     <label className="block text-xs font-medium text-gray-600 mb-1">Unidad <span className="text-red-500">*</span></label>
-                    <input 
-                      type="number" 
-                      value={item.unidad} 
-                      onChange={e => handleItemChange(index, 'unidad', e.target.value)} 
-                      min="1" 
-                      className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 ${errors[`items[${index}].unidad`] ? 'border-red-500 ring-red-500' : 'border-gray-300 ring-blue-500'}`} 
-                    />
+                    <input type="number" value={item.unidad} onChange={e => handleItemChange(index, 'unidad', e.target.value)} min="1" className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 ${errors[`items[${index}].unidad`] ? 'border-red-500 ring-red-500' : 'border-gray-300 ring-blue-500'}`} />
                     {errors[`items[${index}].unidad`] && <span className="text-red-600 text-xs block mt-1">{errors[`items[${index}].unidad`]}</span>}
                   </div>
 
-                  {/* 2. Equipo */}
+                  {/* EQUIPO (Encuadrado) */}
                   <div>
                     <label className="block text-xs font-medium text-gray-600 mb-1">Equipo <span className="text-red-500">*</span></label>
-                    <input 
-                      type="text" 
-                      value={item.equipo} 
-                      onChange={e => handleItemChange(index, 'equipo', e.target.value)} 
-                      className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 ${errors[`items[${index}].equipo`] ? 'border-red-500 ring-red-500' : 'border-gray-300 ring-blue-500'}`} 
-                      placeholder="Ej: Laptop" 
-                    />
+                    <div className={`flex bg-white rounded-lg border focus-within:ring-2 overflow-hidden transition-shadow ${errors[`items[${index}].equipo`] ? 'border-red-500 focus-within:ring-red-500' : 'border-gray-300 focus-within:ring-blue-500'}`}>
+                      <input 
+                        type="text" 
+                        value={item.equipo} 
+                        onChange={e => handleItemChange(index, 'equipo', e.target.value)} 
+                        className="w-full px-3 py-2 focus:outline-none bg-transparent" 
+                        placeholder="Ej: Laptop" 
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setScannerConfig({ isOpen: true, itemIndex: index, field: 'equipo' })}
+                        className="xl:hidden flex-shrink-0 bg-gray-800 hover:bg-gray-700 text-white px-3 py-2 flex items-center justify-center transition"
+                      >
+                        <Scan className="w-5 h-5" />
+                      </button>
+                    </div>
                     {errors[`items[${index}].equipo`] && <span className="text-red-600 text-xs block mt-1">{errors[`items[${index}].equipo`]}</span>}
                   </div>
 
-                  {/* 3. Serial */}
+                  {/* SERIAL (Encuadrado) */}
                   <div>
                     <label className="block text-xs font-medium text-gray-600 mb-1">Serial <span className="text-red-500">*</span></label>
-                    <input 
-                      ref={el => serialInputRefs.current[index] = el} 
-                      type="text" 
-                      value={item.serial} 
-                      onChange={e => handleItemChange(index, 'serial', e.target.value)} 
-                      onKeyDown={e => handleSerialKeyDown(e, index)} 
-                      className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 ${errors[`items[${index}].serial`] ? 'border-red-500 ring-red-500' : 'border-gray-300 ring-blue-500'}`} 
-                      placeholder="Serial" 
-                    />
+                    <div className={`flex bg-white rounded-lg border focus-within:ring-2 overflow-hidden transition-shadow ${errors[`items[${index}].serial`] ? 'border-red-500 focus-within:ring-red-500' : 'border-gray-300 focus-within:ring-blue-500'}`}>
+                      <input 
+                        ref={el => serialInputRefs.current[index] = el} 
+                        type="text" 
+                        value={item.serial} 
+                        onChange={e => handleItemChange(index, 'serial', e.target.value)} 
+                        onKeyDown={e => handleSerialKeyDown(e, index)} 
+                        className="w-full px-3 py-2 focus:outline-none bg-transparent" 
+                        placeholder="Serial" 
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setScannerConfig({ isOpen: true, itemIndex: index, field: 'serial' })}
+                        className="xl:hidden flex-shrink-0 bg-gray-800 hover:bg-gray-700 text-white px-3 py-2 flex items-center justify-center transition"
+                      >
+                        <Scan className="w-5 h-5" />
+                      </button>
+                    </div>
                     {errors[`items[${index}].serial`] && <span className="text-red-600 text-xs block mt-1">{errors[`items[${index}].serial`]}</span>}
                   </div>
 
-                  {/* 4. Usuario */}
+                  {/* Usuario */}
                   <div>
                     <label className="block text-xs font-medium text-gray-600 mb-1">Usuario <span className="text-red-500">*</span></label>
                     <input 
+                      ref={el => usuarioInputRefs.current[index] = el} 
                       type="text" 
                       value={item.usuario} 
                       onChange={e => handleItemChange(index, 'usuario', e.target.value)} 
@@ -339,28 +378,18 @@ const CrearNotaEntrada = () => {
                     {errors[`items[${index}].usuario`] && <span className="text-red-600 text-xs block mt-1">{errors[`items[${index}].usuario`]}</span>}
                   </div>
 
-                  {/* 5. SD */}
+                  {/* SD */}
                   <div>
                     <label className="block text-xs font-medium text-gray-600 mb-1">SD <span className="text-red-500">*</span></label>
-                    <input 
-                      type="text" 
-                      value={item.sd} 
-                      onChange={e => handleItemChange(index, 'sd', e.target.value)} 
-                      className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 ${errors[`items[${index}].sd`] ? 'border-red-500 ring-red-500' : 'border-gray-300 ring-blue-500'}`}
-                    />
+                    <input type="text" value={item.sd} onChange={e => handleItemChange(index, 'sd', e.target.value)} className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 ${errors[`items[${index}].sd`] ? 'border-red-500 ring-red-500' : 'border-gray-300 ring-blue-500'}`} />
                     {errors[`items[${index}].sd`] && <span className="text-red-600 text-xs block mt-1">{errors[`items[${index}].sd`]}</span>}
                   </div>
-					
-                  {/* 6. Botón Eliminar */}
+          
+                  {/* Botón Eliminar */}
                   <div className="col-span-2 sm:col-span-3 md:col-span-1">
-                    <button 
-                      type="button" 
-                      onClick={() => eliminarItem(index)} 
-                      title={`Eliminar Ítem #${index + 1}`}
-                      className="w-full p-3 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600 transition-colors flex justify-center items-center h-[42px] mt-4 md:mt-0"
-                    >
+                    <button type="button" onClick={() => eliminarItem(index)} title={`Eliminar Ítem #${index + 1}`} className="w-full p-3 bg-red-500 text-white rounded-lg shadow-md hover:bg-red-600 transition-colors flex justify-center items-center h-[42px] mt-4 md:mt-0">
                       <Trash2 className="w-5 h-5" />
-                      <span className="md:hidden ml-2 font-semibold">Eliminar Ítem</span>
+                      <span className="xl:hidden ml-2 font-semibold">Eliminar Ítem</span>
                     </button>
                   </div>
                 </div>

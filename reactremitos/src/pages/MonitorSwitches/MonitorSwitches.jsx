@@ -12,7 +12,7 @@ import bgImage from '../.././assets/cisco-catalyst.png';
 import SSHFront from './SSHFront';
 import PingFront from './PingFront';
 
-const API_BASE_URL = 'http://10.35.144.252:5063/api/Monitor'; 
+const API_BASE_URL = '/api-switch/api/Monitor';
 
 function RealTimeClock() {
   const [time, setTime] = useState(new Date());

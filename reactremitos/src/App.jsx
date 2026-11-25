@@ -25,12 +25,13 @@ import EditarRemito from './pages/Remitos/EditarRemito';
 import GenerarEtiquetas from './pages/Remitos/GenerarEtiquetas';
 
 import NotaPSA from './pages/NotaPSA';
-
 import MonitorImpresoras from './pages/MonitorImpresoras.jsx';
 import MonitorSwitches from './pages/MonitorSwitches/MonitorSwitches.jsx';
 import DariOs from './pages/DariOs.jsx';
-
 import Perfil from './pages/Perfil.jsx';
+
+import NetworkStatus from './components/NetworkStatus';
+import PwaUpdater from './components/PwaUpdater';
 
 import './css/NotaSalidaPrint.css';
 import './css/VerRemito.css';
@@ -60,20 +61,16 @@ const MainLayout = ({ children, handleLogout, usuario }) => {
   }, [location.pathname, handleLogout]);
 
   const menuFiltrado = menuItems.filter(item => hasRol(...item.roles));
-
   const isFullWidthRoute = ['/monitor-impresoras', '/notaPSA', '/DariOs', '/monitor-switches'].some(path => location.pathname.startsWith(path));
 
   return (
     <div className="flex h-screen bg-gray-100 overflow-hidden print-layout-reset">
-      
-      {/* SIDEBAR PARA DESKTOP */}
-      <aside className="hidden md:flex flex-col w-64 bg-gray-900 text-white border-r border-white transition-all duration-300 z-20 no-print">
+      <aside className="hidden xl:flex flex-col w-64 bg-gray-900 text-white border-r border-white transition-all duration-300 z-20 no-print">
         <div className="flex items-center justify-center h-20 border-b border-white-800">
           <img src="../../aerotech.png" alt="Logo" className="max-h-16 object-contain mr-3" />
         </div>
         
         <div className="flex-1 overflow-y-auto py-6 px-4 space-y-2">
-          
           {menuFiltrado.map((item, idx) => (
             <NavLink 
               key={idx} 
@@ -88,7 +85,6 @@ const MainLayout = ({ children, handleLogout, usuario }) => {
           ))}
         </div>
 
-        {/* PERFIL Y LOGOUT */}
         <div className="p-4 border-t border-gray-800 bg-gray-900">
           <div className="flex items-center mb-4 px-2">
             <div className="h-10 w-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-lg">
@@ -111,9 +107,8 @@ const MainLayout = ({ children, handleLogout, usuario }) => {
         </div>
       </aside>
 
-      {/* SIDEBAR MÓVIL */}
       {menuOpen && (
-        <div className="fixed inset-0 z-40 md:hidden no-print">
+        <div className="fixed inset-0 z-40 xl:hidden no-print">
           <div className="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity" onClick={() => setMenuOpen(false)}></div>
           <div className="relative flex flex-col w-64 h-full bg-gray-900 text-white shadow-xl transform transition-transform duration-300">
             <div className="flex items-center justify-between h-20 px-4 border-b border-gray-800">
@@ -138,13 +133,36 @@ const MainLayout = ({ children, handleLogout, usuario }) => {
                 </NavLink>
               ))}
             </div>
+
+            <div className="p-4 border-t border-gray-800 bg-gray-900 mt-auto">
+              <div className="flex items-center mb-4 px-2">
+                <div className="h-10 w-10 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-lg">
+                  {usuario.nombre ? usuario.nombre.charAt(0).toUpperCase() : 'U'}
+                </div>
+                <div className="ml-3">
+                  <p className="text-sm font-medium text-white line-clamp-1">{usuario.nombre}</p>
+                  <p className="text-xs text-gray-400">Legajo: {usuario.legajo}</p>
+                </div>
+              </div>
+              <button 
+                onClick={() => {
+                  setMenuOpen(false);
+                  handleLogout();
+                }} 
+                className="w-full flex items-center justify-center px-4 py-2 border border-red-500 text-red-500 rounded-lg hover:bg-red-500 hover:text-white transition-colors"
+              >
+                <svg className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                </svg>
+                Salir
+              </button>
+            </div>
           </div>
         </div>
       )}
 
-      {/* CONTENIDO PRINCIPAL */}
       <div className="flex-1 flex flex-col h-full overflow-hidden w-full relative print-layout-reset">
-        <header className="md:hidden flex items-center justify-between bg-gray-900 h-16 px-4 shadow-md z-10 no-print">
+        <header className="xl:hidden flex items-center justify-between bg-gray-900 h-16 px-4 shadow-md z-10 no-print">
           <div className="flex items-center">
             <img src="../../aerotech.png" alt="Logo" className="max-h-16 object-contain mr-2" />
           </div>
@@ -153,7 +171,7 @@ const MainLayout = ({ children, handleLogout, usuario }) => {
           </button>
         </header>
 
-       <main className={`flex-1 overflow-y-auto bg-gray-50 ${isFullWidthRoute ? 'p-0' : 'p-4 md:p-8'} print-main-reset`}>
+       <main className={`flex-1 overflow-y-auto bg-gray-50 ${isFullWidthRoute ? 'p-0' : 'p-4 xl:p-8'} print-main-reset`}>
           <div className={`mx-auto ${isFullWidthRoute ? 'w-full h-full max-w-none' : 'max-w-8xl'} transition-all duration-300`}>
             {children}
           </div>
@@ -188,7 +206,7 @@ export default function App() {
 
     try {
       const payloadBase64 = token.split('.')[1];
-      const payload = JSON.parse(atob(payloadBase64.replace(/-/g, '+').replace(/_/g, '/'))); // Agregado el replace por seguridad
+      const payload = JSON.parse(atob(payloadBase64.replace(/-/g, '+').replace(/_/g, '/')));
 
       setUsuario({
         id: parseInt(payload['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier']),
@@ -201,45 +219,49 @@ export default function App() {
   }, [token]);
 
   return (
-    <Router>
-      <Routes>
-        <Route path="/login" element={isLoggedIn ? <Navigate to="/" replace /> : <Login handleAuthSuccess={handleAuthSuccess} />} />
-        <Route path="/DariOs" element={<DariOs />} />
+    <>
+      <NetworkStatus />
+      <PwaUpdater />
+      <Router>
+        <Routes>
+          <Route path="/login" element={isLoggedIn ? <Navigate to="/" replace /> : <Login handleAuthSuccess={handleAuthSuccess} />} />
+          <Route path="/DariOs" element={<DariOs />} />
 
-        <Route path="*" element={!isLoggedIn ? <Navigate to="/login" replace /> : (
-          <MainLayout handleLogout={handleLogout} usuario={usuario}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/notaPSA" element={<NotaPSA token={token} />} />
-              <Route path="/monitor-impresoras" element={hasRol('Admin', 'Tecnico') ? <MonitorImpresoras /> : <Navigate to="/" replace />} />
+          <Route path="*" element={!isLoggedIn ? <Navigate to="/login" replace /> : (
+            <MainLayout handleLogout={handleLogout} usuario={usuario}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/notaPSA" element={<NotaPSA token={token} />} />
+                <Route path="/monitor-impresoras" element={hasRol('Admin', 'Tecnico') ? <MonitorImpresoras /> : <Navigate to="/" replace />} />
 
-              <Route path="/salidas" element={hasRol('Admin', 'Tecnico') ? <Salidas token={token} usuario={usuario} /> : <Navigate to="/" replace />} />
-              <Route path="/salidas/crearnotasalida" element={hasRol('Admin', 'Tecnico') ? <CrearNotaSalida token={token} /> : <Navigate to="/" replace />} />
-              <Route path="/salidas/vernotasalida/:id" element={hasRol('Admin', 'Tecnico') ? <VerNotaSalida usuario={usuario} /> : <Navigate to="/" replace />} />
+                <Route path="/salidas" element={hasRol('Admin', 'Tecnico') ? <Salidas token={token} usuario={usuario} /> : <Navigate to="/" replace />} />
+                <Route path="/salidas/crearnotasalida" element={hasRol('Admin', 'Tecnico') ? <CrearNotaSalida token={token} /> : <Navigate to="/" replace />} />
+                <Route path="/salidas/vernotasalida/:id" element={hasRol('Admin', 'Tecnico') ? <VerNotaSalida usuario={usuario} /> : <Navigate to="/" replace />} />
 
-              <Route path="/entradas" element={hasRol('Admin', 'Tecnico') ? <Entradas token={token} /> : <Navigate to="/" replace />} />
-              <Route path="/entradas/crearnotaentrada" element={hasRol('Admin', 'Tecnico') ? <CrearNotaEntrada token={token} /> : <Navigate to="/" replace />} />
-              <Route path="/entradas/vernotaentrada/:id" element={hasRol('Admin', 'Tecnico') ? <VerNotaEntrada /> : <Navigate to="/" replace />} />
+                <Route path="/entradas" element={hasRol('Admin', 'Tecnico') ? <Entradas token={token} /> : <Navigate to="/" replace />} />
+                <Route path="/entradas/crearnotaentrada" element={hasRol('Admin', 'Tecnico') ? <CrearNotaEntrada token={token} /> : <Navigate to="/" replace />} />
+                <Route path="/entradas/vernotaentrada/:id" element={hasRol('Admin', 'Tecnico') ? <VerNotaEntrada /> : <Navigate to="/" replace />} />
 
-              <Route path="/pendientes" element={hasRol('Admin') ? <AprobacionesPendientes usuario={usuario} /> : <Navigate to="/" replace />} />
+                <Route path="/pendientes" element={hasRol('Admin') ? <AprobacionesPendientes usuario={usuario} /> : <Navigate to="/" replace />} />
 
-              <Route path="/remitos" element={hasRol('Admin', 'Tecnico') ? <Remitos token={token} /> : <Navigate to="/" replace />} />
-              <Route path="/remitos/verremito/:id" element={hasRol('Admin', 'Tecnico') ? <VerRemito /> : <Navigate to="/" replace />} />
-              <Route path="/remitos/crearremito" element={hasRol('Admin') ? <CrearRemito token={token} /> : <Navigate to="/" replace />} />
-              <Route path="/remitos/editarremito/:id" element={hasRol('Admin') ? <EditarRemito token={token} /> : <Navigate to="/" replace />} />
-              <Route path="/remitos/etiquetas/:id" element={hasRol('Admin') ? <GenerarEtiquetas /> : <Navigate to="/" replace />} />
+                <Route path="/remitos" element={hasRol('Admin', 'Tecnico') ? <Remitos token={token} /> : <Navigate to="/" replace />} />
+                <Route path="/remitos/verremito/:id" element={hasRol('Admin', 'Tecnico') ? <VerRemito /> : <Navigate to="/" replace />} />
+                <Route path="/remitos/crearremito" element={hasRol('Admin') ? <CrearRemito token={token} /> : <Navigate to="/" replace />} />
+                <Route path="/remitos/editarremito/:id" element={hasRol('Admin') ? <EditarRemito token={token} /> : <Navigate to="/" replace />} />
+                <Route path="/remitos/etiquetas/:id" element={hasRol('Admin') ? <GenerarEtiquetas /> : <Navigate to="/" replace />} />
 
-              <Route path="/dashboard" element={hasRol('Admin') ? <Dashboard token={token} /> : <Navigate to="/" replace />} />
-              <Route path="/dashboardSalidas" element={hasRol('Admin') ? <DashboardSalidas token={token} /> : <Navigate to="/" replace />} />
-              <Route path="/perfil" element={hasRol('Admin', 'Tecnico') ? <Perfil /> : <Navigate to="/" replace />} />
-              
-              <Route path="/monitor-switches" element={hasRol('Admin', 'Tecnico') ? <MonitorSwitches /> : <Navigate to="/" replace />} />
+                <Route path="/dashboard" element={hasRol('Admin') ? <Dashboard token={token} /> : <Navigate to="/" replace />} />
+                <Route path="/dashboardSalidas" element={hasRol('Admin') ? <DashboardSalidas token={token} /> : <Navigate to="/" replace />} />
+                <Route path="/perfil" element={hasRol('Admin', 'Tecnico') ? <Perfil /> : <Navigate to="/" replace />} />
+                
+                <Route path="/monitor-switches" element={hasRol('Admin', 'Tecnico') ? <MonitorSwitches /> : <Navigate to="/" replace />} />
 
-              <Route path="*" element={<h1 className="text-2xl font-bold text-gray-700">404 | Página no encontrada</h1>} />
-            </Routes>
-          </MainLayout>
-        )} />
-      </Routes>
-    </Router>
+                <Route path="*" element={<h1 className="text-2xl font-bold text-gray-700">404 | Página no encontrada</h1>} />
+              </Routes>
+            </MainLayout>
+          )} />
+        </Routes>
+      </Router>
+    </>
   );
 }

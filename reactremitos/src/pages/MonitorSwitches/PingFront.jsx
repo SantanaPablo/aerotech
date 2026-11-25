@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 
-const WS_PING_URL = "ws://10.35.144.252:5064/ws/ping";
+const WS_PING_URL = `wss://${window.location.host}/ws-ssh/ws/ping`;
 
 export default function PingTester() {
   const [ip, setIp] = useState("");

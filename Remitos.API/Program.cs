@@ -6,7 +6,7 @@ using Aerotech.Infrastructure.Services;
 using Aerotech.Infrastructure.Persistence;
 using System.Text;
 using System.Text.Json.Serialization;
-
+using Microsoft.AspNetCore.HttpOverrides;
 var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseWindowsService();
 
@@ -69,16 +69,20 @@ builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 
 var app = builder.Build();
 
+app.UseForwardedHeaders(new ForwardedHeadersOptions
+{
+    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+});
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-
-
 app.UseCors("AllowFrontend");
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
+
 app.Run();

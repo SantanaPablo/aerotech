@@ -14,7 +14,7 @@ import { useNavigate } from 'react-router-dom';
 import '.././css/DariOs.css';
 
 const STORAGE_KEY = 'aeronet-noc-v6';
-const API_URL = 'http://10.35.144.252:5500/api/Nagios/combinado';
+const API_URL = '/api-nagios/api/Nagios/combinado';
 
 // Dimensiones de los nodos
 const NODE_W = 500;

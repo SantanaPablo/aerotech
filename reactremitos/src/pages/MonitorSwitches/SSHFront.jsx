@@ -3,7 +3,7 @@ import { Terminal } from "xterm";
 import { FitAddon } from "xterm-addon-fit";
 import "xterm/css/xterm.css";
 
-const WS_BASE_URL = "ws://10.35.144.252:5064/ws/terminal";
+const WS_BASE_URL = `wss://${window.location.host}/ws-ssh/ws/terminal`;
 
 export default function SshTerminalTester() {
   const [ip, setIp] = useState("");
