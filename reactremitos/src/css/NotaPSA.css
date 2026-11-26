@@ -1,612 +1,404 @@
-/* Estilos generales */
-
-.psa-nota-container {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-    font-size: 11px;
-    line-height: 1.2;
-    color: #333;
-    visibility: visible;
-}
-
-/* Contenedor principal para vista previa */
-.psa-container {
-    width: 21cm;
-    min-height: auto;
-    margin: 0 auto;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    padding: 1.2cm;
-    box-sizing: border-box;
-}
-
-/* Contenedor para segunda página - SIN altura mínima */
-.psa-container-second {
-    width: 21cm;
-    min-height: auto;
-    margin: 0 auto;
-    background-color: white;
-    box-sizing: border-box;
-}
-
-/* Estilos específicos del formulario */
-.psa-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 10px;
-    padding-bottom: 5px;
-}
-
-.psa-logo-container {
-    flex: 0 0 33%;
-    text-align: left;
-}
-
-.psa-header-info {
-    flex: 1 1 auto;
-    text-align: right;
-}
-
-.psa-header img {
-    width: 100%;
-    max-width: 7cm;
-    height: auto;
-}
-
-.psa-header h1 {
-    font-size: 12px;
-    margin: 2px 0;
-    text-transform: uppercase;
-    color: #003366;
-}
-
-.psa-header p {
-    margin: 1px 0;
-    font-size: 11px;
-}
-
-.psa-header-lines {
-    text-align: left;
-    margin: 10px 0;
-}
-
-.psa-header-lines h1 {
-    margin: 3px 0;
-    font-size: 11px;
-    color: #000;
-    font-weight: bold;
-}
-
-.psa-header-lines p {
-    margin: 2px 0;
-    font-weight: bold;
-    color: #000;
-    font-size: 11px;
-}
-
-.psa-fecha {
-    text-align: right;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #555;
-}
-
-.psa-saludo {
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.psa-saludo p {
-    margin: 5px 0;
-}
-
-.psa-symbol-container {
-    text-align: center;
-    margin: 10px 0;
-    padding: 5px;
-    background-color: #f9f9f9;
-    border-radius: 3px;
-    border: 1px solid #ddd;
-    font-size: 11px;
-}
-
-.psa-tipo-operacion-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 10px 0;
-}
-
-.psa-tipo-operacion {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.psa-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 10px;
-    table-layout: fixed;
-}
-
-.psa-table, .psa-table th, .psa-table td {
-    border: 1px solid #999;
-}
-
-.psa-table th, .psa-table td {
-    padding: 4px;
-    text-align: left;
-    vertical-align: top;
-}
-
-.psa-table th {
-    background-color: #e6f2ff;
-    font-weight: bold;
-    font-size: 10px;
-}
-
-.psa-tabla-articulos td, .psa-tabla-articulos th {
-    text-align: center;
-}
-
-.psa-input-field {
-    width: 100%;
-    border: 1px solid #ddd;
-    background: #fff;
-    font-family: inherit;
-    font-size: 10px;
-    padding: 3px;
-    box-sizing: border-box;
-    border-radius: 2px;
-    margin: 1px 0;
-    height: 18px;
-}
-
-.psa-input-field:focus {
-    outline: none;
-    border-color: #4d90fe;
-    box-shadow: 0 0 2px rgba(77, 144, 254, 0.5);
-}
-
-.psa-checkbox-container {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    margin-bottom: 3px;
-    font-size: 10px;
-}
-
-.psa-checkbox-container input[type="checkbox"], 
-.psa-checkbox-container input[type="radio"] {
-    margin: 5 px;
-    transform: scale(0.8);
-}
-
-.psa-credential-box {
-    width: 45mm;
-    height: 65mm;
-    border: 1px dashed #ccc;
-    margin: 5px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    background: #f9f9f9;
-}
-
-.psa-credential-box img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
-
-.psa-btn {
-    padding: 5px 10px;
-    background-color: #003366;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 11px;
-    margin: 3px;
-    transition: background-color 0.3s;
-}
-
-.psa-btn:hover {
-    background-color: #004c8c;
-}
-
-.psa-btn-secondary {
-    background-color: #28a745;
-}
-
-.psa-btn-secondary:hover {
-    background-color: #218838;
-}
-
-.psa-btn-danger {
-    background-color: #dc3545;
-}
-
-.psa-btn-danger:hover {
-    background-color: #c82333;
-}
-
-.psa-flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin: 10px 0;
-}
-
-.psa-remove-btn {
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    background: rgba(255,255,255,0.9);
-    border: 1px solid #ccc;
-    border-radius: 50%;
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-    font-size: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #dc3545;
-    font-weight: bold;
-}
-
 .psa-nota {
-    margin-top: 10px;
-    font-style: italic;
-    font-size: 10px;
-    color: #666;
-    padding: 5px;
-    background-color: #fff8e1;
-    border-left: 2px solid #ffc107;
+  --psa-azul-oscuro: #0f243e;
+  --psa-azul: #102c57;
+  --psa-azul-medio: #35598c;
+  --psa-fondo: #f0f4f8;
+  --psa-rotulo: #e6ecf4;
+  --psa-borde: #91a7c4;
+  --psa-ambar: #fff3cd;
+  --psa-ambar-oscuro: #7a5c00;
+  --psa-margen-lateral: 15mm;
+  padding: 12px;
+  overflow-x: auto;
+  color: #262626;
+  font: 9pt/1.2 Calibri, 'Carlito', Arial, sans-serif;
 }
 
-.psa-puesto-ingreso {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    gap: 3px;
-    flex-wrap: nowrap;
-    font-size: 11px;
-    width: 100%;
-}
-
-.psa-ingreso-egreso-select {
-    border: 1px solid #ccc;
-    padding: 3px;
-    border-radius: 2px;
-    font-size: 11px;
-    background: white;
-    height: 22px;
-    width: auto;
-}
-
-.psa-puesto-input {
-    flex: 1;
-    margin-left: 3px;
-    min-width: 150px;
-}
-
-.psa-tipo-solicitud-container {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-}
-
-.psa-form-section {
-    margin-bottom: 15px;
-}
-
-.psa-form-section-title {
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: #003366;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 3px;
-    font-size: 11px;
-}
-
-.psa-actions {
-    text-align: center;
-    margin: 15px 0;
-}
-
-.psa-required {
-    color: #dc3545;
-}
-
-.psa-error-message {
-    color: #dc3545;
-    font-size: 9px;
-    margin-top: 2px;
-    display: none;
-}
-
-.psa-success-message {
-    background-color: #d4edda;
-    color: #155724;
-    padding: 6px;
-    border-radius: 3px;
-    margin: 8px 0;
-    display: none;
-    font-size: 11px;
-}
-
-.psa-inline-checkbox-container {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin: 5px 0;
-}
-
-/* Modales */
-.psa-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+.psa-herramientas {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.psa-modal {
-  background: #fff;
-  padding: 20px;
-  width: 1200px;
-  max-height: 80vh;
-  border-radius: 12px;
-  overflow-y: auto;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-  animation: modalFadeIn 0.3s ease;
-}
-
-@keyframes modalFadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.psa-modal h2 {
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-.psa-modal-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
   flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
+  align-items: start;
+  justify-content: space-between;
+  gap: 8px 16px;
+  width: 210mm;
+  margin: 0 auto 12px;
+  padding: 12px;
+  border: 1px solid var(--psa-borde);
+  background: white;
 }
 
-.psa-tecnico-card {
-  background: #f5f5f5;
+.psa-herramientas button,
+.psa-agregar-fila,
+.psa-modal button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  background: var(--psa-azul);
+  color: white;
+  font-weight: bold;
+}
+
+.psa-agregar-fila { display: block; margin: 2mm 0; }
+.psa-modal {
+  width: min(880px, calc(100vw - 32px));
+  max-height: 85vh;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid var(--psa-borde);
   border-radius: 10px;
-  width: 100%;
+  color: inherit;
+  background: white;
+  box-shadow: 0 12px 35px #0003;
+}
+
+.psa-modal::backdrop { background: #0f243e80; }
+.psa-modal header { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.psa-modal header { margin-bottom: 12px; }
+.psa-modal h2 { margin: 0; font-size: 16pt; font-weight: bold; }
+.psa-herramientas p { margin: 4px 0 0; }
+.psa-herramientas [role] { flex-basis: 100%; }
+.psa-herramientas [role='alert'] { color: #9b1c1c; }
+.psa-lista-tecnicos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(285px, 100%), 1fr));
+  gap: 6px 12px;
+  margin-top: 8px;
+}
+
+.psa-tarjeta-tecnico {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 8px;
   padding: 10px;
+  border: 1px solid var(--psa-borde);
+  border-radius: 6px;
+  background: var(--psa-fondo);
+  overflow-wrap: anywhere;
+}
+
+.psa-tarjeta-tecnico:has(input:checked) { border-color: var(--psa-azul-medio); background: var(--psa-rotulo); }
+.psa-tarjeta-tecnico dl { margin: 4px 0 0; }
+.psa-tarjeta-tecnico dl div { display: flex; flex-wrap: wrap; gap: 0 4px; }
+.psa-tarjeta-tecnico dt { font-weight: bold; }
+.psa-tarjeta-tecnico dd { margin: 0; }
+.psa-estado {
+  border: 1px solid #667085;
+  border-radius: 4px;
+  padding: 3px 6px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+.psa-estado.vencida { border-color: #f00; color: #9b1c1c; background: #fee2e2; }
+.psa-estado.por-vencer { border-color: #fa0; color: #785500; background: #fff3cd; }
+.psa-estado.vigente { border-color: #0a0; color: #166534; background: #dcfce7; }
+
+.psa-hoja {
+  box-sizing: border-box;
+  position: relative;
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto 12px;
+  padding: 27mm var(--psa-margen-lateral) 24mm;
+  background: white;
+  box-shadow: 0 2px 8px #0002;
+}
+
+.psa-encabezado,
+.psa-pie {
+  position: absolute;
+  right: var(--psa-margen-lateral);
+  left: var(--psa-margen-lateral);
+}
+
+.psa-encabezado {
+  top: 8mm;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  height: 13.2mm;
+  padding-bottom: 1.5mm;
+  border-bottom: 1.3pt solid var(--psa-azul);
+  color: var(--psa-azul);
+  font-size: 7.5pt;
+  font-weight: bold;
+}
+
+.psa-encabezado img { width: 30pt; height: 30pt; object-fit: contain; }
+
+.psa-pie {
+  bottom: 7mm;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 1mm;
+  border-top: 1px solid var(--psa-borde);
+  color: #7f7f7f;
+  font-size: 8pt;
+}
+
+.psa-portada {
+  display: grid;
+  grid-template-columns: 63fr 39fr;
+  min-height: 48pt;
+}
+
+.psa-portada h1 {
   display: flex;
   align-items: center;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  margin: 0;
+  padding: 2mm;
+  background: var(--psa-azul-oscuro);
+  color: white;
+  font-size: 10pt;
+  font-weight: bold;
+  line-height: 1.2;
 }
 
-.psa-tecnico-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+.psa-logo {
+  display: grid;
+  place-items: center;
+  background: #ededed;
 }
 
-.psa-tecnico-card img {
-  width: 60px;
-  height: 60px;
-  border-radius: 6px;
-  margin-right: 10px;
-  object-fit: cover;
+.psa-logo img { width: 80%; height: 14mm; object-fit: contain; }
+
+.psa-destinatario {
+  display: grid;
+  grid-template-columns: 54fr 48fr;
+  margin: 2mm 0;
 }
 
-.psa-btn-group {
+.psa-destinatario > div { padding: 2pt 4.5pt; }
+.psa-fecha { display: flex; gap: 1.5mm; align-items: center; }
+.psa-fecha .psa-campo:first-child { flex: 1; min-width: 0; }
+.psa-fecha .psa-campo[type='date'] { width: auto; }
+.psa-autoridad { margin-top: 2mm; color: var(--psa-azul); font-weight: bold; }
+
+.psa-reservado {
   display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
+  flex-direction: column;
+  min-height: 99pt;
+  border: 1px solid var(--psa-borde);
+  background: var(--psa-ambar);
+}
+
+.psa-reservado h2 {
+  margin: 0;
+  padding: 2.8pt 3pt;
+  background: var(--psa-ambar-oscuro);
+  color: white;
+  text-align: center;
+  font-size: 8.5pt;
+  font-weight: bold;
+}
+
+.psa-reservado-opciones { display: flex; justify-content: space-evenly; padding: 2.8pt 3pt; color: #262626; font-size: 14pt; font-weight: bold; border-block: 1px solid var(--psa-borde); }
+.psa-reservado-opciones input, .psa-reservado-opciones .psa-casilla { width: 10pt; height: 10pt; }
+.psa-sello { flex: 1; padding: 4pt; color: var(--psa-ambar-oscuro); font-size: 8.5pt; font-weight: bold; }
+
+.psa-aviso,
+.psa-motivo,
+.psa-declaracion {
+  border: 1px solid var(--psa-borde);
+  padding: 1.5mm 2mm;
+  background: var(--psa-fondo);
+}
+
+.psa-aviso { border-left: 2.5pt solid var(--psa-azul-medio); font-size: 8pt; }
+.psa-aviso strong, .psa-aviso b, .psa-aviso li::marker { color: var(--psa-azul); }
+.psa-aviso ul,
+.psa-declaracion ol { margin: 1mm 0; padding-left: 5mm; }
+.psa-aviso ul { list-style-type: disc; }
+.psa-declaracion ol { list-style-type: decimal; }
+.psa-ejemplo { text-align: center; font-style: italic; }
+.psa-leyenda { color: #262626; font-style: italic; }
+.psa-leyenda span { color: var(--psa-ambar-oscuro); }
+
+.psa-titulo-seccion {
+  margin: 8pt 0 1.4pt;
+  padding: .7pt 4.5pt;
+  background: var(--psa-azul);
+  color: white;
+  font-size: 10pt;
+  font-weight: bold;
+  line-height: 1.15;
+  break-after: avoid;
 }
 
 
+.psa-tabla {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
 
-/* Estilos para impresión */
+.psa-tabla th,
+.psa-tabla td { border: 1px solid var(--psa-borde); padding: .8mm 1mm; vertical-align: middle; }
+.psa-tabla th { font-weight: bold; }
+.psa-datos th,
+.psa-autorizacion th { background: var(--psa-rotulo); text-align: left; }
+.psa-datos tr { height: 7mm; }
+
+.psa-tabla .psa-cabecera-media { background: var(--psa-azul-medio); color: white; text-align: center; }
+.psa-opciones { display: flex; flex-wrap: wrap; gap: .5mm 3mm; }
+.psa-opcion { display: inline-flex; align-items: center; gap: 1mm; margin: 0; cursor: pointer; }
+.psa-opcion input { width: 12px; height: 12px; margin: 0; accent-color: var(--psa-azul); flex: none; }
+.psa-opcion:has(input:disabled) { cursor: default; }
+
+.psa-modalidad { height: 20mm; background: var(--psa-fondo); }
+.psa-modalidad .psa-opcion { color: var(--psa-azul); }
+.psa-modalidad .psa-opcion input {
+  appearance: none;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--psa-azul-medio);
+}
+.psa-modalidad .psa-opcion input:checked::before {
+  content: 'X';
+  font-size: 8pt;
+  line-height: 1;
+}
+.psa-autorizacion th { color: var(--psa-azul); }
+.psa-vigencia-valor { text-align: center; }
+.psa-vigencia-valor .psa-campo { border: 0; text-align: center; }
+.psa-ubicacion tr:nth-child(2) { height: 10.7mm; }
+.psa-ubicacion tr:nth-child(n+4) { height: 5.8mm; }
+.psa-otro { display: flex; align-items: baseline; gap: 2mm; }
+.psa-otro .psa-campo { flex: 1; min-width: 0; }
+.psa-otro .psa-valor:empty::after { content: '_________________________________'; }
+
+.psa-motivo p { color: #7f7f7f; font-size: 8pt; font-style: italic; }
+.psa-declaracion-final { break-inside: avoid; }
+.psa-motivo p,
+.psa-declaracion p { margin: 0; }
+.psa-instruccion { margin: 1mm 0; font-style: italic; }
+
+.psa-planilla { text-align: center; }
+.psa-planilla thead th { background: var(--psa-azul); color: white; }
+.psa-planilla tbody tr:nth-child(even) { background: var(--psa-fondo); }
+.psa-objetos tbody tr { height: 8.47mm; }
+.psa-objetos tfoot th,
+.psa-objetos tfoot td { background: var(--psa-rotulo); }
+.psa-responsables tbody tr { height: 10.94mm; }
+.psa-responsables tbody th { background: var(--psa-rotulo); }
+.psa-nomina tbody tr { height: 8.29mm; }
+.psa-firma { margin-top: 2mm; }
+.psa-firma tr { height: 10.58mm; }
+.psa-firma-empresa { background: var(--psa-rotulo); text-align: center; }
+.psa-firma-empresa strong,
+.psa-firma-empresa span { display: block; }
+.psa-firma-empresa span { margin-top: 12mm; }
+
+.psa-campo {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: .4mm .65mm;
+  border: 1px solid var(--psa-borde);
+  border-radius: 2px;
+  background: white;
+  color: inherit;
+  font: inherit;
+}
+
+.psa-campo:focus-visible { outline: 2px solid var(--psa-azul-medio); }
+textarea.psa-campo { resize: vertical; }
+.psa-solo-impresion { display: none; }
+
+@page nota-psa {
+  size: A4 portrait;
+  margin: 27mm 15mm 18mm;
+  @top-left {
+    content: 'POLICÍA DE SEGURIDAD AEROPORTUARIA · UOSP METROPOLITANA';
+    padding-top: 17mm;
+    vertical-align: top;
+    text-align: left;
+    font: bold 7.5pt Calibri, Carlito, Arial, sans-serif;
+    color: #102c57;
+    background: linear-gradient(#102c57, #102c57) left 21mm / 100% 1.3pt no-repeat;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  @top-right {
+    content: image-set(url('/assets/logo-psa.png') 4.25x);
+    width: 30pt;
+    padding-top: 8mm;
+    vertical-align: top;
+    text-align: right;
+    background: linear-gradient(#102c57, #102c57) left 21mm / 100% 1.3pt no-repeat;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  @bottom-left {
+    color: #7f7f7f;
+    font: 7.5pt Calibri, Carlito, Arial, sans-serif;
+    vertical-align: top;
+    padding-top: 6mm;
+  }
+  @bottom-right {
+    content: 'Página ' counter(page) ' de ' counter(pages);
+    color: #7f7f7f;
+    font: 7.5pt Calibri, Carlito, Arial, sans-serif;
+    vertical-align: top;
+    padding-top: 6mm;
+  }
+}
+
 @media print {
-    body {
-        background-color: white;
-        margin: 10 px;
-        padding: 0;
-    }
+  body:has(.psa-nota) .print-layout-reset,
+  body:has(.psa-nota) .print-main-reset,
+  body:has(.psa-nota) .print-main-reset > div { display: block; height: auto !important; overflow: visible !important; }
 
-    .psa-nota-container, .psa-nota-container * {
-        visibility: visible;
-    }
+  .psa-nota, .psa-nota * { visibility: visible; }
+  .psa-nota { padding: 0; overflow: visible; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .psa-nota .psa-hoja {
+    page: nota-psa;
+    width: auto;
+    min-height: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none;
+  }
 
-    .psa-container {
-        width: 100%;
-        height: auto;
-        box-shadow: none;
-        padding: 0.5cm;
-        margin: 10 px;
-    }
+  .psa-nota .psa-primera-pagina { break-after: page; }
+  .psa-nota .psa-primera-pagina + .psa-titulo-seccion { margin-top: 0 !important; }
+  .psa-nota .psa-no-print { display: none !important; }
+  .psa-nota .psa-solo-impresion { display: inline; }
+  .psa-nota .psa-valor { white-space: pre-wrap; overflow-wrap: anywhere; }
+  .psa-nota .psa-fecha .psa-valor:first-of-type:not(:empty)::after { content: ','; }
+  .psa-nota .psa-casilla {
+    display: inline-grid;
+    place-items: center;
+    box-sizing: border-box;
+    width: 2.6mm;
+    height: 2.6mm;
+    border: .25mm solid currentColor;
+    line-height: 0;
+    font-size: 8pt;
+  }
 
-    .psa-container-second {
-        width: 100%;
-        height: auto;
-        box-shadow: none;
-        padding: 0.5cm;
-        margin: 10 px;
-        min-height: auto !important;
-    }
-
-    .psa-no-print {
-        display: none !important;
-    }
-
-    .psa-page-break {
-        page-break-before: always;
-    }
-
-    /* Mantener la estructura original */
-    .psa-header {
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: flex-start !important;
-        margin-bottom: 15px !important;
-    }
-
-    .psa-logo-container {
-        text-align: left !important;
-        flex: 0 0 33% !important;
-    }
-
-    .psa-header-info {
-        text-align: right !important;
-    }
-    .psa-header-lines {
-        margin-bottom: 15px !important;
-    }
-   .psa-header-lines h1 {
-        margin: 4px 0 !important;
-    }
-
-    .psa-header-lines p {
-        margin: 3px 0 !important;
-    }
-
-    .psa-fecha {
-        text-align: right !important;
-        margin-bottom: 10px !important;
-    }
-
-.psa-saludo {
-        margin-bottom: 10px !important;
-    }
-
-    .psa-saludo p {
-        margin: 4px 0 !important;
-    }
-
-    .psa-symbol-container {
-        margin: 10px 0 !important;
-        padding: 5px !important;
-    }
-
-    .psa-form-section {
-        margin-bottom: 15px !important;
-    }
-
-    .psa-form-section-title {
-        margin-bottom: 10px !important;
-        padding-bottom: 5px !important;
-    }
-
-    .psa-table {
-        margin-bottom: 10px !important;
-    }
-
-    .psa-table th, .psa-table td {
-        padding: 3px 4px !important;
-    }
-    /* Asegurar que los inputs mantengan su estilo */
-    .psa-puesto-ingreso {
-        display: flex !important;
-        flex-wrap: nowrap !important;
-        margin-bottom: 8px !important;
-        align-items: center !important;
-        width: 100% !important;
-    }
-
-    .psa-puesto-ingreso input {
-        flex-grow: 1 !important;
-        margin-left: 3px !important;
-        width: auto !important;
-    }
-
-    /* Mejorar la legibilidad en impresión */
-    .psa-input-field {
-        background: transparent !important;
-        border: 1px solid #ccc !important;
-    }
-
-    /* Asegurar que los botones no se impriman */
-    .psa-btn, .psa-remove-btn {
-        display: none !important;
-    }
-}
-
-@media (max-width: 10cm) {
-    .psa-container {
-        width: 100%;
-        padding: 10px;
-    }
-
-    .psa-header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        margin-bottom: 15px !important;
-    }
-
-    .psa-header-info {
-        text-align: center;
-        margin-top: 8px;
-    }
-    .psa-header-lines {
-        margin-bottom: 15px !important;
-    }
-
-    .psa-puesto-ingreso {
-        flex-wrap: wrap;
-    }
-
-    .psa-logo-container {
-        flex: 0 0 auto;
-        width: 100%;
-        text-align: center;
-    }
-
-    .psa-header img {
-        max-width: 33%;
-    }
-
-    .psa-ingreso-egreso-select {
-        width: auto;
-    }
-
-    .psa-puesto-input {
-        width: 100%;
-        margin-top: 5px;
-    }
-
-    .psa-tipo-operacion-container {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    /* En móviles, forzar alineación izquierda para impresión */
-    @media print {
-        .psa-logo-container {
-            text-align: left !important;
-        }
-        .psa-header-info {
-            text-align: right !important;
-        }
-    }
+  .psa-nota .psa-portada h1 { padding: 4.5pt !important; }
+  .psa-nota .psa-titulo-seccion { padding: .7pt 4.5pt !important; margin: 8pt 0 1.4pt !important; }
+  .psa-nota .psa-tabla :is(th, td) { padding: .8mm 1mm !important; }
+  .psa-nota .psa-primera-pagina .psa-titulo-seccion { margin-top: 6pt !important; }
+  .psa-nota .psa-primera-pagina .psa-tabla :is(th, td) { padding-block: 1.5pt !important; }
+  .psa-nota .psa-ubicacion tr { height: auto; }
+  .psa-nota .psa-ubicacion tr:nth-child(n+4) { height: 13pt; }
+  .psa-nota .psa-modalidad { height: 47pt; }
+  .psa-nota .psa-destinatario,
+  .psa-nota .psa-aviso ul,
+  .psa-nota .psa-declaracion ol,
+  .psa-nota .psa-instruccion { margin: 1mm 0 !important; }
+  .psa-nota :is(.psa-aviso, .psa-motivo, .psa-declaracion, .psa-sello) { padding: 3pt 4.5pt !important; }
+  .psa-nota .psa-destinatario > div { padding: 2pt 4.5pt !important; }
+  .psa-nota .psa-reservado :is(h2, .psa-reservado-opciones) { padding: 2.8pt 3pt !important; }
+  .psa-nota .psa-aviso ul,
+  .psa-nota .psa-declaracion ol { padding-left: 5mm !important; }
+  .psa-nota .psa-autoridad,
+  .psa-nota .psa-firma { margin-top: 2mm !important; }
+  .psa-nota .psa-firma-empresa span { margin-top: 12mm !important; }
+  .psa-nota :is(.psa-encabezado, .psa-pie) { display: none !important; }
+  .psa-nota .psa-tabla thead, .psa-nota .psa-tabla tfoot { display: table-row-group; }
+  .psa-nota .psa-tabla tr { break-inside: avoid; }
 }
